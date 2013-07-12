@@ -1,4 +1,8 @@
 # Django settings for modeladorsemantiko project.
+# -*- coding: utf-8 -*-
+import os
+gettext = lambda s: s
+PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -12,7 +16,8 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'semantik_modelador',                     # Or path to database file if using sqlite3.
+        'NAME': os.path.join(PROJECT_PATH, 'semantik_modelador'),
+        #'NAME': 'semantik_modelador',                     # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER':'',
         'PASSWORD':'',

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite" afterPath="$PROJECT_DIR$/db.sqlite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorges/models.py" afterPath="$PROJECT_DIR$/modeladorges/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorges/admin.py" afterPath="$PROJECT_DIR$/modeladorges/admin.py" />
     </list>
     <ignored path="modeladorsemantiko.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,10 +28,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorges/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="6" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.37125748">
+            <state line="79" column="6" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modeladorges/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="33" selection-start="497" selection-end="497" vertical-scroll-proportion="0.778098">
               <folding />
             </state>
           </provider>
@@ -53,7 +61,6 @@
       <list>
         <option value="$PROJECT_DIR$/navigation_autocomplete/templates/navigation_autocomplete/script.html" />
         <option value="$PROJECT_DIR$/templates/admin/base_site.html" />
-        <option value="$PROJECT_DIR$/modeladorges/admin.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/fk_autocomplete/models.py" />
@@ -67,6 +74,7 @@
         <option value="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
         <option value="$PROJECT_DIR$/modeladorges/models.py" />
+        <option value="$PROJECT_DIR$/modeladorges/admin.py" />
       </list>
     </option>
   </component>
@@ -534,7 +542,11 @@
       <created>1373907249237</created>
       <updated>1373907249237</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Sistema usando MySQL">
+      <created>1373923610457</created>
+      <updated>1373923610457</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -734,7 +746,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorges/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="6" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.37125748">
+        <state line="79" column="6" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorges/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="33" selection-start="497" selection-end="497" vertical-scroll-proportion="0.778098">
           <folding />
         </state>
       </provider>

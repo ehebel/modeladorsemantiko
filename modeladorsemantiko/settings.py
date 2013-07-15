@@ -1,8 +1,8 @@
 # Django settings for modeladorsemantiko project.
 # -*- coding: utf-8 -*-
-import os
-gettext = lambda s: s
-PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
+import os.path
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -11,12 +11,17 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+FIXTURE_DIRS = [
+    os.path.join(PROJECT_ROOT, 'fixtures'),
+    ]
+
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(PROJECT_PATH, 'semantik_modelador.sqlite'), # Or path to database file if using sqlite3.
+        'NAME': 'db.sqlite',
+        #'NAME': os.path.join(PROJECT_PATH, 'db.sqlite'), # Or path to database file if using sqlite3.
         #'NAME': 'semantik_modelador',
         # The following settings are not used with sqlite3:
         'USER':'',
@@ -25,6 +30,17 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default.
     }
 }
+
+TEMPLATE_CONTEXT_PROCESSORS = ('django.contrib.auth.context_processors.auth',
+                               "django.core.context_processors.debug",
+                               'django.core.context_processors.debug',
+                               'django.core.context_processors.i18n',
+                               'django.core.context_processors.media',
+                               'django.core.context_processors.static',
+                               'django.core.context_processors.request',
+                               'django.core.context_processors.tz',
+                               'django.contrib.messages.context_processors.messages')
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -66,14 +82,15 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = 'static'
+STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
 # Additional locations of static files
-STATICFILES_DIRS = ( os.path.join(PROJECT_PATH, 'staticfiles'),
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -97,9 +114,14 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+
+
+
+
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -116,21 +138,29 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT, 'templates'),
 )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-
+    'django.contrib.admindocs',
+    'autocomplete_light',
+    'autocomplete_light.tests',
+    'gfk_autocomplete',
+    'optionnal_gfk_autocomplete',
+    'generic_m2m_autocomplete',
+    #'navigation_autocomplete',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
-    #'django-autocomplete-light',
+    'modeladorsemantiko',
+    'modeladorges',
+
 )
 
 # A sample logging configuration. The only tangible logging
@@ -151,13 +181,22 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
+        },
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            },
+        },
     'loggers': {
         'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
+            'handlers':['console'],
             'propagate': True,
-        },
-    }
+            'level':'DEBUG',
+            },
+        'cities_light': {
+            'handlers':['console'],
+            'propagate': True,
+            'level':'DEBUG',
+            },
+        }
 }

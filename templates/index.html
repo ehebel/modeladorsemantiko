@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Bienvenido al Modelador Semantiko
+{% endblock %}
+
+{% block content %}
+    Favor elegir proyecto:
+    <ul>
+        <li>
+            <a href="/admin">INGRESAR</a>
+        </li>
+{#        <li>#}
+{#            <a href="/non_admin/">non-admin</a> - how to use autocomplete-light#}
+{#            outside admin#}
+{#        </li>#}
+{#        <li>#}
+{#            <a href="/non_admin_add_another/widget/add">#}
+{#                non-admin add another item#}
+{#            </a> - shows how add another works outside of the admin#}
+{#        </li>#}
+        <li>
+            <a href="/autocomplete">autocomplete</a> - ver todos los autocompletar registrados
+        </li>
+{#        <li>#}
+{#            <a href="/hvad_autocomplete/item/add/">hvad autocomplete</a> -#}
+{#            demonstrates how to use translated autocompletes with#}
+{#            <a href="https://github.com/kristianoellegaard/django-hvad"#}
+{#               target="_blank">django-hvad</a>#}
+{#        <li>#}
+{#            <a href="/inlines_outside_admin/">inlines outside admin</a> - how to#}
+{#            use#}
+{#            inlines outside admin#}
+{#        </li>#}
+{#        <li>#}
+{#            <a href="/just_javascript/">just javascript</a> - how to create#}
+{#            a fully-working autocomplete just by javascript at client-side;#}
+{#        </li>#}
+    </ul>
+{% endblock %}

@@ -13,7 +13,7 @@ class ciediez(models.Model):
     categoria = models.CharField(max_length=255, null=True, blank=True)
     version = models.CharField(max_length=255, null=True, blank=True)
     def __unicode__(self):
-        return self.descriptor
+        return "%s | %s" % (self.codigo, self.descriptor)
     class Meta:
         ordering=['codigo']
 
@@ -30,7 +30,7 @@ class casprocedimiento(models.Model):
     usuario_crea = models.CharField(max_length=40)
     usuario_modif = models.CharField(max_length=40)
     def __unicode__(self):
-        return self.integlosa
+        return "%s | %s" % (self.idintervencionclinica, self.integlosa)
     class Meta:
         ordering=['idintervencionclinica']
 
@@ -42,7 +42,7 @@ class casdiagnostico(models.Model):
     usuario_crea = models.CharField(max_length=40)
     usuario_modif = models.CharField(max_length=40, null=True, blank=True)
     def __unicode__(self):
-        return self.descripcion
+        return "%s | %s" % (self.codigo, self.descripcion)
     class Meta:
         ordering = ['codigo']
 

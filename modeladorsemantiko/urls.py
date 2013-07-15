@@ -29,7 +29,7 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^modelador/admin/', include(admin.site.urls)),
 
     #url(r'support_sandino/', include('support_sandino.urls')),
     #url(r'^non_admin/', include('non_admin.urls', namespace='non_admin')),
@@ -37,7 +37,7 @@ urlpatterns = patterns('',
     #    namespace='non_admin_add_another')),
     url(r'^double_loading/', generic.TemplateView.as_view(
         template_name='double_loading.html')),
-    url(r'^autocomplete/', include('autocomplete_light.urls')),
+    url(r'^modelador/autocomplete/', include('autocomplete_light.urls')),
     #url(r'^navigation/', include('navigation_autocomplete.urls')),
     #url(r'^default_template/', include('default_template_autocomplete.urls')),
     url(r'^cities_light/', include('cities_light.contrib.restframework')),

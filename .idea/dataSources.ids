@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="0984d5bb-a267-4510-9cd3-85885097991f">
+  <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="af8a7cc3-056a-487d-9c3f-f2ce2601d971">
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
     <jdbc-url>jdbc:sqlite:/Users/ehebel/modeladorsemantiko/modeladorsemantiko/db.sqlite</jdbc-url>
     <libraries>
@@ -100,10 +100,38 @@
       <column name="name" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
       <primary-key columns="id" />
     </table>
-    <table name="ges_patologia" schema="" catalog="" type="TABLE">
-      <column name="ID" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
-      <column name="GLOSA" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
-      <column name="GES_ABREVIADO" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+    <table name="fk_autocomplete_pelicula" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="nombre" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="fk_autocomplete_pelicula_actor" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="pelicula_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="persona_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="persona_id" ref-table="fk_autocomplete_persona" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="fk_autocomplete_pelicula_actor_0b03659e" unique="true" columns="persona_id" />
+      <index name="fk_autocomplete_pelicula_actor_2bc4fe40" unique="true" columns="pelicula_id" />
+    </table>
+    <table name="fk_autocomplete_persona" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="persona" sqlType="VARCHAR(40)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="generic_m2m_autocomplete_modelgroup" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="gfk_autocomplete_taggeditem" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="content_type_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="object_id" sqlType="INTEGER UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="tag" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="gfk_autocomplete_taggeditem_37ef4eb4" unique="true" columns="content_type_id" />
     </table>
     <table name="modeladorges_casdiagnostico" schema="" catalog="" type="TABLE">
       <column name="codigo" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
@@ -170,6 +198,38 @@
       <foreign-key name="1" columns="ciediez_id" ref-table="modeladorges_ciediez" ref-schema="" ref-catalog="" ref-columns="codigo" update-rule="3" delete-rule="3" deferrability="1" />
       <index name="modeladorges_ges_patologia_ciediez_88416a7e" unique="true" columns="ciediez_id" />
       <index name="modeladorges_ges_patologia_ciediez_16d18bd4" unique="true" columns="ges_patologia_id" />
+    </table>
+    <table name="optionnal_gfk_autocomplete_optionnaltaggeditem" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="content_type_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="object_id" sqlType="INTEGER UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="tag" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="optionnal_gfk_autocomplete_optionnaltaggeditem_37ef4eb4" unique="true" columns="content_type_id" />
+    </table>
+    <table name="tests_artist" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="genre_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="genre_id" ref-table="tests_genre" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="tests_artist_33e6008b" unique="true" columns="genre_id" />
+    </table>
+    <table name="tests_foo" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="tests_genre" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="tests_noname" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="number" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
     </table>
   </data-source>
 </component>

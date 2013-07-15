@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite" afterPath="$PROJECT_DIR$/db.sqlite" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
     </list>
@@ -32,7 +32,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="8" selection-start="393" selection-end="393" vertical-scroll-proportion="0.48126802">
+            <state line="37" column="25" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.91354465">
               <folding />
             </state>
           </provider>
@@ -567,7 +567,11 @@
       <created>1373898482219</created>
       <updated>1373898482219</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Sistema usando MySQL">
+      <created>1373906442499</created>
+      <updated>1373906442499</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -630,7 +634,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sistema en funcionamiento, agrego urlpatterns" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistema usando MySQL" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -646,6 +650,7 @@
     <MESSAGE value="Habilitación de Admin" />
     <MESSAGE value="Sistema en funcionamiento" />
     <MESSAGE value="Sistema en funcionamiento, agrego urlpatterns" />
+    <MESSAGE value="Sistema usando MySQL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -765,7 +770,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="8" selection-start="393" selection-end="393" vertical-scroll-proportion="0.48126802">
+        <state line="37" column="25" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.91354465">
           <folding />
         </state>
       </provider>

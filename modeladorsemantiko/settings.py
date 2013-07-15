@@ -193,10 +193,10 @@ LOGGING = {
             'propagate': True,
             'level':'DEBUG',
             },
-        'cities_light': {
-            'handlers':['console'],
-            'propagate': True,
-            'level':'DEBUG',
-            },
+#        'cities_light': {
+#            'handlers':['console'],
+#            'propagate': True,
+#            'level':'DEBUG',
+#            },
         }
 }

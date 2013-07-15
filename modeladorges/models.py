@@ -59,3 +59,34 @@ class ges_patologia(models.Model):
         ordering = ['id']
 
 
+class concepto(models.Model):
+    conceptid = models.BigIntegerField(primary_key=True)
+    fsn = models.CharField('Fully Specified Name',max_length=255, )
+    ciediez = models.ForeignKey(ciediez, null=True, blank=True)
+    revisado = models.BooleanField()
+#    def descripciones(objeto):
+#        return '<br/>'.join(c.termino for c in objeto.img_descripcione_set.order_by('id')[:3])
+#    descripciones.allow_tags = True
+#    descripciones.short_description = 'Descripcion'
+#
+#    def get_qdoc(objqdoc):
+#        return '%s'% objqdoc.QDoc_Code.QDoc_ExamName
+#    get_qdoc.allow_tags = True
+#    get_qdoc.short_description = 'QDoc ExamName'
+
+    def __unicode__(self):
+        return self.fsn
+
+class descripcione(models.Model):
+    descriptionid = models.BigIntegerField(primary_key=True)
+    OPCIONES_TIPO = (
+        (1,'Preferido'),
+        (2,'Sinonimo Visible'),
+        #        (3,'Sinonimo No Visible'),
+        #        (4,'Termino No Valido'),
+        )
+    termino = models.CharField(max_length=255)
+    id_concepto = models.ForeignKey(concepto, null=True, blank=True)
+    tipodescripcion = models.IntegerField(choices=OPCIONES_TIPO)
+    def __unicode__(self):
+        return self.termino

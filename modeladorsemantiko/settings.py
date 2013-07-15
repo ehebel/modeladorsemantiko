@@ -19,14 +19,15 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        #'NAME': 'db.sqlite',
-        'NAME': os.path.join(PROJECT_ROOT, 'db.sqlite'), # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        #'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'semantik_modelador',
+        #'NAME': os.path.join(PROJECT_ROOT, 'db.sqlite'), # Or path to database file if using sqlite3.
         #'NAME': 'semantik_modelador',
         # The following settings are not used with sqlite3:
-        'USER':'',
-        'PASSWORD':'',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'USER':'semantik_ehebel',
+        'PASSWORD':'h^Og5UO&}bOR',
+        'HOST': 'localhost',             # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
 }
@@ -90,8 +91,8 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/home1/semantik/public_html/modelador/static/'
-    #os.path.join(PROJECT_ROOT, 'static'),
+    #'/home1/semantik/public_html/modelador/static/'
+    os.path.join(PROJECT_ROOT, 'static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

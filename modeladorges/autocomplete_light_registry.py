@@ -4,7 +4,7 @@ import autocomplete_light
 from modeladorges.models import ciediez,casdiagnostico,casprocedimiento
 
 
-autocomplete_light.register(ciediez, search_fields=('^descriptor','^codigo'),
+autocomplete_light.register(ciediez, search_fields=('descriptor','^codigo'),
     autocomplete_js_attributes={'minimum_characters': 3,
                                 'placeholder': 'diagnostico ...'})
 

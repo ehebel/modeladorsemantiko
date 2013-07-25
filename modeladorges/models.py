@@ -72,17 +72,9 @@ class ges_patologia(models.Model):
 class concepto(models.Model):
     conceptid = models.BigIntegerField(primary_key=True)
     fsn = models.CharField('Fully Specified Name',max_length=255, )
-    ciediez = models.ForeignKey(ciediez, null=True, blank=True)
+    ciedeis = models.ForeignKey(ciediez, null=True, blank=True)
+    cieDiez = models.ForeignKey(oms2008ciediez, null=True, blank=True)
     revisado = models.BooleanField()
-#    def descripciones(objeto):
-#        return '<br/>'.join(c.termino for c in objeto.img_descripcione_set.order_by('id')[:3])
-#    descripciones.allow_tags = True
-#    descripciones.short_description = 'Descripcion'
-#
-#    def get_qdoc(objqdoc):
-#        return '%s'% objqdoc.QDoc_Code.QDoc_ExamName
-#    get_qdoc.allow_tags = True
-#    get_qdoc.short_description = 'QDoc ExamName'
 
     def __unicode__(self):
         return self.fsn

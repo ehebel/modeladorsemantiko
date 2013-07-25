@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="Agrego InLine para Modelador de Conceptos">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite" afterPath="$PROJECT_DIR$/db.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+    <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorges/admin.py" afterPath="$PROJECT_DIR$/modeladorges/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" afterPath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorges/models.py" afterPath="$PROJECT_DIR$/modeladorges/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
     </list>
     <ignored path="modeladorsemantiko.iws" />
@@ -34,10 +28,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorges/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="31" selection-start="3969" selection-end="3969" vertical-scroll-proportion="-0.21037464">
+            <state line="94" column="31" selection-start="3969" selection-end="3969" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -54,10 +48,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="0" selection-start="957" selection-end="957" vertical-scroll-proportion="0.0">
+            <state line="28" column="0" selection-start="405" selection-end="823" vertical-scroll-proportion="0.518732">
               <folding />
             </state>
           </provider>
@@ -97,10 +91,10 @@
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/static/admin/css/base.css" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
-        <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
         <option value="$PROJECT_DIR$/modeladorges/models.py" />
         <option value="$PROJECT_DIR$/modeladorges/admin.py" />
+        <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
       </list>
     </option>
   </component>
@@ -569,13 +563,18 @@
       <created>1374240566290</created>
       <updated>1374240566290</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Agrego InLine para Modelador de Conceptos">
+      <created>1374767073504</created>
+      <updated>1374767073504</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="733" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.49675325" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2552674" sideWeight="0.5660377" order="3" side_tool="false" content_ui="tabs" />
@@ -591,7 +590,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.49675325" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -718,13 +716,6 @@
         <state line="22" column="22" selection-start="633" selection-end="633" vertical-scroll-proportion="0.74303406" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="957" selection-end="957" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorges/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="0" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.0">
@@ -743,7 +734,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorges/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="31" selection-start="3969" selection-end="3969" vertical-scroll-proportion="-0.21037464">
+        <state line="94" column="31" selection-start="3969" selection-end="3969" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="405" selection-end="823" vertical-scroll-proportion="0.518732">
           <folding />
         </state>
       </provider>

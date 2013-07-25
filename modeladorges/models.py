@@ -4,6 +4,20 @@ autocomplete_light.autodiscover()
 from django.db import models
 
 # Create your models here.
+class oms2008ciediez(models.Model):
+    codigo = models.CharField(primary_key=True, max_length=20)
+    descriptor = models.CharField(max_length=255)
+    cod_sec = models.CharField(max_length=5,blank=True,null=True)
+    cod_adicional = models.CharField(max_length=5,blank=True,null=True)
+    sexo = models.PositiveIntegerField(blank=True,null=True)
+    area = models.CharField(max_length=5,blank=True,null=True)
+    clasificacion = models.CharField(max_length=5,blank=True,null=True)
+    def __unicode__(self):
+        return "%s | %s" % (self.codigo, self.descriptor)
+    class META:
+        ordering = ['codigo']
+        verbose_name_plural = "codigos"
+
 class ciediez(models.Model):
     codigo = models.CharField(max_length=10, primary_key=True)
     descriptor = models.CharField(max_length=255)
@@ -94,16 +108,3 @@ class descripcione(models.Model):
     def __unicode__(self):
         return self.termino
 
-class oms2008ciediez(models.Model):
-    codigo = models.CharField(primary_key=True, max_length=20)
-    descriptor = models.CharField(max_length=255)
-    cod_sec = models.CharField(max_length=5,blank=True,null=True)
-    cod_adicional = models.CharField(max_length=5,blank=True,null=True)
-    sexo = models.PositiveIntegerField(blank=True,null=True)
-    area = models.CharField(max_length=5,blank=True,null=True)
-    clasificacion = models.CharField(max_length=5,blank=True,null=True)
-    def __unicode__(self):
-        return "%s | %s" % (self.codigo, self.descriptor)
-    class META:
-        ordering = ['codigo']
-        verbose_name_plural = "codigos"

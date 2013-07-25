@@ -8,6 +8,7 @@ from modeladorges.models import *
 
 
 class GesAdmin(admin.ModelAdmin):
+    list_display = ['glosa','get_cie']
     form = autocomplete_light.modelform_factory(ges_patologia)
 admin.site.register(ges_patologia, GesAdmin)
 
@@ -30,7 +31,10 @@ class ConceptAdmin(admin.ModelAdmin):
 admin.site.register(concepto,ConceptAdmin)
 
 
-admin.site.register(ciediez)
+class cieDeisAdmin(admin.ModelAdmin):
+    form = autocomplete_light.modelform_factory(ciediez)
+admin.site.register(ciediez,cieDeisAdmin)
+
 admin.site.register(casprocedimiento)
 admin.site.register(casdiagnostico)
 

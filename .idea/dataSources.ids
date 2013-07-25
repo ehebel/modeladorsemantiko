@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="ac62b690-5f31-4521-bc6f-042670bb1f63">
+  <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="dc8feafb-d416-4b24-9171-53e450abf9ee">
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
     <jdbc-url>jdbc:sqlite:/Users/ehebel/modeladorsemantiko/modeladorsemantiko/modeladorsemantiko/../db.sqlite</jdbc-url>
     <libraries>
@@ -186,6 +186,24 @@
       <column name="categoria" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="version" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <primary-key columns="codigo" />
+    </table>
+    <table name="modeladorges_concepto" schema="" catalog="" type="TABLE">
+      <column name="conceptid" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fsn" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ciediez_id" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="revisado" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="conceptid" />
+      <foreign-key name="1" columns="ciediez_id" ref-table="modeladorges_ciediez" ref-schema="" ref-catalog="" ref-columns="codigo" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorges_concepto_88416a7e" unique="true" columns="ciediez_id" />
+    </table>
+    <table name="modeladorges_descripcione" schema="" catalog="" type="TABLE">
+      <column name="descriptionid" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="termino" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="id_concepto_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="tipodescripcion" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="descriptionid" />
+      <foreign-key name="1" columns="id_concepto_id" ref-table="modeladorges_concepto" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorges_descripcione_4a482dc6" unique="true" columns="id_concepto_id" />
     </table>
     <table name="modeladorges_ges_patologia" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />

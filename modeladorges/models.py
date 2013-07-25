@@ -12,10 +12,12 @@ class ciediez(models.Model):
     grupo = models.CharField(max_length=255, null=True, blank=True)
     categoria = models.CharField(max_length=255, null=True, blank=True)
     version = models.CharField(max_length=255, null=True, blank=True)
+    OMSciediez = models.ForeignKey('oms2008ciediez', verbose_name='CIE 10-2008', null=True, blank=True)
     def __unicode__(self):
         return "%s | %s" % (self.codigo, self.descriptor)
     class Meta:
         ordering=['codigo']
+        verbose_name_plural = "Codigos CIE-DEIS"
 
 class casprocedimiento(models.Model):
     idintervencionclinica = models.CharField('ID CAS',max_length=20, primary_key= True)
@@ -53,6 +55,14 @@ class ges_patologia(models.Model):
     ciediez = models.ManyToManyField('modeladorges.ciediez', blank=True, related_name="diagnostico")
     casproc = models.ManyToManyField('modeladorges.casprocedimiento', blank=True)
     casdiag = models.ManyToManyField('modeladorges.casdiagnostico', blank=True)
+
+    def get_cie(objeto):
+        #return '<br/>'.join(c.descriptor for c in objeto.ciediez_set.order_by('codigo')[:3])
+        return "<br/>".join([s.descriptor for s in objeto.ciediez.order_by('codigo').all()])
+
+    get_cie.allow_tags = True
+    get_cie.short_description = 'CIE-DEIS'
+
     def __unicode__(self):
         return self.glosa
     class Meta:
@@ -79,6 +89,7 @@ class concepto(models.Model):
 
 class descripcione(models.Model):
     descriptionid = models.BigIntegerField(primary_key=True)
+    ocisid =  models.BigIntegerField(unique=True)
     OPCIONES_TIPO = (
         (1,'Preferido'),
         (2,'Sinonimo Visible'),
@@ -90,3 +101,17 @@ class descripcione(models.Model):
     tipodescripcion = models.IntegerField(choices=OPCIONES_TIPO)
     def __unicode__(self):
         return self.termino
+
+class oms2008ciediez(models.Model):
+    codigo = models.CharField(primary_key=True, max_length=20)
+    descriptor = models.CharField(max_length=255)
+    cod_sec = models.CharField(max_length=5,blank=True,null=True)
+    cod_adicional = models.CharField(max_length=5,blank=True,null=True)
+    sexo = models.PositiveIntegerField(blank=True,null=True)
+    area = models.CharField(max_length=5,blank=True,null=True)
+    clasificacion = models.CharField(max_length=5,blank=True,null=True)
+    def __unicode__(self):
+        return "%s | %s" % (self.codigo, self.descriptor)
+    class META:
+        ordering = ['codigo']
+        verbose_name_plural = "codigos"

@@ -1,7 +1,7 @@
 import autocomplete_light
 
 
-from modeladorges.models import ciediez,casdiagnostico,casprocedimiento,concepto,descripcione
+from modeladorges.models import ciediez,casdiagnostico,casprocedimiento,concepto, oms2008ciediez
 
 
 autocomplete_light.register(ciediez, search_fields=('descriptor','^codigo'),
@@ -25,3 +25,8 @@ autocomplete_light.register(casprocedimiento, search_fields=('^integlosa',),
 autocomplete_light.register(concepto, search_fields=('fsn',),
     autocomplete_js_attributes={'minimum_characters': 3,
                                 'placeholder': 'SNOMED Conceptos .. '})
+
+
+autocomplete_light.register(oms2008ciediez, search_fields=('descriptor',),
+    autocomplete_js_attributes={'minimum_characters': 3,
+                                'placeholder': 'CIE-10 ... '})

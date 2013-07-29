@@ -72,7 +72,7 @@ class ges_patologia(models.Model):
 
     def get_cie(objeto):
         #return '<br/>'.join(c.descriptor for c in objeto.ciediez_set.order_by('codigo')[:3])
-        return "<br/>".join([s.descriptor for s in objeto.ciediez.order_by('codigo').all()])
+        return "<br/>".join([s.descriptor for s in objeto.ciediez.order_by('codigo').all()[:6]])
 
     get_cie.allow_tags = True
     get_cie.short_description = 'CIE-DEIS'

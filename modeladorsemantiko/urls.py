@@ -7,6 +7,7 @@ autocomplete_light.autodiscover()
 
 from django.contrib import admin
 admin.autodiscover()
+from efectoresCAS import views
 
 #urlpatterns = patterns('',
 #    # Examples:
@@ -48,7 +49,8 @@ urlpatterns = patterns('',
     (r'^i18n/', include('django.conf.urls.i18n')),
     (r'^just_javascript/$', generic.TemplateView.as_view(
         template_name='just_javascript.html')),
-    (r'^modelador/$', generic.TemplateView.as_view(template_name='index.html'))
+    (r'^modelador/$', generic.TemplateView.as_view(template_name='index.html')),
+    (r'^CAS/efectores/$', views.lista_areas)
 )
 
 

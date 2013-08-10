@@ -14,27 +14,33 @@ class concepto(models.Model):
         ordering=['id']
         verbose_name_plural = "conceptos"
 
-class cas_areas(models.Model):
+class cas_area(models.Model):
     descripcion = models.CharField(max_length=255)
     conceptosporarea = models.ManyToManyField(concepto, through='conceptosCASporarea')
     def __unicode__(self):
         return self.descripcion
+    class Meta:
+        ordering=['id']
+        verbose_name_plural = "Areas CAS"
 
-class cas_lugares(models.Model):
+class cas_lugar(models.Model):
     descripcion = models.CharField(max_length=255)
-    areas = models.ForeignKey(cas_areas)
+    areas = models.ForeignKey(cas_area)
     def __unicode__(self):
         return self.descripcion
-
+    class Meta:
+        ordering=['id']
+        verbose_name_plural = "Lugares CAS"
 
 class conceptosCASporarea(models.Model):
     concepto = models.ForeignKey(concepto)
-    area = models.ForeignKey(cas_areas)
+    area = models.ForeignKey(cas_area)
     def __unicode__(self):
         return "%s | %s" % (self.concepto.fsn, self.area.descripcion)
     class Meta:
         ordering=['id']
         verbose_name_plural = "Conceptos CAS por Area"
+
 
 class descripcion(models.Model):
     OPCIONES_TIPO = (

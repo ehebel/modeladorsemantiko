@@ -12,8 +12,8 @@ class ConceptAdmin(admin.ModelAdmin):
 
 admin.site.register(descripcion)
 admin.site.register(concepto,ConceptAdmin)
-admin.site.register(cas_areas)
-admin.site.register(cas_lugares)
+admin.site.register(cas_area)
+admin.site.register(cas_lugar)
 admin.site.register(efector)
 admin.site.register(conceptosCASporarea)
 

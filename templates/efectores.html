@@ -25,8 +25,8 @@
                 {% empty %}
                     <ul>¡Sin Lugares!</ul>
             {% endfor %}
-            Codigo de Efector: {% for test in efector.radiologico_set.all %}
-                <ul>{{ test.QDoc_ExamName }}</ul>
+            Codigo de Efector: {% for test in efector.efector_set.all %}
+                <ul>{{ test.ExamName }}</ul>
                 {% empty %}
                     <ul>¡Sin Efector!</ul>
             {% endfor %}

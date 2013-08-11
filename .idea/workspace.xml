@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite" afterPath="$PROJECT_DIR$/db.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectoresCAS/admin.py" afterPath="$PROJECT_DIR$/efectoresCAS/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectoresCAS/views.py" afterPath="$PROJECT_DIR$/efectoresCAS/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" afterPath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/urls.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/efectores.html" afterPath="$PROJECT_DIR$/templates/efectores.html" />
     </list>
     <ignored path="modeladorsemantiko.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,19 +28,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="17" selection-start="840" selection-end="840" vertical-scroll-proportion="0.28285077">
+            <state line="28" column="17" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="efectores.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="efectores.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/efectores.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="50" selection-start="448" selection-end="452" vertical-scroll-proportion="-5.7">
+            <state line="38" column="16" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.90225565">
               <folding />
             </state>
           </provider>
@@ -113,13 +106,13 @@
         <option value="$PROJECT_DIR$/modeladorges/models.py" />
         <option value="$PROJECT_DIR$/modeladorges/admin.py" />
         <option value="$PROJECT_DIR$/modeladorges/views.py" />
-        <option value="$PROJECT_DIR$/templates/efectores.html" />
         <option value="$PROJECT_DIR$/efectoresCAS/models.py" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
         <option value="$PROJECT_DIR$/efectoresCAS/views.py" />
         <option value="$PROJECT_DIR$/efectoresCAS/admin.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
+        <option value="$PROJECT_DIR$/templates/efectores.html" />
       </list>
     </option>
   </component>
@@ -639,7 +632,11 @@
       <created>1376140133992</created>
       <updated>1376140133992</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Se agrega ModeladorEfectores con Autocomplete_Light">
+      <created>1376248606736</created>
+      <updated>1376248606736</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -722,7 +719,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agrego Modelador de Efectores por Concepto-Area" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega ModeladorEfectores con Autocomplete_Light" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -745,6 +742,7 @@
     <MESSAGE value="Agrego InLine para Modelador de Conceptos" />
     <MESSAGE value="Modifico settings agregando OMS-CIE-2008 y modeladores Ajax" />
     <MESSAGE value="Agrego Modelador de Efectores por Concepto-Area" />
+    <MESSAGE value="Se agrega ModeladorEfectores con Autocomplete_Light" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -819,13 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/efectores.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="50" selection-start="448" selection-end="452" vertical-scroll-proportion="-5.7">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/efectoresCAS/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="40" selection-start="641" selection-end="641" vertical-scroll-proportion="-12.692307">
@@ -851,7 +842,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="17" selection-start="840" selection-end="840" vertical-scroll-proportion="0.28285077">
+        <state line="28" column="17" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/efectores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="16" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.90225565">
           <folding />
         </state>
       </provider>

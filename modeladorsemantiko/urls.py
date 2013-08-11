@@ -50,7 +50,7 @@ urlpatterns = patterns('',
     (r'^just_javascript/$', generic.TemplateView.as_view(
         template_name='just_javascript.html')),
     (r'^modelador/$', generic.TemplateView.as_view(template_name='index.html')),
-    (r'^CAS/efectores/$', views.lista_areas)
+    (r'^modelador/CAS/efectores/$', views.lista_areas)
 )
 
 

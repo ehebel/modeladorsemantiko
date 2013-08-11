@@ -2,7 +2,7 @@ import autocomplete_light
 
 
 from modeladorges.models import ciediez,casdiagnostico,casprocedimiento,concepto, oms2008ciediez
-
+from efectoresCAS.models import conceptosCASporarea
 
 autocomplete_light.register(ciediez, search_fields=('descriptor','^codigo'),
     autocomplete_js_attributes={'minimum_characters': 3,
@@ -30,3 +30,7 @@ autocomplete_light.register(concepto, search_fields=('fsn',),
 autocomplete_light.register(oms2008ciediez, search_fields=('descriptor',),
     autocomplete_js_attributes={'minimum_characters': 3,
                                 'placeholder': 'CIE-10 ... '})
+
+
+autocomplete_light.register(conceptosCASporarea, search_fields=('id',),
+    autocomplete_js_attributes={'placeholder': 'ID conceptos por area .. '})

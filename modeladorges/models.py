@@ -3,9 +3,8 @@ autocomplete_light.autodiscover()
 
 from django.db import models
 
-# Create your models here.
 class oms2008ciediez(models.Model):
-    codigo = models.CharField(primary_key=True, max_length=20)
+    codigo = models.CharField(unique=True, max_length=20)
     descriptor = models.CharField(max_length=255)
     cod_sec = models.CharField(max_length=5,blank=True,null=True)
     cod_adicional = models.CharField(max_length=5,blank=True,null=True)
@@ -19,7 +18,7 @@ class oms2008ciediez(models.Model):
         verbose_name_plural = "codigos"
 
 class ciediez(models.Model):
-    codigo = models.CharField(max_length=10, primary_key=True)
+    codigo = models.CharField(max_length=10, unique=True)
     descriptor = models.CharField(max_length=255)
     capitulo_num = models.CharField(max_length=10, null=True, blank=True)
     capitulo_titulo = models.CharField(max_length=255, null=True, blank=True)
@@ -69,14 +68,11 @@ class ges_patologia(models.Model):
     ciediez = models.ManyToManyField('modeladorges.ciediez', blank=True, related_name="diagnostico")
     casproc = models.ManyToManyField('modeladorges.casprocedimiento', blank=True)
     casdiag = models.ManyToManyField('modeladorges.casdiagnostico', blank=True)
-
     def get_cie(objeto):
         #return '<br/>'.join(c.descriptor for c in objeto.ciediez_set.order_by('codigo')[:3])
         return "<br/>".join([s.descriptor for s in objeto.ciediez.order_by('codigo').all()[:6]])
-
     get_cie.allow_tags = True
     get_cie.short_description = 'CIE-DEIS'
-
     def __unicode__(self):
         return self.glosa
     class Meta:
@@ -95,7 +91,7 @@ class concepto(models.Model):
 
 class descripcione(models.Model):
     descriptionid = models.BigIntegerField(primary_key=True)
-    ocisid =  models.BigIntegerField(unique=True)
+    ocisid =  models.BigIntegerField(unique=True, )
     OPCIONES_TIPO = (
         (1,'Preferido'),
         (2,'Sinonimo Visible'),
@@ -107,4 +103,6 @@ class descripcione(models.Model):
     tipodescripcion = models.IntegerField(choices=OPCIONES_TIPO)
     def __unicode__(self):
         return self.termino
-
+    class Meta:
+        ordering = ['id']
+        verbose_name = ['Descripciones']

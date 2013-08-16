@@ -104,5 +104,5 @@ class descripcione(models.Model):
     def __unicode__(self):
         return self.termino
     class Meta:
-        ordering = ['id']
+        ordering = ['descriptionid']
         verbose_name = ['Descripciones']

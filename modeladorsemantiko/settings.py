@@ -159,6 +159,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'south',
     'autocomplete_light',
     'autocomplete_light.tests',
     'gfk_autocomplete',

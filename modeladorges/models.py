@@ -32,22 +32,6 @@ class ciediez(models.Model):
         ordering=['codigo']
         verbose_name_plural = "Codigos CIE-DEIS"
 
-class ges_patologia(models.Model):
-    id = models.IntegerField(primary_key=True)
-    glosa = models.CharField(max_length=255)
-    glosa_abrev = models.CharField(max_length=255, blank=True, help_text='Glosa Abreviada', verbose_name='Glosa Abreviada')
-    ciediez = models.ManyToManyField('modeladorges.ciediez', blank=True, related_name="diagnostico")
-    casproc = models.ManyToManyField('modeladorges.casprocedimiento', blank=True)
-    casdiag = models.ManyToManyField('modeladorges.casdiagnostico', blank=True)
-    def get_cie(objeto):
-        return "<br/>".join([s.descriptor for s in objeto.ciediez.order_by('codigo').all()[:6]])
-    get_cie.allow_tags = True
-    get_cie.short_description = 'CIE-DEIS'
-    def __unicode__(self):
-        return self.glosa
-    class Meta:
-        ordering = ['id']
-
 class casprocedimiento(models.Model):
     idintervencionclinica = models.CharField('ID CAS',max_length=20, primary_key= True)
     integlosa = models.CharField(max_length=255)
@@ -77,8 +61,21 @@ class casdiagnostico(models.Model):
     class Meta:
         ordering = ['codigo']
 
-
-
+class ges_patologia(models.Model):
+    id = models.IntegerField(primary_key=True)
+    glosa = models.CharField(max_length=255)
+    glosa_abrev = models.CharField(max_length=255, blank=True, help_text='Glosa Abreviada', verbose_name='Glosa Abreviada')
+    ciediez = models.ManyToManyField('modeladorges.ciediez', blank=True, related_name="diagnostico")
+    casproc = models.ManyToManyField('modeladorges.casprocedimiento', blank=True)
+    casdiag = models.ManyToManyField('modeladorges.casdiagnostico', blank=True)
+    def get_cie(objeto):
+        return "<br/>".join([s.descriptor for s in objeto.ciediez.order_by('codigo').all()[:6]])
+    get_cie.allow_tags = True
+    get_cie.short_description = 'CIE-DEIS'
+    def __unicode__(self):
+        return self.glosa
+    class Meta:
+        ordering = ['id']
 
 class concepto(models.Model):
     conceptid = models.BigIntegerField(primary_key=True)

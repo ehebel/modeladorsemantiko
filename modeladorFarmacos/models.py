@@ -235,6 +235,7 @@ class kairos_presentaciones (models.Model):
     medio = models.CharField(max_length=255)
     cantidadenvase = models.SmallIntegerField()
     dosis = models.SmallIntegerField()
+    cantidadunidad = models.FloatField()
     unidadcantidad = models.CharField(max_length=255)
     descripcion = models.CharField(max_length=255)
     factorfraccion = models.SmallIntegerField()

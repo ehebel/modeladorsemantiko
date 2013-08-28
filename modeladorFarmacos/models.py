@@ -262,6 +262,26 @@ class kairos_presentaciones (models.Model):
 
 
 
+class kairos_precio(models.Model):
+    id_presentacion_kairos = models.AutoField(primary_key=True)
+    claveproducto = models.IntegerField()
+    clavepresentacion = models.IntegerField()
+    fechaingreso = models.DateField()
+    fechavigencia = models.DateField()
+    preciofabrica = models.FloatField()
+    preciopublico = models.FloatField()
+    preciofabrica12 = models.FloatField()
+    preciopublico12 = models.FloatField()
+    preciofabrica17 = models.FloatField()
+    preciopublico17 = models.FloatField()
+    preciofabrica18 = models.FloatField()
+    preciopublico18 = models.FloatField()
+    preciofabrica19 = models.FloatField()
+    preciopublico19 = models.FloatField()
+
+
+
+
 ## ##-
 ## table 'xt_sustancias'
 ## extension de sustancias
@@ -282,7 +302,7 @@ class xt_sustancias (models.Model):
     revisado = models.BooleanField()
     consultar = models.BooleanField()
     kairos_sustancia = models.ForeignKey(kairos_sustancia)
-    concept_sust_dmd = models.ForeignKey(uk_dmd_conceptos)
+    concept_sust_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -302,12 +322,12 @@ class xt_mb (models.Model):
     descripcion = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_mb')
-    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_mb')
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
-    concept_vtm_dmd = models.ForeignKey(uk_dmd_conceptos)
+    concept_vtm_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
     rel_xt_sust = models.ManyToManyField(xt_sustancias, through='rel_xt_mb_xt_sust')
     def __unicode__(self):
         return self.descripcion
@@ -324,11 +344,11 @@ class xt_mc (models.Model):
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_mc = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255, null=False, blank=False, help_text='Obligatorio')
-    med_basico = models.ManyToManyField(xt_mb, null=True)
+    med_basico = models.ForeignKey(xt_mb, null=True)
     estado_prescripcion = models.SmallIntegerField(choices=OPCIONES_PRESCRIPCION, null=False, blank=False)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea')
-    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariomod')
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
@@ -414,7 +434,7 @@ class xt_gfp (models.Model):
     usuario_ult_mod = models.SmallIntegerField()
     revisado = models.BooleanField()
     consultar = models.BooleanField()
-    concept_tfg_dmd = models.ForeignKey(uk_dmd_conceptos)
+    concept_tfg_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -440,7 +460,7 @@ class xt_fp (models.Model):
     revisado = models.BooleanField()
     consultar = models.BooleanField()
     id_producto_xt = models.SmallIntegerField()
-    concept_tf_dmd = models.ForeignKey(uk_dmd_conceptos)
+    concept_tf_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
 
     def __unicode__(self):
         return self.descripcion
@@ -492,7 +512,7 @@ class xt_producto (models.Model):
     estado = models.SmallIntegerField(choices=OPCIONES_ESTADO, null=False, blank=False)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_producto')
-    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_producto')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
@@ -522,13 +542,13 @@ class xt_pc (models.Model):
     estado = models.SmallIntegerField(choices=OPCIONES_ESTADO, null=False, blank=False)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_pc')
-    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_pc')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     id_xt_fp = models.ForeignKey(xt_fp, verbose_name='Familia de Producto')
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico')
-    concept_amp_dmd = models.ForeignKey(uk_dmd_conceptos)
+    concept_amp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
 
     def __unicode__(self):
         return self.descripcion
@@ -568,7 +588,7 @@ class xt_mcce (models.Model):
     descripcion = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_mcce')
-    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariomod_mcce')
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
@@ -576,7 +596,7 @@ class xt_mcce (models.Model):
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico')
     cantidad = models.IntegerField()
     unidad_medida_cant = models.ForeignKey(xt_unidad_medida_cant)
-    concept_vmpp_dmd = models.ForeignKey(uk_dmd_conceptos)
+    concept_vmpp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
 
     def __unicode__(self):
         return self.descripcion
@@ -602,7 +622,7 @@ class xt_pcce (models.Model):
     desc_abreviada = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_pcce')
-    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_pcce')
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
@@ -610,7 +630,7 @@ class xt_pcce (models.Model):
     id_xt_pc = models.ForeignKey(xt_pc, verbose_name= 'Producto Comercial')
     id_xt_mcce = models.ForeignKey(xt_mcce, verbose_name='Medicamento Clinico Con Envase')
     gtin_gs1 = models.BigIntegerField()
-    concept_ampp_dmd = models.ForeignKey(uk_dmd_conceptos)
+    concept_ampp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
     id_presentacion_kairos = models.ForeignKey(kairos_presentaciones, verbose_name='Presentacion Kairos')
 
     def __unicode__(self):
@@ -618,6 +638,5 @@ class xt_pcce (models.Model):
     class Meta:
         ordering=['id_xt_pcce']
         verbose_name_plural ='productos comerciales con envase (extension)'
-
 
 

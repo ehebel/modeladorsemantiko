@@ -395,8 +395,7 @@ class rel_mc_sust (models.Model):
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO)
     potencia = models.IntegerField()
     id_unidad_potencia = models.ForeignKey(xt_unidad_potencia, related_name='unidad potencia')
-    #TODO Preguntar por este campo por que parece traido de otra tabla
-    #partido_por = models.SmallIntegerField()
+    partido_por = models.SmallIntegerField()
     id_unidad_partido_por = models.ForeignKey(xt_unidad_potencia, related_name='unidad partido por')
 
 

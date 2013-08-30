@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
     </list>
     <ignored path="modeladorsemantiko.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,10 +28,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="1" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
+            <state line="22" column="0" selection-start="405" selection-end="405" vertical-scroll-proportion="0.45081967">
               <folding />
             </state>
           </provider>
@@ -46,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="356" column="61" selection-start="12357" selection-end="12357" vertical-scroll-proportion="0.91803277">
+            <state line="356" column="61" selection-start="12357" selection-end="12357" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -95,10 +95,10 @@
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/migrations/0008_auto__add_kairos_precio__chg_field_xt_fp_concept_tf_dmd__chg_field_xt_.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/migrations/0007_auto__chg_field_xt_mc_usuario_creador.py" />
-        <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
+        <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
       </list>
     </option>
   </component>
@@ -646,7 +646,11 @@
       <created>1377895476389</created>
       <updated>1377895476389</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Se agrega app modeladorFarmacos v1.00.4 con admin, bioequivalentes y otros.">
+      <created>1377896026290</created>
+      <updated>1377896026290</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -729,7 +733,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrega app modeladorFarmacos v1.00.3 con campo unidadpartidopor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega app modeladorFarmacos v1.00.4 con admin, bioequivalentes y otros." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -759,6 +763,7 @@
     <MESSAGE value="Se agrega app modeladorFarmacos v1.00.1 con cambio de MC a MB de M2M a FK y modficacion de algunas fechas." />
     <MESSAGE value="Se agrega app modeladorFarmacos v1.00.2 con campo cantidadunidad en el modelo de kairos_presentaciones." />
     <MESSAGE value="Se agrega app modeladorFarmacos v1.00.3 con campo unidadpartidopor" />
+    <MESSAGE value="Se agrega app modeladorFarmacos v1.00.4 con admin, bioequivalentes y otros." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -832,13 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="1" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="71" column="69" selection-start="3176" selection-end="3176" vertical-scroll-proportion="-9.346154">
@@ -859,10 +857,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="356" column="61" selection-start="12357" selection-end="12357" vertical-scroll-proportion="0.91803277">
+        <state line="356" column="61" selection-start="12357" selection-end="12357" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="405" selection-end="405" vertical-scroll-proportion="0.45081967">
+          <folding />
         </state>
       </provider>
     </entry>

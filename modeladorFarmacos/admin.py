@@ -23,6 +23,12 @@ class SustanciaBasicoInline(admin.TabularInline):
     radio_fields = {
         "estado": admin.HORIZONTAL}
 
+
+class bioeqAdminInline(admin.TabularInline):
+    model = xt_bioequivalente
+
+
+
 class xt_sustanciasAdmin (admin.ModelAdmin):
     pass
 
@@ -70,6 +76,8 @@ class mcAdmin (admin.ModelAdmin):
             return formset.save()
 
 class mbAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size':'100'})}}
     inlines = [SustanciaBasicoInline,]
     form = autocomplete_light.modelform_factory(xt_mb)
     readonly_fields=('xt_id_mb',)
@@ -143,6 +151,7 @@ class mcceAdmin(admin.ModelAdmin):
             return formset.save()
 
 class pcAdmin(admin.ModelAdmin):
+    #inlines = [bioeqAdminInline,]
     form = autocomplete_light.modelform_factory(xt_pc)
     readonly_fields=('id_xt_pc',)
     radio_fields = {
@@ -213,32 +222,36 @@ class pcceAdmin(admin.ModelAdmin):
         else:
             return formset.save()
 
+
+
 admin.site.register(xt_mc,mcAdmin)
 admin.site.register(xt_mcce,mcceAdmin)
 admin.site.register(xt_mb,mbAdmin)
 admin.site.register(xt_pc,pcAdmin)
 admin.site.register(xt_pcce,pcceAdmin)
 
-
-#admin.site.register(uk_dmd_conceptos)
-#admin.site.register(uk_dmd_relationships)
-#admin.site.register(xt_unidad_dosis_unitaria)
-#admin.site.register(xt_unidad_medida_unitaria)
-#admin.site.register(xt_formas_farm)
-#admin.site.register(xt_condicion_venta)
-#admin.site.register(kairos_sustancia)
-#admin.site.register(kairos_lab)
-#admin.site.register(kairos_productos)
-#admin.site.register(kairos_presentaciones)
+admin.site.register(xt_bioequivalente)
 admin.site.register(xt_sustancias,xt_sustanciasAdmin)
-#admin.site.register(xt_unidad_potencia)
-#admin.site.register(rel_mc_sust,relmcsustAdmin)
-#admin.site.register(rel_xt_mb_xt_sust)
-#admin.site.register(xt_gfp)
-#admin.site.register(xt_fp)
-#admin.site.register(xt_laboratorio)
-#admin.site.register(xt_producto)
-#admin.site.register(xt_unidad_medida_cant)
+
+
+admin.site.register(uk_dmd_conceptos)
+admin.site.register(uk_dmd_relationships)
+admin.site.register(xt_unidad_dosis_unitaria)
+admin.site.register(xt_unidad_medida_unitaria)
+admin.site.register(xt_formas_farm)
+admin.site.register(xt_condicion_venta)
+admin.site.register(kairos_sustancia)
+admin.site.register(kairos_lab)
+admin.site.register(kairos_productos)
+admin.site.register(kairos_presentaciones)
+admin.site.register(xt_unidad_potencia)
+admin.site.register(rel_mc_sust)
+admin.site.register(rel_xt_mb_xt_sust)
+admin.site.register(xt_gfp)
+admin.site.register(xt_fp)
+admin.site.register(xt_laboratorio)
+admin.site.register(xt_producto)
+admin.site.register(xt_unidad_medida_cant)
 
 
 __author__ = 'ehebel'

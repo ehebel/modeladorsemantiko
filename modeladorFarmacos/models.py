@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 ## ##-
 
 
-
 class uk_dmd_conceptos (models.Model):
     conceptid = models.BigIntegerField(primary_key=True)
     conceptstatus = models.SmallIntegerField()
@@ -57,7 +56,7 @@ class xt_unidad_dosis_unitaria (models.Model):
     fecha_creacion = models.DateTimeField()
     usuario_creador = models.SmallIntegerField()
     estado = models.BooleanField()
-
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -79,7 +78,7 @@ class xt_unidad_medida_unitaria (models.Model):
     fecha_creacion = models.DateTimeField()
     usuario_creador = models.SmallIntegerField()
     estado = models.BooleanField()
-
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -101,7 +100,7 @@ class xt_formas_farm (models.Model):
     fecha_creacion = models.DateTimeField()
     usuario_creador = models.SmallIntegerField()
     estado = models.BooleanField()
-
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -125,7 +124,7 @@ class xt_condicion_venta (models.Model):
     fecha_creacion = models.DateTimeField()
     usuario_creador = models.SmallIntegerField()
     estado = models.BooleanField()
-
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -235,7 +234,7 @@ class kairos_presentaciones (models.Model):
     medio = models.CharField(max_length=255)
     cantidadenvase = models.SmallIntegerField()
     dosis = models.SmallIntegerField()
-    cantidadunidad = models.FloatField()
+    cantidadunidad = models.FloatField(null=True)
     unidadcantidad = models.CharField(max_length=255)
     descripcion = models.CharField(max_length=255)
     factorfraccion = models.SmallIntegerField()
@@ -279,7 +278,8 @@ class kairos_precio(models.Model):
     preciopublico18 = models.FloatField()
     preciofabrica19 = models.FloatField()
     preciopublico19 = models.FloatField()
-
+    def __unicode__(self):
+        return self.especificacion
 
 
 
@@ -303,7 +303,8 @@ class xt_sustancias (models.Model):
     revisado = models.BooleanField()
     consultar = models.BooleanField()
     kairos_sustancia = models.ForeignKey(kairos_sustancia)
-    concept_sust_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
+    concept_sust_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -328,8 +329,9 @@ class xt_mb (models.Model):
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
-    concept_vtm_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
+    concept_vtm_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     rel_xt_sust = models.ManyToManyField(xt_sustancias, through='rel_xt_mb_xt_sust')
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -360,8 +362,9 @@ class xt_mc (models.Model):
     unidad_medida_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True)
     forma_farmaceutica = models.ForeignKey(xt_formas_farm, null=True)
     condicion_venta = models.ForeignKey(xt_condicion_venta, null=True)
-    concept_vmp_dmd = models.ForeignKey(uk_dmd_conceptos, null=True)
+    concept_vmp_dmd = models.ForeignKey(uk_dmd_conceptos, null=True, blank=True)
     rel_mc = models.ManyToManyField(xt_sustancias, through='rel_mc_sust')
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -378,8 +381,9 @@ class xt_unidad_potencia (models.Model):
     id_unidad_potencia = models.SmallIntegerField()
     descripcion = models.CharField(max_length=255)
     estado = models.BooleanField()
-
-
+    observacion = models.CharField(max_length=255, blank=True, null=True)
+    def __unicode__(self):
+        return self.descripcion
 ## ##-
 ## table 'rel_mc_sust'
 ## 
@@ -395,7 +399,7 @@ class rel_mc_sust (models.Model):
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO)
     potencia = models.IntegerField()
     id_unidad_potencia = models.ForeignKey(xt_unidad_potencia, related_name='unidad potencia')
-    partido_por = models.SmallIntegerField()
+    partido_por = models.SmallIntegerField(null=True)
     id_unidad_partido_por = models.ForeignKey(xt_unidad_potencia, related_name='unidad partido por')
 
 
@@ -415,58 +419,6 @@ class rel_xt_mb_xt_sust (models.Model):
     orden = models.SmallIntegerField()
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO)
 
-
-## ##-
-## table 'xt_gfp'
-## grupo de familia de productos de la extension
-## ##-
-
-
-
-class xt_gfp (models.Model):
-    id_xt_gfp = models.IntegerField(primary_key=True)
-    
-    descripcion = models.CharField(max_length=255)
-    estado = models.BooleanField()
-    fecha_creacion = models.DateTimeField()
-    usuario_creador = models.SmallIntegerField()
-    fecha_ult_mod = models.DateTimeField()
-    usuario_ult_mod = models.SmallIntegerField()
-    revisado = models.BooleanField()
-    consultar = models.BooleanField()
-    concept_tfg_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
-    def __unicode__(self):
-        return self.descripcion
-    class Meta:
-        ordering=['id_xt_gfp']
-        verbose_name_plural ='grupo de familia de productos de la extension'
-
-## ##-
-## table 'xt_fp'
-## familia de producto de la extension
-## ##-
-
-
-
-class xt_fp (models.Model):
-    id_xt_fp = models.IntegerField(primary_key=True)
-    xtconcepto = models.SmallIntegerField()
-    descripcion = models.CharField(max_length=255)
-    estado = models.BooleanField()
-    fecha_creacion = models.DateTimeField()
-    usuario_creador = models.SmallIntegerField()
-    fecha_ult_mod = models.DateTimeField()
-    usuario_ult_mod = models.SmallIntegerField()
-    revisado = models.BooleanField()
-    consultar = models.BooleanField()
-    id_producto_xt = models.SmallIntegerField()
-    concept_tf_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
-
-    def __unicode__(self):
-        return self.descripcion
-    class Meta:
-        ordering=['id_xt_fp']
-        verbose_name_plural ='familia de producto de la extension'
 
 
 ## ##-
@@ -518,12 +470,66 @@ class xt_producto (models.Model):
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     id_xt_lab = models.ForeignKey(xt_laboratorio)
     clave_prod_kairos = models.ForeignKey(kairos_productos)
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
         ordering=['id_xt_producto']
         verbose_name_plural ='productos de la extension'
 
+
+## ##-
+## table 'xt_gfp'
+## grupo de familia de productos de la extension
+## ##-
+
+
+
+class xt_gfp (models.Model):
+    id_xt_gfp = models.IntegerField(primary_key=True)
+
+    descripcion = models.CharField(max_length=255)
+    estado = models.BooleanField()
+    fecha_creacion = models.DateTimeField()
+    usuario_creador = models.SmallIntegerField()
+    fecha_ult_mod = models.DateTimeField()
+    usuario_ult_mod = models.SmallIntegerField()
+    revisado = models.BooleanField()
+    consultar = models.BooleanField()
+    concept_tfg_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
+    observacion = models.CharField(max_length=255, blank=True, null=True)
+    def __unicode__(self):
+        return self.descripcion
+    class Meta:
+        ordering=['id_xt_gfp']
+        verbose_name_plural ='grupo de familia de productos de la extension'
+
+## ##-
+## table 'xt_fp'
+## familia de producto de la extension
+## ##-
+
+
+
+class xt_fp (models.Model):
+    id_xt_fp = models.IntegerField(primary_key=True)
+    xtconcepto = models.SmallIntegerField()
+    descripcion = models.CharField(max_length=255)
+    estado = models.BooleanField()
+    fecha_creacion = models.DateTimeField()
+    usuario_creador = models.SmallIntegerField()
+    fecha_ult_mod = models.DateTimeField()
+    usuario_ult_mod = models.SmallIntegerField()
+    revisado = models.BooleanField()
+    consultar = models.BooleanField()
+    id_producto_xt = models.ForeignKey(xt_producto, null=True)
+    concept_tf_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
+    observacion = models.CharField(max_length=255, blank=True, null=True)
+    def __unicode__(self):
+        return self.descripcion
+    class Meta:
+        ordering=['id_xt_fp']
+        verbose_name_plural ='familia de producto de la extension'
 
 
 
@@ -538,7 +544,7 @@ class xt_pc (models.Model):
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_pc = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
-    descripcion_breviada = models.CharField(max_length=255)
+    descripcion_breviada = models.CharField(max_length=255, verbose_name='Descripcion Abreviada')
     estado = models.SmallIntegerField(choices=OPCIONES_ESTADO, null=False, blank=False)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_pc')
@@ -548,13 +554,16 @@ class xt_pc (models.Model):
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     id_xt_fp = models.ForeignKey(xt_fp, verbose_name='Familia de Producto')
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico')
-    concept_amp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
-
+    concept_amp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
         ordering=['id_xt_pc']
         verbose_name_plural ='productos comerciales (extension)'
+
+
+
 
 ## ##-
 ## table 'xt_unidad_medida_cant'
@@ -570,10 +579,10 @@ class xt_unidad_medida_cant (models.Model):
 
     def __unicode__(self):
         return self.descripcion
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     class Meta:
         ordering=['id_unidad_medida_cant']
         verbose_name_plural ='unidad de medida de cantidad de la extension'
-
 
 ## ##-
 ## table 'xt_mcce'
@@ -596,8 +605,8 @@ class xt_mcce (models.Model):
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico')
     cantidad = models.IntegerField()
     unidad_medida_cant = models.ForeignKey(xt_unidad_medida_cant)
-    concept_vmpp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
-
+    concept_vmpp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -630,9 +639,9 @@ class xt_pcce (models.Model):
     id_xt_pc = models.ForeignKey(xt_pc, verbose_name= 'Producto Comercial')
     id_xt_mcce = models.ForeignKey(xt_mcce, verbose_name='Medicamento Clinico Con Envase')
     gtin_gs1 = models.BigIntegerField()
-    concept_ampp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True)
+    concept_ampp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     id_presentacion_kairos = models.ForeignKey(kairos_presentaciones, verbose_name='Presentacion Kairos')
-
+    observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -640,3 +649,11 @@ class xt_pcce (models.Model):
         verbose_name_plural ='productos comerciales con envase (extension)'
 
 
+
+
+class xt_bioequivalente(models.Model):
+    id_xt_bioequivalente = models.AutoField(primary_key=True)
+    bioequivalente = models.ForeignKey(xt_producto, related_name='equivalente')
+    referencia = models.ForeignKey(xt_producto, related_name='referencia')
+    def __unicode__(self):
+        return self.id

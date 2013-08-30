@@ -4,6 +4,40 @@ from django.forms import TextInput, Textarea
 from django.contrib import admin
 admin.autodiscover()
 from modeladorFarmacos.models import *
+import csv
+from django.http import HttpResponse
+from django.core.exceptions import PermissionDenied
+
+def export_as_csv(modeladmin, request, queryset):
+    """
+    Generic csv export admin action.
+    """
+    if not request.user.is_staff:
+        raise PermissionDenied
+    opts = modeladmin.model._meta
+    response = HttpResponse(mimetype='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=%s.csv' % unicode(opts).replace('.', '_')
+    writer = csv.writer(response, delimiter=';')
+    field_names = [field.name for field in opts.fields]
+    # Write a first row with header information
+    writer.writerow(field_names)
+    # Write data rows
+    for obj in queryset:
+        values = []
+        for field in field_names:
+            value = (getattr(obj, field))
+            if callable(value):
+                try:
+                    value = value() or ''
+                except:
+                    value = 'Error retrieving value'
+            if value is None:
+                value = ''
+            values.append(unicode(value).encode('utf-8'))
+        writer.writerow(values)
+        #writer.writerow([getattr(obj, field) for field in field_names])
+    return response
+export_as_csv.short_description = "Exportar elementos seleccionados como CSV"
 
 
 class SustanciaClinicoInline(admin.TabularInline):
@@ -28,14 +62,19 @@ class bioeqAdminInline(admin.TabularInline):
     model = xt_bioequivalente
 
 
-
 class xt_sustanciasAdmin (admin.ModelAdmin):
     pass
 
 class mcAdmin (admin.ModelAdmin):
-    inlines = [SustanciaClinicoInline,]
     form = autocomplete_light.modelform_factory(xt_mc)
+    inlines = [SustanciaClinicoInline,]
+    search_fields = ['descripcion']
+    list_display = ['id_xt_mc','descripcion','observacion','med_basico']
+    list_filter = ['revisado','consultar','estado']
+    list_display_links = ['id_xt_mc','descripcion']
+    actions = [export_as_csv]
     readonly_fields=('id_xt_mc',)
+
     radio_fields = {
                 "estado": admin.HORIZONTAL
                 ,"consultar": admin.HORIZONTAL
@@ -43,9 +82,7 @@ class mcAdmin (admin.ModelAdmin):
                 ,"tipo_forma_farm": admin.HORIZONTAL
     }
 
-#    def save_model(self, request, obj, form, change):
-#        obj.usuario_creador = request.user
-#        obj.save()
+
 
 
     def save_model(self, request, obj, form, change):
@@ -78,9 +115,15 @@ class mcAdmin (admin.ModelAdmin):
 class mbAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'100'})}}
-    inlines = [SustanciaBasicoInline,]
     form = autocomplete_light.modelform_factory(xt_mb)
+    inlines = [SustanciaBasicoInline,]
+    search_fields = ['descripcion']
+    list_display = ['xt_id_mb','descripcion','observacion']
+    list_filter = ['revisado','consultar','estado']
+    list_display_links = ['xt_id_mb','descripcion']
+    actions = [export_as_csv]
     readonly_fields=('xt_id_mb',)
+
     radio_fields = {
         "estado": admin.HORIZONTAL
         ,"consultar": admin.HORIZONTAL

@@ -318,7 +318,7 @@ class xt_sustancias (models.Model):
 
 
 class xt_mb (models.Model):
-    OPCIONES_ESTADO = ((1, 'Vigente'),(0, 'No Vigente'))
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     xt_id_mb = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
@@ -333,7 +333,7 @@ class xt_mb (models.Model):
     rel_xt_sust = models.ManyToManyField(xt_sustancias, through='rel_xt_mb_xt_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
-        return self.descripcion
+        return "%s | %s" % (self.estado, self.descripcion)
     class Meta:
         ordering=['xt_id_mb']
         verbose_name_plural ='medicamento basico (extension)'
@@ -341,14 +341,22 @@ class xt_mb (models.Model):
 
 
 class xt_mc (models.Model):
-    OPCIONES_ESTADO = ((1, 'Vigente'),(0, 'No Vigente'))
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     OPCIONES_FORMA_FARM = ((1, 'Discreta'),(2,'Continua'),(3,'No Aplica'))
-    OPCIONES_PRESCRIPCION = ((1,'Estado 1'),(2,'Estado 2'),(3,'Estado 3'))
+    OPCIONES_PRESCRIPCION = (
+         (1,'Invalido para prescribir en Atencion Primaria')
+        ,(2,'Nunca valido para prescribir como MC')
+        ,(3,'No prescribible como un MC pero es valido como PC')
+        ,(4,'No recomendable prescribir como un MC')
+        ,(5,'Valido como producto prescribible')
+        ,(6,'MC no recomendable para prescribir - marca no bioequivalente')
+        ,(7,'MC no recomendable para prescribir - requiere entrenamiento del paciente')
+        )
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_mc = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255, null=False, blank=False, help_text='Obligatorio')
     med_basico = models.ForeignKey(xt_mb, null=True)
-    estado_prescripcion = models.SmallIntegerField(choices=OPCIONES_PRESCRIPCION, null=False, blank=False)
+    estado_prescripcion = models.SmallIntegerField(choices=OPCIONES_PRESCRIPCION, null=True, blank=True)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea')
     fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
@@ -391,7 +399,7 @@ class xt_unidad_potencia (models.Model):
 
 
 class rel_mc_sust (models.Model):
-    OPCIONES_ESTADO = ((1, 'Vigente'),(0, 'No Vigente'))
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     id_rel_mc_sust = models.AutoField(primary_key=True)
     id_xt_mc = models.ForeignKey(xt_mc)
     id_xt_sust = models.ForeignKey(xt_sustancias)
@@ -412,7 +420,7 @@ class rel_mc_sust (models.Model):
 
 
 class rel_xt_mb_xt_sust (models.Model):
-    OPCIONES_ESTADO = ((1, 'Vigente'),(0, 'No Vigente'))
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     id_rel_xt_mb_xt_sust = models.AutoField(primary_key=True)
     id_xt_sust = models.ForeignKey(xt_sustancias)
     id_xt_mb = models.ForeignKey(xt_mb)
@@ -457,7 +465,7 @@ class xt_laboratorio (models.Model):
 
 
 class xt_producto (models.Model):
-    OPCIONES_ESTADO = ((1, 'Vigente'),(0, 'No Vigente'))
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_producto = models.IntegerField(primary_key=True)
     descripcion = models.CharField(max_length=255)
@@ -540,7 +548,7 @@ class xt_fp (models.Model):
 ## ##-
 
 class xt_pc (models.Model):
-    OPCIONES_ESTADO = ((1, 'Vigente'),(0, 'No Vigente'))
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_pc = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
@@ -591,7 +599,7 @@ class xt_unidad_medida_cant (models.Model):
 
 
 class xt_mcce (models.Model):
-    OPCIONES_ESTADO = ((1, 'Vigente'),(0, 'No Vigente'))
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_mcce = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
@@ -624,7 +632,7 @@ class xt_mcce (models.Model):
 
 
 class xt_pcce (models.Model):
-    OPCIONES_ESTADO = ((1, 'Vigente'),(0, 'No Vigente'))
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_pcce = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)

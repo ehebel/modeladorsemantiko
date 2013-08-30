@@ -67,3 +67,6 @@ autocomplete_light.register(rel_xt_mb_xt_sust, search_fields=('descripcion',),
 
 autocomplete_light.register(rel_mc_sust, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'Medicamentos Clinicos .. '})
+
+autocomplete_light.register(xt_pc, search_fields=('descripcion',),
+    autocomplete_js_attributes={'placeholder': 'Productos Comerciales .. '})

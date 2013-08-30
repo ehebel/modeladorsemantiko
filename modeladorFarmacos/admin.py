@@ -60,6 +60,8 @@ class SustanciaBasicoInline(admin.TabularInline):
 
 class bioeqAdminInline(admin.TabularInline):
     model = xt_bioequivalente
+    form = autocomplete_light.modelform_factory(xt_pc)
+    fk_name = 'referencia'
 
 
 class xt_sustanciasAdmin (admin.ModelAdmin):
@@ -194,7 +196,7 @@ class mcceAdmin(admin.ModelAdmin):
             return formset.save()
 
 class pcAdmin(admin.ModelAdmin):
-    #inlines = [bioeqAdminInline,]
+    inlines = [bioeqAdminInline,]
     form = autocomplete_light.modelform_factory(xt_pc)
     readonly_fields=('id_xt_pc',)
     radio_fields = {
@@ -275,7 +277,6 @@ admin.site.register(xt_pcce,pcceAdmin)
 
 admin.site.register(xt_bioequivalente)
 admin.site.register(xt_sustancias,xt_sustanciasAdmin)
-
 
 admin.site.register(uk_dmd_conceptos)
 admin.site.register(uk_dmd_relationships)

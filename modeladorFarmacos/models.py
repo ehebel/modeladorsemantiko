@@ -564,6 +564,7 @@ class xt_pc (models.Model):
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico')
     concept_amp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
+    #bioequivalente = models.ManyToManyField('self', through='xt_bioequivalente', symmetrical=False)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -622,8 +623,6 @@ class xt_mcce (models.Model):
         verbose_name_plural ='medicamento clinico con envase (extension)'
 
 
-
-
 ## ##-
 ## table 'xt_pcce'
 ## productos comerciales con envase de la extension
@@ -661,7 +660,7 @@ class xt_pcce (models.Model):
 
 class xt_bioequivalente(models.Model):
     id_xt_bioequivalente = models.AutoField(primary_key=True)
-    bioequivalente = models.ForeignKey(xt_producto, related_name='equivalente')
-    referencia = models.ForeignKey(xt_producto, related_name='referencia')
+    referencia = models.ForeignKey(xt_pc, related_name='referencia')
+    bioequivalente = models.ForeignKey(xt_pc, related_name='equivalente')
     def __unicode__(self):
-        return self.id
+        return self.id_xt_bioequivalente

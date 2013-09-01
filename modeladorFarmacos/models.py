@@ -189,7 +189,7 @@ class kairos_precio(models.Model):
     preciofabrica19 = models.FloatField()
     preciopublico19 = models.FloatField()
     def __unicode__(self):
-        return self.claveproducto
+        return "%s" % (self.claveproducto)
 
 
 

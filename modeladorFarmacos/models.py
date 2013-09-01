@@ -472,7 +472,7 @@ class xt_laboratorio (models.Model):
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_lab = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
-    desc_abrev = models.CharField(max_length=255)
+    desc_abrev = models.CharField(max_length=255, blank=True)
 
     fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_lab')
@@ -598,7 +598,7 @@ class xt_pc (models.Model):
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_pc = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
-    descripcion_breviada = models.CharField(max_length=255, verbose_name='Descripcion Abreviada')
+    descripcion_breviada = models.CharField(max_length=255, verbose_name='Descripcion Abreviada', blank=True)
 
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_pc')
@@ -687,7 +687,7 @@ class xt_pcce (models.Model):
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_pcce = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
-    desc_abreviada = models.CharField(max_length=255)
+    desc_abreviada = models.CharField(max_length=255,blank=True)
 
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_pcce')

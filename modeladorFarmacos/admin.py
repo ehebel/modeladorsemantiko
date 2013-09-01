@@ -264,8 +264,6 @@ class pcceAdmin(admin.ModelAdmin):
         form.save_m2m()
         return instance
 
-
-
     def save_formset(self, request, form, formset, change):
         def set_user(instance):
             if not instance.usuario_ult_mod:
@@ -281,34 +279,68 @@ class pcceAdmin(admin.ModelAdmin):
             return formset.save()
 
 
+class xtlabAdmin(admin.ModelAdmin):
+    def save_model(self, request, obj, form, change):
 
-admin.site.register(xt_mc,mcAdmin)
+        if not hasattr(obj, 'usuario_creador'):
+            obj.usuario_creador = request.user
+        obj.save()
+
+        instance = form.save(commit=False)
+        if not hasattr(instance,'usuario_ult_mod'):
+            instance.usuario_ult_mod = request.user
+        instance.usuario_ult_mod = request.user
+        instance.save()
+        form.save_m2m()
+        return instance
+
+    def save_formset(self, request, form, formset, change):
+        def set_user(instance):
+            if not instance.usuario_ult_mod:
+                instance.usuario_ult_mod = request.user
+            instance.usuario_ult_mod = request.user
+            instance.save()
+        if formset.model == xt_mc:
+            instances = formset.save(commit=False)
+            map(set_user, instances)
+            formset.save_m2m()
+            return instances
+        else:
+            return formset.save()
+
+admin.site.register(xt_mc,  mcAdmin)
 admin.site.register(xt_mcce,mcceAdmin)
-admin.site.register(xt_mb,mbAdmin)
-admin.site.register(xt_pc,pcAdmin)
+admin.site.register(xt_mb,  mbAdmin)
+admin.site.register(xt_pc,  pcAdmin)
 admin.site.register(xt_pcce,pcceAdmin)
-
+admin.site.register(xt_laboratorio,xtlabAdmin)
 admin.site.register(xt_bioequivalente)
-admin.site.register(xt_sustancias,xt_sustanciasAdmin)
 
-admin.site.register(uk_dmd_conceptos)
-admin.site.register(uk_dmd_relationships)
+admin.site.register(xt_sustancias,xt_sustanciasAdmin)
 admin.site.register(xt_unidad_dosis_unitaria)
 admin.site.register(xt_unidad_medida_unitaria)
 admin.site.register(xt_formas_farm)
 admin.site.register(xt_condicion_venta)
+admin.site.register(xt_unidad_potencia)
+
+admin.site.register(xt_gfp)
+admin.site.register(xt_fp)
+admin.site.register(xt_producto)
+admin.site.register(xt_unidad_medida_cant)
+
+admin.site.register(rel_mc_sust)
+admin.site.register(rel_xt_mb_xt_sust)
+
+admin.site.register(uk_dmd_conceptos)
+admin.site.register(uk_dmd_relationships)
+
 admin.site.register(kairos_sustancia)
 admin.site.register(kairos_lab)
 admin.site.register(kairos_productos)
 admin.site.register(kairos_presentaciones)
-admin.site.register(xt_unidad_potencia)
-admin.site.register(rel_mc_sust)
-admin.site.register(rel_xt_mb_xt_sust)
-admin.site.register(xt_gfp)
-admin.site.register(xt_fp)
-admin.site.register(xt_laboratorio)
-admin.site.register(xt_producto)
-admin.site.register(xt_unidad_medida_cant)
+
+
+
 
 
 __author__ = 'ehebel'

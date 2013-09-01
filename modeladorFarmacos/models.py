@@ -322,10 +322,12 @@ class xt_mb (models.Model):
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     xt_id_mb = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255, blank=True)
+
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_mb')
     fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_mb')
+
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified', blank=True)
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified', blank=True)
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified', blank=True)
@@ -342,6 +344,8 @@ class xt_mb (models.Model):
 
 class xt_mc (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
+
     OPCIONES_FORMA_FARM = ((1, 'Discreta'),(2,'Continua'),(3,'No Aplica'))
     OPCIONES_PRESCRIPCION = (
          (1,'Invalido para prescribir en Atencion Primaria')
@@ -352,7 +356,6 @@ class xt_mc (models.Model):
         ,(6,'MC no recomendable para prescribir - marca no bioequivalente')
         ,(7,'MC no recomendable para prescribir - requiere entrenamiento del paciente')
         )
-    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_mc = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255, null=False, blank=False, help_text='Obligatorio')
     med_basico = models.ForeignKey(xt_mb, null=True, blank=True)
@@ -366,6 +369,7 @@ class xt_mc (models.Model):
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
+
     tipo_forma_farm = models.SmallIntegerField(choices=OPCIONES_FORMA_FARM, null=True, blank=True)
 
     tamano_dosis_u = models.IntegerField(null=True, blank=True)
@@ -389,12 +393,15 @@ class xt_mc (models.Model):
 ## ##-
 
 class xt_unidad_potencia (models.Model):
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     id_unidad_potencia = models.SmallIntegerField()
     descripcion = models.CharField(max_length=255)
-    estado = models.BooleanField()
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
+
+
 ## ##-
 ## table 'rel_mc_sust'
 ## 
@@ -440,18 +447,21 @@ class rel_xt_mb_xt_sust (models.Model):
 
 
 class xt_laboratorio (models.Model):
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_lab = models.IntegerField(primary_key=True)
-    
-    descripcion = models.SmallIntegerField()
-    desc_abrev = models.SmallIntegerField()
-    estado = models.BooleanField()
-    fecha_creacion = models.DateTimeField()
-    usuario_creador = models.SmallIntegerField()
-    fecha_ult_mod = models.DateTimeField()
-    usuario_ult_mod = models.SmallIntegerField()
-    revisado = models.BooleanField()
-    consultar = models.BooleanField()
-    clave_lab_kairos = models.ForeignKey(kairos_lab)
+    descripcion = models.CharField(max_length=255)
+    desc_abrev = models.CharField(max_length=255)
+
+    fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
+    usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea')
+    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='usuariomod')
+
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
+    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
+    clave_lab_kairos = models.ForeignKey(kairos_lab, null=True, blank=True)
 
     def __unicode__(self):
         return self.descripcion
@@ -472,6 +482,7 @@ class xt_producto (models.Model):
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_producto = models.IntegerField(primary_key=True)
     descripcion = models.CharField(max_length=255)
+
     estado = models.SmallIntegerField(choices=OPCIONES_ESTADO, null=False, blank=False)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_producto')
@@ -479,7 +490,8 @@ class xt_producto (models.Model):
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_producto')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
-    id_xt_lab = models.ForeignKey(xt_laboratorio)
+
+    id_xt_lab = models.ForeignKey(xt_laboratorio, null=True , blank=True)
     clave_prod_kairos = models.ForeignKey(kairos_productos)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
@@ -497,16 +509,21 @@ class xt_producto (models.Model):
 
 
 class xt_gfp (models.Model):
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_gfp = models.IntegerField(primary_key=True)
 
     descripcion = models.CharField(max_length=255)
-    estado = models.BooleanField()
-    fecha_creacion = models.DateTimeField()
-    usuario_creador = models.SmallIntegerField()
-    fecha_ult_mod = models.DateTimeField()
-    usuario_ult_mod = models.SmallIntegerField()
-    revisado = models.BooleanField()
-    consultar = models.BooleanField()
+
+    fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
+    usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea')
+    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='usuariomod')
+
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
+    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
+
     concept_tfg_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
@@ -523,16 +540,21 @@ class xt_gfp (models.Model):
 
 
 class xt_fp (models.Model):
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_fp = models.IntegerField(primary_key=True)
     xtconcepto = models.SmallIntegerField()
     descripcion = models.CharField(max_length=255)
-    estado = models.BooleanField()
-    fecha_creacion = models.DateTimeField()
-    usuario_creador = models.SmallIntegerField()
-    fecha_ult_mod = models.DateTimeField()
-    usuario_ult_mod = models.SmallIntegerField()
-    revisado = models.BooleanField()
-    consultar = models.BooleanField()
+
+    fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
+    usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea')
+    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='usuariomod')
+
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
+    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
+
     id_producto_xt = models.ForeignKey(xt_producto, null=True)
     concept_tf_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
@@ -556,13 +578,16 @@ class xt_pc (models.Model):
     id_xt_pc = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
     descripcion_breviada = models.CharField(max_length=255, verbose_name='Descripcion Abreviada')
-    estado = models.SmallIntegerField(choices=OPCIONES_ESTADO, null=False, blank=False)
+
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_pc')
     fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_pc')
+
+    estado = models.SmallIntegerField(choices=OPCIONES_ESTADO, null=False, blank=False)
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
+
     id_xt_fp = models.ForeignKey(xt_fp, verbose_name='Familia de Producto')
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico')
     concept_amp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
@@ -607,13 +632,16 @@ class xt_mcce (models.Model):
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_mcce = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
+
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_mcce')
     fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariomod_mcce')
+
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
+
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico')
     cantidad = models.IntegerField()
     unidad_medida_cant = models.ForeignKey(xt_unidad_medida_cant)
@@ -639,13 +667,16 @@ class xt_pcce (models.Model):
     id_xt_pcce = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
     desc_abreviada = models.CharField(max_length=255)
+
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_pcce')
     fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_pcce')
+
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
+
     id_xt_pc = models.ForeignKey(xt_pc, verbose_name= 'Producto Comercial')
     id_xt_mcce = models.ForeignKey(xt_mcce, verbose_name='Medicamento Clinico Con Envase')
     gtin_gs1 = models.BigIntegerField()

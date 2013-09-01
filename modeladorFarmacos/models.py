@@ -609,8 +609,8 @@ class xt_pc (models.Model):
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
 
-    id_xt_fp = models.ForeignKey(xt_fp, verbose_name='Familia de Producto')
-    id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico')
+    id_xt_fp = models.ForeignKey(xt_fp, verbose_name='Familia de Producto', null=True, blank=True)
+    id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico', null=True, blank=True)
     concept_amp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     #bioequivalente = models.ManyToManyField('self', through='xt_bioequivalente', symmetrical=False)

@@ -165,7 +165,7 @@ class kairos_presentaciones (models.Model):
     estado = models.CharField(max_length=255)
 
     def __unicode__(self):
-        return self.especificacion
+        return self.descripcion
     class Meta:
         ordering=['id_presentacion_kairos']
         verbose_name_plural ='tabla de presentaciones de productos de kairos'

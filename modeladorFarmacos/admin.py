@@ -280,6 +280,8 @@ class pcceAdmin(admin.ModelAdmin):
 
 
 class xtlabAdmin(admin.ModelAdmin):
+    list_display = ['id_xt_lab,descripcion,clave_lab_kairos_id']
+    list_filter = ['revisado','consultar','estado']
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):

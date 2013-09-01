@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
     </list>
     <ignored path="modeladorsemantiko.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +32,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="405" selection-end="770" vertical-scroll-proportion="0.0">
+            <state line="63" column="23" selection-start="2689" selection-end="2689" vertical-scroll-proportion="-9.153846">
               <folding />
             </state>
           </provider>
@@ -40,16 +41,16 @@
       <file leaf-file-name="autocomplete_light_registry.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="69" selection-start="3176" selection-end="3176" vertical-scroll-proportion="-20.038462">
+            <state line="71" column="69" selection-start="3176" selection-end="3176" vertical-scroll-proportion="-20.538462">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="418" column="50" selection-start="15625" selection-end="15625" vertical-scroll-proportion="0.38307694">
+            <state line="465" column="6" selection-start="17045" selection-end="17045" vertical-scroll-proportion="-8.0">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -57,10 +58,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="314" column="38" selection-start="10270" selection-end="10270" vertical-scroll-proportion="-26.307692">
+            <state line="283" column="51" selection-start="9255" selection-end="9255" vertical-scroll-proportion="0.26121795">
               <folding>
                 <element signature="e#3461#3629#0" expanded="false" />
               </folding>
@@ -94,9 +95,9 @@
         <option value="$PROJECT_DIR$/modeladorFarmacos/migrations/0007_auto__chg_field_xt_mc_usuario_creador.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
         <option value="$USER_HOME$/Library/Caches/PyCharm20/python_stubs/1902336724/__builtin__.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
-        <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
+        <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
       </list>
     </option>
   </component>
@@ -700,7 +701,11 @@
       <created>1378067859749</created>
       <updated>1378067859749</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Se agrega app modeladorFarmacos v1.00.5 con mejoras a los admin y modelos&#10;">
+      <created>1378067927223</created>
+      <updated>1378067927223</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -883,13 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="69" selection-start="3176" selection-end="3176" vertical-scroll-proportion="-20.038462">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm20/python_stubs/1902336724/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="642" column="6" selection-start="19677" selection-end="19677" vertical-scroll-proportion="0.33333334">
@@ -897,27 +895,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
+    <entry file="file://$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="405" selection-end="770" vertical-scroll-proportion="0.0">
+        <state line="71" column="69" selection-start="3176" selection-end="3176" vertical-scroll-proportion="-20.538462">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
+    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="314" column="38" selection-start="10270" selection-end="10270" vertical-scroll-proportion="-26.307692">
-          <folding>
-            <element signature="e#3461#3629#0" expanded="false" />
-          </folding>
+        <state line="63" column="23" selection-start="2689" selection-end="2689" vertical-scroll-proportion="-9.153846">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="418" column="50" selection-start="15625" selection-end="15625" vertical-scroll-proportion="0.38307694">
+        <state line="465" column="6" selection-start="17045" selection-end="17045" vertical-scroll-proportion="-8.0">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="283" column="51" selection-start="9255" selection-end="9255" vertical-scroll-proportion="0.26121795">
+          <folding>
+            <element signature="e#3461#3629#0" expanded="false" />
           </folding>
         </state>
       </provider>

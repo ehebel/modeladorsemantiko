@@ -134,8 +134,9 @@ class mbAdmin(admin.ModelAdmin):
     }
 
     def save_model(self, request, obj, form, change):
-        if getattr(obj, 'usuario_creador_id', None) is None:
-            obj.usuario_creador_id = request.user
+
+        if not hasattr(obj, 'usuario_creador'):
+            obj.usuario_creador = request.user
         obj.save()
 
         instance = form.save(commit=False)
@@ -145,6 +146,8 @@ class mbAdmin(admin.ModelAdmin):
         instance.save()
         form.save_m2m()
         return instance
+
+
 
     def save_formset(self, request, form, formset, change):
         def set_user(instance):
@@ -170,8 +173,9 @@ class mcceAdmin(admin.ModelAdmin):
         ,"revisado": admin.HORIZONTAL
     }
     def save_model(self, request, obj, form, change):
-        if getattr(obj, 'usuario_creador_id', None) is None:
-            obj.usuario_creador_id = request.user.id
+
+        if not hasattr(obj, 'usuario_creador'):
+            obj.usuario_creador = request.user
         obj.save()
 
         instance = form.save(commit=False)
@@ -182,13 +186,15 @@ class mcceAdmin(admin.ModelAdmin):
         form.save_m2m()
         return instance
 
+
+
     def save_formset(self, request, form, formset, change):
         def set_user(instance):
             if not instance.usuario_ult_mod:
                 instance.usuario_ult_mod = request.user
             instance.usuario_ult_mod = request.user
             instance.save()
-        if formset.model == xt_mcce:
+        if formset.model == xt_mc:
             instances = formset.save(commit=False)
             map(set_user, instances)
             formset.save_m2m()
@@ -206,8 +212,9 @@ class pcAdmin(admin.ModelAdmin):
         ,"revisado": admin.HORIZONTAL
     }
     def save_model(self, request, obj, form, change):
-        if getattr(obj, 'usuario_creador_id', None) is None:
-            obj.usuario_creador_id = request.user.id
+
+        if not hasattr(obj, 'usuario_creador'):
+            obj.usuario_creador = request.user
         obj.save()
 
         instance = form.save(commit=False)
@@ -218,13 +225,15 @@ class pcAdmin(admin.ModelAdmin):
         form.save_m2m()
         return instance
 
+
+
     def save_formset(self, request, form, formset, change):
         def set_user(instance):
             if not instance.usuario_ult_mod:
                 instance.usuario_ult_mod = request.user
             instance.usuario_ult_mod = request.user
             instance.save()
-        if formset.model == xt_pc:
+        if formset.model == xt_mc:
             instances = formset.save(commit=False)
             map(set_user, instances)
             formset.save_m2m()
@@ -242,8 +251,9 @@ class pcceAdmin(admin.ModelAdmin):
         ,"revisado": admin.HORIZONTAL
     }
     def save_model(self, request, obj, form, change):
-        if getattr(obj, 'usuario_creador_id', None) is None:
-            obj.usuario_creador_id = request.user.id
+
+        if not hasattr(obj, 'usuario_creador'):
+            obj.usuario_creador = request.user
         obj.save()
 
         instance = form.save(commit=False)
@@ -254,13 +264,15 @@ class pcceAdmin(admin.ModelAdmin):
         form.save_m2m()
         return instance
 
+
+
     def save_formset(self, request, form, formset, change):
         def set_user(instance):
             if not instance.usuario_ult_mod:
                 instance.usuario_ult_mod = request.user
             instance.usuario_ult_mod = request.user
             instance.save()
-        if formset.model == xt_pcce:
+        if formset.model == xt_mc:
             instances = formset.save(commit=False)
             map(set_user, instances)
             formset.save_m2m()

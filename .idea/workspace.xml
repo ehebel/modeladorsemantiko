@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
     </list>
     <ignored path="modeladorsemantiko.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="357" column="64" selection-start="12461" selection-end="12461" vertical-scroll-proportion="0.47058824">
+            <state line="357" column="64" selection-start="12461" selection-end="12461" vertical-scroll-proportion="-6.1538463">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -57,12 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="31" selection-start="3051" selection-end="3051" vertical-scroll-proportion="0.0">
+            <state line="280" column="33" selection-start="9102" selection-end="9102" vertical-scroll-proportion="0.29411766">
               <folding>
-                <element signature="e#3425#3860#0" expanded="false" />
                 <element signature="e#3461#3629#0" expanded="false" />
               </folding>
             </state>
@@ -95,9 +94,9 @@
         <option value="$PROJECT_DIR$/modeladorFarmacos/migrations/0007_auto__chg_field_xt_mc_usuario_creador.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
         <option value="$USER_HOME$/Library/Caches/PyCharm20/python_stubs/1902336724/__builtin__.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
       </list>
     </option>
   </component>
@@ -673,7 +672,11 @@
       <created>1378054811255</created>
       <updated>1378054811255</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Se agrega app modeladorFarmacos v1.00.4 con admin, bioequivalentes y otros.">
+      <created>1378055362120</created>
+      <updated>1378055362120</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -869,16 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="31" selection-start="3051" selection-end="3051" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#3425#3860#0" expanded="false" />
-            <element signature="e#3461#3629#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="161" column="4" selection-start="6074" selection-end="6074" vertical-scroll-proportion="0.0">
@@ -888,9 +881,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="357" column="64" selection-start="12461" selection-end="12461" vertical-scroll-proportion="0.47058824">
+        <state line="357" column="64" selection-start="12461" selection-end="12461" vertical-scroll-proportion="-6.1538463">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="280" column="33" selection-start="9102" selection-end="9102" vertical-scroll-proportion="0.29411766">
+          <folding>
+            <element signature="e#3461#3629#0" expanded="false" />
           </folding>
         </state>
       </provider>

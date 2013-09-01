@@ -330,16 +330,17 @@ admin.site.register(xt_fp)
 admin.site.register(xt_producto)
 admin.site.register(xt_unidad_medida_cant)
 
-admin.site.register(rel_mc_sust)
-admin.site.register(rel_xt_mb_xt_sust)
+#admin.site.register(rel_mc_sust)
+#admin.site.register(rel_xt_mb_xt_sust)
 
-admin.site.register(uk_dmd_conceptos)
-admin.site.register(uk_dmd_relationships)
+#admin.site.register(uk_dmd_conceptos)
+#admin.site.register(uk_dmd_relationships)
 
 admin.site.register(kairos_sustancia)
 admin.site.register(kairos_lab)
 admin.site.register(kairos_productos)
 admin.site.register(kairos_presentaciones)
+admin.site.register(kairos_precio)
 
 
 

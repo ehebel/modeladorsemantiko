@@ -174,8 +174,8 @@ class kairos_presentaciones (models.Model):
 
 class kairos_precio(models.Model):
     id_presentacion_kairos = models.AutoField(primary_key=True)
-    claveproducto = models.IntegerField()
-    clavepresentacion = models.IntegerField()
+    claveproducto = models.ForeignKey(kairos_productos)
+    clavepresentacion = models.ForeignKey(kairos_presentaciones)
     fechaingreso = models.DateField()
     fechavigencia = models.DateField()
     preciofabrica = models.FloatField()
@@ -189,7 +189,7 @@ class kairos_precio(models.Model):
     preciofabrica19 = models.FloatField()
     preciopublico19 = models.FloatField()
     def __unicode__(self):
-        return self.especificacion
+        return self.claveproducto
 
 
 
@@ -215,7 +215,7 @@ class xt_unidad_dosis_unitaria (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_unidad_dosis_u']
-        verbose_name_plural ='unidad de dosis unitaria de extension'
+        verbose_name_plural ='XT unidad de dosis unitaria'
 
 
 ## ##-
@@ -240,7 +240,7 @@ class xt_unidad_medida_unitaria (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_unidad_medida_u']
-        verbose_name_plural ='unidades de medida unitaria para la extension'
+        verbose_name_plural ='XT unidades de medida unitaria'
 
 
 ## ##-
@@ -265,7 +265,7 @@ class xt_formas_farm (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_formafarm']
-        verbose_name_plural ='formas farmaceuticas de extension'
+        verbose_name_plural ='XT formas farmaceuticas de extension'
 
 
 
@@ -293,7 +293,7 @@ class xt_condicion_venta (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_condventa']
-        verbose_name_plural ='condiciones de venta de la extension'
+        verbose_name_plural ='XT condiciones de venta de la extension'
 
 
 
@@ -329,7 +329,7 @@ class xt_sustancias (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_sust']
-        verbose_name_plural ='extension de sustancias'
+        verbose_name_plural ='XT extension de sustancias'
 
 ## ##-
 ## table 'xt_mb'
@@ -359,7 +359,7 @@ class xt_mb (models.Model):
         return "%s | %s" % (self.estado, self.descripcion)
     class Meta:
         ordering=['xt_id_mb']
-        verbose_name_plural ='medicamento basico (extension)'
+        verbose_name_plural ='XT medicamento basico (extension)'
 
 
 
@@ -405,7 +405,7 @@ class xt_mc (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_mc']
-        verbose_name_plural = "medicamento clinico (extension)"
+        verbose_name_plural = "XT medicamento clinico (extension)"
 
 
 ## ##-
@@ -488,7 +488,7 @@ class xt_laboratorio (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_lab']
-        verbose_name_plural ='laboratorios de la extension'
+        verbose_name_plural ='XT laboratorios de la extension'
 
 
 ## ##-
@@ -519,7 +519,7 @@ class xt_producto (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_producto']
-        verbose_name_plural ='productos de la extension'
+        verbose_name_plural ='XT productos de la extension'
 
 
 ## ##-
@@ -551,7 +551,7 @@ class xt_gfp (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_gfp']
-        verbose_name_plural ='grupo de familia de productos de la extension'
+        verbose_name_plural ='XT grupo de familia de productos de la extension'
 
 ## ##-
 ## table 'xt_fp'
@@ -583,7 +583,7 @@ class xt_fp (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_fp']
-        verbose_name_plural ='familia de producto de la extension'
+        verbose_name_plural ='XT familia de producto de la extension'
 
 
 
@@ -618,7 +618,7 @@ class xt_pc (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_pc']
-        verbose_name_plural ='productos comerciales (extension)'
+        verbose_name_plural ='XT productos comerciales (extension)'
 
 
 
@@ -640,7 +640,7 @@ class xt_unidad_medida_cant (models.Model):
     observacion = models.CharField(max_length=255, blank=True, null=True)
     class Meta:
         ordering=['id_unidad_medida_cant']
-        verbose_name_plural ='unidad de medida de cantidad de la extension'
+        verbose_name_plural ='XT unidad de medida de cantidad'
 
 ## ##-
 ## table 'xt_mcce'
@@ -672,7 +672,7 @@ class xt_mcce (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_mcce']
-        verbose_name_plural ='medicamento clinico con envase (extension)'
+        verbose_name_plural ='XT medicamento clinico con envase (extension)'
 
 
 ## ##-
@@ -708,7 +708,7 @@ class xt_pcce (models.Model):
         return self.descripcion
     class Meta:
         ordering=['id_xt_pcce']
-        verbose_name_plural ='productos comerciales con envase (extension)'
+        verbose_name_plural ='XT productos comerciales con envase (extension)'
 
 
 
@@ -719,3 +719,6 @@ class xt_bioequivalente(models.Model):
     bioequivalente = models.ForeignKey(xt_pc, related_name='equivalente')
     def __unicode__(self):
         return self.id_xt_bioequivalente
+    class Meta:
+        ordering=['id_xt_bioequivalente']
+        verbose_name_plural ='XT Productos Bioequivalentes'

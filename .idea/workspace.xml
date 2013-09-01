@@ -49,7 +49,7 @@
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="286" column="113" selection-start="9635" selection-end="9635" vertical-scroll-proportion="-0.07532051">
+            <state line="136" column="48" selection-start="4258" selection-end="4270" vertical-scroll-proportion="-3.4262822">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -692,7 +692,11 @@
       <created>1378067247154</created>
       <updated>1378067247154</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Se agrega app modeladorFarmacos v1.00.5 con mejoras a los admin y modelos&#10;">
+      <created>1378067344244</created>
+      <updated>1378067344245</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -907,7 +911,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="286" column="113" selection-start="9635" selection-end="9635" vertical-scroll-proportion="-0.07532051">
+        <state line="136" column="48" selection-start="4258" selection-end="4270" vertical-scroll-proportion="-3.4262822">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

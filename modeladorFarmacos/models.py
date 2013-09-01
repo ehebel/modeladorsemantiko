@@ -203,7 +203,7 @@ class kairos_precio(models.Model):
 class xt_unidad_dosis_unitaria (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
 
-    id_xt_unidad_dosis_u = models.IntegerField(primary_key=True)
+    id_xt_unidad_dosis_u = models.AutoField(primary_key=True)
 
     descripcion = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
@@ -228,7 +228,7 @@ class xt_unidad_dosis_unitaria (models.Model):
 class xt_unidad_medida_unitaria (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
 
-    id_xt_unidad_medida_u = models.SmallIntegerField()
+    id_xt_unidad_medida_u = models.AutoField(primary_key=True)
 
     descripcion = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
@@ -253,7 +253,7 @@ class xt_unidad_medida_unitaria (models.Model):
 class xt_formas_farm (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
 
-    id_xt_formafarm = models.IntegerField(primary_key=True)
+    id_xt_formafarm = models.AutoField(primary_key=True)
 
     descripcion = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
@@ -280,7 +280,7 @@ class xt_formas_farm (models.Model):
 class xt_condicion_venta (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
 
-    id_xt_condventa = models.IntegerField(primary_key=True)
+    id_xt_condventa = models.AutoField(primary_key=True)
 
     descripcion = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
@@ -308,7 +308,7 @@ class xt_condicion_venta (models.Model):
 class xt_sustancias (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
-    id_xt_sust = models.IntegerField(primary_key=True)
+    id_xt_sust = models.AutoField(primary_key=True)
     
     descripcion = models.CharField(max_length=255)
     riesgo_teratogenico = models.SmallIntegerField()
@@ -415,7 +415,7 @@ class xt_mc (models.Model):
 
 class xt_unidad_potencia (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
-    id_unidad_potencia = models.SmallIntegerField()
+    id_unidad_potencia = models.AutoField()
     descripcion = models.CharField(max_length=255)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
@@ -470,7 +470,7 @@ class rel_xt_mb_xt_sust (models.Model):
 class xt_laboratorio (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
-    id_xt_lab = models.IntegerField(primary_key=True)
+    id_xt_lab = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
     desc_abrev = models.CharField(max_length=255)
 
@@ -501,7 +501,7 @@ class xt_laboratorio (models.Model):
 class xt_producto (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
-    id_xt_producto = models.IntegerField(primary_key=True)
+    id_xt_producto = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
 
     estado = models.SmallIntegerField(choices=OPCIONES_ESTADO, null=False, blank=False)
@@ -532,7 +532,7 @@ class xt_producto (models.Model):
 class xt_gfp (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
-    id_xt_gfp = models.IntegerField(primary_key=True)
+    id_xt_gfp = models.AutoField(primary_key=True)
 
     descripcion = models.CharField(max_length=255)
 
@@ -563,7 +563,7 @@ class xt_gfp (models.Model):
 class xt_fp (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
-    id_xt_fp = models.IntegerField(primary_key=True)
+    id_xt_fp = models.AutoField(primary_key=True)
     xtconcepto = models.SmallIntegerField()
     descripcion = models.CharField(max_length=255)
 

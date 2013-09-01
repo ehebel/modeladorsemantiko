@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
     </list>
@@ -31,7 +32,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="53" selection-start="672" selection-end="672" vertical-scroll-proportion="0.5081967">
+            <state line="161" column="4" selection-start="6074" selection-end="6074" vertical-scroll-proportion="0.8770492">
               <folding />
             </state>
           </provider>
@@ -665,7 +666,11 @@
       <created>1378054449095</created>
       <updated>1378054449095</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Se agrega app modeladorFarmacos v1.00.4 con admin, bioequivalentes y otros.">
+      <created>1378054702559</created>
+      <updated>1378054702560</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -882,7 +887,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="53" selection-start="672" selection-end="672" vertical-scroll-proportion="0.5081967">
+        <state line="161" column="4" selection-start="6074" selection-end="6074" vertical-scroll-proportion="0.8770492">
           <folding />
         </state>
       </provider>

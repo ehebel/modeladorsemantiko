@@ -355,7 +355,7 @@ class xt_mc (models.Model):
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_mc = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255, null=False, blank=False, help_text='Obligatorio')
-    med_basico = models.ForeignKey(xt_mb, null=True)
+    med_basico = models.ForeignKey(xt_mb, null=True, blank=True)
     estado_prescripcion = models.SmallIntegerField(choices=OPCIONES_PRESCRIPCION, null=True, blank=True)
 
     fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)

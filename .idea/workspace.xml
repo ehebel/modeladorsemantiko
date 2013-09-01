@@ -4,7 +4,6 @@
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
     </list>
     <ignored path="modeladorsemantiko.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,7 +60,7 @@
       <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="283" column="51" selection-start="9255" selection-end="9255" vertical-scroll-proportion="0.26121795">
+            <state line="286" column="47" selection-start="9362" selection-end="9362" vertical-scroll-proportion="0.36">
               <folding>
                 <element signature="e#3461#3629#0" expanded="false" />
               </folding>
@@ -705,7 +704,11 @@
       <created>1378067927223</created>
       <updated>1378067927223</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Se agrega app modeladorFarmacos v1.00.5 con mejoras a los admin y modelos&#10;">
+      <created>1378068194277</created>
+      <updated>1378068194277</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -920,7 +923,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="283" column="51" selection-start="9255" selection-end="9255" vertical-scroll-proportion="0.26121795">
+        <state line="286" column="47" selection-start="9362" selection-end="9362" vertical-scroll-proportion="0.36">
           <folding>
             <element signature="e#3461#3629#0" expanded="false" />
           </folding>

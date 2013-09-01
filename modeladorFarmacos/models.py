@@ -415,7 +415,7 @@ class xt_mc (models.Model):
 
 class xt_unidad_potencia (models.Model):
     OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
-    id_unidad_potencia = models.AutoField()
+    id_unidad_potencia = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)

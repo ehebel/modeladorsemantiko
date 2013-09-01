@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
     </list>
@@ -47,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="196" column="0" selection-start="6594" selection-end="6594" vertical-scroll-proportion="-113.07692">
+            <state line="286" column="113" selection-start="9635" selection-end="9635" vertical-scroll-proportion="-0.07532051">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -58,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="314" column="38" selection-start="10270" selection-end="10270" vertical-scroll-proportion="1.0923077">
+            <state line="314" column="38" selection-start="10270" selection-end="10270" vertical-scroll-proportion="-26.307692">
               <folding>
                 <element signature="e#3461#3629#0" expanded="false" />
               </folding>
@@ -689,7 +688,11 @@
       <created>1378066750117</created>
       <updated>1378066750117</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Se agrega app modeladorFarmacos v1.00.5 con mejoras a los admin y modelos&#10;">
+      <created>1378067247154</created>
+      <updated>1378067247154</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -893,20 +896,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="0" selection-start="6594" selection-end="6594" vertical-scroll-proportion="-113.07692">
+        <state line="314" column="38" selection-start="10270" selection-end="10270" vertical-scroll-proportion="-26.307692">
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#3461#3629#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="314" column="38" selection-start="10270" selection-end="10270" vertical-scroll-proportion="1.0923077">
+        <state line="286" column="113" selection-start="9635" selection-end="9635" vertical-scroll-proportion="-0.07532051">
           <folding>
-            <element signature="e#3461#3629#0" expanded="false" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

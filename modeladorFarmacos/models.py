@@ -207,7 +207,7 @@ class xt_unidad_dosis_unitaria (models.Model):
 
     descripcion = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
-    usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_mb')
+    usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_udu')
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
 
     observacion = models.CharField(max_length=255, blank=True, null=True)
@@ -232,7 +232,7 @@ class xt_unidad_medida_unitaria (models.Model):
 
     descripcion = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
-    usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_mb')
+    usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_umu')
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
 
     observacion = models.CharField(max_length=255, blank=True, null=True)
@@ -257,7 +257,7 @@ class xt_formas_farm (models.Model):
 
     descripcion = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
-    usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_mb')
+    usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_ff')
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
@@ -284,7 +284,7 @@ class xt_condicion_venta (models.Model):
 
     descripcion = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
-    usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_mb')
+    usuario_creador = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariocrea_cv')
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
 

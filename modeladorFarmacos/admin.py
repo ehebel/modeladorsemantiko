@@ -85,11 +85,10 @@ class mcAdmin (admin.ModelAdmin):
     }
 
 
-
-
     def save_model(self, request, obj, form, change):
-        if getattr(obj, 'usuario_creador_id', None) is None:
-            obj.usuario_creador_id = request.user
+
+        if not hasattr(obj, 'usuario_creador'):
+            obj.usuario_creador = request.user
         obj.save()
 
         instance = form.save(commit=False)
@@ -99,6 +98,8 @@ class mcAdmin (admin.ModelAdmin):
         instance.save()
         form.save_m2m()
         return instance
+
+
 
     def save_formset(self, request, form, formset, change):
         def set_user(instance):

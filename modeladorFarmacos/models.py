@@ -357,14 +357,17 @@ class xt_mc (models.Model):
     descripcion = models.CharField(max_length=255, null=False, blank=False, help_text='Obligatorio')
     med_basico = models.ForeignKey(xt_mb, null=True)
     estado_prescripcion = models.SmallIntegerField(choices=OPCIONES_PRESCRIPCION, null=True, blank=True)
-    fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
+
+    fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea')
     fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
-    usuario_ult_mod = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariomod')
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')
-    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
-    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
-    tipo_forma_farm = models.SmallIntegerField(choices=OPCIONES_FORMA_FARM, null=False, blank=True)
+    usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='usuariomod')
+
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
+    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
+    tipo_forma_farm = models.SmallIntegerField(choices=OPCIONES_FORMA_FARM, null=True, blank=True)
+
     tamano_dosis_u = models.IntegerField(null=True, blank=True)
     unidad_dosis_u = models.ForeignKey(xt_unidad_dosis_unitaria, null=True, blank=True)
     unidad_medida_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True, blank=True)

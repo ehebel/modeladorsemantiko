@@ -215,7 +215,7 @@ class mcceAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mcce)
     list_display = ['id_xt_mcce','descripcion','id_xt_mc','concept_vmpp_dmd'] #TODO sustancias m2m
     list_filter = ['revisado','consultar','estado',('concept_vmpp_dmd', IsNullFieldListFilter)] #TODO con/Sin observacion
-    #(('myfield', BooleanFieldListFilter), 'other_field', 'other_field2')
+
     readonly_fields=('id_xt_mcce',)
     radio_fields = {
         "estado": admin.HORIZONTAL
@@ -253,7 +253,10 @@ admin.site.register(xt_mcce,mcceAdmin)
 class pcAdmin(admin.ModelAdmin):
     inlines = [bioeqAdminInline,]
     list_display = ['id_xt_pc','descripcion','id_xt_fp','id_xt_mc','concept_amp_dmd'] #TODO BOOL Bioequivalente
-    list_filter = ['estado','revisado','consultar',('id_xt_mc', IsNullFieldListFilter)] #TODO BOOL Observacion
+    list_filter = ['estado','revisado','consultar'
+        ,('id_xt_mc', IsNullFieldListFilter)
+        ,('concept_amp_dmd', IsNullFieldListFilter)
+    ] #TODO BOOL Observacion
     form = autocomplete_light.modelform_factory(xt_pc)
     readonly_fields=('id_xt_pc',)
     radio_fields = {
@@ -291,8 +294,10 @@ admin.site.register(xt_pc,  pcAdmin)
 
 class pcceAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_pcce)
-    list_filter = ['estado','revisado','consultar'] #TODO BOOL Observacion
+    list_filter = ['estado','revisado','consultar'
+        ,('id_xt_mcce', IsNullFieldListFilter)] #TODO BOOL Observacion
     list_display = ['id_xt_pcce','descripcion','id_xt_pc','id_xt_mcce','concept_ampp_dmd','id_presentacion_kairos'] #TODO BOOL Bioequivalente
+
     readonly_fields=('id_xt_pcce',)
     radio_fields = {
         "estado": admin.HORIZONTAL
@@ -329,7 +334,8 @@ admin.site.register(xt_pcce,pcceAdmin)
 
 class xtlabAdmin(admin.ModelAdmin):
     list_display = ['id_xt_lab','descripcion','clave_lab_kairos']
-    list_filter = ['revisado','consultar','estado']
+    list_filter = ['revisado','consultar','estado',('clave_lab_kairos', IsNullFieldListFilter)]
+
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):

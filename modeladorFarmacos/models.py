@@ -379,7 +379,7 @@ class xt_mc (models.Model):
         )
     id_xt_mc = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255, null=False, blank=False, help_text='Obligatorio')
-    med_basico = models.ForeignKey(xt_mb, null=True, blank=True)
+    med_basico = models.ForeignKey(xt_mb, null=True, blank=True, limit_choices_to = {'estado':'0'})
     estado_prescripcion = models.SmallIntegerField(choices=OPCIONES_PRESCRIPCION, null=True, blank=True)
 
     fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
@@ -394,10 +394,10 @@ class xt_mc (models.Model):
     tipo_forma_farm = models.SmallIntegerField(choices=OPCIONES_FORMA_FARM, null=True, blank=True)
 
     tamano_dosis_u = models.IntegerField(null=True, blank=True)
-    unidad_dosis_u = models.ForeignKey(xt_unidad_dosis_unitaria, null=True, blank=True)
-    unidad_medida_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True, blank=True)
-    forma_farmaceutica = models.ForeignKey(xt_formas_farm, null=True, blank=True)
-    condicion_venta = models.ForeignKey(xt_condicion_venta, null=True, blank=True)
+    unidad_dosis_u = models.ForeignKey(xt_unidad_dosis_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'})
+    unidad_medida_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'})
+    forma_farmaceutica = models.ForeignKey(xt_formas_farm, null=True, blank=True, limit_choices_to = {'estado':'0'})
+    condicion_venta = models.ForeignKey(xt_condicion_venta, null=True, blank=True, limit_choices_to = {'estado':'0'})
     concept_vmp_dmd = models.ForeignKey(uk_dmd_conceptos, null=True, blank=True)
     rel_mc = models.ManyToManyField(xt_sustancias, through='rel_mc_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
@@ -512,7 +512,7 @@ class xt_producto (models.Model):
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
 
-    id_xt_lab = models.ForeignKey(xt_laboratorio, null=True , blank=True)
+    id_xt_lab = models.ForeignKey(xt_laboratorio, null=True , blank=True, limit_choices_to = {'estado':'0'})
     clave_prod_kairos = models.ForeignKey(kairos_productos)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
@@ -576,7 +576,7 @@ class xt_fp (models.Model):
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
 
-    id_producto_xt = models.ForeignKey(xt_producto, null=True)
+    id_producto_xt = models.ForeignKey(xt_producto, null=True, limit_choices_to = {'estado':'0'})
     concept_tf_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):

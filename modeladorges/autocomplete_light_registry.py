@@ -59,14 +59,17 @@ autocomplete_light.register(uk_dmd_conceptos, search_fields=('fullyspecifiedname
 autocomplete_light.register(xt_sustancias, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'XT Sustancias .. '})
 
+
 autocomplete_light.register(xt_mc, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'Medicamentos Clinicos .. '})
 
+
 autocomplete_light.register(rel_xt_mb_xt_sust, search_fields=('descripcion',),
-    autocomplete_js_attributes={'placeholder': 'Medicamentos Clinicos .. '})
+    autocomplete_js_attributes={'placeholder': 'Rel Medicamentos Clinicos .. '})
 
 autocomplete_light.register(rel_mc_sust, search_fields=('descripcion',),
-    autocomplete_js_attributes={'placeholder': 'Medicamentos Clinicos .. '})
+    autocomplete_js_attributes={'placeholder': 'Rel Medicamentos Clinicos .. '})
+
 
 autocomplete_light.register(xt_pc, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'Productos Comerciales .. '})

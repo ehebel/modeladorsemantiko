@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite" afterPath="$PROJECT_DIR$/db.sqlite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
     </list>
     <ignored path="modeladorsemantiko.iws" />
@@ -32,10 +30,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="38" selection-start="551" selection-end="551" vertical-scroll-proportion="-2.6538463">
+            <state line="37" column="5" selection-start="1417" selection-end="1417" vertical-scroll-proportion="0.86915886">
               <folding />
             </state>
           </provider>
@@ -61,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="568" selection-end="568" vertical-scroll-proportion="0.16987179">
+            <state line="15" column="0" selection-start="568" selection-end="568" vertical-scroll-proportion="-4.076923">
               <folding>
                 <element signature="e#620#1434#0" expanded="false" />
                 <element signature="e#1490#2529#0" expanded="false" />
@@ -156,8 +154,8 @@
         <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
         <option value="$PROJECT_DIR$/templates/admin/myapp/change_form.html" />
         <option value="$PROJECT_DIR$/templates/admin/modeladorFarmacos/change_form.html" />
-        <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+        <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
       </list>
     </option>
   </component>
@@ -924,7 +922,11 @@
       <created>1378131708044</created>
       <updated>1378131708044</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Se agrega app modeladorFarmacos v1.00.6 con mejoras a los admin incluyendo requerimientos&#10;">
+      <created>1378136591644</created>
+      <updated>1378136591644</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -949,7 +951,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31166914" sideWeight="0.9076175" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28200972" sideWeight="0.6661743" order="3" side_tool="false" content_ui="tabs" />
@@ -963,7 +965,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22156574" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19773096" sideWeight="0.21855345" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23419774" sideWeight="0.56868535" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44756278" sideWeight="0.99348533" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44756278" sideWeight="0.99348533" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1133,16 +1135,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="38" selection-start="551" selection-end="551" vertical-scroll-proportion="-2.6538463">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="568" selection-end="568" vertical-scroll-proportion="0.16987179">
+        <state line="15" column="0" selection-start="568" selection-end="568" vertical-scroll-proportion="-4.076923">
           <folding>
             <element signature="e#620#1434#0" expanded="false" />
             <element signature="e#1490#2529#0" expanded="false" />
@@ -1203,6 +1198,13 @@
             <element signature="e#27297#27670#0" expanded="false" />
             <element signature="e#27739#28174#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="5" selection-start="1417" selection-end="1417" vertical-scroll-proportion="0.86915886">
+          <folding />
         </state>
       </provider>
     </entry>

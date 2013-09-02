@@ -6,9 +6,12 @@ admin.autodiscover()
 from modeladorFarmacos.models import *
 import csv
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.core.exceptions import PermissionDenied
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.admin import FieldListFilter
+
+from django.utils.encoding import force_unicode
 
 class IsNullFieldListFilter(FieldListFilter):
     def __init__(self, field, request, params, model, model_admin, field_path):
@@ -86,6 +89,21 @@ class bioeqAdminInline(admin.TabularInline):
 class xt_sustanciasAdmin (admin.ModelAdmin):
     list_display = ['id_xt_sust','riesgo_teratogenico','kairos_sustancia','concept_sust_dmd','observacion']
     list_filter = ['revisado','consultar','estado']
+
+    def response_change(self, request, obj):
+        """
+        Determines the HttpResponse for the change_view stage.
+        """
+        if request.POST.has_key("_viewnext"):
+            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+                   {'name': force_unicode(obj._meta.verbose_name),
+                    'obj': force_unicode(obj)})
+            next = obj.__class__.objects.filter(id_xt_sust__gt=obj.id_xt_sust).order_by('id_xt_sust')[:1]
+            if next:
+                self.message_user(request, msg)
+                return HttpResponseRedirect("../%s/" % next[0].pk)
+        return super(xt_sustanciasAdmin, self).response_change(request, obj)
+
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -135,7 +153,19 @@ class mcAdmin (admin.ModelAdmin):
                 ,"tipo_forma_farm": admin.HORIZONTAL
     }
 
-
+    def response_change(self, request, obj):
+        """
+        Determines the HttpResponse for the change_view stage.
+        """
+        if request.POST.has_key("_viewnext"):
+            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+                   {'name': force_unicode(obj._meta.verbose_name),
+                    'obj': force_unicode(obj)})
+            next = obj.__class__.objects.filter(id_xt_mc__gt=obj.id_xt_mc).order_by('id_xt_mc')[:1]
+            if next:
+                self.message_user(request, msg)
+                return HttpResponseRedirect("../%s/" % next[0].pk)
+        return super(mcAdmin, self).response_change(request, obj)
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -183,6 +213,19 @@ class mbAdmin(admin.ModelAdmin):
         ,"revisado": admin.HORIZONTAL
     }
 
+    def response_change(self, request, obj):
+        """
+        Determines the HttpResponse for the change_view stage.
+        """
+        if request.POST.has_key("_viewnext"):
+            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+                   {'name': force_unicode(obj._meta.verbose_name),
+                    'obj': force_unicode(obj)})
+            next = obj.__class__.objects.filter(xt_id_mb__gt=obj.xt_id_mb).order_by('xt_id_mb')[:1]
+            if next:
+                self.message_user(request, msg)
+                return HttpResponseRedirect("../%s/" % next[0].pk)
+        return super(mbAdmin, self).response_change(request, obj)
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -222,6 +265,21 @@ class mcceAdmin(admin.ModelAdmin):
         ,"consultar": admin.HORIZONTAL
         ,"revisado": admin.HORIZONTAL
     }
+
+    def response_change(self, request, obj):
+        """
+        Determines the HttpResponse for the change_view stage.
+        """
+        if request.POST.has_key("_viewnext"):
+            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+                   {'name': force_unicode(obj._meta.verbose_name),
+                    'obj': force_unicode(obj)})
+            next = obj.__class__.objects.filter(id_xt_mcce__gt=obj.id_xt_mcce).order_by('id_xt_mcce')[:1]
+            if next:
+                self.message_user(request, msg)
+                return HttpResponseRedirect("../%s/" % next[0].pk)
+        return super(mcceAdmin, self).response_change(request, obj)
+
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -264,6 +322,20 @@ class pcAdmin(admin.ModelAdmin):
         ,"consultar": admin.HORIZONTAL
         ,"revisado": admin.HORIZONTAL
     }
+    def response_change(self, request, obj):
+        """
+        Determines the HttpResponse for the change_view stage.
+        """
+        if request.POST.has_key("_viewnext"):
+            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+                   {'name': force_unicode(obj._meta.verbose_name),
+                    'obj': force_unicode(obj)})
+            next = obj.__class__.objects.filter(id_xt_pc__gt=obj.id_xt_pc).order_by('id_xt_pc')[:1]
+            if next:
+                self.message_user(request, msg)
+                return HttpResponseRedirect("../%s/" % next[0].pk)
+        return super(pcAdmin, self).response_change(request, obj)
+
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -304,6 +376,20 @@ class pcceAdmin(admin.ModelAdmin):
         ,"consultar": admin.HORIZONTAL
         ,"revisado": admin.HORIZONTAL
     }
+
+    def response_change(self, request, obj):
+        """
+        Determines the HttpResponse for the change_view stage.
+        """
+        if request.POST.has_key("_viewnext"):
+            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+                   {'name': force_unicode(obj._meta.verbose_name),
+                    'obj': force_unicode(obj)})
+            next = obj.__class__.objects.filter(id_xt_pcce__gt=obj.id_xt_pcce).order_by('id_xt_pcce')[:1]
+            if next:
+                self.message_user(request, msg)
+                return HttpResponseRedirect("../%s/" % next[0].pk)
+        return super(pcceAdmin, self).response_change(request, obj)
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -335,6 +421,20 @@ admin.site.register(xt_pcce,pcceAdmin)
 class xtlabAdmin(admin.ModelAdmin):
     list_display = ['id_xt_lab','descripcion','clave_lab_kairos']
     list_filter = ['revisado','consultar','estado',('clave_lab_kairos', IsNullFieldListFilter)]
+
+    def response_change(self, request, obj):
+        """
+        Determines the HttpResponse for the change_view stage.
+        """
+        if request.POST.has_key("_viewnext"):
+            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+                   {'name': force_unicode(obj._meta.verbose_name),
+                    'obj': force_unicode(obj)})
+            next = obj.__class__.objects.filter(id_xt_lab__gt=obj.id_xt_lab).order_by('id_xt_lab')[:1]
+            if next:
+                self.message_user(request, msg)
+                return HttpResponseRedirect("../%s/" % next[0].pk)
+        return super(xtlabAdmin, self).response_change(request, obj)
 
     def save_model(self, request, obj, form, change):
 

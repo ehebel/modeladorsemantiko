@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Django default" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="02f42f3b-197a-47b5-8459-952625f35da9">
+  <data-source source="LOCAL" name="Django default" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="0adbad8b-281c-4590-8619-c75cccfc1a86">
     <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
     <jdbc-url>jdbc:mysql://127.0.0.1/semantik_modelador</jdbc-url>
     <user-name>semantik_ehebel</user-name>

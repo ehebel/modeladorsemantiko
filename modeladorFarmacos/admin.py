@@ -141,7 +141,7 @@ class mbAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mb)
     inlines = [SustanciaBasicoInline,]
     search_fields = ['descripcion']
-    list_display = ['xt_id_mb','descripcion','concept_vtm_dmd','','observacion'] #TODO sustancias m2m
+    list_display = ['xt_id_mb','descripcion','concept_vtm_dmd','observacion'] #TODO sustancias m2m
     list_filter = ['revisado','consultar','estado'] #TODO #Sin sustancia modelada
     list_display_links = ['xt_id_mb','descripcion']
     actions = [export_as_csv]

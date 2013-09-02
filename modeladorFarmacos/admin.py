@@ -59,6 +59,8 @@ class bioeqAdminInline(admin.TabularInline):
 
 
 class xt_sustanciasAdmin (admin.ModelAdmin):
+    list_display = ['id_xt_sust','riesgo_teratogenico','kairos_sustancia','concept_sust_dmd','observacion']
+    list_filter = ['revisado','consultar','estado']
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -91,8 +93,8 @@ class mcAdmin (admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mc)
     inlines = [SustanciaClinicoInline,]
     search_fields = ['descripcion']
-    list_display = ['id_xt_mc','descripcion','observacion','med_basico']
-    list_filter = ['revisado','consultar','estado']
+    list_display = ['id_xt_mc','descripcion','observacion','med_basico','estado_prescripcion','tipo_forma_farm','condicion_venta','concept_vmp_dmd']
+    list_filter = ['revisado','consultar','estado'] #TODO con/sin observacion
     list_display_links = ['id_xt_mc','descripcion']
     actions = [export_as_csv]
     readonly_fields=('id_xt_mc',)
@@ -139,8 +141,8 @@ class mbAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mb)
     inlines = [SustanciaBasicoInline,]
     search_fields = ['descripcion']
-    list_display = ['xt_id_mb','descripcion','observacion']
-    list_filter = ['revisado','consultar','estado']
+    list_display = ['xt_id_mb','descripcion','concept_vtm_dmd','','observacion'] #TODO sustancias m2m
+    list_filter = ['revisado','consultar','estado'] #TODO #Sin sustancia modelada
     list_display_links = ['xt_id_mb','descripcion']
     actions = [export_as_csv]
     readonly_fields=('xt_id_mb',)
@@ -181,6 +183,8 @@ admin.site.register(xt_mb,  mbAdmin)
 
 class mcceAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mcce)
+    list_display = ['xt_id_mcce','descripcion','concept_vmpp_dmd'] #TODO sustancias m2m
+    list_filter = ['revisado','consultar','estado'] #TODO con/Sin observacion
     readonly_fields=('id_xt_mcce',)
     radio_fields = {
         "estado": admin.HORIZONTAL
@@ -217,6 +221,8 @@ admin.site.register(xt_mcce,mcceAdmin)
 
 class pcAdmin(admin.ModelAdmin):
     inlines = [bioeqAdminInline,]
+    list_display = ['id_xt_pc','descripcion','id_xt_fp','id_xt_mc','concept_amp_dmd'] #TODO BOOL Bioequivalente
+    list_filter = ['estado','revisado','consultar'] #TODO BOOL Observacion
     form = autocomplete_light.modelform_factory(xt_pc)
     readonly_fields=('id_xt_pc',)
     radio_fields = {
@@ -254,6 +260,8 @@ admin.site.register(xt_pc,  pcAdmin)
 
 class pcceAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_pcce)
+    list_filter = ['estado','revisado','consultar'] #TODO BOOL Observacion
+    list_display = ['id_xt_pcce','descripcion','id_xt_pc','id_xt_mcce','concept_ampp_dmd','id_presentacion_kairos'] #TODO BOOL Bioequivalente
     readonly_fields=('id_xt_pcce',)
     radio_fields = {
         "estado": admin.HORIZONTAL
@@ -325,27 +333,6 @@ class uduAdmin(admin.ModelAdmin):
         if not hasattr(obj, 'usuario_creador'):
             obj.usuario_creador = request.user
         obj.save()
-
-#        instance = form.save(commit=False)
-#        if not hasattr(instance,'usuario_ult_mod'):
-#            instance.usuario_ult_mod = request.user
-#        instance.usuario_ult_mod = request.user
-#        instance.save()
-#        form.save_m2m()
-#        return instance
-#    def save_formset(self, request, form, formset, change):
-#        def set_user(instance):
-#            if not instance.usuario_ult_mod:
-#                instance.usuario_ult_mod = request.user
-#            instance.usuario_ult_mod = request.user
-#            instance.save()
-#        if formset.model == xt_mc:
-#            instances = formset.save(commit=False)
-#            map(set_user, instances)
-#            formset.save_m2m()
-#            return instances
-#        else:
-#            return formset.save()
 admin.site.register(xt_unidad_dosis_unitaria,uduAdmin)
 
 class umuAdmin(admin.ModelAdmin):
@@ -354,27 +341,6 @@ class umuAdmin(admin.ModelAdmin):
         if not hasattr(obj, 'usuario_creador'):
             obj.usuario_creador = request.user
         obj.save()
-
-#        instance = form.save(commit=False)
-#        if not hasattr(instance,'usuario_ult_mod'):
-#            instance.usuario_ult_mod = request.user
-#        instance.usuario_ult_mod = request.user
-#        instance.save()
-#        form.save_m2m()
-#        return instance
-#    def save_formset(self, request, form, formset, change):
-#        def set_user(instance):
-#            if not instance.usuario_ult_mod:
-#                instance.usuario_ult_mod = request.user
-#            instance.usuario_ult_mod = request.user
-#            instance.save()
-#        if formset.model == xt_mc:
-#            instances = formset.save(commit=False)
-#            map(set_user, instances)
-#            formset.save_m2m()
-#            return instances
-#        else:
-#            return formset.save()
 admin.site.register(xt_unidad_medida_unitaria,uduAdmin)
 
 class ffAdmin(admin.ModelAdmin):
@@ -383,27 +349,6 @@ class ffAdmin(admin.ModelAdmin):
         if not hasattr(obj, 'usuario_creador'):
             obj.usuario_creador = request.user
         obj.save()
-#
-#        instance = form.save(commit=False)
-#        if not hasattr(instance,'usuario_ult_mod'):
-#            instance.usuario_ult_mod = request.user
-#        instance.usuario_ult_mod = request.user
-#        instance.save()
-#        form.save_m2m()
-#        return instance
-#    def save_formset(self, request, form, formset, change):
-#        def set_user(instance):
-#            if not instance.usuario_ult_mod:
-#                instance.usuario_ult_mod = request.user
-#            instance.usuario_ult_mod = request.user
-#            instance.save()
-#        if formset.model == xt_mc:
-#            instances = formset.save(commit=False)
-#            map(set_user, instances)
-#            formset.save_m2m()
-#            return instances
-#        else:
-#            return formset.save()
 admin.site.register(xt_formas_farm,ffAdmin)
 
 class condVentaAdmin(admin.ModelAdmin):
@@ -412,28 +357,6 @@ class condVentaAdmin(admin.ModelAdmin):
         if not hasattr(obj, 'usuario_creador'):
             obj.usuario_creador = request.user
         obj.save()
-
-#        instance = form.save(commit=False)
-#        if not hasattr(instance,'usuario_ult_mod'):
-#            instance.usuario_ult_mod = request.user
-#        instance.usuario_ult_mod = request.user
-#        instance.save()
-#        form.save_m2m()
-#        return instance
-#    def save_formset(self, request, form, formset, change):
-#        def set_user(instance):
-#            if not instance.usuario_ult_mod:
-#                instance.usuario_ult_mod = request.user
-#            instance.usuario_ult_mod = request.user
-#            instance.save()
-#        if formset.model == xt_mc:
-#            instances = formset.save(commit=False)
-#            map(set_user, instances)
-#            formset.save_m2m()
-#            return instances
-#        else:
-#            return formset.save()
-
 admin.site.register(xt_condicion_venta,condVentaAdmin)
 
 

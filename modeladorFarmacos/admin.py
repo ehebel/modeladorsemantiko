@@ -7,6 +7,32 @@ from modeladorFarmacos.models import *
 import csv
 from django.http import HttpResponse
 from django.core.exceptions import PermissionDenied
+from django.contrib.admin import BooleanFieldListFilter
+from django.utils.translation import ugettext_lazy as _
+from django.contrib.admin import FieldListFilter
+
+class IsNullFieldListFilter(FieldListFilter):
+    def __init__(self, field, request, params, model, model_admin, field_path):
+        self.lookup_kwarg = '%s__isnull' % field_path
+        self.lookup_val = request.GET.get(self.lookup_kwarg, None)
+        super(IsNullFieldListFilter, self).__init__(field,
+            request, params, model, model_admin, field_path)
+
+    def expected_parameters(self):
+        return [self.lookup_kwarg]
+
+    def choices(self, cl):
+        for lookup, title in (
+            (None, _('All')),
+            ('False', _('Con Elementos')),
+            ('True', _('Sin Elementos'))):
+            yield {
+                'selected': self.lookup_val == lookup,
+                'query_string': cl.get_query_string({
+                    self.lookup_kwarg: lookup,
+                    }),
+                'display': title,
+                }
 
 def export_as_csv(modeladmin, request, queryset):
     """
@@ -183,8 +209,9 @@ admin.site.register(xt_mb,  mbAdmin)
 
 class mcceAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mcce)
-    list_display = ['id_xt_mcce','descripcion','concept_vmpp_dmd'] #TODO sustancias m2m
-    list_filter = ['revisado','consultar','estado'] #TODO con/Sin observacion
+    list_display = ['id_xt_mcce','descripcion','id_xt_mc','concept_vmpp_dmd'] #TODO sustancias m2m
+    list_filter = ['revisado','consultar','estado',('concept_vmpp_dmd', IsNullFieldListFilter)] #TODO con/Sin observacion
+    #(('myfield', BooleanFieldListFilter), 'other_field', 'other_field2')
     readonly_fields=('id_xt_mcce',)
     radio_fields = {
         "estado": admin.HORIZONTAL
@@ -222,7 +249,7 @@ admin.site.register(xt_mcce,mcceAdmin)
 class pcAdmin(admin.ModelAdmin):
     inlines = [bioeqAdminInline,]
     list_display = ['id_xt_pc','descripcion','id_xt_fp','id_xt_mc','concept_amp_dmd'] #TODO BOOL Bioequivalente
-    list_filter = ['estado','revisado','consultar'] #TODO BOOL Observacion
+    list_filter = ['estado','revisado','consultar',('id_xt_mc', IsNullFieldListFilter)] #TODO BOOL Observacion
     form = autocomplete_light.modelform_factory(xt_pc)
     readonly_fields=('id_xt_pc',)
     radio_fields = {
@@ -453,11 +480,9 @@ admin.site.register(xt_producto,productoAdmin)
 
 
 admin.site.register(xt_unidad_medida_cant)
-
 admin.site.register(xt_bioequivalente)
 #admin.site.register(rel_mc_sust)
 #admin.site.register(rel_xt_mb_xt_sust)
-
 #admin.site.register(uk_dmd_conceptos)
 #admin.site.register(uk_dmd_relationships)
 

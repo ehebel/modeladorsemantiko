@@ -1,16 +1,856 @@
 <?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Django default" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="d9d3c2f9-aa7f-4d9c-9c5a-f9c050bdc0cf">
-    <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-    <jdbc-url>jdbc:mysql://127.0.0.1/semantik_modelador</jdbc-url>
-    <user-name>semantik_ehebel</user-name>
-    <user-password>dfc2dff4dfe5dfcddf9fdfffdfe5df8cdfd7dfc8dfe5dff8</user-password>
+  <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="7e37a4e3-b608-4136-8db3-2d05559b534c">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:/Users/ehebel/modeladorsemantiko/modeladorsemantiko/modeladorsemantiko/../db.sqlite</jdbc-url>
     <libraries>
       <library>
-        <url>file://$USER_HOME$/Library/Preferences/PyCharm20/jdbc-drivers/mysql-connector-license.txt</url>
+        <url>file://$USER_HOME$/Library/Preferences/PyCharm20/jdbc-drivers/xerial-sqlite-license.txt</url>
       </library>
       <library>
-        <url>file://$USER_HOME$/Library/Preferences/PyCharm20/jdbc-drivers/mysql-connector-java-5.1.18-bin.jar</url>
+        <url>file://$USER_HOME$/Library/Preferences/PyCharm20/jdbc-drivers/sqlite-jdbc-3.7.2.jar</url>
       </library>
     </libraries>
+    <table name="CONCEPTS" schema="" catalog="" type="TABLE">
+      <column name="CONCEPTID" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="FSN" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="CODIGO" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+    </table>
+    <table name="DESCRIPCION" schema="" catalog="" type="TABLE">
+      <column name="DESCRIPTIONID" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="TERM" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="CONCEPTID" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+    </table>
+    <table name="TERMINOS2" schema="" catalog="" type="TABLE">
+      <column name="CONCEPTID" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="FSN" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="DESCRIPTIONID" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="TERM" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="MAPSETNAME" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="CODIGO" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="DESCRIPCION_CIE_10" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="SUGERIDO" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="SUGERIDO2" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+    </table>
+    <table name="XT_MC_import" schema="" catalog="" type="TABLE">
+      <column name="ID_XT_MC" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="DESCRIPCION" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="MED_BASICO" sqlType="" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+    </table>
+    <table name="auth_group" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(80)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="auth_group_permissions" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="group_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="permission_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="auth_group_permissions_83d7f98b" unique="true" columns="permission_id" />
+      <index name="auth_group_permissions_5f412f9a" unique="true" columns="group_id" />
+    </table>
+    <table name="auth_permission" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="content_type_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="codename" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <exported-key columns="" />
+      <index name="auth_permission_37ef4eb4" unique="true" columns="content_type_id" />
+    </table>
+    <table name="auth_user" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="password" sqlType="VARCHAR(128)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="last_login" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="is_superuser" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="username" sqlType="VARCHAR(30)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="first_name" sqlType="VARCHAR(30)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="last_name" sqlType="VARCHAR(30)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="email" sqlType="VARCHAR(75)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="is_staff" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="is_active" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="date_joined" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="auth_user_groups" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="user_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="group_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="auth_user_groups_5f412f9a" unique="true" columns="group_id" />
+      <index name="auth_user_groups_6340c63c" unique="true" columns="user_id" />
+    </table>
+    <table name="auth_user_user_permissions" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="user_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="permission_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="auth_user_user_permissions_83d7f98b" unique="true" columns="permission_id" />
+      <index name="auth_user_user_permissions_6340c63c" unique="true" columns="user_id" />
+    </table>
+    <table name="django_admin_log" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="action_time" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="user_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="content_type_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="object_id" sqlType="TEXT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="object_repr" sqlType="VARCHAR(200)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="action_flag" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="change_message" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="django_admin_log_37ef4eb4" unique="true" columns="content_type_id" />
+      <index name="django_admin_log_6340c63c" unique="true" columns="user_id" />
+    </table>
+    <table name="django_content_type" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="app_label" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="model" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="django_session" schema="" catalog="" type="TABLE">
+      <column name="session_key" sqlType="VARCHAR(40)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="session_data" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="expire_date" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="session_key" />
+      <index name="django_session_b7b81f0c" unique="true" columns="expire_date" />
+    </table>
+    <table name="django_site" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="domain" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="name" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="efectoresCAS_cas_area" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="efectoresCAS_cas_areas" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="efectoresCAS_cas_lugar" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="areas_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="areas_id" ref-table="efectoresCAS_cas_area" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+    </table>
+    <table name="efectoresCAS_cas_lugares" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="areas_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="areas_id" ref-table="efectoresCAS_cas_areas" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+    </table>
+    <table name="efectoresCAS_concepto" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fsn" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="revisado" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="efectoresCAS_conceptoscasporarea" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="concepto_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="area_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="area_id" ref-table="efectoresCAS_cas_areas" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="concepto_id" ref-table="efectoresCAS_concepto" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+    </table>
+    <table name="efectoresCAS_descripcion" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="termino" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="id_concepto_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="tipodescripcion" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="id_concepto_id" ref-table="efectoresCAS_concepto" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+    </table>
+    <table name="efectoresCAS_efector" schema="" catalog="" type="TABLE">
+      <column name="ExamCode" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ExamName" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="ExamCode" />
+    </table>
+    <table name="efectoresCAS_efector_codigoporarea" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="efector_id" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="conceptoscasporarea_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="conceptoscasporarea_id" ref-table="efectoresCAS_conceptoscasporarea" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+    </table>
+    <table name="fk_autocomplete_pelicula" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="nombre" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="fk_autocomplete_pelicula_actor" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="pelicula_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="persona_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="persona_id" ref-table="fk_autocomplete_persona" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="fk_autocomplete_pelicula_actor_0b03659e" unique="true" columns="persona_id" />
+      <index name="fk_autocomplete_pelicula_actor_2bc4fe40" unique="true" columns="pelicula_id" />
+    </table>
+    <table name="fk_autocomplete_persona" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="persona" sqlType="VARCHAR(40)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="generic_m2m_autocomplete_modelgroup" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="genericm2m_relatedobject" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="parent_type_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="parent_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="object_type_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="object_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="alias" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="creation_date" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="object_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="parent_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="genericm2m_relatedobject_846f0221" unique="true" columns="object_id" />
+      <index name="genericm2m_relatedobject_a59a5cc4" unique="true" columns="object_type_id" />
+      <index name="genericm2m_relatedobject_dda537fd" unique="true" columns="parent_id" />
+      <index name="genericm2m_relatedobject_c92362b7" unique="true" columns="parent_type_id" />
+    </table>
+    <table name="gfk_autocomplete_taggeditem" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="content_type_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="object_id" sqlType="INTEGER UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="tag" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="gfk_autocomplete_taggeditem_37ef4eb4" unique="true" columns="content_type_id" />
+    </table>
+    <table name="modeladorFarmacos_kairos_lab" schema="" catalog="" type="TABLE">
+      <column name="clave" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="abreviatura" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="direccioni" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="localidad" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ciudad" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="seccion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="provincia" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="codigopostal" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="telefonos" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fax" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="tipo" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="web" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechaalta" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechacambio" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="estado" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="clave" />
+    </table>
+    <table name="modeladorFarmacos_kairos_precio" schema="" catalog="" type="TABLE">
+      <column name="id_presentacion_kairos" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="claveproducto_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="clavepresentacion_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fechaingreso" sqlType="DATE" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechavigencia" sqlType="DATE" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="preciofabrica" sqlType="REAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="preciopublico" sqlType="REAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="preciofabrica12" sqlType="REAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="preciopublico12" sqlType="REAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="preciofabrica17" sqlType="REAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="preciopublico17" sqlType="REAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="preciofabrica18" sqlType="REAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="preciopublico18" sqlType="REAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="preciofabrica19" sqlType="REAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="preciopublico19" sqlType="REAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id_presentacion_kairos" />
+      <foreign-key name="1" columns="clavepresentacion_id" ref-table="modeladorFarmacos_kairos_presentaciones" ref-schema="" ref-catalog="" ref-columns="id_presentacion_kairos" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="claveproducto_id" ref-table="modeladorFarmacos_kairos_productos" ref-schema="" ref-catalog="" ref-columns="clave" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_kairos_precio_a009790e" unique="true" columns="clavepresentacion_id" />
+      <index name="modeladorFarmacos_kairos_precio_ca69e3dc" unique="true" columns="claveproducto_id" />
+    </table>
+    <table name="modeladorFarmacos_kairos_presentaciones" schema="" catalog="" type="TABLE">
+      <column name="id_presentacion_kairos" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="claveproducto_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="clavepresentacion" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="concentracion" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="unidadconcentracion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="especificacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="viaadministracion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="medio" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="cantidadenvase" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="dosis" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="cantidadunidad" sqlType="REAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="unidadcantidad" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="factorfraccion" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="impuesto" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="porcentajeimpuesto" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="listadodescuento" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="uso" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="pami" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="troquel" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ioma" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="tipo" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="sifar" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="codigobarras" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="canasta" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="registro" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechaalta" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechacambio" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="estado" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id_presentacion_kairos" />
+      <foreign-key name="1" columns="claveproducto_id" ref-table="modeladorFarmacos_kairos_productos" ref-schema="" ref-catalog="" ref-columns="clave" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_kairos_presentaciones_ca69e3dc" unique="true" columns="claveproducto_id" />
+    </table>
+    <table name="modeladorFarmacos_kairos_productos" schema="" catalog="" type="TABLE">
+      <column name="clave" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="laboratorioproductor" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="laboratoriocomercializador" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="origen" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="psicofarmaco" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="condicionventa" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="estupefaciente" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="almacenamiento" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="caducidad" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="certificado" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechaalta" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechacambio" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="estado" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="impuesto" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="odontologia" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="clave" />
+    </table>
+    <table name="modeladorFarmacos_kairos_sustancia" schema="" catalog="" type="TABLE">
+      <column name="clave" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="tipo" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechaalta" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechacambio" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="estado" sqlType="VARCHAR(1)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="clave" />
+    </table>
+    <table name="modeladorFarmacos_rel_mc_sust" schema="" catalog="" type="TABLE">
+      <column name="id_rel_mc_sust" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="id_xt_mc_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="id_xt_sust_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="orden" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="potencia" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="id_unidad_potencia_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="partido_por" sqlType="SMALLINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="id_unidad_partido_por_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id_rel_mc_sust" />
+      <foreign-key name="1" columns="id_unidad_partido_por_id" ref-table="modeladorFarmacos_xt_unidad_potencia" ref-schema="" ref-catalog="" ref-columns="id_unidad_potencia" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="id_unidad_potencia_id" ref-table="modeladorFarmacos_xt_unidad_potencia" ref-schema="" ref-catalog="" ref-columns="id_unidad_potencia" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="3" columns="id_xt_sust_id" ref-table="modeladorFarmacos_xt_sustancias" ref-schema="" ref-catalog="" ref-columns="id_xt_sust" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="4" columns="id_xt_mc_id" ref-table="modeladorFarmacos_xt_mc" ref-schema="" ref-catalog="" ref-columns="id_xt_mc" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_rel_mc_sust_36f4ec48" unique="true" columns="id_unidad_partido_por_id" />
+      <index name="modeladorFarmacos_rel_mc_sust_bed1e2ba" unique="true" columns="id_unidad_potencia_id" />
+      <index name="modeladorFarmacos_rel_mc_sust_a2ef0db8" unique="true" columns="id_xt_sust_id" />
+      <index name="modeladorFarmacos_rel_mc_sust_76d8e61a" unique="true" columns="id_xt_mc_id" />
+    </table>
+    <table name="modeladorFarmacos_rel_xt_mb_xt_sust" schema="" catalog="" type="TABLE">
+      <column name="id_rel_xt_mb_xt_sust" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="id_xt_sust_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="id_xt_mb_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="orden" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id_rel_xt_mb_xt_sust" />
+      <foreign-key name="1" columns="id_xt_mb_id" ref-table="modeladorFarmacos_xt_mb" ref-schema="" ref-catalog="" ref-columns="xt_id_mb" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="id_xt_sust_id" ref-table="modeladorFarmacos_xt_sustancias" ref-schema="" ref-catalog="" ref-columns="id_xt_sust" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_rel_xt_mb_xt_sust_90506521" unique="true" columns="id_xt_mb_id" />
+      <index name="modeladorFarmacos_rel_xt_mb_xt_sust_a2ef0db8" unique="true" columns="id_xt_sust_id" />
+    </table>
+    <table name="modeladorFarmacos_uk_dmd_conceptos" schema="" catalog="" type="TABLE">
+      <column name="conceptid" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="conceptstatus" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fullyspecifiedname" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ctv3id" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="snomedid" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="isprimitive" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="conceptid" />
+    </table>
+    <table name="modeladorFarmacos_uk_dmd_relationships" schema="" catalog="" type="TABLE">
+      <column name="relationshipid" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="conceptid1_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="relationshiptype" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="conceptid2_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="characteristictype" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="refinability" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="relationshipgroup" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="relationshipid" />
+      <foreign-key name="1" columns="conceptid2_id" ref-table="modeladorFarmacos_uk_dmd_conceptos" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="conceptid1_id" ref-table="modeladorFarmacos_uk_dmd_conceptos" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_uk_dmd_relationships_936b900d" unique="true" columns="conceptid2_id" />
+      <index name="modeladorFarmacos_uk_dmd_relationships_ffc7111c" unique="true" columns="conceptid1_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_bioequivalente" schema="" catalog="" type="TABLE">
+      <column name="id_xt_bioequivalente" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="referencia_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="bioequivalente_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id_xt_bioequivalente" />
+      <foreign-key name="1" columns="bioequivalente_id" ref-table="modeladorFarmacos_xt_pc" ref-schema="" ref-catalog="" ref-columns="id_xt_pc" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="referencia_id" ref-table="modeladorFarmacos_xt_pc" ref-schema="" ref-catalog="" ref-columns="id_xt_pc" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_bioequivalente_8caa7223" unique="true" columns="bioequivalente_id" />
+      <index name="modeladorFarmacos_xt_bioequivalente_cc9e33f2" unique="true" columns="referencia_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_condicion_venta" schema="" catalog="" type="TABLE">
+      <column name="id_xt_condventa" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_condventa" />
+      <foreign-key name="1" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_condicion_venta_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_formas_farm" schema="" catalog="" type="TABLE">
+      <column name="id_xt_formafarm" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_formafarm" />
+      <foreign-key name="1" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_formas_farm_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_fp" schema="" catalog="" type="TABLE">
+      <column name="id_xt_fp" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="xtconcepto" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fecha_ult_mod" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_ult_mod_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="revisado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="consultar" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="id_producto_xt_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="concept_tf_dmd_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_fp" />
+      <foreign-key name="1" columns="concept_tf_dmd_id" ref-table="modeladorFarmacos_uk_dmd_conceptos" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="id_producto_xt_id" ref-table="modeladorFarmacos_xt_producto" ref-schema="" ref-catalog="" ref-columns="id_xt_producto" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="3" columns="usuario_ult_mod_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="4" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_fp_358a9fdf" unique="true" columns="concept_tf_dmd_id" />
+      <index name="modeladorFarmacos_xt_fp_94fb3032" unique="true" columns="id_producto_xt_id" />
+      <index name="modeladorFarmacos_xt_fp_a343dea8" unique="true" columns="usuario_ult_mod_id" />
+      <index name="modeladorFarmacos_xt_fp_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_gfp" schema="" catalog="" type="TABLE">
+      <column name="id_xt_gfp" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fecha_ult_mod" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_ult_mod_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="revisado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="consultar" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="concept_tfg_dmd_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_gfp" />
+      <foreign-key name="1" columns="concept_tfg_dmd_id" ref-table="modeladorFarmacos_uk_dmd_conceptos" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="usuario_ult_mod_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="3" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_gfp_cdb4877b" unique="true" columns="concept_tfg_dmd_id" />
+      <index name="modeladorFarmacos_xt_gfp_a343dea8" unique="true" columns="usuario_ult_mod_id" />
+      <index name="modeladorFarmacos_xt_gfp_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_laboratorio" schema="" catalog="" type="TABLE">
+      <column name="id_xt_lab" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="desc_abrev" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fecha_ult_mod" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_ult_mod_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="revisado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="consultar" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="clave_lab_kairos_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <primary-key columns="id_xt_lab" />
+      <foreign-key name="1" columns="clave_lab_kairos_id" ref-table="modeladorFarmacos_kairos_lab" ref-schema="" ref-catalog="" ref-columns="clave" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="usuario_ult_mod_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="3" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_laboratorio_f89cd5e9" unique="true" columns="clave_lab_kairos_id" />
+      <index name="modeladorFarmacos_xt_laboratorio_a343dea8" unique="true" columns="usuario_ult_mod_id" />
+      <index name="modeladorFarmacos_xt_laboratorio_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_mb" schema="" catalog="" type="TABLE">
+      <column name="xt_id_mb" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fecha_ult_mod" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_ult_mod_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="revisado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="consultar" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="concept_vtm_dmd_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="xt_id_mb" />
+      <foreign-key name="1" columns="concept_vtm_dmd_id" ref-table="modeladorFarmacos_uk_dmd_conceptos" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="usuario_ult_mod_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="3" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_mb_f1c5d79b" unique="true" columns="concept_vtm_dmd_id" />
+      <index name="modeladorFarmacos_xt_mb_a343dea8" unique="true" columns="usuario_ult_mod_id" />
+      <index name="modeladorFarmacos_xt_mb_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_mc" schema="" catalog="" type="TABLE">
+      <column name="id_xt_mc" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="med_basico_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="estado_prescripcion" sqlType="SMALLINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fecha_ult_mod" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_ult_mod_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="revisado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="consultar" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="tipo_forma_farm" sqlType="SMALLINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="tamano_dosis_u" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="unidad_dosis_u_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="unidad_medida_u_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="forma_farmaceutica_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="condicion_venta_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="concept_vmp_dmd_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_mc" />
+      <foreign-key name="1" columns="concept_vmp_dmd_id" ref-table="modeladorFarmacos_uk_dmd_conceptos" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="condicion_venta_id" ref-table="modeladorFarmacos_xt_condicion_venta" ref-schema="" ref-catalog="" ref-columns="id_xt_condventa" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="3" columns="forma_farmaceutica_id" ref-table="modeladorFarmacos_xt_formas_farm" ref-schema="" ref-catalog="" ref-columns="id_xt_formafarm" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="4" columns="unidad_medida_u_id" ref-table="modeladorFarmacos_xt_unidad_medida_unitaria" ref-schema="" ref-catalog="" ref-columns="id_xt_unidad_medida_u" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="5" columns="unidad_dosis_u_id" ref-table="modeladorFarmacos_xt_unidad_dosis_unitaria" ref-schema="" ref-catalog="" ref-columns="id_xt_unidad_dosis_u" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="6" columns="usuario_ult_mod_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="7" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="8" columns="med_basico_id" ref-table="modeladorFarmacos_xt_mb" ref-schema="" ref-catalog="" ref-columns="xt_id_mb" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_mc_aff158d4" unique="true" columns="concept_vmp_dmd_id" />
+      <index name="modeladorFarmacos_xt_mc_eb7f8ae9" unique="true" columns="condicion_venta_id" />
+      <index name="modeladorFarmacos_xt_mc_134e4b7c" unique="true" columns="forma_farmaceutica_id" />
+      <index name="modeladorFarmacos_xt_mc_9b9fc9f6" unique="true" columns="unidad_medida_u_id" />
+      <index name="modeladorFarmacos_xt_mc_f30db686" unique="true" columns="unidad_dosis_u_id" />
+      <index name="modeladorFarmacos_xt_mc_a343dea8" unique="true" columns="usuario_ult_mod_id" />
+      <index name="modeladorFarmacos_xt_mc_c386f923" unique="true" columns="usuario_creador_id" />
+      <index name="modeladorFarmacos_xt_mc_00b4ed0b" unique="true" columns="med_basico_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_mcce" schema="" catalog="" type="TABLE">
+      <column name="id_xt_mcce" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fecha_ult_mod" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_ult_mod_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="revisado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="consultar" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="id_xt_mc_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="cantidad" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="unidad_medida_cant_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="concept_vmpp_dmd_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_mcce" />
+      <foreign-key name="1" columns="concept_vmpp_dmd_id" ref-table="modeladorFarmacos_uk_dmd_conceptos" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="unidad_medida_cant_id" ref-table="modeladorFarmacos_xt_unidad_medida_cant" ref-schema="" ref-catalog="" ref-columns="id_unidad_medida_cant" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="3" columns="id_xt_mc_id" ref-table="modeladorFarmacos_xt_mc" ref-schema="" ref-catalog="" ref-columns="id_xt_mc" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="4" columns="usuario_ult_mod_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="5" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_mcce_ac4398e7" unique="true" columns="concept_vmpp_dmd_id" />
+      <index name="modeladorFarmacos_xt_mcce_7f9b453d" unique="true" columns="unidad_medida_cant_id" />
+      <index name="modeladorFarmacos_xt_mcce_76d8e61a" unique="true" columns="id_xt_mc_id" />
+      <index name="modeladorFarmacos_xt_mcce_a343dea8" unique="true" columns="usuario_ult_mod_id" />
+      <index name="modeladorFarmacos_xt_mcce_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_pc" schema="" catalog="" type="TABLE">
+      <column name="id_xt_pc" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="descripcion_breviada" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fecha_ult_mod" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_ult_mod_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="revisado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="consultar" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="id_xt_fp_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="id_xt_mc_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="concept_amp_dmd_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_pc" />
+      <foreign-key name="1" columns="concept_amp_dmd_id" ref-table="modeladorFarmacos_uk_dmd_conceptos" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="id_xt_mc_id" ref-table="modeladorFarmacos_xt_mc" ref-schema="" ref-catalog="" ref-columns="id_xt_mc" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="3" columns="id_xt_fp_id" ref-table="modeladorFarmacos_xt_fp" ref-schema="" ref-catalog="" ref-columns="id_xt_fp" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="4" columns="usuario_ult_mod_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="5" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_pc_e9301d21" unique="true" columns="concept_amp_dmd_id" />
+      <index name="modeladorFarmacos_xt_pc_76d8e61a" unique="true" columns="id_xt_mc_id" />
+      <index name="modeladorFarmacos_xt_pc_c5ae159f" unique="true" columns="id_xt_fp_id" />
+      <index name="modeladorFarmacos_xt_pc_a343dea8" unique="true" columns="usuario_ult_mod_id" />
+      <index name="modeladorFarmacos_xt_pc_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_pcce" schema="" catalog="" type="TABLE">
+      <column name="id_xt_pcce" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="desc_abreviada" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fecha_ult_mod" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_ult_mod_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="revisado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="consultar" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="id_xt_pc_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="id_xt_mcce_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="gtin_gs1" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="concept_ampp_dmd_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="id_presentacion_kairos_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_pcce" />
+      <foreign-key name="1" columns="id_presentacion_kairos_id" ref-table="modeladorFarmacos_kairos_presentaciones" ref-schema="" ref-catalog="" ref-columns="id_presentacion_kairos" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="concept_ampp_dmd_id" ref-table="modeladorFarmacos_uk_dmd_conceptos" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="3" columns="id_xt_mcce_id" ref-table="modeladorFarmacos_xt_mcce" ref-schema="" ref-catalog="" ref-columns="id_xt_mcce" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="4" columns="id_xt_pc_id" ref-table="modeladorFarmacos_xt_pc" ref-schema="" ref-catalog="" ref-columns="id_xt_pc" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="5" columns="usuario_ult_mod_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="6" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_pcce_76b8df2f" unique="true" columns="id_presentacion_kairos_id" />
+      <index name="modeladorFarmacos_xt_pcce_6257bc28" unique="true" columns="concept_ampp_dmd_id" />
+      <index name="modeladorFarmacos_xt_pcce_14abe3a0" unique="true" columns="id_xt_mcce_id" />
+      <index name="modeladorFarmacos_xt_pcce_2afec690" unique="true" columns="id_xt_pc_id" />
+      <index name="modeladorFarmacos_xt_pcce_a343dea8" unique="true" columns="usuario_ult_mod_id" />
+      <index name="modeladorFarmacos_xt_pcce_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_producto" schema="" catalog="" type="TABLE">
+      <column name="id_xt_producto" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="estado" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fecha_ult_mod" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_ult_mod_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="revisado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="consultar" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="id_xt_lab_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="clave_prod_kairos_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_producto" />
+      <foreign-key name="1" columns="clave_prod_kairos_id" ref-table="modeladorFarmacos_kairos_productos" ref-schema="" ref-catalog="" ref-columns="clave" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="id_xt_lab_id" ref-table="modeladorFarmacos_xt_laboratorio" ref-schema="" ref-catalog="" ref-columns="id_xt_lab" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="3" columns="usuario_ult_mod_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="4" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_producto_f879ba08" unique="true" columns="clave_prod_kairos_id" />
+      <index name="modeladorFarmacos_xt_producto_5d183d5a" unique="true" columns="id_xt_lab_id" />
+      <index name="modeladorFarmacos_xt_producto_a343dea8" unique="true" columns="usuario_ult_mod_id" />
+      <index name="modeladorFarmacos_xt_producto_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_sustancias" schema="" catalog="" type="TABLE">
+      <column name="id_xt_sust" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="riesgo_teratogenico" sqlType="SMALLINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="fecha_ult_mod" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_ult_mod_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="revisado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="consultar" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="kairos_sustancia_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="concept_sust_dmd_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_sust" />
+      <foreign-key name="1" columns="concept_sust_dmd_id" ref-table="modeladorFarmacos_uk_dmd_conceptos" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="kairos_sustancia_id" ref-table="modeladorFarmacos_kairos_sustancia" ref-schema="" ref-catalog="" ref-columns="clave" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="3" columns="usuario_ult_mod_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="4" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_sustancias_b46b08d6" unique="true" columns="concept_sust_dmd_id" />
+      <index name="modeladorFarmacos_xt_sustancias_461e5e74" unique="true" columns="kairos_sustancia_id" />
+      <index name="modeladorFarmacos_xt_sustancias_a343dea8" unique="true" columns="usuario_ult_mod_id" />
+      <index name="modeladorFarmacos_xt_sustancias_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_unidad_dosis_unitaria" schema="" catalog="" type="TABLE">
+      <column name="id_xt_unidad_dosis_u" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_unidad_dosis_u" />
+      <foreign-key name="1" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_unidad_dosis_unitaria_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_unidad_medida_cant" schema="" catalog="" type="TABLE">
+      <column name="id_unidad_medida_cant" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_unidad_medida_cant" />
+    </table>
+    <table name="modeladorFarmacos_xt_unidad_medida_unitaria" schema="" catalog="" type="TABLE">
+      <column name="id_xt_unidad_medida_u" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha_creacion" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_creador_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_xt_unidad_medida_u" />
+      <foreign-key name="1" columns="usuario_creador_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorFarmacos_xt_unidad_medida_unitaria_c386f923" unique="true" columns="usuario_creador_id" />
+    </table>
+    <table name="modeladorFarmacos_xt_unidad_potencia" schema="" catalog="" type="TABLE">
+      <column name="id_unidad_potencia" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="estado" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="observacion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id_unidad_potencia" />
+    </table>
+    <table name="modeladorges_casdiagnostico" schema="" catalog="" type="TABLE">
+      <column name="codigo" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="estado" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha" sqlType="DATE" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_crea" sqlType="VARCHAR(40)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_modif" sqlType="VARCHAR(40)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="codigo" />
+    </table>
+    <table name="modeladorges_casprocedimiento" schema="" catalog="" type="TABLE">
+      <column name="idintervencionclinica" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="integlosa" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="codgrupo" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="grpdescripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="codsubgrupo" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="sgrdescripcion" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="inte_codigo_fonasa" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="estado" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fecha" sqlType="DATE" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_crea" sqlType="VARCHAR(40)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="usuario_modif" sqlType="VARCHAR(40)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="idintervencionclinica" />
+    </table>
+    <table name="modeladorges_ciediez" schema="" catalog="" type="TABLE">
+      <column name="codigo" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="descriptor" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="capitulo_num" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="capitulo_titulo" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="grupo" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="categoria" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="version" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="OMSciediez_id" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="codigo" />
+      <foreign-key name="1" columns="OMSciediez_id" ref-table="modeladorges_oms2008ciediez" ref-schema="" ref-catalog="" ref-columns="codigo" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorges_ciediez_a177bd70" unique="true" columns="OMSciediez_id" />
+    </table>
+    <table name="modeladorges_concepto" schema="" catalog="" type="TABLE">
+      <column name="conceptid" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fsn" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ciedeis_id" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="cieDiez_id" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="revisado" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="conceptid" />
+      <foreign-key name="1" columns="cieDiez_id" ref-table="modeladorges_oms2008ciediez" ref-schema="" ref-catalog="" ref-columns="codigo" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="ciedeis_id" ref-table="modeladorges_ciediez" ref-schema="" ref-catalog="" ref-columns="codigo" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorges_concepto_372ab9dd" unique="true" columns="cieDiez_id" />
+      <index name="modeladorges_concepto_75260f39" unique="true" columns="ciedeis_id" />
+    </table>
+    <table name="modeladorges_descripcione" schema="" catalog="" type="TABLE">
+      <column name="descriptionid" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ocisid" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="termino" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="id_concepto_id" sqlType="BIGINT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="tipodescripcion" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="descriptionid" />
+      <foreign-key name="1" columns="id_concepto_id" ref-table="modeladorges_concepto" ref-schema="" ref-catalog="" ref-columns="conceptid" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorges_descripcione_4a482dc6" unique="true" columns="id_concepto_id" />
+    </table>
+    <table name="modeladorges_ges_patologia" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="glosa" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="glosa_abrev" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="modeladorges_ges_patologia_casdiag" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="ges_patologia_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="casdiagnostico_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="casdiagnostico_id" ref-table="modeladorges_casdiagnostico" ref-schema="" ref-catalog="" ref-columns="codigo" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorges_ges_patologia_casdiag_f371bc27" unique="true" columns="casdiagnostico_id" />
+      <index name="modeladorges_ges_patologia_casdiag_16d18bd4" unique="true" columns="ges_patologia_id" />
+    </table>
+    <table name="modeladorges_ges_patologia_casproc" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="ges_patologia_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="casprocedimiento_id" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="casprocedimiento_id" ref-table="modeladorges_casprocedimiento" ref-schema="" ref-catalog="" ref-columns="idintervencionclinica" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorges_ges_patologia_casproc_f74846ae" unique="true" columns="casprocedimiento_id" />
+      <index name="modeladorges_ges_patologia_casproc_16d18bd4" unique="true" columns="ges_patologia_id" />
+    </table>
+    <table name="modeladorges_ges_patologia_ciediez" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="ges_patologia_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="ciediez_id" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="ciediez_id" ref-table="modeladorges_ciediez" ref-schema="" ref-catalog="" ref-columns="codigo" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="modeladorges_ges_patologia_ciediez_88416a7e" unique="true" columns="ciediez_id" />
+      <index name="modeladorges_ges_patologia_ciediez_16d18bd4" unique="true" columns="ges_patologia_id" />
+    </table>
+    <table name="modeladorges_oms2008ciediez" schema="" catalog="" type="TABLE">
+      <column name="codigo" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="descriptor" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="cod_sec" sqlType="VARCHAR(5)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="cod_adicional" sqlType="VARCHAR(5)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="sexo" sqlType="INTEGER UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="area" sqlType="VARCHAR(5)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="clasificacion" sqlType="VARCHAR(5)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="codigo" />
+    </table>
+    <table name="optionnal_gfk_autocomplete_optionnaltaggeditem" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="content_type_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="object_id" sqlType="INTEGER UNSIGNED" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="tag" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="optionnal_gfk_autocomplete_optionnaltaggeditem_37ef4eb4" unique="true" columns="content_type_id" />
+    </table>
+    <table name="south_migrationhistory" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="app_name" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="migration" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="applied" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="tests_artist" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="genre_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="genre_id" ref-table="tests_genre" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="tests_artist_33e6008b" unique="true" columns="genre_id" />
+    </table>
+    <table name="tests_foo" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="tests_genre" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="tests_noname" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="number" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
   </data-source>
 </component>

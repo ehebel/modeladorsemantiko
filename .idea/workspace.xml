@@ -31,7 +31,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="10" selection-start="217" selection-end="217" vertical-scroll-proportion="0.4066265">
+            <state line="6" column="12" selection-start="181" selection-end="181" vertical-scroll-proportion="0.27108434">
               <folding />
             </state>
           </provider>
@@ -928,7 +928,11 @@
       <created>1378136691383</created>
       <updated>1378136691383</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Se agrega app modeladorFarmacos v1.00.6 con mejoras a los admin incluyendo requerimientos&#10;">
+      <created>1378136765004</created>
+      <updated>1378136765004</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1205,7 +1209,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="10" selection-start="217" selection-end="217" vertical-scroll-proportion="0.4066265">
+        <state line="6" column="12" selection-start="181" selection-end="181" vertical-scroll-proportion="0.27108434">
           <folding />
         </state>
       </provider>

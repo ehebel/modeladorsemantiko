@@ -62,7 +62,7 @@
           <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="143" column="62" selection-start="5279" selection-end="5279" vertical-scroll-proportion="0.7136752">
+                <state line="185" column="31" selection-start="6757" selection-end="6757" vertical-scroll-proportion="0.74358976">
                   <folding>
                     <element signature="e#353#1392#0" expanded="false" />
                     <element signature="e#1528#1674#0" expanded="false" />
@@ -75,7 +75,6 @@
                     <element signature="e#4039#4412#0" expanded="false" />
                     <element signature="e#4481#4916#0" expanded="false" />
                     <element signature="e#4517#4685#0" expanded="false" />
-                    <element signature="e#6673#8007#0" expanded="false" />
                     <element signature="e#7130#7503#0" expanded="false" />
                     <element signature="e#8593#8966#0" expanded="false" />
                     <element signature="e#9035#9470#0" expanded="false" />
@@ -93,7 +92,7 @@
           <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="695" column="29" selection-start="27099" selection-end="27099" vertical-scroll-proportion="0.534202">
+                <state line="699" column="14" selection-start="27366" selection-end="27376" vertical-scroll-proportion="0.7046263">
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
                   </folding>
@@ -792,7 +791,11 @@
       <created>1378122197362</created>
       <updated>1378122197362</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Se agrega app modeladorFarmacos v1.00.6 con mejoras a los admin incluyendo requerimientos&#10;">
+      <created>1378122206508</created>
+      <updated>1378122206508</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1008,7 +1011,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="62" selection-start="5279" selection-end="5279" vertical-scroll-proportion="0.7136752">
+        <state line="185" column="31" selection-start="6757" selection-end="6757" vertical-scroll-proportion="0.74358976">
           <folding>
             <element signature="e#353#1392#0" expanded="false" />
             <element signature="e#1528#1674#0" expanded="false" />
@@ -1021,7 +1024,6 @@
             <element signature="e#4039#4412#0" expanded="false" />
             <element signature="e#4481#4916#0" expanded="false" />
             <element signature="e#4517#4685#0" expanded="false" />
-            <element signature="e#6673#8007#0" expanded="false" />
             <element signature="e#7130#7503#0" expanded="false" />
             <element signature="e#8593#8966#0" expanded="false" />
             <element signature="e#9035#9470#0" expanded="false" />

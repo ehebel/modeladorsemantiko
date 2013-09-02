@@ -183,7 +183,7 @@ admin.site.register(xt_mb,  mbAdmin)
 
 class mcceAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mcce)
-    list_display = ['xt_id_mcce','descripcion','concept_vmpp_dmd'] #TODO sustancias m2m
+    list_display = ['id_xt_mcce','descripcion','concept_vmpp_dmd'] #TODO sustancias m2m
     list_filter = ['revisado','consultar','estado'] #TODO con/Sin observacion
     readonly_fields=('id_xt_mcce',)
     radio_fields = {

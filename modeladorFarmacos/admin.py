@@ -10,8 +10,10 @@ from django.http import HttpResponseRedirect
 from django.core.exceptions import PermissionDenied
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.admin import FieldListFilter
-
+from django.contrib.auth.admin import UserAdmin
+from django import http
 from django.utils.encoding import force_unicode
+
 
 class IsNullFieldListFilter(FieldListFilter):
     def __init__(self, field, request, params, model, model_admin, field_path):
@@ -89,7 +91,28 @@ class bioeqAdminInline(admin.TabularInline):
 class xt_sustanciasAdmin (admin.ModelAdmin):
     list_display = ['id_xt_sust','riesgo_teratogenico','kairos_sustancia','concept_sust_dmd','observacion']
     list_filter = ['revisado','consultar','estado']
+    def add_view(self, request, *args, **kwargs):
+        result = super(xt_sustanciasAdmin, self).add_view(request, *args, **kwargs )
+        request.session['filtered'] =  None
+        return result
 
+    def change_view(self, request, object_id, form_url='', extra_context=None):
+
+        result = super(xt_sustanciasAdmin, self).change_view(request, object_id, form_url, extra_context )
+
+        ref = request.META.get('HTTP_REFERER', '')
+        if ref.find('?') != -1:
+            request.session['filtered'] =  ref
+
+        if request.POST.has_key('_save'):
+            try:
+                if request.session['filtered'] is not None:
+                    result['Location'] = request.session['filtered']
+                    request.session['filtered'] = None
+            except:
+                pass
+
+        return result
     def response_change(self, request, obj):
         """
         Determines the HttpResponse for the change_view stage.
@@ -152,7 +175,27 @@ class mcAdmin (admin.ModelAdmin):
                 ,"revisado": admin.HORIZONTAL
                 ,"tipo_forma_farm": admin.HORIZONTAL
     }
+    def add_view(self, request, *args, **kwargs):
+        result = super(mcAdmin, self).add_view(request, *args, **kwargs )
+        request.session['filtered'] =  None
+        return result
+    def change_view(self, request, object_id, form_url='', extra_context=None):
 
+        result = super(mcAdmin, self).change_view(request, object_id, form_url, extra_context )
+
+        ref = request.META.get('HTTP_REFERER', '')
+        if ref.find('?') != -1:
+            request.session['filtered'] =  ref
+
+        if request.POST.has_key('_save'):
+            try:
+                if request.session['filtered'] is not None:
+                    result['Location'] = request.session['filtered']
+                    request.session['filtered'] = None
+            except:
+                pass
+
+        return result
     def response_change(self, request, obj):
         """
         Determines the HttpResponse for the change_view stage.
@@ -212,7 +255,28 @@ class mbAdmin(admin.ModelAdmin):
         ,"consultar": admin.HORIZONTAL
         ,"revisado": admin.HORIZONTAL
     }
+    def add_view(self, request, *args, **kwargs):
+        result = super(mbAdmin, self).add_view(request, *args, **kwargs )
+        request.session['filtered'] =  None
+        return result
 
+    def change_view(self, request, object_id, form_url='', extra_context=None):
+
+        result = super(mbAdmin, self).change_view(request, object_id, form_url, extra_context )
+
+        ref = request.META.get('HTTP_REFERER', '')
+        if ref.find('?') != -1:
+            request.session['filtered'] =  ref
+
+        if request.POST.has_key('_save'):
+            try:
+                if request.session['filtered'] is not None:
+                    result['Location'] = request.session['filtered']
+                    request.session['filtered'] = None
+            except:
+                pass
+
+        return result
     def response_change(self, request, obj):
         """
         Determines the HttpResponse for the change_view stage.
@@ -265,7 +329,27 @@ class mcceAdmin(admin.ModelAdmin):
         ,"consultar": admin.HORIZONTAL
         ,"revisado": admin.HORIZONTAL
     }
+    def add_view(self, request, *args, **kwargs):
+        result = super(mcceAdmin, self).add_view(request, *args, **kwargs )
+        request.session['filtered'] =  None
+        return result
+    def change_view(self, request, object_id, form_url='', extra_context=None):
 
+        result = super(mcceAdmin, self).change_view(request, object_id, form_url, extra_context )
+
+        ref = request.META.get('HTTP_REFERER', '')
+        if ref.find('?') != -1:
+            request.session['filtered'] =  ref
+
+        if request.POST.has_key('_save'):
+            try:
+                if request.session['filtered'] is not None:
+                    result['Location'] = request.session['filtered']
+                    request.session['filtered'] = None
+            except:
+                pass
+
+        return result
     def response_change(self, request, obj):
         """
         Determines the HttpResponse for the change_view stage.
@@ -279,7 +363,6 @@ class mcceAdmin(admin.ModelAdmin):
                 self.message_user(request, msg)
                 return HttpResponseRedirect("../%s/" % next[0].pk)
         return super(mcceAdmin, self).response_change(request, obj)
-
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -306,6 +389,7 @@ class mcceAdmin(admin.ModelAdmin):
             return instances
         else:
             return formset.save()
+
 admin.site.register(xt_mcce,mcceAdmin)
 
 class pcAdmin(admin.ModelAdmin):
@@ -322,6 +406,29 @@ class pcAdmin(admin.ModelAdmin):
         ,"consultar": admin.HORIZONTAL
         ,"revisado": admin.HORIZONTAL
     }
+    def add_view(self, request, *args, **kwargs):
+        result = super(pcAdmin, self).add_view(request, *args, **kwargs )
+        request.session['filtered'] =  None
+        return result
+
+    def change_view(self, request, object_id, form_url='', extra_context=None):
+
+        result = super(pcAdmin, self).change_view(request, object_id, form_url, extra_context )
+
+        ref = request.META.get('HTTP_REFERER', '')
+        if ref.find('?') != -1:
+            request.session['filtered'] =  ref
+
+        if request.POST.has_key('_save'):
+            try:
+                if request.session['filtered'] is not None:
+                    result['Location'] = request.session['filtered']
+                    request.session['filtered'] = None
+            except:
+                pass
+
+        return result
+
     def response_change(self, request, obj):
         """
         Determines the HttpResponse for the change_view stage.
@@ -349,6 +456,7 @@ class pcAdmin(admin.ModelAdmin):
         instance.save()
         form.save_m2m()
         return instance
+
     def save_formset(self, request, form, formset, change):
         def set_user(instance):
             if not instance.usuario_ult_mod:
@@ -376,6 +484,28 @@ class pcceAdmin(admin.ModelAdmin):
         ,"consultar": admin.HORIZONTAL
         ,"revisado": admin.HORIZONTAL
     }
+    def add_view(self, request, *args, **kwargs):
+        result = super(pcceAdmin, self).add_view(request, *args, **kwargs )
+        request.session['filtered'] =  None
+        return result
+
+    def change_view(self, request, object_id, form_url='', extra_context=None):
+
+        result = super(pcceAdmin, self).change_view(request, object_id, form_url, extra_context )
+
+        ref = request.META.get('HTTP_REFERER', '')
+        if ref.find('?') != -1:
+            request.session['filtered'] =  ref
+
+        if request.POST.has_key('_save'):
+            try:
+                if request.session['filtered'] is not None:
+                    result['Location'] = request.session['filtered']
+                    request.session['filtered'] = None
+            except:
+                pass
+
+        return result
 
     def response_change(self, request, obj):
         """
@@ -390,6 +520,7 @@ class pcceAdmin(admin.ModelAdmin):
                 self.message_user(request, msg)
                 return HttpResponseRedirect("../%s/" % next[0].pk)
         return super(pcceAdmin, self).response_change(request, obj)
+
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -403,6 +534,7 @@ class pcceAdmin(admin.ModelAdmin):
         instance.save()
         form.save_m2m()
         return instance
+
     def save_formset(self, request, form, formset, change):
         def set_user(instance):
             if not instance.usuario_ult_mod:
@@ -421,7 +553,6 @@ admin.site.register(xt_pcce,pcceAdmin)
 class xtlabAdmin(admin.ModelAdmin):
     list_display = ['id_xt_lab','descripcion','clave_lab_kairos']
     list_filter = ['revisado','consultar','estado',('clave_lab_kairos', IsNullFieldListFilter)]
-
     def response_change(self, request, obj):
         """
         Determines the HttpResponse for the change_view stage.
@@ -462,6 +593,29 @@ class xtlabAdmin(admin.ModelAdmin):
             return instances
         else:
             return formset.save()
+
+    def add_view(self, request, *args, **kwargs):
+        result = super(xtlabAdmin, self).add_view(request, *args, **kwargs )
+        request.session['filtered'] =  None
+        return result
+
+    def change_view(self, request, object_id, form_url='', extra_context=None):
+
+        result = super(xtlabAdmin, self).change_view(request, object_id, form_url, extra_context )
+
+        ref = request.META.get('HTTP_REFERER', '')
+        if ref.find('?') != -1:
+            request.session['filtered'] =  ref
+
+        if request.POST.has_key('_save'):
+            try:
+                if request.session['filtered'] is not None:
+                    result['Location'] = request.session['filtered']
+                    request.session['filtered'] = None
+            except:
+                pass
+
+        return result
 admin.site.register(xt_laboratorio,xtlabAdmin)
 
 class uduAdmin(admin.ModelAdmin):
@@ -601,9 +755,6 @@ admin.site.register(kairos_lab)
 admin.site.register(kairos_productos)
 admin.site.register(kairos_presentaciones)
 admin.site.register(kairos_precio)
-
-
-
 
 
 __author__ = 'ehebel'

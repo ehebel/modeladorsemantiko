@@ -7,7 +7,6 @@ from modeladorFarmacos.models import *
 import csv
 from django.http import HttpResponse
 from django.core.exceptions import PermissionDenied
-from django.contrib.admin import BooleanFieldListFilter
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.admin import FieldListFilter
 
@@ -119,8 +118,12 @@ class mcAdmin (admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mc)
     inlines = [SustanciaClinicoInline,]
     search_fields = ['descripcion']
-    list_display = ['id_xt_mc','descripcion','observacion','med_basico','estado_prescripcion','tipo_forma_farm','condicion_venta','concept_vmp_dmd']
-    list_filter = ['revisado','consultar','estado'] #TODO con/sin observacion
+    list_display = ['id_xt_mc','descripcion','observacion','med_basico'
+        ,'estado_prescripcion','tipo_forma_farm','condicion_venta','concept_vmp_dmd']
+    list_filter = ['revisado','consultar','estado'
+        ,('med_basico', IsNullFieldListFilter)
+        ,('concept_vmp_dmd', IsNullFieldListFilter)
+        ] #TODO con/sin observacion
     list_display_links = ['id_xt_mc','descripcion']
     actions = [export_as_csv]
     readonly_fields=('id_xt_mc',)
@@ -168,7 +171,8 @@ class mbAdmin(admin.ModelAdmin):
     inlines = [SustanciaBasicoInline,]
     search_fields = ['descripcion']
     list_display = ['xt_id_mb','descripcion','concept_vtm_dmd','observacion'] #TODO sustancias m2m
-    list_filter = ['revisado','consultar','estado'] #TODO #Sin sustancia modelada
+    list_filter = ['revisado','consultar','estado'
+        ,('concept_vtm_dmd', IsNullFieldListFilter)] #TODO #Sin sustancia modelada (M2M)
     list_display_links = ['xt_id_mb','descripcion']
     actions = [export_as_csv]
     readonly_fields=('xt_id_mb',)

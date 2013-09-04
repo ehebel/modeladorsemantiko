@@ -356,7 +356,7 @@ class xt_mb (models.Model):
     rel_xt_sust = models.ManyToManyField(xt_sustancias, through='rel_xt_mb_xt_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def get_sustancia(objeto):
-        return "<br/>".join([s.descriptor for s in objeto.rel_xt_sust.order_by('id_xt_sust').all()[:6]])
+        return "<br/>".join([s.descripcion for s in objeto.rel_xt_sust.order_by('id_xt_sust').all()[:6]])
     get_sustancia.allow_tags = True
     get_sustancia.short_description = 'XT Sustancias'
 

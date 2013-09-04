@@ -69,6 +69,9 @@ def export_as_csv(modeladmin, request, queryset):
     return response
 export_as_csv.short_description = "Exportar elementos seleccionados como CSV"
 
+class ProductoComercialInline(admin.TabularInline):
+    model = xt_pc
+    form = autocomplete_light.modelform_factory(xt_pc)
 
 class SustanciaClinicoInline(admin.TabularInline):
     model = xt_mc.rel_mc.through
@@ -157,9 +160,9 @@ admin.site.register(xt_sustancias,xt_sustanciasAdmin)
 
 class mcAdmin (admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mc)
-    inlines = [SustanciaClinicoInline,]
+    inlines = [SustanciaClinicoInline] # ,ProductoComercialInline]
     search_fields = ['descripcion']
-    list_display = ['id_xt_mc','descripcion','observacion','med_basico'
+    list_display = ['id_xt_mc','descripcion','observacion','med_basico','get_sustancia','get_pc'
         ,'estado_prescripcion','tipo_forma_farm','condicion_venta','concept_vmp_dmd']
     list_filter = ['revisado','consultar','estado'
         ,('med_basico', IsNullFieldListFilter)
@@ -243,7 +246,7 @@ class mbAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mb)
     inlines = [SustanciaBasicoInline,]
     search_fields = ['descripcion']
-    list_display = ['xt_id_mb','descripcion','concept_vtm_dmd','observacion'] #TODO sustancias m2m
+    list_display = ['xt_id_mb','descripcion','get_sustancia','concept_vtm_dmd','observacion'] #TODO sustancias m2m
     list_filter = ['revisado','consultar','estado'
         ,('concept_vtm_dmd', IsNullFieldListFilter)] #TODO #Sin sustancia modelada (M2M)
     list_display_links = ['xt_id_mb','descripcion']

@@ -94,7 +94,7 @@ class descripcione(models.Model):
         (1,'Preferido'),
         (2,'Sinonimo Visible'),
         #        (3,'Sinonimo No Visible'),
-        #        (4,'Termino No Valido'),
+        (4,'Termino No Valido'),
         )
     termino = models.CharField(max_length=255)
     id_concepto = models.ForeignKey(concepto, null=True, blank=True)

@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite" afterPath="$PROJECT_DIR$/db.sqlite" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorges/models.py" afterPath="$PROJECT_DIR$/modeladorges/models.py" />
     </list>
     <ignored path="modeladorsemantiko.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,105 +32,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.22590362">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="autocomplete_light_registry.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="0" selection-start="2588" selection-end="2588" vertical-scroll-proportion="-15.346154">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="578" column="0" selection-start="22216" selection-end="22216" vertical-scroll-proportion="-8.0">
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="568" selection-end="568" vertical-scroll-proportion="-4.076923">
-              <folding>
-                <element signature="e#620#1434#0" expanded="false" />
-                <element signature="e#1490#2529#0" expanded="false" />
-                <element signature="e#2665#2811#0" expanded="false" />
-                <element signature="e#2867#3024#0" expanded="false" />
-                <element signature="e#3075#3182#0" expanded="false" />
-                <element signature="e#3234#5847#0" expanded="false" />
-                <element signature="e#4272#4905#0" expanded="false" />
-                <element signature="e#4970#5343#0" expanded="false" />
-                <element signature="e#5412#5847#0" expanded="false" />
-                <element signature="e#5941#9161#0" expanded="false" />
-                <element signature="e#6803#6934#0" expanded="false" />
-                <element signature="e#7024#7550#0" expanded="false" />
-                <element signature="e#7604#8220#0" expanded="false" />
-                <element signature="e#8284#8657#0" expanded="false" />
-                <element signature="e#8726#9161#0" expanded="false" />
-                <element signature="e#8762#8930#0" expanded="false" />
-                <element signature="e#9237#12374#0" expanded="false" />
-                <element signature="e#10015#10146#0" expanded="false" />
-                <element signature="e#10237#10763#0" expanded="false" />
-                <element signature="e#10817#11433#0" expanded="false" />
-                <element signature="e#11497#11870#0" expanded="false" />
-                <element signature="e#11939#12374#0" expanded="false" />
-                <element signature="e#12452#15330#0" expanded="false" />
-                <element signature="e#12960#13093#0" expanded="false" />
-                <element signature="e#13183#13711#0" expanded="false" />
-                <element signature="e#13765#14389#0" expanded="false" />
-                <element signature="e#14453#14826#0" expanded="false" />
-                <element signature="e#14895#15330#0" expanded="false" />
-                <element signature="e#15409#18376#0" expanded="false" />
-                <element signature="e#16014#16145#0" expanded="false" />
-                <element signature="e#16236#16762#0" expanded="false" />
-                <element signature="e#16817#17433#0" expanded="false" />
-                <element signature="e#17498#17871#0" expanded="false" />
-                <element signature="e#17941#18376#0" expanded="false" />
-                <element signature="e#18454#21379#0" expanded="false" />
-                <element signature="e#19005#19138#0" expanded="false" />
-                <element signature="e#19229#19757#0" expanded="false" />
-                <element signature="e#19812#20436#0" expanded="false" />
-                <element signature="e#20501#20874#0" expanded="false" />
-                <element signature="e#20944#21379#0" expanded="false" />
-                <element signature="e#21460#24049#0" expanded="false" />
-                <element signature="e#21671#22293#0" expanded="false" />
-                <element signature="e#22358#22731#0" expanded="false" />
-                <element signature="e#23295#23429#0" expanded="false" />
-                <element signature="e#23520#24049#0" expanded="false" />
-                <element signature="e#24136#24300#0" expanded="false" />
-                <element signature="e#24395#24559#0" expanded="false" />
-                <element signature="e#24654#24818#0" expanded="false" />
-                <element signature="e#24908#25072#0" expanded="false" />
-                <element signature="e#25210#26146#0" expanded="false" />
-                <element signature="e#25269#25642#0" expanded="false" />
-                <element signature="e#25711#26146#0" expanded="false" />
-                <element signature="e#26222#27158#0" expanded="false" />
-                <element signature="e#26281#26654#0" expanded="false" />
-                <element signature="e#26723#27158#0" expanded="false" />
-                <element signature="e#27238#28174#0" expanded="false" />
-                <element signature="e#27297#27670#0" expanded="false" />
-                <element signature="e#27739#28174#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -138,21 +45,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/efectoresCAS/models.py" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
         <option value="$PROJECT_DIR$/efectoresCAS/views.py" />
         <option value="$PROJECT_DIR$/efectoresCAS/admin.py" />
         <option value="$PROJECT_DIR$/templates/efectores.html" />
-        <option value="$PROJECT_DIR$/modeladorges/models.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/migrations/0008_auto__add_kairos_precio__chg_field_xt_fp_concept_tf_dmd__chg_field_xt_.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/migrations/0007_auto__chg_field_xt_mc_usuario_creador.py" />
         <option value="$USER_HOME$/Library/Caches/PyCharm20/python_stubs/1902336724/__builtin__.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
         <option value="$PROJECT_DIR$/templates/admin/myapp/change_form.html" />
         <option value="$PROJECT_DIR$/templates/admin/modeladorFarmacos/change_form.html" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
+        <option value="$PROJECT_DIR$/efectoresCAS/models.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+        <option value="$PROJECT_DIR$/modeladorges/models.py" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
       </list>
     </option>
@@ -216,47 +123,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modeladorsemantiko" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modeladorsemantiko" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modeladorsemantiko" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modeladorsemantiko" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modeladorFarmacos" />
+              <option name="myItemId" value="modeladorges" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -940,7 +807,11 @@
       <created>1378136939294</created>
       <updated>1378136939294</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Se agrega app modeladorFarmacos v1.00.6 con mejoras a los admin incluyendo requerimientos&#10;">
+      <created>1378136985374</created>
+      <updated>1378136985374</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -965,24 +836,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31166914" sideWeight="0.9076175" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28200972" sideWeight="0.6661743" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43131462" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.7784343" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2658789" sideWeight="0.5008104" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17341977" sideWeight="0.19202363" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.49675325" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22156574" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28200972" sideWeight="0.6661743" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19773096" sideWeight="0.21855345" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23419774" sideWeight="0.56868535" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44756278" sideWeight="0.99348533" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.7784343" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1936791" sideWeight="0.55243725" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17341977" sideWeight="0.19202363" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2658789" sideWeight="0.5008104" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44756278" sideWeight="0.9773096" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43131462" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.49675325" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1078,11 +949,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="31" selection-end="508" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="0" selection-start="1406" selection-end="1406" vertical-scroll-proportion="0.5989305" />
@@ -1098,18 +964,9 @@
         <state line="16" column="48" selection-start="487" selection-end="487" vertical-scroll-proportion="0.5421687" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorges/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="42" selection-start="3480" selection-end="3480" vertical-scroll-proportion="-12.769231">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorges/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="294" selection-end="294" vertical-scroll-proportion="-0.5732484">
-          <folding />
-        </state>
+        <state line="10" column="0" selection-start="294" selection-end="294" vertical-scroll-proportion="-0.5732484" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm20/python_stubs/1902336724/__builtin__.py">
@@ -1119,27 +976,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="2588" selection-end="2588" vertical-scroll-proportion="-15.346154">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="578" column="0" selection-start="22216" selection-end="22216" vertical-scroll-proportion="-8.0">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/modeladorFarmacos/change_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="5" selection-start="354" selection-end="354" vertical-scroll-proportion="0.48076922">
-          <folding />
-        </state>
+        <state line="10" column="5" selection-start="354" selection-end="354" vertical-scroll-proportion="0.48076922" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/autocomplete_light_env/lib/python2.7/site-packages/django/contrib/admin/options.py">
@@ -1149,75 +988,128 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="32" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.57641196">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="616" column="39" selection-start="23721" selection-end="23721" vertical-scroll-proportion="0.3445513">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="0" selection-start="2588" selection-end="2588" vertical-scroll-proportion="0.5846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorges/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="42" selection-start="4225" selection-end="4225" vertical-scroll-proportion="0.63076925">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="568" selection-end="568" vertical-scroll-proportion="-4.076923">
+        <state line="171" column="29" selection-start="6670" selection-end="6670" vertical-scroll-proportion="0.6923077">
           <folding>
             <element signature="e#620#1434#0" expanded="false" />
+            <element signature="e#704#936#0" expanded="false" />
+            <element signature="e#981#1007#0" expanded="false" />
+            <element signature="e#1044#1434#0" expanded="false" />
             <element signature="e#1490#2529#0" expanded="false" />
-            <element signature="e#2665#2811#0" expanded="false" />
-            <element signature="e#2867#3024#0" expanded="false" />
-            <element signature="e#3075#3182#0" expanded="false" />
-            <element signature="e#3234#5847#0" expanded="false" />
-            <element signature="e#4272#4905#0" expanded="false" />
-            <element signature="e#4970#5343#0" expanded="false" />
-            <element signature="e#5412#5847#0" expanded="false" />
-            <element signature="e#5941#9161#0" expanded="false" />
-            <element signature="e#6803#6934#0" expanded="false" />
-            <element signature="e#7024#7550#0" expanded="false" />
-            <element signature="e#7604#8220#0" expanded="false" />
-            <element signature="e#8284#8657#0" expanded="false" />
-            <element signature="e#8726#9161#0" expanded="false" />
-            <element signature="e#8762#8930#0" expanded="false" />
-            <element signature="e#9237#12374#0" expanded="false" />
-            <element signature="e#10015#10146#0" expanded="false" />
-            <element signature="e#10237#10763#0" expanded="false" />
-            <element signature="e#10817#11433#0" expanded="false" />
-            <element signature="e#11497#11870#0" expanded="false" />
-            <element signature="e#11939#12374#0" expanded="false" />
-            <element signature="e#12452#15330#0" expanded="false" />
-            <element signature="e#12960#13093#0" expanded="false" />
-            <element signature="e#13183#13711#0" expanded="false" />
-            <element signature="e#13765#14389#0" expanded="false" />
-            <element signature="e#14453#14826#0" expanded="false" />
-            <element signature="e#14895#15330#0" expanded="false" />
-            <element signature="e#15409#18376#0" expanded="false" />
-            <element signature="e#16014#16145#0" expanded="false" />
-            <element signature="e#16236#16762#0" expanded="false" />
-            <element signature="e#16817#17433#0" expanded="false" />
-            <element signature="e#17498#17871#0" expanded="false" />
-            <element signature="e#17941#18376#0" expanded="false" />
-            <element signature="e#18454#21379#0" expanded="false" />
-            <element signature="e#19005#19138#0" expanded="false" />
-            <element signature="e#19229#19757#0" expanded="false" />
-            <element signature="e#19812#20436#0" expanded="false" />
-            <element signature="e#20501#20874#0" expanded="false" />
-            <element signature="e#20944#21379#0" expanded="false" />
-            <element signature="e#21460#24049#0" expanded="false" />
-            <element signature="e#21671#22293#0" expanded="false" />
-            <element signature="e#22358#22731#0" expanded="false" />
-            <element signature="e#23295#23429#0" expanded="false" />
-            <element signature="e#23520#24049#0" expanded="false" />
-            <element signature="e#24136#24300#0" expanded="false" />
-            <element signature="e#24395#24559#0" expanded="false" />
-            <element signature="e#24654#24818#0" expanded="false" />
-            <element signature="e#24908#25072#0" expanded="false" />
-            <element signature="e#25210#26146#0" expanded="false" />
-            <element signature="e#25269#25642#0" expanded="false" />
-            <element signature="e#25711#26146#0" expanded="false" />
-            <element signature="e#26222#27158#0" expanded="false" />
-            <element signature="e#26281#26654#0" expanded="false" />
-            <element signature="e#26723#27158#0" expanded="false" />
-            <element signature="e#27238#28174#0" expanded="false" />
-            <element signature="e#27297#27670#0" expanded="false" />
-            <element signature="e#27739#28174#0" expanded="false" />
+            <element signature="e#1490#1538#1" expanded="false" />
+            <element signature="e#2992#3149#0" expanded="false" />
+            <element signature="e#3200#3307#0" expanded="false" />
+            <element signature="e#3359#5972#0" expanded="false" />
+            <element signature="e#3573#3715#0" expanded="false" />
+            <element signature="e#3806#4343#0" expanded="false" />
+            <element signature="e#4397#5030#0" expanded="false" />
+            <element signature="e#4397#4475#1" expanded="false" />
+            <element signature="e#5095#5468#0" expanded="false" />
+            <element signature="e#5537#5972#0" expanded="false" />
+            <element signature="e#5573#5741#0" expanded="false" />
+            <element signature="e#6980#7111#0" expanded="false" />
+            <element signature="e#7201#7727#0" expanded="false" />
+            <element signature="e#7781#8397#0" expanded="false" />
+            <element signature="e#7781#7859#1" expanded="false" />
+            <element signature="e#8461#8834#0" expanded="false" />
+            <element signature="e#8903#9338#0" expanded="false" />
+            <element signature="e#8939#9107#0" expanded="false" />
+            <element signature="e#9414#12567#0" expanded="false" />
+            <element signature="e#10208#10339#0" expanded="false" />
+            <element signature="e#10430#10956#0" expanded="false" />
+            <element signature="e#11010#11626#0" expanded="false" />
+            <element signature="e#11010#11088#1" expanded="false" />
+            <element signature="e#11690#12063#0" expanded="false" />
+            <element signature="e#12132#12567#0" expanded="false" />
+            <element signature="e#12168#12336#0" expanded="false" />
+            <element signature="e#12645#15523#0" expanded="false" />
+            <element signature="e#13153#13286#0" expanded="false" />
+            <element signature="e#13376#13904#0" expanded="false" />
+            <element signature="e#13958#14582#0" expanded="false" />
+            <element signature="e#13958#14036#1" expanded="false" />
+            <element signature="e#14646#15019#0" expanded="false" />
+            <element signature="e#15088#15523#0" expanded="false" />
+            <element signature="e#15124#15292#0" expanded="false" />
+            <element signature="e#15602#18569#0" expanded="false" />
+            <element signature="e#16207#16338#0" expanded="false" />
+            <element signature="e#16429#16955#0" expanded="false" />
+            <element signature="e#17010#17626#0" expanded="false" />
+            <element signature="e#17010#17088#1" expanded="false" />
+            <element signature="e#17691#18064#0" expanded="false" />
+            <element signature="e#18134#18569#0" expanded="false" />
+            <element signature="e#18170#18338#0" expanded="false" />
+            <element signature="e#18647#21572#0" expanded="false" />
+            <element signature="e#19198#19331#0" expanded="false" />
+            <element signature="e#19422#19950#0" expanded="false" />
+            <element signature="e#20005#20629#0" expanded="false" />
+            <element signature="e#20005#20083#1" expanded="false" />
+            <element signature="e#20694#21067#0" expanded="false" />
+            <element signature="e#21137#21572#0" expanded="false" />
+            <element signature="e#21173#21341#0" expanded="false" />
+            <element signature="e#21653#24242#0" expanded="false" />
+            <element signature="e#21864#22486#0" expanded="false" />
+            <element signature="e#21864#21942#1" expanded="false" />
+            <element signature="e#22551#22924#0" expanded="false" />
+            <element signature="e#22993#23428#0" expanded="false" />
+            <element signature="e#23029#23197#0" expanded="false" />
+            <element signature="e#23488#23622#0" expanded="false" />
+            <element signature="e#23713#24242#0" expanded="false" />
+            <element signature="e#24329#24493#0" expanded="false" />
+            <element signature="e#24388#24493#0" expanded="false" />
+            <element signature="e#24588#24752#0" expanded="false" />
+            <element signature="e#24647#24752#0" expanded="false" />
+            <element signature="e#24847#25011#0" expanded="false" />
+            <element signature="e#24906#25011#0" expanded="false" />
+            <element signature="e#25101#25265#0" expanded="false" />
+            <element signature="e#25160#25265#0" expanded="false" />
+            <element signature="e#25403#26339#0" expanded="false" />
+            <element signature="e#25462#25835#0" expanded="false" />
+            <element signature="e#25904#26339#0" expanded="false" />
+            <element signature="e#25940#26108#0" expanded="false" />
+            <element signature="e#26415#27351#0" expanded="false" />
+            <element signature="e#26474#26847#0" expanded="false" />
+            <element signature="e#26916#27351#0" expanded="false" />
+            <element signature="e#26952#27120#0" expanded="false" />
+            <element signature="e#27431#28367#0" expanded="false" />
+            <element signature="e#27490#27863#0" expanded="false" />
+            <element signature="e#27932#28367#0" expanded="false" />
+            <element signature="e#27968#28136#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.22590362">
+        <state line="22" column="0" selection-start="405" selection-end="767" vertical-scroll-proportion="0.50769234">
           <folding />
         </state>
       </provider>

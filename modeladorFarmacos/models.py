@@ -322,7 +322,6 @@ class xt_sustancias (models.Model):
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
 
-    kairos_sustancia = models.ForeignKey(kairos_sustancia)
     concept_sust_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
@@ -352,6 +351,7 @@ class xt_mb (models.Model):
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
 
+    kairos_sustancia = models.ForeignKey(kairos_sustancia)
     concept_vtm_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     rel_xt_sust = models.ManyToManyField(xt_sustancias, through='rel_xt_mb_xt_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)

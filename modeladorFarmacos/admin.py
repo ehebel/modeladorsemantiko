@@ -92,7 +92,7 @@ class bioeqAdminInline(admin.TabularInline):
 
 
 class xt_sustanciasAdmin (admin.ModelAdmin):
-    list_display = ['id_xt_sust','descripcion','riesgo_teratogenico','kairos_sustancia','concept_sust_dmd','observacion']
+    list_display = ['id_xt_sust','descripcion','riesgo_teratogenico','concept_sust_dmd']
     list_filter = ['revisado','consultar','estado']
     search_fields = ['descripcion',]
     ordering = ['descripcion',]
@@ -247,10 +247,11 @@ class mbAdmin(admin.ModelAdmin):
         models.CharField: {'widget': TextInput(attrs={'size':'100'})}}
     form = autocomplete_light.modelform_factory(xt_mb)
     inlines = [SustanciaBasicoInline,]
+    ordering = ['descripcion',]
     search_fields = ['descripcion']
-    list_display = ['xt_id_mb','descripcion','get_sustancia','concept_vtm_dmd','observacion'] #TODO sustancias m2m
+    list_display = ['xt_id_mb','descripcion','get_sustancia','kairos_sustancia','concept_vtm_dmd']
     list_filter = ['revisado','consultar','estado'
-        ,('concept_vtm_dmd', IsNullFieldListFilter)] #TODO #Sin sustancia modelada (M2M)
+        ,('concept_vtm_dmd', IsNullFieldListFilter)]
     list_display_links = ['xt_id_mb','descripcion']
     actions = [export_as_csv]
     readonly_fields=('xt_id_mb',)

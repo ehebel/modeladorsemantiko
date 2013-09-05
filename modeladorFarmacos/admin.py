@@ -322,7 +322,7 @@ class mbAdmin(admin.ModelAdmin):
             return instances
         else:
             return formset.save()
-admin.site.register(xt_mb,  mbAdmin)
+admin.site.register(xt_mb)#,  mbAdmin)
 
 class mcceAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mcce)

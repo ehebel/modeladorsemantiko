@@ -92,8 +92,10 @@ class bioeqAdminInline(admin.TabularInline):
 
 
 class xt_sustanciasAdmin (admin.ModelAdmin):
-    list_display = ['id_xt_sust','riesgo_teratogenico','kairos_sustancia','concept_sust_dmd','observacion']
+    list_display = ['id_xt_sust','descripcion','riesgo_teratogenico','kairos_sustancia','concept_sust_dmd','observacion']
     list_filter = ['revisado','consultar','estado']
+    search_fields = ['descripcion',]
+    ordering = ['descripcion',]
     def add_view(self, request, *args, **kwargs):
         result = super(xt_sustanciasAdmin, self).add_view(request, *args, **kwargs )
         request.session['filtered'] =  None

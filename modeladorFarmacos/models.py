@@ -243,6 +243,22 @@ class xt_unidad_medida_unitaria (models.Model):
         verbose_name_plural ='XT unidades de medida unitaria'
 
 
+
+class xt_formas_agrupadas(models.Model):
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    id_xt_formas_agrupadas = models.AutoField(primary_key=True)
+
+    descripcion = models.CharField(max_length=255)
+    fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
+    usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_ff')
+
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    def __unicode__(self):
+        return self.descripcion
+    class Meta:
+        ordering=['descripcion']
+        verbose_name_plural ='XT Agrupador de formas farmaceuticas de extension'
+
 ## ##-
 ## table 'xt_formas_farm'
 ## formas farmaceuticas de extension
@@ -261,6 +277,7 @@ class xt_formas_farm (models.Model):
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
+    id_formas_agrupadas = models.ForeignKey(xt_formas_agrupadas, null=True, blank=True)
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -596,6 +613,7 @@ class xt_fp (models.Model):
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
 
     id_producto_xt = models.ForeignKey(xt_producto, null=True, limit_choices_to = {'estado':'0'})
+    id_gfp_xt = models.ForeignKey(xt_gfp, null=True, blank=True)
     concept_tf_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):

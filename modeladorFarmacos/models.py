@@ -250,7 +250,7 @@ class xt_formas_agrupadas(models.Model):
 
     descripcion = models.CharField(max_length=255)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
-    usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_ff')
+    usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_fa')
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     def __unicode__(self):

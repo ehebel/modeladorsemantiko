@@ -53,8 +53,8 @@ class kairos_sustancia (models.Model):
     clave = models.IntegerField(primary_key=True)
     descripcion = models.CharField(max_length=255)
     tipo = models.CharField(max_length=255)
-    fechaalta = models.DateTimeField()
-    fechacambio = models.DateTimeField()
+    fechaalta = models.DateTimeField(null=True)
+    fechacambio = models.DateTimeField(null=True)
     estado = models.CharField(max_length=1)
 
     def __unicode__(self):
@@ -84,8 +84,8 @@ class kairos_lab (models.Model):
     fax = models.CharField(max_length=255)
     tipo = models.CharField(max_length=255)
     web = models.CharField(max_length=255)
-    fechaalta = models.DateTimeField()
-    fechacambio = models.DateTimeField()
+    fechaalta = models.DateTimeField(null=True)
+    fechacambio = models.DateTimeField(null=True)
     estado = models.CharField(max_length=255)
 
     def __unicode__(self):
@@ -114,8 +114,8 @@ class kairos_productos (models.Model):
     almacenamiento = models.CharField(max_length=255)
     caducidad = models.CharField(max_length=255)
     certificado = models.CharField(max_length=255)
-    fechaalta = models.DateTimeField()
-    fechacambio = models.DateTimeField()
+    fechaalta = models.DateTimeField(null=True)
+    fechacambio = models.DateTimeField(null=True)
     estado = models.CharField(max_length=255)
     impuesto = models.CharField(max_length=255)
     odontologia = models.CharField(max_length=255)
@@ -160,8 +160,8 @@ class kairos_presentaciones (models.Model):
     codigobarras = models.CharField(max_length=255)
     canasta = models.CharField(max_length=255)
     registro = models.CharField(max_length=255)
-    fechaalta = models.DateTimeField()
-    fechacambio = models.DateTimeField()
+    fechaalta = models.DateTimeField(null=True)
+    fechacambio = models.DateTimeField(null=True)
     estado = models.CharField(max_length=255)
 
     def __unicode__(self):
@@ -176,8 +176,8 @@ class kairos_precio(models.Model):
     id_presentacion_kairos = models.AutoField(primary_key=True)
     claveproducto = models.ForeignKey(kairos_productos)
     clavepresentacion = models.ForeignKey(kairos_presentaciones)
-    fechaingreso = models.DateField()
-    fechavigencia = models.DateField()
+    fechaingreso = models.DateField(null=True)
+    fechavigencia = models.DateField(null=True)
     preciofabrica = models.FloatField()
     preciopublico = models.FloatField()
     preciofabrica12 = models.FloatField()
@@ -332,7 +332,7 @@ class xt_sustancias (models.Model):
 
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_sust')
-    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_sust')
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -361,7 +361,7 @@ class xt_mb (models.Model):
 
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_mb')
-    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_mb')
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -411,7 +411,7 @@ class xt_mc (models.Model):
 
     fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_mc')
-    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='usuariomod_mc')
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -512,7 +512,7 @@ class xt_laboratorio (models.Model):
 
     fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_lab')
-    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='usuariomod_lab')
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -543,7 +543,7 @@ class xt_producto (models.Model):
     estado = models.SmallIntegerField(choices=OPCIONES_ESTADO, null=False, blank=False)
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_producto')
-    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_producto')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
@@ -574,7 +574,7 @@ class xt_gfp (models.Model):
 
     fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_gfp')
-    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='usuariomod_gfp')
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -605,7 +605,7 @@ class xt_fp (models.Model):
 
     fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_fp')
-    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='usuariomod_fp')
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -639,7 +639,7 @@ class xt_pc (models.Model):
 
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_pc')
-    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_pc')
 
     estado = models.SmallIntegerField(choices=OPCIONES_ESTADO, null=False, blank=False)
@@ -691,7 +691,7 @@ class xt_mcce (models.Model):
 
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_mcce')
-    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='usuariomod_mcce')
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')
@@ -726,7 +726,7 @@ class xt_pcce (models.Model):
 
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_pcce')
-    fecha_ult_mod = models.DateTimeField(null=False, auto_now=True)
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_pcce')
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')

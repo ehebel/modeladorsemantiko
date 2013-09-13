@@ -471,7 +471,7 @@ class rel_mc_sust (models.Model):
     id_xt_mc = models.ForeignKey(xt_mc)
     id_xt_sust = models.ForeignKey(xt_sustancias)
     orden = models.SmallIntegerField(null=True, blank=True)
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True, blank=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO)
     potencia = models.IntegerField(null=True, blank=True)
     id_unidad_potencia = models.ForeignKey(xt_unidad_potencia, related_name='unidad potencia', null=True, blank=True)
     partido_por = models.SmallIntegerField(null=True,blank=True)
@@ -492,7 +492,7 @@ class rel_xt_mb_xt_sust (models.Model):
     id_xt_sust = models.ForeignKey(xt_sustancias)
     id_xt_mb = models.ForeignKey(xt_mb)
     orden = models.SmallIntegerField(null=True, blank=False)
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True, blank=False)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO)
 
 
 

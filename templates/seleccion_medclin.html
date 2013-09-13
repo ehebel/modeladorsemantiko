@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<style>
+    <!--
+    .tab { margin-left: 40px; }
+    -->
+</style>
+<head>
+    <title></title>
+</head>
+<body>
+{{ listado_mc.descripcion }}
+<p class="tab"> Medicamento Basico: {{ listado_mc.med_basico.descripcion }} <br><br>
+
+    Productos Comerciales:
+     {% for producto in listado_pc %}
+         <ul>   <p class="tab"> {{ producto.descripcion }}</p> </ul>
+    {% endfor %}
+
+
+</body>
+</html>

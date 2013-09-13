@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<style>
+    <!--
+    .tab { margin-left: 40px; }
+    -->
+</style>
+
+<html>
+<head>
+    <title>Resultados de Busqueda</title>
+</head>
+
+<p>Usted buscó: <strong>{{ query }}</strong></p>
+
+{% if medicmentos %}
+    <p>Encontramos {{ medicmentos|length }} medicamentos clinicos{{ medicamentos|pluralize }}.</p>
+    <ul>
+        {% for medicamentos in medicmentos %}
+            <li><a href="/modelador/seleccion_medclin/{{ medicamentos.id_xt_mc }}">{{ medicamentos.descripcion }}</a></li>
+            <p class="tab"> Medicamento Basico: {{ medicamentos.med_basico }} <br>
+            </p>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hubo medicamentos clínicos coincidentes.</p>
+{% endif %}
+</body>
+</html>

@@ -201,7 +201,7 @@ class kairos_precio(models.Model):
 
 
 class xt_unidad_dosis_unitaria (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
 
     id_xt_unidad_dosis_u = models.AutoField(primary_key=True)
 
@@ -226,7 +226,7 @@ class xt_unidad_dosis_unitaria (models.Model):
 
 
 class xt_unidad_medida_unitaria (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
 
     id_xt_unidad_medida_u = models.AutoField(primary_key=True)
 
@@ -245,7 +245,7 @@ class xt_unidad_medida_unitaria (models.Model):
 
 
 class xt_formas_agrupadas(models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_xt_formas_agrupadas = models.AutoField(primary_key=True)
 
     descripcion = models.CharField(max_length=255)
@@ -267,7 +267,7 @@ class xt_formas_agrupadas(models.Model):
 
 
 class xt_formas_farm (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
 
     id_xt_formafarm = models.AutoField(primary_key=True)
 
@@ -295,7 +295,7 @@ class xt_formas_farm (models.Model):
 
 
 class xt_condicion_venta (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
 
     id_xt_condventa = models.AutoField(primary_key=True)
 
@@ -323,7 +323,7 @@ class xt_condicion_venta (models.Model):
 
 
 class xt_sustancias (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_sust = models.AutoField(primary_key=True)
     
@@ -354,7 +354,7 @@ class xt_sustancias (models.Model):
 
 
 class xt_mb (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     xt_id_mb = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255, blank=True)
@@ -391,7 +391,7 @@ class xt_mb (models.Model):
 
 
 class xt_mc (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
 
     OPCIONES_FORMA_FARM = ((1, 'Discreta'),(2,'Continua'),(3,'No Aplica'))
@@ -450,7 +450,7 @@ class xt_mc (models.Model):
 ## ##-
 
 class xt_unidad_potencia (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_unidad_potencia = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -466,16 +466,16 @@ class xt_unidad_potencia (models.Model):
 
 
 class rel_mc_sust (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_rel_mc_sust = models.AutoField(primary_key=True)
     id_xt_mc = models.ForeignKey(xt_mc)
     id_xt_sust = models.ForeignKey(xt_sustancias)
     orden = models.SmallIntegerField()
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO)
-    potencia = models.IntegerField()
-    id_unidad_potencia = models.ForeignKey(xt_unidad_potencia, related_name='unidad potencia')
-    partido_por = models.SmallIntegerField(null=True)
-    id_unidad_partido_por = models.ForeignKey(xt_unidad_potencia, related_name='unidad partido por')
+    potencia = models.IntegerField(null=True, blank=True)
+    id_unidad_potencia = models.ForeignKey(xt_unidad_potencia, related_name='unidad potencia', null=True, blank=True)
+    partido_por = models.SmallIntegerField(null=True,blank=True)
+    id_unidad_partido_por = models.ForeignKey(xt_unidad_potencia, related_name='unidad partido por',null=True, blank=True)
 
 
 
@@ -487,12 +487,12 @@ class rel_mc_sust (models.Model):
 
 
 class rel_xt_mb_xt_sust (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_rel_xt_mb_xt_sust = models.AutoField(primary_key=True)
     id_xt_sust = models.ForeignKey(xt_sustancias)
     id_xt_mb = models.ForeignKey(xt_mb)
-    orden = models.SmallIntegerField()
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO)
+    orden = models.SmallIntegerField(null=True, blank=False)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True, blank=False)
 
 
 
@@ -504,7 +504,7 @@ class rel_xt_mb_xt_sust (models.Model):
 
 
 class xt_laboratorio (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_lab = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
@@ -535,7 +535,7 @@ class xt_laboratorio (models.Model):
 
 
 class xt_producto (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_producto = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
@@ -566,7 +566,7 @@ class xt_producto (models.Model):
 
 
 class xt_gfp (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_gfp = models.AutoField(primary_key=True)
 
@@ -597,7 +597,7 @@ class xt_gfp (models.Model):
 
 
 class xt_fp (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_fp = models.AutoField(primary_key=True)
     xtconcepto = models.SmallIntegerField()
@@ -631,7 +631,7 @@ class xt_fp (models.Model):
 ## ##-
 
 class xt_pc (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_pc = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
@@ -684,7 +684,7 @@ class xt_unidad_medida_cant (models.Model):
 
 
 class xt_mcce (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_mcce = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
@@ -718,7 +718,7 @@ class xt_mcce (models.Model):
 
 
 class xt_pcce (models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_pcce = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
@@ -753,7 +753,7 @@ class xt_bioequivalente(models.Model):
     referencia = models.ForeignKey(xt_pc, related_name='referencia')
     bioequivalente = models.ForeignKey(xt_pc, related_name='equivalente')
     def __unicode__(self):
-        return self.id_xt_bioequivalente
+        return "%s | %s" % (self.referencia, self.bioequivalente)
     class Meta:
         ordering=['id_xt_bioequivalente']
         verbose_name_plural ='XT Productos Bioequivalentes'

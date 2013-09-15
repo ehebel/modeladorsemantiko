@@ -90,6 +90,8 @@ class bioeqAdminInline(admin.TabularInline):
     form = autocomplete_light.modelform_factory(xt_pc)
     fk_name = 'referencia'
 
+#Inicia ADMIN de modelos Completos
+#Para mejorar facilidad de busqueda
 
 class xt_sustanciasAdmin (admin.ModelAdmin):
     list_display = ['id_xt_sust','descripcion','riesgo_teratogenico','concept_sust_dmd']
@@ -328,7 +330,7 @@ class mcceAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mcce)
     list_display = ['id_xt_mcce','descripcion','id_xt_mc','concept_vmpp_dmd'] #TODO sustancias m2m
     list_filter = ['revisado','consultar','estado',('concept_vmpp_dmd', IsNullFieldListFilter)] #TODO con/Sin observacion
-
+    search_fields = ['descripcion',]
     readonly_fields=('id_xt_mcce',)
     radio_fields = {
         "estado": admin.HORIZONTAL
@@ -400,6 +402,7 @@ admin.site.register(xt_mcce,mcceAdmin)
 
 class pcAdmin(admin.ModelAdmin):
     inlines = [bioeqAdminInline,]
+    search_fields = ['descripcion',]
     list_display = ['id_xt_pc','descripcion','id_xt_fp','id_xt_mc','concept_amp_dmd'] #TODO BOOL Bioequivalente
     list_filter = ['estado','revisado','consultar'
         ,('id_xt_mc', IsNullFieldListFilter)
@@ -483,7 +486,7 @@ class pcceAdmin(admin.ModelAdmin):
     list_filter = ['estado','revisado','consultar'
         ,('id_xt_mcce', IsNullFieldListFilter)] #TODO BOOL Observacion
     list_display = ['id_xt_pcce','descripcion','id_xt_pc','id_xt_mcce','concept_ampp_dmd','id_presentacion_kairos'] #TODO BOOL Bioequivalente
-
+    search_fields = ['descripcion',]
     readonly_fields=('id_xt_pcce',)
     radio_fields = {
         "estado": admin.HORIZONTAL
@@ -559,6 +562,7 @@ admin.site.register(xt_pcce,pcceAdmin)
 class xtlabAdmin(admin.ModelAdmin):
     list_display = ['id_xt_lab','descripcion','clave_lab_kairos']
     list_filter = ['revisado','consultar','estado',('clave_lab_kairos', IsNullFieldListFilter)]
+    search_fields = ['descripcion',]
     def response_change(self, request, obj):
         """
         Determines the HttpResponse for the change_view stage.

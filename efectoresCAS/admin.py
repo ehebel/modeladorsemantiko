@@ -49,29 +49,31 @@ class DescInLine(admin.TabularInline):
 
 class ConceptAdmin(admin.ModelAdmin):
     list_filter = ['revisado',]
+    list_display = ['fsn','revisado']
     inlines = DescInLine,ConceptosAreaInline
     actions = [export_as_csv]
+admin.site.register(concepto,ConceptAdmin)
 
 
 class efectorAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(efector)
+    list_display = ['ExamCode','ExamName']
     filter_vertical = ('codigoporarea',)
     actions = [export_as_csv]
+admin.site.register(efector,efectorAdmin)
 
 
 class descripcionAdmin(admin.ModelAdmin):
     list_display = ['descripcion','tipodescripcion','id_concepto']
     list_filter = ['tipodescripcion']
     actions = [export_as_csv]
+admin.site.register(descripcion,descripcionAdmin)
 
 
 
 
-admin.site.register(descripcion)
-admin.site.register(concepto,ConceptAdmin)
 admin.site.register(cas_area)
 admin.site.register(cas_lugar)
-admin.site.register(efector,efectorAdmin)
 admin.site.register(conceptosCASporarea)
 
 __author__ = 'ehebel'

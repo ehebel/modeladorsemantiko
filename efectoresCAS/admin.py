@@ -64,7 +64,7 @@ admin.site.register(efector,efectorAdmin)
 
 
 class descripcionAdmin(admin.ModelAdmin):
-    list_display = ['descripcion','tipodescripcion','id_concepto']
+    list_display = ['termino','tipodescripcion','id_concepto']
     list_filter = ['tipodescripcion']
     actions = [export_as_csv]
 admin.site.register(descripcion,descripcionAdmin)

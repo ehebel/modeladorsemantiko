@@ -63,8 +63,13 @@ class efector(models.Model):
     ExamCode = models.CharField(max_length=255, primary_key=True)
     ExamName = models.CharField(max_length=255)
     codigoporarea = models.ManyToManyField(conceptosCASporarea)
+    def get_conceptosporarea(objeto):
+        return "<br/>".join([s.concepto for s in objeto.get_conceptosporarea.order_by('id').all[:6]])
+    get_conceptosporarea.allow_tags = True
+    get_conceptosporarea.short_description = 'Conceptos por Area'
     def __unicode__(self):
         return self.ExamName
     class Meta:
         ordering=['ExamName']
         verbose_name_plural = "efectores"
+

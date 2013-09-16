@@ -759,7 +759,7 @@ admin.site.register(xt_bioequivalente)
 #admin.site.register(rel_xt_mb_xt_sust)
 #admin.site.register(uk_dmd_conceptos)
 #admin.site.register(uk_dmd_relationships)
-
+admin.site.register(xt_formas_agrupadas)
 admin.site.register(kairos_sustancia)
 admin.site.register(kairos_lab)
 admin.site.register(kairos_productos)

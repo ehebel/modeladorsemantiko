@@ -55,7 +55,7 @@ class ConceptAdmin(admin.ModelAdmin):
     list_display = ['fsn','revisado']
     inlines = DescInLine,ConceptosAreaInline
     actions = [export_as_csv]
-
+    search_fields = ['fsn',]
     def add_view(self, request, *args, **kwargs):
         result = super(ConceptAdmin, self).add_view(request, *args, **kwargs )
         request.session['filtered'] =  None
@@ -96,8 +96,9 @@ admin.site.register(concepto,ConceptAdmin)
 
 class efectorAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(efector)
-    list_display = ['ExamCode','ExamName']
+    list_display = ['ExamCode','ExamName','get_conceptosporarea']
     filter_vertical = ('codigoporarea',)
+    search_fields = ['ExamCode','ExamName']
     actions = [export_as_csv]
 admin.site.register(efector,efectorAdmin)
 
@@ -105,6 +106,7 @@ admin.site.register(efector,efectorAdmin)
 class descripcionAdmin(admin.ModelAdmin):
     list_display = ['termino','tipodescripcion','id_concepto']
     list_filter = ['tipodescripcion']
+    search_fields = ['termino',]
     actions = [export_as_csv]
 admin.site.register(descripcion,descripcionAdmin)
 

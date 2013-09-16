@@ -654,7 +654,7 @@ class xt_pc (models.Model):
     def __unicode__(self):
         return self.descripcion
     class Meta:
-        ordering=['id_xt_pc']
+        ordering=['descripcion']
         verbose_name_plural ='XT productos comerciales (extension)'
 
 

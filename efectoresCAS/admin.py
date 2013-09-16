@@ -1,6 +1,9 @@
 from django.contrib import admin
 admin.autodiscover()
 from efectoresCAS.models import *
+from django.http import HttpResponseRedirect
+from django.utils.encoding import force_unicode
+from django.utils.translation import ugettext_lazy as _
 
 
 
@@ -52,6 +55,20 @@ class ConceptAdmin(admin.ModelAdmin):
     list_display = ['fsn','revisado']
     inlines = DescInLine,ConceptosAreaInline
     actions = [export_as_csv]
+
+    def response_change(self, request, obj):
+        """
+        Determines the HttpResponse for the change_view stage.
+        """
+        if request.POST.has_key("_viewnext"):
+            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+                   {'name': force_unicode(obj._meta.verbose_name),
+                    'obj': force_unicode(obj)})
+            next = obj.__class__.objects.filter(id_xt_sust__gt=obj.id_xt_sust).order_by('id_xt_sust')[:1]
+            if next:
+                self.message_user(request, msg)
+                return HttpResponseRedirect("../%s/" % next[0].pk)
+        return super(ConceptAdmin, self).response_change(request, obj)
 admin.site.register(concepto,ConceptAdmin)
 
 

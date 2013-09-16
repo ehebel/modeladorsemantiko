@@ -36,7 +36,7 @@
       <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="725" column="36" selection-start="27710" selection-end="27710" vertical-scroll-proportion="-29.923077">
+            <state line="135" column="0" selection-start="4465" selection-end="5152" vertical-scroll-proportion="-16.153847">
               <folding>
                 <element signature="e#620#1434#0" expanded="false" />
                 <element signature="e#704#936#0" expanded="false" />
@@ -48,15 +48,11 @@
                 <element signature="e#2790#2936#0" expanded="false" />
                 <element signature="e#2992#3149#0" expanded="false" />
                 <element signature="e#3200#3307#0" expanded="false" />
-                <element signature="e#3430#6093#0" expanded="false" />
                 <element signature="e#3694#3836#0" expanded="false" />
                 <element signature="e#3927#4464#0" expanded="false" />
-                <element signature="e#4518#5151#0" expanded="false" />
-                <element signature="e#4518#4596#1" expanded="false" />
                 <element signature="e#5216#5589#0" expanded="false" />
                 <element signature="e#5658#6093#0" expanded="false" />
                 <element signature="e#5694#5862#0" expanded="false" />
-                <element signature="e#6187#9459#0" expanded="false" />
                 <element signature="e#7101#7232#0" expanded="false" />
                 <element signature="e#7322#7848#0" expanded="false" />
                 <element signature="e#7902#8518#0" expanded="false" />
@@ -131,9 +127,9 @@
       <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/efectoresCAS/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="28" selection-start="2038" selection-end="2038" vertical-scroll-proportion="0.7153846">
+            <state line="70" column="70" selection-start="2500" selection-end="2500" vertical-scroll-proportion="0.83076924">
               <folding>
-                <element signature="e#207#1246#0" expanded="false" />
+                <element signature="e#356#1395#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -148,19 +144,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="161" column="5" selection-start="6086" selection-end="6086" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="530" column="21" selection-start="20446" selection-end="20454" vertical-scroll-proportion="-0.15384616">
+            <state line="530" column="21" selection-start="20446" selection-end="20454" vertical-scroll-proportion="-305.19232">
               <folding />
             </state>
           </provider>
@@ -1006,7 +993,11 @@
       <created>1379282119298</created>
       <updated>1379282119298</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="Se agrega app modeladorFarmacos v1.00.7 mejoras en el manejo de los buscadores y vista de busqueda de farmacos por MC. Ademas se mejora el modelador de EfectoresCAS.">
+      <created>1379282189382</created>
+      <updated>1379282189382</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1158,13 +1149,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="5" selection-start="6086" selection-end="6086" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/local_settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="1" selection-start="795" selection-end="795" vertical-scroll-proportion="0.0" />
@@ -1197,14 +1181,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="530" column="21" selection-start="20446" selection-end="20454" vertical-scroll-proportion="-0.15384616">
+        <state line="530" column="21" selection-start="20446" selection-end="20454" vertical-scroll-proportion="-305.19232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="5" selection-start="6086" selection-end="6086" vertical-scroll-proportion="1.4769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="26" selection-start="1234" selection-end="1234" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="725" column="36" selection-start="27710" selection-end="27710" vertical-scroll-proportion="-29.923077">
+        <state line="135" column="0" selection-start="4465" selection-end="5152" vertical-scroll-proportion="-16.153847">
           <folding>
             <element signature="e#620#1434#0" expanded="false" />
             <element signature="e#704#936#0" expanded="false" />
@@ -1216,15 +1214,11 @@
             <element signature="e#2790#2936#0" expanded="false" />
             <element signature="e#2992#3149#0" expanded="false" />
             <element signature="e#3200#3307#0" expanded="false" />
-            <element signature="e#3430#6093#0" expanded="false" />
             <element signature="e#3694#3836#0" expanded="false" />
             <element signature="e#3927#4464#0" expanded="false" />
-            <element signature="e#4518#5151#0" expanded="false" />
-            <element signature="e#4518#4596#1" expanded="false" />
             <element signature="e#5216#5589#0" expanded="false" />
             <element signature="e#5658#6093#0" expanded="false" />
             <element signature="e#5694#5862#0" expanded="false" />
-            <element signature="e#6187#9459#0" expanded="false" />
             <element signature="e#7101#7232#0" expanded="false" />
             <element signature="e#7322#7848#0" expanded="false" />
             <element signature="e#7902#8518#0" expanded="false" />
@@ -1295,18 +1289,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="26" selection-start="1234" selection-end="1234" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/efectoresCAS/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="28" selection-start="2038" selection-end="2038" vertical-scroll-proportion="0.7153846">
+        <state line="70" column="70" selection-start="2500" selection-end="2500" vertical-scroll-proportion="0.83076924">
           <folding>
-            <element signature="e#207#1246#0" expanded="false" />
+            <element signature="e#356#1395#0" expanded="false" />
           </folding>
         </state>
       </provider>

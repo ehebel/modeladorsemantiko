@@ -36,7 +36,7 @@
       <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="0" selection-start="4465" selection-end="5152" vertical-scroll-proportion="-16.153847">
+            <state line="100" column="0" selection-start="3636" selection-end="4464" vertical-scroll-proportion="-6.9615383">
               <folding>
                 <element signature="e#620#1434#0" expanded="false" />
                 <element signature="e#704#936#0" expanded="false" />
@@ -48,8 +48,7 @@
                 <element signature="e#2790#2936#0" expanded="false" />
                 <element signature="e#2992#3149#0" expanded="false" />
                 <element signature="e#3200#3307#0" expanded="false" />
-                <element signature="e#3694#3836#0" expanded="false" />
-                <element signature="e#3927#4464#0" expanded="false" />
+                <element signature="e#4518#5151#0" expanded="false" />
                 <element signature="e#5216#5589#0" expanded="false" />
                 <element signature="e#5658#6093#0" expanded="false" />
                 <element signature="e#5694#5862#0" expanded="false" />
@@ -127,7 +126,7 @@
       <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/efectoresCAS/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="70" selection-start="2500" selection-end="2500" vertical-scroll-proportion="0.83076924">
+            <state line="65" column="35" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.65384614">
               <folding>
                 <element signature="e#356#1395#0" expanded="false" />
               </folding>
@@ -997,7 +996,11 @@
       <created>1379282189382</created>
       <updated>1379282189382</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Se agrega app modeladorFarmacos v1.00.7 mejoras en el manejo de los buscadores y vista de busqueda de farmacos por MC. Ademas se mejora el modelador de EfectoresCAS.">
+      <created>1379294457300</created>
+      <updated>1379294457300</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1202,7 +1205,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="0" selection-start="4465" selection-end="5152" vertical-scroll-proportion="-16.153847">
+        <state line="100" column="0" selection-start="3636" selection-end="4464" vertical-scroll-proportion="-6.9615383">
           <folding>
             <element signature="e#620#1434#0" expanded="false" />
             <element signature="e#704#936#0" expanded="false" />
@@ -1214,8 +1217,7 @@
             <element signature="e#2790#2936#0" expanded="false" />
             <element signature="e#2992#3149#0" expanded="false" />
             <element signature="e#3200#3307#0" expanded="false" />
-            <element signature="e#3694#3836#0" expanded="false" />
-            <element signature="e#3927#4464#0" expanded="false" />
+            <element signature="e#4518#5151#0" expanded="false" />
             <element signature="e#5216#5589#0" expanded="false" />
             <element signature="e#5658#6093#0" expanded="false" />
             <element signature="e#5694#5862#0" expanded="false" />
@@ -1291,7 +1293,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/efectoresCAS/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="70" selection-start="2500" selection-end="2500" vertical-scroll-proportion="0.83076924">
+        <state line="65" column="35" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.65384614">
           <folding>
             <element signature="e#356#1395#0" expanded="false" />
           </folding>

@@ -398,8 +398,8 @@ class xt_mc (models.Model):
     OPCIONES_PRESCRIPCION = (
          (1,'Invalido para prescribir en Atencion Primaria')
         ,(2,'Nunca valido para prescribir como MC')
-        ,(3,'No prescribible como un MC pero es valido como PC')
-        ,(4,'No recomendable prescribir como un MC')
+        #,(3,'No prescribible como un MC pero es valido como PC')
+        #,(4,'No recomendable prescribir como un MC')
         ,(5,'Valido como producto prescribible')
         ,(6,'MC no recomendable para prescribir - marca no bioequivalente')
         ,(7,'MC no recomendable para prescribir - requiere entrenamiento del paciente')

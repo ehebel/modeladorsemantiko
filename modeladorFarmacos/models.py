@@ -2,6 +2,22 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+
+class vtm_hiba (models.Model):
+    descriptionid = models.BigIntegerField(primary_key=True)
+    term_vtm = models.CharField(max_length=255)
+    def __unicode__(self):
+        return self.term_vtm
+
+
+class vmp_hiba (models.Model):
+    descriptionid = models.BigIntegerField(primary_key=True)
+    term_vmp = models.CharField(max_length=255)
+    def __unicode__(self):
+        return self.term_vmp
+
+
 ## ##-
 ## table 'uk_dmd_conceptos'
 ##
@@ -472,9 +488,9 @@ class rel_mc_sust (models.Model):
     id_xt_sust = models.ForeignKey(xt_sustancias)
     orden = models.SmallIntegerField(null=True, blank=True)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO)
-    potencia = models.IntegerField(null=True, blank=True)
+    potencia = models.FloatField(null=True, blank=True)
     id_unidad_potencia = models.ForeignKey(xt_unidad_potencia, related_name='unidad potencia', null=True, blank=True)
-    partido_por = models.SmallIntegerField(null=True,blank=True)
+    partido_por = models.FloatField(null=True,blank=True)
     id_unidad_partido_por = models.ForeignKey(xt_unidad_potencia, related_name='unidad partido por',null=True, blank=True)
 
 

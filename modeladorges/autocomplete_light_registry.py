@@ -42,13 +42,13 @@ autocomplete_light.register(xt_mb, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'Medicamentos Basicos .. '})
 
 autocomplete_light.register(xt_unidad_dosis_unitaria, search_fields=('descripcion',),
-    autocomplete_js_attributes={'placeholder': 'Unidad Dosis U .. '})
+    autocomplete_js_attributes={'placeholder': 'ej. mg'})
 
 autocomplete_light.register(xt_unidad_medida_unitaria, search_fields=('descripcion',),
-    autocomplete_js_attributes={'placeholder': 'Unidad Medida U .. '})
+    autocomplete_js_attributes={'placeholder': 'ej. comprimido'})
 
 autocomplete_light.register(xt_formas_farm, search_fields=('descripcion',),
-    autocomplete_js_attributes={'placeholder': 'Forma Farm .. '})
+    autocomplete_js_attributes={'placeholder': 'ej. comprimido efervescente '})
 
 autocomplete_light.register(xt_condicion_venta, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'Cond Venta .. '})
@@ -57,11 +57,16 @@ autocomplete_light.register(uk_dmd_conceptos, search_fields=('fullyspecifiedname
     autocomplete_js_attributes={'placeholder': 'UK DMD .. '})
 
 autocomplete_light.register(xt_sustancias, search_fields=('descripcion',),
-    autocomplete_js_attributes={'placeholder': 'XT Sustancias .. '})
+    autocomplete_js_attributes={'placeholder': 'ej. paracetamol'})
 
+autocomplete_light.register(vmp_hiba, search_fields=('term_vmp',),
+    autocomplete_js_attributes={'placeholder': 'ej. ACARBOSA 50 MG COMPRIMIDO'})
+
+autocomplete_light.register(vtm_hiba, search_fields =('term_vtm',),
+    autocomplete_js_attributes={'placeholder': 'ej. PREPARADO CON PARACETAMOL'})
 
 autocomplete_light.register(xt_mc, search_fields=('descripcion',),
-    autocomplete_js_attributes={'placeholder': 'Medicamentos Clinicos .. '})
+    autocomplete_js_attributes={'placeholder': 'ej. PARACETAMOL 500 MG COMPRIMIDO'})
 
 
 autocomplete_light.register(rel_xt_mb_xt_sust, search_fields=('descripcion',),
@@ -72,4 +77,4 @@ autocomplete_light.register(rel_mc_sust, search_fields=('descripcion',),
 
 
 autocomplete_light.register(xt_pc, search_fields=('descripcion',),
-    autocomplete_js_attributes={'placeholder': 'Productos Comerciales .. '})
+    autocomplete_js_attributes={'placeholder': 'ej. TAREG 160 MG COMPRIMIDOS RECUBIERTOS (NOVARTIS)'})

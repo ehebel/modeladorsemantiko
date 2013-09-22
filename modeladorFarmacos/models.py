@@ -386,7 +386,7 @@ class xt_mb (models.Model):
 
     kairos_sustancia = models.ForeignKey(kairos_sustancia,null=True,blank=True)
     concept_vtm_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
-    concepto_vtm_hiba = models.ForeignKey(vtm_hiba, null = True, blank=True)
+    concept_vtm_hiba = models.ForeignKey(vtm_hiba, null = True, blank=True)
 
     rel_xt_sust = models.ManyToManyField(xt_sustancias, through='rel_xt_mb_xt_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)

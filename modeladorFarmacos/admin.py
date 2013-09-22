@@ -10,8 +10,6 @@ from django.http import HttpResponseRedirect
 from django.core.exceptions import PermissionDenied
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.admin import FieldListFilter
-from django.contrib.auth.admin import UserAdmin
-from django import http
 from django.utils.encoding import force_unicode
 
 
@@ -163,11 +161,14 @@ class xt_sustanciasAdmin (admin.ModelAdmin):
 admin.site.register(xt_sustancias,xt_sustanciasAdmin)
 
 class mcAdmin (admin.ModelAdmin):
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size':'100'})}
+    }
     form = autocomplete_light.modelform_factory(xt_mc)
     inlines = [SustanciaClinicoInline] # ,ProductoComercialInline]
     search_fields = ['descripcion']
-    list_display = ['id_xt_mc','descripcion','observacion','med_basico','get_sustancia','get_pc'
-        ,'estado_prescripcion','tipo_forma_farm','condicion_venta','concept_vmp_dmd']
+    list_display = ['id_xt_mc','descripcion','med_basico','get_sustancia','get_pc'
+        ,'estado_prescripcion','tipo_forma_farm','concept_vmp_dmd']
     list_filter = ['revisado','consultar','estado'
         ,('med_basico', IsNullFieldListFilter)
         ,('concept_vmp_dmd', IsNullFieldListFilter)

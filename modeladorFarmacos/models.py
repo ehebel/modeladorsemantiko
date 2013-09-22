@@ -386,6 +386,8 @@ class xt_mb (models.Model):
 
     kairos_sustancia = models.ForeignKey(kairos_sustancia,null=True,blank=True)
     concept_vtm_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
+    concepto_vtm_hiba = models.ForeignKey(vtm_hiba, null = True, blank=True)
+
     rel_xt_sust = models.ManyToManyField(xt_sustancias, through='rel_xt_mb_xt_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def get_sustancia(objeto):
@@ -442,6 +444,7 @@ class xt_mc (models.Model):
     forma_farmaceutica = models.ForeignKey(xt_formas_farm, null=True, blank=True, limit_choices_to = {'estado':'0'})
     condicion_venta = models.ForeignKey(xt_condicion_venta, null=True, blank=True, limit_choices_to = {'estado':'0'})
     concept_vmp_dmd = models.ForeignKey(uk_dmd_conceptos, null=True, blank=True)
+    concept_vmp_hiba = models.ForeignKey(vmp_hiba, null=True, blank=True)
     rel_mc = models.ManyToManyField(xt_sustancias, through='rel_mc_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def get_pc(self):

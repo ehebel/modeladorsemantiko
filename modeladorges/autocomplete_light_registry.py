@@ -39,10 +39,10 @@ autocomplete_light.register(conceptosCASporarea, search_fields=('id',),
 
 
 autocomplete_light.register(xt_mb, search_fields=('descripcion',),
-    autocomplete_js_attributes={'placeholder': 'Medicamentos Basicos .. '})
+    autocomplete_js_attributes={'placeholder': 'ej. IBUPROFENO + PARACETAMOL '})
 
 autocomplete_light.register(xt_unidad_dosis_unitaria, search_fields=('descripcion',),
-    autocomplete_js_attributes={'placeholder': 'ej. mg'})
+    autocomplete_js_attributes={'placeholder': 'ej. ampolla, comprimido..'})
 
 autocomplete_light.register(xt_unidad_medida_unitaria, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. comprimido'})

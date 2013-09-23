@@ -4,8 +4,8 @@
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/efectoresCAS.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectoresCAS/models.py" afterPath="$PROJECT_DIR$/efectoresCAS/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" afterPath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modeladorsemantiko/local_settings.py" />
@@ -35,10 +35,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="79" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.70873785">
+            <state line="72" column="79" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -53,10 +53,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="449" column="12" selection-start="17373" selection-end="17377" vertical-scroll-proportion="-4.5">
+            <state line="454" column="22" selection-start="17594" selection-end="17594" vertical-scroll-proportion="0.33333334">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="254" column="80" selection-start="9872" selection-end="9872" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,11 +95,11 @@
         <option value="$PROJECT_DIR$/templates/search_results.html" />
         <option value="$PROJECT_DIR$/templates/seleccion_medclin.html" />
         <option value="$PROJECT_DIR$/templates/search_form.html" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
         <option value="$PROJECT_DIR$/efectoresCAS/admin.py" />
         <option value="$PROJECT_DIR$/efectoresCAS/models.py" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
       </list>
     </option>
   </component>
@@ -141,6 +150,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="modeladorsemantiko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modeladorsemantiko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modeladorsemantiko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modeladorFarmacos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -946,7 +969,11 @@
       <created>1379891056479</created>
       <updated>1379891056479</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="Se agrega modelos para VTM y VMP del HIBA, admas se modifica tabla rel_mc_sust para considerar potencias como decimales.">
+      <created>1379896033915</created>
+      <updated>1379896033915</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1119,13 +1146,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="4" selection-start="6213" selection-end="6213" vertical-scroll-proportion="7.7586207">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/search_results.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="36" selection-start="363" selection-end="363" vertical-scroll-proportion="0.86440676">
@@ -1168,16 +1188,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
+    <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="449" column="12" selection-start="17373" selection-end="17377" vertical-scroll-proportion="-4.5">
+        <state line="72" column="79" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="79" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.70873785">
+        <state line="254" column="80" selection-start="9872" selection-end="9872" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="454" column="22" selection-start="17594" selection-end="17594" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>

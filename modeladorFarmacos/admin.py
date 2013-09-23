@@ -252,7 +252,7 @@ class mbAdmin(admin.ModelAdmin):
     inlines = [SustanciaBasicoInline,]
     ordering = ['descripcion',]
     search_fields = ['descripcion']
-    list_display = ['xt_id_mb','descripcion','get_sustancia','kairos_sustancia','concept_vtm_dmd']
+    list_display = ['xt_id_mb','descripcion','get_sustancia','concept_vtm_hiba','kairos_sustancia','concept_vtm_dmd']
     list_filter = ['revisado','consultar','estado'
         ,('concept_vtm_dmd', IsNullFieldListFilter)]
     list_display_links = ['xt_id_mb','descripcion']

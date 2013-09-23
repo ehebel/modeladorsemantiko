@@ -78,3 +78,8 @@ autocomplete_light.register(rel_mc_sust, search_fields=('descripcion',),
 
 autocomplete_light.register(xt_pc, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. TAREG 160 MG COMPRIMIDOS RECUBIERTOS (NOVARTIS)'})
+
+
+autocomplete_light.register(kairos_sustancia, search_fields=('descripcion',),
+    autocomplete_js_attributes={'placeholder': 'ej. Ibuprofeno...'})
+

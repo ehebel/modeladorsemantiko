@@ -205,7 +205,7 @@ class kairos_precio(models.Model):
     preciofabrica19 = models.FloatField()
     preciopublico19 = models.FloatField()
     def __unicode__(self):
-        return "%s" % (self.claveproducto)
+        return "%s" % self.claveproducto
 
 
 
@@ -407,6 +407,23 @@ class xt_mb (models.Model):
         verbose_name_plural ='XT medicamento basico (extension)'
 
 
+## ##-
+## table 'xt_unidad_medida_cant'
+## unidad de medida de cantidad de la extension
+## ##-
+
+
+
+class xt_unidad_medida_cant (models.Model):
+    id_unidad_medida_cant = models.AutoField(primary_key=True)
+    descripcion = models.CharField(max_length=255)
+    observacion = models.CharField(max_length=255, blank=True, null=True)
+    def __unicode__(self):
+        return self.descripcion
+    class Meta:
+        ordering=['id_unidad_medida_cant']
+        verbose_name_plural ='XT unidad de medida de cantidad'
+
 
 class xt_mc (models.Model):
     OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
@@ -441,7 +458,9 @@ class xt_mc (models.Model):
     tamano_dosis_u = models.IntegerField(null=True, blank=True)
     unidad_dosis_u = models.ForeignKey(xt_unidad_dosis_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'})
     unidad_medida_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'})
-    forma_farmaceutica = models.ForeignKey(xt_formas_farm, null=True, blank=True, limit_choices_to = {'estado':'0'})
+    dosis_total_num = models.FloatField(null=True, blank=True)
+    dosis_total_u = models.ForeignKey(xt_unidad_medida_cant, null=True, blank=True, limit_choices_to = {'id_unidad_medida_cant':'1'} )
+    forma_farmaceutica_agrup = models.ForeignKey(xt_formas_agrupadas, null=True, blank=True, limit_choices_to = {'estado':'0'})
     condicion_venta = models.ForeignKey(xt_condicion_venta, null=True, blank=True, limit_choices_to = {'estado':'0'})
     concept_vmp_dmd = models.ForeignKey(uk_dmd_conceptos, null=True, blank=True)
     concept_vmp_hiba = models.ForeignKey(vmp_hiba, null=True, blank=True)
@@ -519,7 +538,6 @@ class rel_xt_mb_xt_sust (models.Model):
 ## table 'xt_laboratorio'
 ## laboratorios de la extension
 ## ##-
-
 
 
 class xt_laboratorio (models.Model):
@@ -668,8 +686,11 @@ class xt_pc (models.Model):
     id_xt_fp = models.ForeignKey(xt_fp, verbose_name='Familia de Producto', null=True, blank=True)
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico', null=True, blank=True)
     concept_amp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
+    reg_isp_num = models.PositiveIntegerField(max_length=8, null = True, blank=True)
+    reg_isp_ano = models.PositiveIntegerField(max_length=2, null=True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     #bioequivalente = models.ManyToManyField('self', through='xt_bioequivalente', symmetrical=False)
+
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -678,23 +699,6 @@ class xt_pc (models.Model):
 
 
 
-
-## ##-
-## table 'xt_unidad_medida_cant'
-## unidad de medida de cantidad de la extension
-## ##-
-
-
-
-class xt_unidad_medida_cant (models.Model):
-    id_unidad_medida_cant = models.AutoField(primary_key=True)
-    descripcion = models.CharField(max_length=255)
-    observacion = models.CharField(max_length=255, blank=True, null=True)
-    def __unicode__(self):
-        return self.descripcion
-    class Meta:
-        ordering=['id_unidad_medida_cant']
-        verbose_name_plural ='XT unidad de medida de cantidad'
 
 ## ##-
 ## table 'xt_mcce'

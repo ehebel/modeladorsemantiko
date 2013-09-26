@@ -4,8 +4,6 @@
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" afterPath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/efectoresCAS.json" />
@@ -66,7 +64,7 @@
       <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="26" selection-start="3247" selection-end="3247" vertical-scroll-proportion="0.48831168">
+            <state line="760" column="0" selection-start="29000" selection-end="29000" vertical-scroll-proportion="0.4909091">
               <folding>
                 <element signature="e#548#1362#0" expanded="false" />
                 <element signature="e#632#864#0" expanded="false" />
@@ -109,6 +107,7 @@
                 <element signature="e#14814#15187#0" expanded="false" />
                 <element signature="e#15256#15691#0" expanded="false" />
                 <element signature="e#15292#15460#0" expanded="false" />
+                <element signature="e#15770#18774#0" expanded="false" />
                 <element signature="e#16412#16543#0" expanded="false" />
                 <element signature="e#16634#17160#0" expanded="false" />
                 <element signature="e#17215#17831#0" expanded="false" />
@@ -211,8 +210,8 @@
         <option value="$PROJECT_DIR$/efectoresCAS/models.py" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/local_settings.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
       </list>
     </option>
   </component>
@@ -1091,7 +1090,11 @@
       <created>1380152499505</created>
       <updated>1380152499505</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Se agrega modelos para VTM y VMP del HIBA, admas se modifica tabla rel_mc_sust para considerar potencias como decimales.">
+      <created>1380155091444</created>
+      <updated>1380155091444</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1312,7 +1315,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="26" selection-start="3247" selection-end="3247" vertical-scroll-proportion="0.48831168">
+        <state line="760" column="0" selection-start="29000" selection-end="29000" vertical-scroll-proportion="0.4909091">
           <folding>
             <element signature="e#548#1362#0" expanded="false" />
             <element signature="e#632#864#0" expanded="false" />
@@ -1355,6 +1358,7 @@
             <element signature="e#14814#15187#0" expanded="false" />
             <element signature="e#15256#15691#0" expanded="false" />
             <element signature="e#15292#15460#0" expanded="false" />
+            <element signature="e#15770#18774#0" expanded="false" />
             <element signature="e#16412#16543#0" expanded="false" />
             <element signature="e#16634#17160#0" expanded="false" />
             <element signature="e#17215#17831#0" expanded="false" />

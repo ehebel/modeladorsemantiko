@@ -755,8 +755,8 @@ admin.site.register(xt_producto,productoAdmin)
 class bioeqAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_bioequivalente)
     list_display = ['id_xt_bioequivalente','referencia','bioequivalente']
-    #search_fields = ['referencia','bioequivalente']
-    pass
+    search_fields = ['referencia__descripcion','bioequivalente__descripcion']
+
 admin.site.register(xt_bioequivalente,bioeqAdmin)
 
 admin.site.register(xt_unidad_medida_cant)

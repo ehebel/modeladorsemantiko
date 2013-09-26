@@ -205,7 +205,7 @@ class kairos_precio(models.Model):
     preciofabrica19 = models.FloatField()
     preciopublico19 = models.FloatField()
     def __unicode__(self):
-        return "%s" % self.claveproducto
+        return u"%s" % self.claveproducto
 
 
 
@@ -358,7 +358,7 @@ class xt_sustancias (models.Model):
     concept_sust_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
-        return "%s | %s | %s" % (self.id_xt_sust, self.estado, self.descripcion)
+        return u"%s | %s | %s" % (self.id_xt_sust, self.estado, self.descripcion)
     class Meta:
         ordering=['id_xt_sust']
         verbose_name_plural ='XT extension de sustancias'
@@ -401,7 +401,7 @@ class xt_mb (models.Model):
 #    get_mc.short_description = 'XT Medicamentos Clinicos'
 
     def __unicode__(self):
-        return "%s | %s | %s" % (self.xt_id_mb, self.estado, self.descripcion)
+        return u"%s | %s | %s" % (self.xt_id_mb, self.estado, self.descripcion)
     class Meta:
         ordering=['xt_id_mb']
         verbose_name_plural ='XT medicamento basico (extension)'
@@ -776,7 +776,7 @@ class xt_bioequivalente(models.Model):
     referencia = models.ForeignKey(xt_pc, related_name='referencia')
     bioequivalente = models.ForeignKey(xt_pc, related_name='equivalente')
     def __unicode__(self):
-        return "%s | %s" % (self.referencia, self.bioequivalente)
+        return u"%s | %s" % (self.referencia, self.bioequivalente)
     class Meta:
         ordering=['id_xt_bioequivalente']
         verbose_name_plural ='XT Productos Bioequivalentes'

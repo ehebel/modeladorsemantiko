@@ -85,7 +85,7 @@ class SustanciaBasicoInline(admin.TabularInline):
 
 class bioeqAdminInline(admin.TabularInline):
     model = xt_bioequivalente
-    form = autocomplete_light.modelform_factory(xt_pc)
+    form = autocomplete_light.modelform_factory(xt_bioequivalente)
     fk_name = 'referencia'
 
 #Inicia ADMIN de modelos Completos
@@ -752,10 +752,14 @@ class productoAdmin(admin.ModelAdmin):
             return formset.save()
 admin.site.register(xt_producto,productoAdmin)
 
-
+class bioeqAdmin(admin.ModelAdmin):
+    form = autocomplete_light.modelform_factory(xt_bioequivalente)
+    list_display = ['id_xt_bioequivalente','referencia','bioequivalente']
+    #search_fields = ['referencia','bioequivalente']
+    pass
+admin.site.register(xt_bioequivalente,bioeqAdmin)
 
 admin.site.register(xt_unidad_medida_cant)
-admin.site.register(xt_bioequivalente)
 #admin.site.register(rel_mc_sust)
 #admin.site.register(rel_xt_mb_xt_sust)
 #admin.site.register(uk_dmd_conceptos)

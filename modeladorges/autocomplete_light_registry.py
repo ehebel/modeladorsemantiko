@@ -83,3 +83,5 @@ autocomplete_light.register(xt_pc, search_fields=('descripcion',),
 autocomplete_light.register(kairos_sustancia, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. Ibuprofeno...'})
 
+autocomplete_light.register(xt_fp, search_fields=('descripcion',),
+    autocomplete_js_attributes={'placeholder': 'ej. Panadol...'})

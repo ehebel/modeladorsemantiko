@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/efectoresCAS.json" />
@@ -52,19 +52,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="778" column="66" selection-start="31484" selection-end="31484" vertical-scroll-proportion="0.0">
+            <state line="469" column="85" selection-start="18215" selection-end="18216" vertical-scroll-proportion="0.67919075">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="760" column="0" selection-start="29000" selection-end="29000" vertical-scroll-proportion="0.4909091">
+            <state line="760" column="0" selection-start="29000" selection-end="29000" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#548#1362#0" expanded="false" />
                 <element signature="e#632#864#0" expanded="false" />
@@ -209,9 +209,9 @@
         <option value="$PROJECT_DIR$/efectoresCAS/admin.py" />
         <option value="$PROJECT_DIR$/efectoresCAS/models.py" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/local_settings.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
       </list>
     </option>
   </component>
@@ -1094,7 +1094,11 @@
       <created>1380155091444</created>
       <updated>1380155091444</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="Se agrega modelos para VTM y VMP del HIBA, admas se modifica tabla rel_mc_sust para considerar potencias como decimales.">
+      <created>1380155298772</created>
+      <updated>1380155298772</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1271,20 +1275,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="79" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/efectoresCAS/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="41" selection-start="3503" selection-end="3503" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/local_settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="17" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0">
@@ -1306,16 +1296,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
+    <entry file="file://$PROJECT_DIR$/efectoresCAS/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="778" column="66" selection-start="31484" selection-end="31484" vertical-scroll-proportion="0.0">
+        <state line="98" column="41" selection-start="3503" selection-end="3503" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="760" column="0" selection-start="29000" selection-end="29000" vertical-scroll-proportion="0.4909091">
+        <state line="760" column="0" selection-start="29000" selection-end="29000" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#548#1362#0" expanded="false" />
             <element signature="e#632#864#0" expanded="false" />
@@ -1403,6 +1393,20 @@
             <element signature="e#28210#28645#0" expanded="false" />
             <element signature="e#28246#28414#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="79" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="469" column="85" selection-start="18215" selection-end="18216" vertical-scroll-proportion="0.67919075">
+          <folding />
         </state>
       </provider>
     </entry>

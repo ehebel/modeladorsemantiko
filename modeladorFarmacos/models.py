@@ -459,7 +459,7 @@ class xt_mc (models.Model):
     unidad_dosis_u = models.ForeignKey(xt_unidad_dosis_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'})
     unidad_medida_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'})
     dosis_total_num = models.FloatField(null=True, blank=True)
-    dosis_total_u = models.ForeignKey(xt_unidad_medida_cant, null=True, blank=True, limit_choices_to = {'id_unidad_medida_cant':'1'} )
+    dosis_total_u = models.ForeignKey(xt_unidad_medida_cant, null=True, blank=True, limit_choices_to = {'id_unidad_medida_cant':'40'} )
     forma_farmaceutica_agrup = models.ForeignKey(xt_formas_agrupadas, null=True, blank=True, limit_choices_to = {'estado':'0'})
     condicion_venta = models.ForeignKey(xt_condicion_venta, null=True, blank=True, limit_choices_to = {'estado':'0'})
     concept_vmp_dmd = models.ForeignKey(uk_dmd_conceptos, null=True, blank=True)

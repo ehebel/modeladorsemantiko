@@ -127,6 +127,38 @@ admin.site.register(efector_codigoporarea,efectorareaAdmin)
 
 
 class concCasAreaAdmin(admin.ModelAdmin):
+    def change_view(self, request, object_id, form_url='', extra_context=None):
+
+        result = super(concCasAreaAdmin, self).change_view(request, object_id, form_url, extra_context )
+
+        ref = request.META.get('HTTP_REFERER', '')
+        if ref.find('?') != -1:
+            request.session['filtered'] =  ref
+
+        if request.POST.has_key('_save'):
+            try:
+                if request.session['filtered'] is not None:
+                    result['Location'] = request.session['filtered']
+                    request.session['filtered'] = None
+            except:
+                pass
+
+        return result
+    def response_change(self, request, obj):
+        """
+        Determines the HttpResponse for the change_view stage.
+        """
+        if request.POST.has_key("_viewnext"):
+            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+                   {'name': force_unicode(obj._meta.verbose_name),
+                    'obj': force_unicode(obj)})
+            next = obj.__class__.objects.filter(id_xt_sust__gt=obj.id_xt_sust).order_by('id_xt_sust')[:1]
+            if next:
+                self.message_user(request, msg)
+                return HttpResponseRedirect("../%s/" % next[0].pk)
+        return super(concCasAreaAdmin, self).response_change(request, obj)
+
+
     inlines = EfectoresAreaInline,
     list_display = ['concepto','area','get_efectorxarea']
     list_filter = ['area']

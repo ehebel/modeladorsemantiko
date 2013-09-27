@@ -36,7 +36,7 @@ class conceptosCASporarea(models.Model):
     concepto = models.ForeignKey(concepto)
     area = models.ForeignKey(cas_area)
     def get_efectorxarea(objeto):
-        pass
+            pass
         #return "<br/>".join([s.efector.ExamCode for s in objeto.efector_codigoporarea_set.order_by('id').all[:6]])
     get_efectorxarea.allow_tags = True
     get_efectorxarea.short_description = 'Efectores por Concepto-Area (En desarrollo)'

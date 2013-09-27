@@ -128,7 +128,8 @@ admin.site.register(efector_codigoporarea,efectorareaAdmin)
 
 class concCasAreaAdmin(admin.ModelAdmin):
     inlines = EfectoresAreaInline,
-
+    list_display = ['concepto','area','get_efectorxarea']
+    list_filter = ['area']
 admin.site.register(conceptosCASporarea,concCasAreaAdmin)
 
 admin.site.register(cas_area)

@@ -35,6 +35,11 @@ class cas_lugar(models.Model):
 class conceptosCASporarea(models.Model):
     concepto = models.ForeignKey(concepto)
     area = models.ForeignKey(cas_area)
+    def get_efectorxarea(objeto):
+        pass
+        #return "<br/>".join([s.efector.ExamCode for s in objeto.efector_codigoporarea_set.order_by('id').all[:6]])
+    get_efectorxarea.allow_tags = True
+    get_efectorxarea.short_description = 'Efectores por Concepto-Area (En desarrollo)'
     def __unicode__(self):
         return "%s | %s" % (self.concepto.fsn, self.area.descripcion)
     class Meta:
@@ -66,7 +71,7 @@ class efector(models.Model):
     codigoporarea = models.ManyToManyField(conceptosCASporarea, through='efector_codigoporarea')
     def get_conceptosporarea(objeto):
         pass
-        #return "<br/>".join([s.concepto for s in objeto.codigoporarea.order_by('id').all[:6]])
+        #return "<br/>".join([a.concepto for a in objeto.codigoporarea.order_by(id).all[:6]])
     get_conceptosporarea.allow_tags = True
     get_conceptosporarea.short_description = 'Conceptos por Area (En desarrollo)'
     def __unicode__(self):

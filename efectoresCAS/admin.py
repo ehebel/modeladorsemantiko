@@ -1,3 +1,5 @@
+import autocomplete_light
+autocomplete_light.autodiscover()
 from django.contrib import admin
 admin.autodiscover()
 from efectoresCAS.models import *
@@ -44,6 +46,11 @@ export_as_csv.short_description = "Exportar elementos seleccionados como CSV"
 
 class ConceptosAreaInline(admin.TabularInline):
     model = cas_area.conceptosporarea.through
+
+class EfectoresAreaInline(admin.TabularInline):
+    model = efector_codigoporarea
+    form = autocomplete_light.modelform_factory(efector)
+    raw_id_fields = ['efector',]
 
 
 class DescInLine(admin.TabularInline):
@@ -111,10 +118,20 @@ class descripcionAdmin(admin.ModelAdmin):
 admin.site.register(descripcion,descripcionAdmin)
 
 
+class efectorareaAdmin(admin.ModelAdmin):
+    list_display = ('id','efector','conceptoscasporarea')
+    ordering = ('id',)
+    raw_id_fields = ('conceptoscasporarea',)
+    search_fields = ('efector__ExamName',)
+admin.site.register(efector_codigoporarea,efectorareaAdmin)
 
+
+class concCasAreaAdmin(admin.ModelAdmin):
+    inlines = EfectoresAreaInline,
+
+admin.site.register(conceptosCASporarea,concCasAreaAdmin)
 
 admin.site.register(cas_area)
 admin.site.register(cas_lugar)
-admin.site.register(conceptosCASporarea)
 
 __author__ = 'ehebel'

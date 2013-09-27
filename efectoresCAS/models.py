@@ -60,20 +60,24 @@ class descripcion(models.Model):
 
 
 
-
-
 class efector(models.Model):
     ExamCode = models.CharField(max_length=255, primary_key=True)
     ExamName = models.CharField(max_length=255)
-    codigoporarea = models.ManyToManyField(conceptosCASporarea)
+    codigoporarea = models.ManyToManyField(conceptosCASporarea, through='efector_codigoporarea')
     def get_conceptosporarea(objeto):
         pass
         #return "<br/>".join([s.concepto for s in objeto.codigoporarea.order_by('id').all[:6]])
     get_conceptosporarea.allow_tags = True
     get_conceptosporarea.short_description = 'Conceptos por Area (En desarrollo)'
     def __unicode__(self):
-        return self.ExamName
+        return '%s | %s' % (self.ExamCode,self.ExamName)
     class Meta:
         ordering=['ExamName']
         verbose_name_plural = "efectores"
 
+
+class efector_codigoporarea(models.Model):
+    efector = models.ForeignKey(efector)
+    conceptoscasporarea = models.ForeignKey(conceptosCASporarea)
+    def __unicode__(self):
+        return u'%s' % self.id

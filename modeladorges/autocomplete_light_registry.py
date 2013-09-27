@@ -2,7 +2,7 @@ import autocomplete_light
 
 
 from modeladorges.models import ciediez,casdiagnostico,casprocedimiento,concepto, oms2008ciediez
-from efectoresCAS.models import conceptosCASporarea
+from efectoresCAS.models import conceptosCASporarea,efector
 from modeladorFarmacos.models import *
 
 autocomplete_light.register(ciediez, search_fields=('descriptor','^codigo'),
@@ -36,7 +36,8 @@ autocomplete_light.register(oms2008ciediez, search_fields=('descriptor',),
 autocomplete_light.register(conceptosCASporarea, search_fields=('id',),
     autocomplete_js_attributes={'placeholder': 'ID conceptos por area .. '})
 
-
+autocomplete_light.register(efector, search_fields=('ExamName',),
+    autocomplete_js_attributes={'placeholder': 'Efectores.. '})
 
 autocomplete_light.register(xt_mb, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. IBUPROFENO + PARACETAMOL '})

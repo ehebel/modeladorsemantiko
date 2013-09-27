@@ -344,7 +344,7 @@ class xt_sustancias (models.Model):
     id_xt_sust = models.AutoField(primary_key=True)
     
     descripcion = models.CharField(max_length=255)
-    riesgo_teratogenico = models.SmallIntegerField(null=True, blank=True)
+    riesgo_teratogenico = models.CharField(max_length=15, null=True, blank=True)
 
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_sust')

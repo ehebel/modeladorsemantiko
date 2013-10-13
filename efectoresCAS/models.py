@@ -2,10 +2,13 @@ from django.db import models
 
 
 class concepto(models.Model):
+    OPCIONES_DOMINIO = ((1, 'Imagenes'),(2, 'Procedimientos'),(3,'Laboratorio'))
     fsn = models.CharField('Fully Specified Name',max_length=255, )
     revisado = models.BooleanField()
+    dominio = models.IntegerField(choices=OPCIONES_DOMINIO)
+    pedible = models.BooleanField()
     def descripciones(objeto):
-        return '<br/>'.join(c.termino for c in objeto.descripcion_set.order_by('id')[:3])
+        return '<br/>'.join(c.termino for c in objeto.descripcion_set.order_by('id')[:4])
     descripciones.allow_tags = True
     descripciones.short_description = 'Descripcion'
     def __unicode__(self):
@@ -17,6 +20,10 @@ class concepto(models.Model):
 class cas_area(models.Model):
     descripcion = models.CharField(max_length=255)
     conceptosporarea = models.ManyToManyField(concepto, through='conceptosCASporarea')
+    def conceptos (objeto):
+        return '<br/>'.join(c.fsn for c in objeto.conceptosporarea.order_by('id')[:4])
+    conceptos.allow_tags = True
+    conceptos.short_description = 'Conceptos'
     def __unicode__(self):
         return self.descripcion
     class Meta:
@@ -66,14 +73,19 @@ class descripcion(models.Model):
 
 
 class efector(models.Model):
+    OPCIONES_DOMINIO = ((1, 'Imagenes'),(2, 'Procedimientos'),(3,'Laboratorio'))
     ExamCode = models.CharField(max_length=255, primary_key=True)
     ExamName = models.CharField(max_length=255)
+    dominio = models.IntegerField(choices=OPCIONES_DOMINIO)
     codigoporarea = models.ManyToManyField(conceptosCASporarea, through='efector_codigoporarea')
     def get_conceptosporarea(objeto):
-        pass
-        #return "<br/>".join([a.concepto for a in objeto.codigoporarea.order_by(id).all[:6]])
+        return '<br/>'.join(c.concepto.fsn for c in objeto.codigoporarea.order_by('id')[:4])
     get_conceptosporarea.allow_tags = True
-    get_conceptosporarea.short_description = 'Conceptos por Area (En desarrollo)'
+    get_conceptosporarea.short_description = 'Conceptos'
+    def get_areas(objeto):
+        return '<br/>'.join(c.area.descripcion for c in objeto.codigoporarea.order_by('id')[:4])
+    get_areas.allow_tags = True
+    get_areas.short_description = 'Areas'
     def __unicode__(self):
         return '%s | %s' % (self.ExamCode,self.ExamName)
     class Meta:

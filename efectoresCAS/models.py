@@ -9,6 +9,7 @@ class concepto(models.Model):
     pedible = models.BooleanField()
     def descripciones(objeto):
         return '<br/>'.join(c.termino for c in objeto.descripcion_set.order_by('id')[:4])
+
     descripciones.allow_tags = True
     descripciones.short_description = 'Descripcion'
     def __unicode__(self):
@@ -43,8 +44,7 @@ class conceptosCASporarea(models.Model):
     concepto = models.ForeignKey(concepto)
     area = models.ForeignKey(cas_area)
     def get_efectorxarea(objeto):
-            pass
-        #return "<br/>".join([s.efector.ExamCode for s in objeto.efector_codigoporarea_set.order_by('id').all[:6]])
+        pass
     get_efectorxarea.allow_tags = True
     get_efectorxarea.short_description = 'Efectores por Concepto-Area (En desarrollo)'
     def __unicode__(self):

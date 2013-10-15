@@ -686,7 +686,7 @@ class xt_pc (models.Model):
     id_xt_fp = models.ForeignKey(xt_fp, verbose_name='Familia de Producto', null=True, blank=True)
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico', null=True, blank=True)
     concept_amp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
-    reg_isp_num = models.PositiveIntegerField(max_length=8, null = True, blank=True)
+    reg_isp_num = models.CharField(max_length=10, null = True, blank=True)
     reg_isp_ano = models.PositiveIntegerField(max_length=2, null=True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     #bioequivalente = models.ManyToManyField('self', through='xt_bioequivalente', symmetrical=False)

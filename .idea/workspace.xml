@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectoresCAS/models.py" afterPath="$PROJECT_DIR$/efectoresCAS/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync">
@@ -35,10 +34,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="464" selection-end="464" vertical-scroll-proportion="0.023076924">
+            <state line="11" column="0" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -47,7 +46,16 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="688" column="48" selection-start="27372" selection-end="27372" vertical-scroll-proportion="-7.8076925">
+            <state line="185" column="22" selection-start="6240" selection-end="6240" vertical-scroll-proportion="-13.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="138" column="18" selection-start="5261" selection-end="5261" vertical-scroll-proportion="4.8364487">
               <folding />
             </state>
           </provider>
@@ -125,6 +133,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -159,7 +168,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -997,7 +1005,11 @@
       <created>1381679920788</created>
       <updated>1381679920788</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="Se arregla la unidad medida cantidad a solo ml">
+      <created>1381878316746</created>
+      <updated>1381878316746</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1028,11 +1040,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22156574" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28200972" sideWeight="0.5565891" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19773096" sideWeight="0.21855345" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19773096" sideWeight="0.6912851" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20421393" sideWeight="0.6912851" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990461" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17341977" sideWeight="0.19202363" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44608566" sideWeight="0.49675852" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30871493" sideWeight="0.49756888" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30871493" sideWeight="0.49756888" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1186,11 +1198,6 @@
         <state line="38" column="61" selection-start="1611" selection-end="1611" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="0" selection-start="3778" selection-end="5092" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/efectoresCAS/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="106" column="27" selection-start="3835" selection-end="3835" vertical-scroll-proportion="0.0">
@@ -1198,16 +1205,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
+    <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="688" column="48" selection-start="27372" selection-end="27372" vertical-scroll-proportion="-7.8076925">
+        <state line="11" column="0" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="464" selection-end="464" vertical-scroll-proportion="0.023076924">
+        <state line="185" column="22" selection-start="6240" selection-end="6240" vertical-scroll-proportion="-13.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="18" selection-start="5261" selection-end="5261" vertical-scroll-proportion="4.8364487">
           <folding />
         </state>
       </provider>

@@ -7,7 +7,7 @@ def lista_areas(solicitud):
     areas = cas_area.objects.order_by('id')
     conceptos = concepto.objects.order_by('id')
     descripciones = descripcion.objects.order_by('id')
-    return render_to_response('efectores.html'
+    return render_to_response('efectores_old2.html'
         ,{'listado_areas':areas,
           'listado_fsn': conceptos,
           'listado_descripciones':descripciones,

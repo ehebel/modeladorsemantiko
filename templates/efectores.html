@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html>
+<!--CSS Code-->
+<style type="text/css">
+    .row {vertical-align: top; height:auto !important;}
+    .list {display:none;}
+    .show {display:none;}
+    .hide:target + .show {display:inline;}
+    .hide:target {display:none;}
+    .hide:target ~ .list {display:inline;}
+    @media print {.hide, .show {display:none;}}
+</style>
 <head>
     <title>Desc-Conc-Areas-Lugares</title>
 </head>
 <body>
 
-<ul>
-    {% for conc in listado_fsn %}
-        <h3>
-            FSN: {{ conc.fsn }}
-        </h3>
-        Descripciones:
-        {% for descrip in conc.descripcion_set.all %}
-            <ul>{{ descrip.termino }}</ul>
-        {% empty %}
-            <ul>¡Sin Descripcion!</ul>
-        {% endfor %}
-        Areas:
-        {% for efector in conc.conceptoscasporarea_set.all %}
-            <ul><h3>{{ efector.area }}</h3>
+{% for conc in listado_fsn %}
+    <div class="row">
+        <a href="#hide{{ conc.id }}" class="hide" id="hide{{ conc.id }}">[+]</a>
+        <a href="#show{{ conc.id }}" class="show" id="show{{ conc.id }}">[-]</a> &nbsp;<b>{{ conc.fsn }}</b>
+
+        <div class="list">
             <ul>
-            Lugar: {% for lugar in efector.area.cas_lugares_set.all %}
-                    <ul>{{ lugar.descripcion }}</ul>
+                <strong>Descripciones:</strong>
+                {% for descrip in conc.descripcion_set.all %}
+                    <li>{{ descrip.termino }}</li>
                 {% empty %}
-                    <ul>¡Sin Lugares!</ul>
-            {% endfor %}
-            Codigo de Efector: {% for test in efector.efector_set.all %}
-                <ul>{{ test.ExamName }}</ul>
+                    <ul>¡Sin Descripcion!</ul>
+                {% endfor %}
+
+                <strong>Areas:</strong>
+                {% for efector in conc.conceptoscasporarea_set.all %}
+                    <li>{{ efector.area }}</li>
+                    <strong>Efectores:</strong>
+                    {% for test in efector.efector_set.all %}
+                        <ul>{{ test.ExamCode }} - {{ test.ExamName }}</ul>
+                    {% empty %}
+                        <ul>¡Sin Efector!</ul>
+                    {% endfor %}
                 {% empty %}
-                    <ul>¡Sin Efector!</ul>
-            {% endfor %}
-        </ul></ul>
-        {% empty %}
-            <ul>¡Sin Áreas!</ul>
-        {% endfor %}
+                    <ul>¡Sin Area!</ul>
+                {% endfor %}
             </ul>
-    <hr>
-    {% endfor %}
-</ul>
+        </div>
+    </div>
+{% endfor %}
 </body>
 </html>

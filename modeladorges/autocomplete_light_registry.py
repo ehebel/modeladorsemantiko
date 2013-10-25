@@ -88,7 +88,7 @@ autocomplete_light.register(kairos_sustancia, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. Ibuprofeno...'})
 
 #TODO Arreglar problema con buscador KAIROS
-autocomplete_light.register(kairos_presentaciones, search_fields=('__unicode__',),
+autocomplete_light.register(kairos_presentaciones, search_fields=('claveproducto__descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. Ginotex'})
 
 autocomplete_light.register(xt_fp, search_fields=('descripcion',),

@@ -482,12 +482,14 @@ class pcAdmin(admin.ModelAdmin):
             return formset.save()
 admin.site.register(xt_pc,  pcAdmin)
 
+
 class pcceAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_pcce)
     list_filter = ['estado','revisado','consultar'
         ,('id_xt_mcce', IsNullFieldListFilter)] #TODO BOOL Observacion
-    list_display = ['id_xt_pcce','descripcion','id_xt_pc','id_xt_mcce','concept_ampp_dmd']#,'id_presentacion_kairos'] #TODO BOOL Bioequivalente
+    list_display = ['id_xt_pcce','descripcion','id_xt_pc','id_xt_mcce','concept_ampp_dmd','id_presentacion_kairos'] #TODO BOOL Bioequivalente
     search_fields = ['descripcion',]
+#    raw_id_fields = ['id_presentacion_kairos']
     readonly_fields=('id_xt_pcce',)
     radio_fields = {
         "estado": admin.HORIZONTAL
@@ -768,7 +770,9 @@ admin.site.register(xt_formas_agrupadas)
 admin.site.register(kairos_sustancia)
 admin.site.register(kairos_lab)
 admin.site.register(kairos_productos)
-admin.site.register(kairos_presentaciones)
+class kairosPresAdmin(admin.ModelAdmin):
+        search_fields = ['claveproducto__descripcion','descripcion']
+admin.site.register(kairos_presentaciones,kairosPresAdmin)
 admin.site.register(kairos_precio)
 
 

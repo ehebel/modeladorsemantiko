@@ -86,3 +86,10 @@ autocomplete_light.register(kairos_sustancia, search_fields=('descripcion',),
 
 autocomplete_light.register(xt_fp, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. Panadol...'})
+
+
+autocomplete_light.register(dbnet, search_fields=('producto',),
+    autocomplete_js_attributes={'placeholder': 'Producto DBNET'})
+
+autocomplete_light.register(atc, search_fields=('atc_desc','cod_atc'),
+    autocomplete_js_attributes={'placeholder': 'Codigo o Desc ATC'})

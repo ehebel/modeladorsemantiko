@@ -172,7 +172,6 @@ INSTALLED_APPS = (
     'modeladorges',
     'efectoresCAS',
     'modeladorFarmacos',
-
 )
 
 # A sample logging configuration. The only tangible logging
@@ -212,6 +211,8 @@ LOGGING = {
 #            },
         }
 }
+
+
 
 try:
     from modeladorsemantiko.local_settings import *

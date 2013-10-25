@@ -2,6 +2,39 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+class dbnet (models.Model):
+    cod_clasificacion = models.IntegerField()
+    clasificacion = models.CharField(max_length=255)
+    codigo = models.AutoField(primary_key=True)
+    producto = models.CharField(max_length=255)
+    receta_retenida = models.IntegerField()
+    cod_principio_activo = models.CharField(max_length=255)
+    principio_activo = models.CharField(max_length=255)
+    cod_concentracion = models.CharField(max_length=255)
+    concentracion = models.CharField(max_length=255)
+    cod_acc_farmacologica = models.IntegerField()
+    accion_farmacologica = models.CharField(max_length=255)
+    cod_unidad = models.CharField(max_length=255)
+    unidad_medida = models.CharField(max_length=255)
+    def __unicode__(self):
+        return self.producto
+
+
+class atc (models.Model):
+    cod_atc = models.CharField(max_length=10, primary_key=True)
+    n1_cod = models.CharField(max_length=10)
+    n1_desc = models.CharField(max_length=255)
+    n2_cod = models.CharField(max_length=10)
+    n2_desc = models.CharField(max_length=255)
+    n3_cod = models.CharField(max_length=10)
+    n3_desc = models.CharField(max_length=255)
+    n4_cod = models.CharField(max_length=10)
+    n4_desc = models.CharField(max_length=255)
+    nivelmax = models.IntegerField()
+    largo = models.IntegerField()
+    atc_desc = models.CharField(max_length=255)
+    def __unicode__(self):
+        return u"%s - %s" % (self.cod_atc,self.atc_desc)
 
 
 class vtm_hiba (models.Model):
@@ -363,6 +396,8 @@ class xt_sustancias (models.Model):
         ordering=['id_xt_sust']
         verbose_name_plural ='XT extension de sustancias'
 
+
+
 ## ##-
 ## table 'xt_mb'
 ## medicamento basico
@@ -387,6 +422,8 @@ class xt_mb (models.Model):
     kairos_sustancia = models.ForeignKey(kairos_sustancia,null=True,blank=True)
     concept_vtm_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     concept_vtm_hiba = models.ForeignKey(vtm_hiba, null = True, blank=True)
+    concept_dbnet = models.ForeignKey(dbnet, null=True, blank=True)
+    atc_code = models.ForeignKey(atc, null=True, blank=True)
 
     rel_xt_sust = models.ManyToManyField(xt_sustancias, through='rel_xt_mb_xt_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
@@ -709,6 +746,12 @@ class xt_pc (models.Model):
 class xt_mcce (models.Model):
     OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
+    OPCIONES_TIPO = (
+        (1,'UNIDOSIS'),
+        (2,'ENVASE CLINICO'),
+        (3,'VENTA PUBLICO'),
+        (4,'MUESTRA MEDICA')
+    )
     id_xt_mcce = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
 
@@ -720,6 +763,7 @@ class xt_mcce (models.Model):
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
+    tipo = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_TIPO, null=False, blank=False)
 
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico')
     cantidad = models.IntegerField()

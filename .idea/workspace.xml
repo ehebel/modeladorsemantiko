@@ -46,7 +46,7 @@
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="27" selection-start="128" selection-end="128" vertical-scroll-proportion="0.10514019">
+            <state line="805" column="83" selection-start="32597" selection-end="32597" vertical-scroll-proportion="0.8557214">
               <folding />
             </state>
           </provider>
@@ -1031,7 +1031,11 @@
       <created>1382672479939</created>
       <updated>1382672479939</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="Agrego ATC y DBNET a modelo de Farmacos">
+      <created>1382673503797</created>
+      <updated>1382673503797</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1243,7 +1247,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="27" selection-start="128" selection-end="128" vertical-scroll-proportion="0.10514019">
+        <state line="805" column="83" selection-start="32597" selection-end="32597" vertical-scroll-proportion="0.8557214">
           <folding />
         </state>
       </provider>

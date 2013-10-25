@@ -422,7 +422,6 @@ class xt_mb (models.Model):
     kairos_sustancia = models.ForeignKey(kairos_sustancia,null=True,blank=True)
     concept_vtm_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     concept_vtm_hiba = models.ForeignKey(vtm_hiba, null = True, blank=True)
-    concept_dbnet = models.ForeignKey(dbnet, null=True, blank=True)
     atc_code = models.ForeignKey(atc, null=True, blank=True)
 
     rel_xt_sust = models.ManyToManyField(xt_sustancias, through='rel_xt_mb_xt_sust')
@@ -802,6 +801,7 @@ class xt_pcce (models.Model):
 
     id_xt_pc = models.ForeignKey(xt_pc, verbose_name= 'Producto Comercial')
     id_xt_mcce = models.ForeignKey(xt_mcce, verbose_name='Medicamento Clinico Con Envase')
+    concept_dbnet = models.ForeignKey(dbnet, null=True, blank=True)
     gtin_gs1 = models.BigIntegerField()
     concept_ampp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     id_presentacion_kairos = models.ForeignKey(kairos_presentaciones, verbose_name='Presentacion Kairos')

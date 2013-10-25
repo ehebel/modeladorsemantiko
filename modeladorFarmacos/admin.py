@@ -486,7 +486,7 @@ class pcceAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_pcce)
     list_filter = ['estado','revisado','consultar'
         ,('id_xt_mcce', IsNullFieldListFilter)] #TODO BOOL Observacion
-    list_display = ['id_xt_pcce','descripcion','id_xt_pc','id_xt_mcce','concept_ampp_dmd','id_presentacion_kairos'] #TODO BOOL Bioequivalente
+    list_display = ['id_xt_pcce','descripcion','id_xt_pc','id_xt_mcce','concept_ampp_dmd']#,'id_presentacion_kairos'] #TODO BOOL Bioequivalente
     search_fields = ['descripcion',]
     readonly_fields=('id_xt_pcce',)
     radio_fields = {

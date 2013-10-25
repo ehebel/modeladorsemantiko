@@ -69,6 +69,9 @@ autocomplete_light.register(vtm_hiba, search_fields =('term_vtm',),
 autocomplete_light.register(xt_mc, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. PARACETAMOL 500 MG COMPRIMIDO'})
 
+autocomplete_light.register(xt_mcce, search_fields=('descripcion',),
+    autocomplete_js_attributes={'placeholder': 'Inserte'})
+
 
 autocomplete_light.register(rel_xt_mb_xt_sust, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'Rel Medicamentos Clinicos .. '})
@@ -83,6 +86,10 @@ autocomplete_light.register(xt_pc, search_fields=('descripcion',),
 
 autocomplete_light.register(kairos_sustancia, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. Ibuprofeno...'})
+
+#TODO Arreglar problema con buscador KAIROS
+autocomplete_light.register(kairos_presentaciones, search_fields=('__unicode__',),
+    autocomplete_js_attributes={'placeholder': 'ej. Ginotex'})
 
 autocomplete_light.register(xt_fp, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. Panadol...'})

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class dbnet (models.Model):
     cod_clasificacion = models.IntegerField()
     clasificacion = models.CharField(max_length=255)
-    codigo = models.AutoField(primary_key=True)
+    codigo = models.IntegerField()
     producto = models.CharField(max_length=255)
     receta_retenida = models.IntegerField()
     cod_principio_activo = models.CharField(max_length=255)

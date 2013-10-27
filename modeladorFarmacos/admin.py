@@ -328,6 +328,9 @@ class mbAdmin(admin.ModelAdmin):
 admin.site.register(xt_mb,  mbAdmin)
 
 class mcceAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size':'100'})}
+    }
     form = autocomplete_light.modelform_factory(xt_mcce)
     list_display = ['id_xt_mcce','descripcion','id_xt_mc','concept_vmpp_dmd'] #TODO sustancias m2m
     list_filter = ['revisado','consultar','estado',('concept_vmpp_dmd', IsNullFieldListFilter)] #TODO con/Sin observacion
@@ -484,10 +487,13 @@ admin.site.register(xt_pc,  pcAdmin)
 
 
 class pcceAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size':'100'})}
+    }
     form = autocomplete_light.modelform_factory(xt_pcce)
     list_filter = ['estado','revisado','consultar'
         ,('id_xt_mcce', IsNullFieldListFilter)] #TODO BOOL Observacion
-    list_display = ['id_xt_pcce','descripcion','id_xt_pc','id_xt_mcce','concept_ampp_dmd','id_presentacion_kairos'] #TODO BOOL Bioequivalente
+    list_display = ['id_xt_pcce','descripcion','id_xt_pc','id_xt_mcce','concept_dbnet','id_presentacion_kairos'] #TODO BOOL Bioequivalente
     search_fields = ['descripcion',]
 #    raw_id_fields = ['id_presentacion_kairos']
     readonly_fields=('id_xt_pcce',)
@@ -760,6 +766,13 @@ class bioeqAdmin(admin.ModelAdmin):
     search_fields = ['referencia__descripcion','bioequivalente__descripcion']
 
 admin.site.register(xt_bioequivalente,bioeqAdmin)
+
+class atcAdmin(admin.ModelAdmin):
+    list_display = ['cod_atc','atc_desc','n1_desc','n2_desc','n3_desc','n4_desc']
+    search_fields = ['cod_atc','atc_desc','n1_desc','n2_desc','n3_desc','n4_desc']
+    list_filter = ['n1_desc']
+admin.site.register(atc,atcAdmin)
+
 
 admin.site.register(xt_unidad_medida_cant)
 #admin.site.register(rel_mc_sust)

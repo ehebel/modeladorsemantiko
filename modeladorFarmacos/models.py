@@ -34,7 +34,9 @@ class atc (models.Model):
     largo = models.IntegerField()
     atc_desc = models.CharField(max_length=255)
     def __unicode__(self):
-        return u"%s - %s" % (self.cod_atc,self.atc_desc)
+        return u"%s > %s > %s > %s > %s > %s" % (self.cod_atc,self.atc_desc,self.n1_desc,self.n2_desc,self.n3_desc,self.n4_desc)
+    class META:
+        verbose_name_plural ='Codigos ATC'
 
 
 class vtm_hiba (models.Model):
@@ -422,7 +424,7 @@ class xt_mb (models.Model):
     kairos_sustancia = models.ForeignKey(kairos_sustancia,null=True,blank=True)
     concept_vtm_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     concept_vtm_hiba = models.ForeignKey(vtm_hiba, null = True, blank=True)
-    atc_code = models.ForeignKey(atc, null=True, blank=True)
+
 
     rel_xt_sust = models.ManyToManyField(xt_sustancias, through='rel_xt_mb_xt_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
@@ -500,6 +502,8 @@ class xt_mc (models.Model):
     condicion_venta = models.ForeignKey(xt_condicion_venta, null=True, blank=True, limit_choices_to = {'estado':'0'})
     concept_vmp_dmd = models.ForeignKey(uk_dmd_conceptos, null=True, blank=True)
     concept_vmp_hiba = models.ForeignKey(vmp_hiba, null=True, blank=True)
+    atc_code = models.ForeignKey(atc, null=True, blank=True)
+
     rel_mc = models.ManyToManyField(xt_sustancias, through='rel_mc_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def get_pc(self):
@@ -802,9 +806,9 @@ class xt_pcce (models.Model):
     id_xt_pc = models.ForeignKey(xt_pc, verbose_name= 'Producto Comercial')
     id_xt_mcce = models.ForeignKey(xt_mcce, verbose_name='Medicamento Clinico Con Envase')
     concept_dbnet = models.ForeignKey(dbnet, null=True, blank=True)
-    gtin_gs1 = models.BigIntegerField()
+    gtin_gs1 = models.BigIntegerField(blank=True, null=True)
     concept_ampp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
-    id_presentacion_kairos = models.ForeignKey(kairos_presentaciones, verbose_name='Presentacion Kairos')
+    id_presentacion_kairos = models.ForeignKey(kairos_presentaciones, verbose_name='Presentacion Kairos',blank=True, null=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion

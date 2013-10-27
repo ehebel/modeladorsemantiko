@@ -492,7 +492,9 @@ class pcceAdmin(admin.ModelAdmin):
     }
     form = autocomplete_light.modelform_factory(xt_pcce)
     list_filter = ['estado','revisado','consultar'
-        ,('id_xt_mcce', IsNullFieldListFilter)] #TODO BOOL Observacion
+        ,('id_xt_mcce', IsNullFieldListFilter)
+        ,('concept_dbnet', IsNullFieldListFilter)
+        ,('id_presentacion_kairos', IsNullFieldListFilter)] #TODO BOOL Observacion
     list_display = ['id_xt_pcce','descripcion','id_xt_pc','id_xt_mcce','concept_dbnet','id_presentacion_kairos'] #TODO BOOL Bioequivalente
     search_fields = ['descripcion',]
 #    raw_id_fields = ['id_presentacion_kairos']

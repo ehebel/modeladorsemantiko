@@ -13,6 +13,8 @@ from django.contrib.admin import FieldListFilter
 from django.utils.encoding import force_unicode
 
 
+
+
 class IsNullFieldListFilter(FieldListFilter):
     def __init__(self, field, request, params, model, model_admin, field_path):
         self.lookup_kwarg = '%s__isnull' % field_path
@@ -167,11 +169,14 @@ class mcAdmin (admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mc)
     inlines = [SustanciaClinicoInline] # ,ProductoComercialInline]
     search_fields = ['descripcion']
-    list_display = ['id_xt_mc','descripcion','med_basico','get_sustancia','get_pc'
-        ,'estado_prescripcion','tipo_forma_farm','concept_vmp_dmd']
+    list_display = ['id_xt_mc','descripcion','med_basico'#,'get_sustancia'
+            ,'get_pc'
+            ,'atc_code'
+            ]
     list_filter = ['revisado','consultar','estado'
         ,('med_basico', IsNullFieldListFilter)
         ,('concept_vmp_dmd', IsNullFieldListFilter)
+        ,('atc_code', IsNullFieldListFilter)
         ] #TODO con/sin observacion
     list_display_links = ['id_xt_mc','descripcion']
     actions = [export_as_csv]

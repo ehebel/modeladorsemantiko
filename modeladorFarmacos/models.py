@@ -35,6 +35,8 @@ class atc (models.Model):
     atc_desc = models.CharField(max_length=255)
     def __unicode__(self):
         return u"%s > %s > %s > %s > %s > %s" % (self.cod_atc,self.atc_desc,self.n1_desc,self.n2_desc,self.n3_desc,self.n4_desc)
+    def showDesc(self):
+        return u"%s" % (self.atc_desc)
     class META:
         verbose_name_plural ='Codigos ATC'
 
@@ -515,6 +517,13 @@ class xt_mc (models.Model):
         return "<br/>".join([s.descripcion for s in objeto.rel_mc.order_by('id_xt_sust').all()[:6]])
     get_sustancia.allow_tags = True
     get_sustancia.short_description = 'XT Sustancias'
+
+    def get_atc(self):
+        pass
+        #return self.atc_code.cod_atc
+    get_atc.allow_tags = True
+    get_atc.short_description = 'ATC (en Desarrollo)'
+
     def __unicode__(self):
         return self.descripcion
     class Meta:

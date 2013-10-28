@@ -518,7 +518,7 @@ class xt_mc (models.Model):
     get_sustancia.allow_tags = True
     get_sustancia.short_description = 'XT Sustancias'
 
-    def get_atc(self):
+    def get_atc(object):
         pass
         #return self.atc_code.cod_atc
     get_atc.allow_tags = True

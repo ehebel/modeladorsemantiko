@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/efectoresCAS.json" />
@@ -34,19 +34,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="520" column="15" selection-start="20259" selection-end="20266" vertical-scroll-proportion="0.0">
+            <state line="520" column="22" selection-start="20273" selection-end="20273" vertical-scroll-proportion="0.56659144">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="173" column="21" selection-start="6505" selection-end="6505" vertical-scroll-proportion="0.33333334">
+            <state line="174" column="13" selection-start="6520" selection-end="6520" vertical-scroll-proportion="-3.6153846">
               <folding>
                 <element signature="e#19832#19965#0" expanded="false" />
                 <element signature="e#20056#20584#0" expanded="false" />
@@ -85,8 +85,8 @@
         <option value="$PROJECT_DIR$/templates/efectores.html" />
         <option value="$PROJECT_DIR$/templates/efectores_old.html" />
         <option value="$PROJECT_DIR$/efectoresCAS/views.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
       </list>
     </option>
   </component>
@@ -1057,7 +1057,11 @@
       <created>1382930941255</created>
       <updated>1382930941256</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="Agrego ATC y DBNET a modelo de Farmacos">
+      <created>1382931018919</created>
+      <updated>1382931018919</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1270,16 +1274,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="520" column="15" selection-start="20259" selection-end="20266" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="21" selection-start="6505" selection-end="6505" vertical-scroll-proportion="0.33333334">
+        <state line="174" column="13" selection-start="6520" selection-end="6520" vertical-scroll-proportion="-3.6153846">
           <folding>
             <element signature="e#19832#19965#0" expanded="false" />
             <element signature="e#20056#20584#0" expanded="false" />
@@ -1287,6 +1284,13 @@
             <element signature="e#20639#20717#1" expanded="false" />
             <element signature="e#21328#21701#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="520" column="22" selection-start="20273" selection-end="20273" vertical-scroll-proportion="0.56659144">
+          <folding />
         </state>
       </provider>
     </entry>

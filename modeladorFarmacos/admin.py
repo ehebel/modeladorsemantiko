@@ -171,7 +171,7 @@ class mcAdmin (admin.ModelAdmin):
     search_fields = ['descripcion']
     list_display = ['id_xt_mc','descripcion','med_basico'#,'get_sustancia'
             ,'get_pc'
-            ,'atc_code'
+            ,'get_atc'
             ]
     list_filter = ['revisado','consultar','estado'
         ,('med_basico', IsNullFieldListFilter)

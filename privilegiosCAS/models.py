@@ -29,11 +29,12 @@ class amca(models.Model):
         return self.amca_desc
 
 class intervencion(models.Model):
-    id_intev = models.AutoField(primary_key=True)
+    id_intev = models.CharField(max_length=20,primary_key=True)
     interv_glosa = models.CharField(max_length=255)
     grpdescripcion = models.CharField(max_length=255)
     sgrdescripcion = models.CharField(max_length=255)
-    amca_cod = models.BigIntegerField(blank=True, null=True)
+    amca_cod = models.ForeignKey(amca,blank=True, null=True)
+    amca_desc = models.CharField(max_length=255)
     def __unicode__(self):
         return self.interv_glosa
 

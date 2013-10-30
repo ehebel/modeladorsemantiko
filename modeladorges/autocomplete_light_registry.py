@@ -102,7 +102,7 @@ autocomplete_light.register(dbnet, search_fields=('producto',),
 autocomplete_light.register(atc, search_fields=('atc_desc','cod_atc'),
     autocomplete_js_attributes={'placeholder': 'Codigo o Desc ATC'})
 
-autocomplete_light.register(kairos_productos, search_fields=('descripcion','abreviatura'))
+autocomplete_light.register(kairos_productos, search_fields=('descripcion',),)
 
 
 autocomplete_light.register(area, search_fields=('area',),

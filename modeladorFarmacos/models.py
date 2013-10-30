@@ -630,7 +630,7 @@ class xt_producto (models.Model):
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
 
     id_xt_lab = models.ForeignKey(xt_laboratorio, null=True , blank=True, limit_choices_to = {'estado':'0'})
-    clave_prod_kairos = models.ForeignKey(kairos_productos)
+    clave_prod_kairos = models.ForeignKey(kairos_productos,blank=True,null=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion

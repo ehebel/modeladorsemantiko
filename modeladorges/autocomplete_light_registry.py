@@ -4,6 +4,7 @@ import autocomplete_light
 from modeladorges.models import ciediez,casdiagnostico,casprocedimiento,concepto, oms2008ciediez
 from efectoresCAS.models import conceptosCASporarea,efector
 from modeladorFarmacos.models import *
+from privilegiosCAS.models import amca, area, intervencion,especialidad,documento,atributo
 
 autocomplete_light.register(ciediez, search_fields=('descriptor','^codigo'),
     autocomplete_js_attributes={'minimum_characters': 3,
@@ -87,7 +88,7 @@ autocomplete_light.register(xt_pc, search_fields=('descripcion',),
 autocomplete_light.register(kairos_sustancia, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. Ibuprofeno...'})
 
-#TODO Arreglar problema con buscador KAIROS
+
 autocomplete_light.register(kairos_presentaciones, search_fields=('claveproducto__descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. Ginotex'})
 
@@ -100,3 +101,25 @@ autocomplete_light.register(dbnet, search_fields=('producto',),
 
 autocomplete_light.register(atc, search_fields=('atc_desc','cod_atc'),
     autocomplete_js_attributes={'placeholder': 'Codigo o Desc ATC'})
+
+autocomplete_light.register(kairos_productos, search_fields=('descripcion','abreviatura'))
+
+
+autocomplete_light.register(area, search_fields=('area'),
+    autocomplete_js_attributes={'placeholder': 'Area'})
+
+autocomplete_light.register(amca, search_fields=('amca_desc'),
+    autocomplete_js_attributes={'placeholder': 'AMCA'})
+
+autocomplete_light.register(intervencion, search_fields=('interv_glosa'),
+    autocomplete_js_attributes={'placeholder': 'Intervencion'})
+
+autocomplete_light.register(documento, search_fields=('estado'),
+    autocomplete_js_attributes={'placeholder': 'Documento'})
+
+autocomplete_light.register(atributo, search_fields=('atributo'),
+    autocomplete_js_attributes={'placeholder': 'Atributo'})
+
+
+autocomplete_light.register(especialidad, search_fields=('espe_descripcion'),
+    autocomplete_js_attributes={'placeholder': 'Especialidad'})

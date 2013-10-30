@@ -33,10 +33,9 @@ class atc (models.Model):
     nivelmax = models.IntegerField()
     largo = models.IntegerField()
     atc_desc = models.CharField(max_length=255)
+
     def __unicode__(self):
         return u"%s > %s > %s > %s > %s > %s" % (self.cod_atc,self.atc_desc,self.n1_desc,self.n2_desc,self.n3_desc,self.n4_desc)
-    def showDesc(self):
-        return u"%s" % (self.atc_desc)
     class META:
         verbose_name_plural ='Codigos ATC'
 
@@ -142,7 +141,7 @@ class kairos_lab (models.Model):
     estado = models.CharField(max_length=255)
 
     def __unicode__(self):
-        return self.descripcion
+        return u'%s [%s]' % (self.abreviatura,self.descripcion)
     class Meta:
         ordering=['clave']
         verbose_name_plural ='laboratorios de kairos'
@@ -158,8 +157,8 @@ class kairos_lab (models.Model):
 class kairos_productos (models.Model):
     clave = models.IntegerField(primary_key=True)
     descripcion = models.CharField(max_length=255)
-    laboratorioproductor = models.SmallIntegerField()
-    laboratoriocomercializador = models.SmallIntegerField()
+    laboratorioproductor = models.ForeignKey(kairos_lab, null=True,blank=True, related_name='productor')
+    laboratoriocomercializador = models.ForeignKey(kairos_lab, null=True,blank=True, related_name='comercializador')
     origen = models.CharField(max_length=255)
     psicofarmaco = models.CharField(max_length=255)
     condicionventa = models.CharField(max_length=255)
@@ -174,7 +173,7 @@ class kairos_productos (models.Model):
     odontologia = models.CharField(max_length=255)
 
     def __unicode__(self):
-        return self.descripcion
+        return u"%s (%s) - %s" % (self.descripcion,self.laboratoriocomercializador,self.estado)
     class Meta:
         ordering=['clave']
         verbose_name_plural ='tabla de productos de kairos'
@@ -435,11 +434,6 @@ class xt_mb (models.Model):
     get_sustancia.allow_tags = True
     get_sustancia.short_description = 'XT Sustancias'
 
-#    def get_mc(objeto):
-#        return "<br/>".join([s.descriptor for s in objeto.rel_xt_sust.order_by('id_xt_mc').all()[:6]])
-#    get_mc.allow_tags = True
-#    get_mc.short_description = 'XT Medicamentos Clinicos'
-
     def __unicode__(self):
         return u"%s | %s | %s" % (self.xt_id_mb, self.estado, self.descripcion)
     class Meta:
@@ -508,6 +502,8 @@ class xt_mc (models.Model):
 
     rel_mc = models.ManyToManyField(xt_sustancias, through='rel_mc_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
+
+
     def get_pc(self):
         return '<br/>'.join([k.descripcion for k in self.xt_pc_set.order_by('id_xt_pc').all()[:6]])
     get_pc.allow_tags = True
@@ -519,13 +515,12 @@ class xt_mc (models.Model):
     get_sustancia.short_description = 'XT Sustancias'
 
     def get_atc(object):
-        pass
-        #return self.atc_code.cod_atc
-    get_atc.allow_tags = True
-    get_atc.short_description = 'ATC (en Desarrollo)'
+        return object.atc_code
+    get_atc.short_description = 'ATC'
 
     def __unicode__(self):
         return self.descripcion
+
     class Meta:
         ordering=['id_xt_mc']
         verbose_name_plural = "XT medicamento clinico (extension)"

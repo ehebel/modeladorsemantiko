@@ -188,6 +188,7 @@ class mcAdmin (admin.ModelAdmin):
                 ,"revisado": admin.HORIZONTAL
                 ,"tipo_forma_farm": admin.HORIZONTAL
     }
+
     def add_view(self, request, *args, **kwargs):
         result = super(mcAdmin, self).add_view(request, *args, **kwargs )
         request.session['filtered'] =  None
@@ -406,10 +407,12 @@ class mcceAdmin(admin.ModelAdmin):
             return instances
         else:
             return formset.save()
-
 admin.site.register(xt_mcce,mcceAdmin)
 
 class pcAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size':'100'})}
+    }
     inlines = [bioeqAdminInline,]
     search_fields = ['descripcion',]
     list_display = ['id_xt_pc','descripcion','id_xt_fp','id_xt_mc','concept_amp_dmd'] #TODO BOOL Bioequivalente
@@ -739,6 +742,11 @@ class fpAdmin(admin.ModelAdmin):
 admin.site.register(xt_fp,fpAdmin)
 
 class productoAdmin(admin.ModelAdmin):
+    form = autocomplete_light.modelform_factory(xt_producto)
+    list_display = ['descripcion','clave_prod_kairos','id_xt_lab']
+    list_filter = ['id_xt_lab',]
+    search_fields = ['descripcion']
+
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):

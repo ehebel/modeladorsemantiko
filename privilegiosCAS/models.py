@@ -81,9 +81,11 @@ class documento(models.Model):
 
 
 class privilegio(models.Model):
+    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
     id_privilegio = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
     desc_abreviada = models.CharField(max_length=255)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO)
     tipo = models.ForeignKey(tipo_privilegio, blank=True, null=True)
     rel_area = models.ManyToManyField(area, blank=True, null=True)
     rel_amca = models.ManyToManyField(amca, blank=True, null=True)

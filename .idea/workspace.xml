@@ -36,7 +36,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="83" column="55" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.6097561">
@@ -67,10 +67,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="29" column="93" selection-start="1172" selection-end="1172" vertical-scroll-proportion="0.024390243">
+                <state line="76" column="93" selection-start="3092" selection-end="3092" vertical-scroll-proportion="0.3902439">
                   <folding />
                 </state>
               </provider>
@@ -1095,7 +1095,11 @@
       <created>1383240699751</created>
       <updated>1383240699751</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="Modif a modelo privilegiosCAS">
+      <created>1383240951501</created>
+      <updated>1383240951501</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1311,7 +1315,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="55" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.6097561">
+        <state line="76" column="93" selection-start="3092" selection-end="3092" vertical-scroll-proportion="0.3902439">
           <folding />
         </state>
       </provider>

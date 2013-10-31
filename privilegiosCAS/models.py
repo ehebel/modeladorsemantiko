@@ -5,7 +5,7 @@ class especialidad(models.Model):
     OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     espe_codigo = models.AutoField(primary_key=True)
     espe_descripcion = models.CharField(max_length=255)
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     def __unicode__(self):
         return self.espe_descripcion
     class META:
@@ -16,7 +16,7 @@ class area(models.Model):
     id_area = models.AutoField(primary_key=True)
     area = models.CharField(max_length=250)
     funcion = models.CharField(max_length=250)
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     def __unicode__(self):
         return self.area
     class META:
@@ -27,7 +27,7 @@ class amca(models.Model):
     OPCIONES_HOMOLOGADO = ((0, 'No'),(1, 'Si'))
     amca_cod = models.AutoField(primary_key=True)
     amca_desc = models.CharField(max_length=255)
-    homologadocas = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_HOMOLOGADO, null=True)
+    homologadocas = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_HOMOLOGADO, default=1)
     def __unicode__(self):
         return self.amca_desc
 
@@ -46,7 +46,7 @@ class tipo_privilegio(models.Model):
     OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     id_tipo_privilegio = models.AutoField(primary_key=True)
     tipo = models.CharField(max_length=255)
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     def __unicode__(self):
         return self.tipo
 
@@ -55,7 +55,7 @@ class atributo(models.Model):
     OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     id_atributo = models.AutoField(primary_key=True)
     atributo = models.CharField(max_length=255)
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     def __unicode__(self):
         return self.atributo
 
@@ -64,7 +64,7 @@ class tipo_documento(models.Model):
     OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     id_tipo_documento = models.AutoField(primary_key=True)
     tipo_documento = models.CharField(max_length=255)
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     def __unicode__(self):
         return self.tipo_documento
 
@@ -74,7 +74,7 @@ class documento(models.Model):
     id_documento = models.AutoField(primary_key=True)
     docuemento = models.BigIntegerField(blank=True, null=True)
     tipo = models.ForeignKey(tipo_documento,blank=True, null=True)
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     rel_atributo = models.ManyToManyField(atributo,blank=True, null=True)
     def __unicode__(self):
         return self.estado

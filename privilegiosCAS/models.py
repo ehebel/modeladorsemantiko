@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class especialidad(models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
+    OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     espe_codigo = models.AutoField(primary_key=True)
     espe_descripcion = models.CharField(max_length=255)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -12,7 +12,7 @@ class especialidad(models.Model):
         verbose_name_plural = "Especialidades"
 
 class area(models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
+    OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     id_area = models.AutoField(primary_key=True)
     area = models.CharField(max_length=250)
     funcion = models.CharField(max_length=250)
@@ -43,7 +43,7 @@ class intervencion(models.Model):
 
 
 class tipo_privilegio(models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
+    OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     id_tipo_privilegio = models.AutoField(primary_key=True)
     tipo = models.CharField(max_length=255)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -52,7 +52,7 @@ class tipo_privilegio(models.Model):
 
 
 class atributo(models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
+    OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     id_atributo = models.AutoField(primary_key=True)
     atributo = models.CharField(max_length=255)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -61,7 +61,7 @@ class atributo(models.Model):
 
 
 class tipo_documento(models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
+    OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     id_tipo_documento = models.AutoField(primary_key=True)
     tipo_documento = models.CharField(max_length=255)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -70,7 +70,7 @@ class tipo_documento(models.Model):
 
 
 class documento(models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
+    OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     id_documento = models.AutoField(primary_key=True)
     docuemento = models.BigIntegerField(blank=True, null=True)
     tipo = models.ForeignKey(tipo_documento,blank=True, null=True)
@@ -81,11 +81,11 @@ class documento(models.Model):
 
 
 class privilegio(models.Model):
-    OPCIONES_ESTADO = ((1, 'No Vigente'),(0, 'Vigente'))
+    OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     id_privilegio = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
     desc_abreviada = models.CharField(max_length=255)
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     tipo = models.ForeignKey(tipo_privilegio, blank=True, null=True)
     rel_area = models.ManyToManyField(area, blank=True, null=True)
     rel_amca = models.ManyToManyField(amca, blank=True, null=True)

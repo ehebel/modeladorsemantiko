@@ -39,7 +39,7 @@
           <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="87" column="28" selection-start="3501" selection-end="3501" vertical-scroll-proportion="0.68292683">
+                <state line="83" column="55" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.6097561">
                   <folding />
                 </state>
               </provider>
@@ -1091,7 +1091,11 @@
       <created>1383240133050</created>
       <updated>1383240133050</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="Modif a modelo privilegiosCAS">
+      <created>1383240699751</created>
+      <updated>1383240699751</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1307,7 +1311,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="28" selection-start="3501" selection-end="3501" vertical-scroll-proportion="0.68292683">
+        <state line="83" column="55" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.6097561">
           <folding />
         </state>
       </provider>

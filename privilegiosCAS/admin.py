@@ -11,7 +11,7 @@ class amcaAdmin(admin.ModelAdmin):
     list_display = ['amca_cod','amca_desc','homologadocas']
     radio_fields = {
         "homologadocas": admin.HORIZONTAL}
-admin.site.register(amca)
+admin.site.register(amca,amcaAdmin)
 
 class intervAdmin(admin.ModelAdmin):
     list_display = ['id_intev','interv_glosa','grpdescripcion','sgrdescripcion','amca_cod']

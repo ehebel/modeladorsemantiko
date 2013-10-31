@@ -8,12 +8,17 @@ admin.site.register(especialidad)
 admin.site.register(area)
 
 class amcaAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size':'100'})}}
+    fields = ['amca_cod','amca_desc','homologadocas']
     list_display = ['amca_cod','amca_desc','homologadocas']
     radio_fields = {
         "homologadocas": admin.HORIZONTAL}
 admin.site.register(amca,amcaAdmin)
 
 class intervAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size':'100'})}}
     list_display = ['id_intev','interv_glosa','grpdescripcion','sgrdescripcion','amca_cod']
 admin.site.register(intervencion,intervAdmin)
 

@@ -4,7 +4,6 @@
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privilegiosCAS/admin.py" afterPath="$PROJECT_DIR$/privilegiosCAS/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privilegiosCAS/models.py" afterPath="$PROJECT_DIR$/privilegiosCAS/models.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/efectoresCAS.json" />
@@ -80,7 +79,7 @@
           <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/privilegiosCAS/admin.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="34" selection-start="419" selection-end="419" vertical-scroll-proportion="0.31707317">
+                <state line="16" column="31" selection-start="569" selection-end="569" vertical-scroll-proportion="0.3902439">
                   <folding />
                 </state>
               </provider>
@@ -1104,7 +1103,11 @@
       <created>1383251337675</created>
       <updated>1383251337675</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="Modif a modelo privilegiosCAS">
+      <created>1383252277299</created>
+      <updated>1383252277299</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1320,7 +1323,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/privilegiosCAS/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="34" selection-start="419" selection-end="419" vertical-scroll-proportion="0.31707317">
+        <state line="16" column="31" selection-start="569" selection-end="569" vertical-scroll-proportion="0.3902439">
           <folding />
         </state>
       </provider>

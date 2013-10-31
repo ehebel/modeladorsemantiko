@@ -801,7 +801,10 @@ admin.site.register(kairos_productos)
 class kairosPresAdmin(admin.ModelAdmin):
         search_fields = ['claveproducto__descripcion','descripcion']
 admin.site.register(kairos_presentaciones,kairosPresAdmin)
-admin.site.register(kairos_precio)
+
+class kairosPrecioAdmin(admin.ModelAdmin):
+    form = autocomplete_light.modelform_factory(kairos_precio)
+admin.site.register(kairos_precio,kairosPrecioAdmin)
 
 
 __author__ = 'ehebel'

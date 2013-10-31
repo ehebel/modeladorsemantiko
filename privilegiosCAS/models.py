@@ -2,19 +2,21 @@ from django.db import models
 
 # Create your models here.
 class especialidad(models.Model):
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     espe_codigo = models.AutoField(primary_key=True)
     espe_descripcion = models.CharField(max_length=255)
-    estado = models.CharField(max_length=20)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     def __unicode__(self):
         return self.espe_descripcion
     class META:
         verbose_name_plural = "Especialidades"
 
 class area(models.Model):
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_area = models.AutoField(primary_key=True)
     area = models.CharField(max_length=250)
     funcion = models.CharField(max_length=250)
-    estado = models.CharField(max_length=250)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     def __unicode__(self):
         return self.area
     class META:
@@ -22,9 +24,10 @@ class area(models.Model):
 
 
 class amca(models.Model):
+    OPCIONES_HOMOLOGADO = ((0, 'No'),(1, 'Si'))
     amca_cod = models.AutoField(primary_key=True)
     amca_desc = models.CharField(max_length=255)
-    homologadocas = models.CharField(max_length=255)
+    homologadocas = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_HOMOLOGADO, null=True)
     def __unicode__(self):
         return self.amca_desc
 
@@ -34,40 +37,44 @@ class intervencion(models.Model):
     grpdescripcion = models.CharField(max_length=255)
     sgrdescripcion = models.CharField(max_length=255)
     amca_cod = models.ForeignKey(amca,blank=True, null=True)
-    amca_desc = models.CharField(max_length=255)
+    #amca_desc = models.CharField(max_length=255)
     def __unicode__(self):
         return self.interv_glosa
 
 
 class tipo_privilegio(models.Model):
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_tipo_privilegio = models.AutoField(primary_key=True)
     tipo = models.CharField(max_length=255)
-    estado = models.CharField(max_length=255)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     def __unicode__(self):
         return self.tipo
 
 
 class atributo(models.Model):
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_atributo = models.AutoField(primary_key=True)
     atributo = models.CharField(max_length=255)
-    estado = models.CharField(max_length=255)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     def __unicode__(self):
         return self.atributo
 
 
 class tipo_documento(models.Model):
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_tipo_documento = models.AutoField(primary_key=True)
     tipo_documento = models.CharField(max_length=255)
-    estado = models.CharField(max_length=255)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     def __unicode__(self):
         return self.tipo_documento
 
 
 class documento(models.Model):
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_documento = models.AutoField(primary_key=True)
     docuemento = models.BigIntegerField(blank=True, null=True)
     tipo = models.ForeignKey(tipo_documento,blank=True, null=True)
-    estado = models.CharField(max_length=255)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
     rel_atributo = models.ManyToManyField(atributo,blank=True, null=True)
     def __unicode__(self):
         return self.estado

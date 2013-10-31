@@ -108,10 +108,10 @@ autocomplete_light.register(kairos_productos, search_fields=('descripcion',),)
 autocomplete_light.register(area, search_fields=('area',),
     autocomplete_js_attributes={'placeholder': 'Area'})
 
-autocomplete_light.register(amca, search_fields=('amca_desc',),
+autocomplete_light.register(amca, search_fields=('amca_desc','amca_cod',),
     autocomplete_js_attributes={'placeholder': 'AMCA'})
 
-autocomplete_light.register(intervencion, search_fields=('interv_glosa',),
+autocomplete_light.register(intervencion, search_fields=('id_intev','interv_glosa',),
     autocomplete_js_attributes={'placeholder': 'Intervencion'})
 
 autocomplete_light.register(documento, search_fields=('estado',),

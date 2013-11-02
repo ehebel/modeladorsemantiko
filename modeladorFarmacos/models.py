@@ -490,17 +490,17 @@ class xt_mc (models.Model):
 
     tipo_forma_farm = models.SmallIntegerField(choices=OPCIONES_FORMA_FARM, null=True, blank=True)
 
-#    u_logistica_cant = models.IntegerField("U_logistica_cant",null=True, blank=True)
-#    u_logistica_u = models.ForeignKey(xt_unidad_dosis_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'}, verbose_name="U Logistica U")
-#    unidosis_asist_cant = models.FloatField("unidosis asist cant", blank=True,null=True)
-#    unidosis_asist_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'}, verbose_name="unidosis asist_u")
-#    volumen_total_cant = models.FloatField("Volumen Total num",null=True, blank=True)
+    u_logistica_cant = models.IntegerField("U_logistica_cant",null=True, blank=True)
+    u_logistica_u = models.ForeignKey(xt_unidad_dosis_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'}, verbose_name="U Logistica U")
+    unidosis_asist_cant = models.FloatField("unidosis asist cant", blank=True,null=True)
+    unidosis_asist_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'}, verbose_name="unidosis asist_u")
+    volumen_total_cant = models.FloatField("Volumen Total num",null=True, blank=True)
 
-   # limit = models.Q(id_unidad_medida_cant = '25')  | models.Q(id_unidad_medida_cant = '40')
-#    volumen_total_u = models.ForeignKey(xt_unidad_medida_cant, null=True, blank=True
-#        , verbose_name='Volumen total U'
+    limit = models.Q(id_unidad_medida_cant = '25')  | models.Q(id_unidad_medida_cant = '40')
+    volumen_total_u = models.ForeignKey(xt_unidad_medida_cant, null=True, blank=True
+        , verbose_name='Volumen total U'
 #        , limit_choices_to = {'id_unidad_medida_cant__in': {'25','39','40'}})
-#        , limit_choices_to = limit) #Ambas formas de limitar la query funcionan
+        , limit_choices_to = limit) #Ambas formas de limitar la query funcionan
 
     forma_farmaceutica_agrup = models.ForeignKey(xt_formas_agrupadas, null=True, blank=True, limit_choices_to = {'estado':'0'})
     condicion_venta = models.ForeignKey(xt_condicion_venta, null=True, blank=True, limit_choices_to = {'estado':'0'})

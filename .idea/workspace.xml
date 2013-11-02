@@ -32,7 +32,7 @@
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="789" column="9" selection-start="31964" selection-end="31964" vertical-scroll-proportion="0.8038741">
+            <state line="504" column="4" selection-start="19609" selection-end="19609" vertical-scroll-proportion="0.8038741">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -1151,7 +1151,11 @@
       <created>1383360792606</created>
       <updated>1383360792606</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="Agrego campo MedlinePlus">
+      <created>1383360888373</created>
+      <updated>1383360888374</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1369,7 +1373,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="789" column="9" selection-start="31964" selection-end="31964" vertical-scroll-proportion="0.8038741">
+        <state line="504" column="4" selection-start="19609" selection-end="19609" vertical-scroll-proportion="0.8038741">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

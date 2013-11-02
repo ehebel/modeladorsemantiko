@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models import Q
+#from django.db.models import Q
 
 # Create your models here.
 class dbnet (models.Model):
@@ -496,7 +496,7 @@ class xt_mc (models.Model):
     unidosis_asist_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'}, verbose_name="unidosis asist_u")
     volumen_total_cant = models.FloatField("Volumen Total num",null=True, blank=True)
 
-    limit = models.Q(id_unidad_medida_cant = '25')  | models.Q(id_unidad_medida_cant = '40')
+   # limit = models.Q(id_unidad_medida_cant = '25')  | models.Q(id_unidad_medida_cant = '40')
     volumen_total_u = models.ForeignKey(xt_unidad_medida_cant, null=True, blank=True
         , verbose_name='Volumen total U'
         , limit_choices_to = {'id_unidad_medida_cant__in': {'25','39','40'}})
@@ -786,7 +786,7 @@ class xt_mcce (models.Model):
     unidad_medida_cant = models.ForeignKey(xt_unidad_medida_cant, related_name='un_medida_cant')
     concept_vmpp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     volumen_total_cant = models.IntegerField(max_length=20, null = True, blank=True)
-    volumen_total_u = models.ForeignKey(xt_unidad_medida_cant, related_name='vol_total_u' , null=True, blank=True, limit_choices_to = {'id_unidad_medida_cant':'40'}, verbose_name='Volumen total U' )
+    volumen_total_u = models.ForeignKey(xt_unidad_medida_cant, related_name='vol_total_u' , null=True, blank=True, limit_choices_to = {'id_unidad_medida_cant__in':{'25','39','40'}}, verbose_name='Volumen total U' )
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion

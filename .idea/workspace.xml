@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -31,7 +32,7 @@
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="788" column="113" selection-start="31954" selection-end="31954" vertical-scroll-proportion="0.76755446">
+            <state line="789" column="9" selection-start="31964" selection-end="31964" vertical-scroll-proportion="0.8038741">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -1146,7 +1147,11 @@
       <created>1383360782146</created>
       <updated>1383360782146</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="Agrego campo MedlinePlus">
+      <created>1383360792606</created>
+      <updated>1383360792606</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1364,7 +1369,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="788" column="113" selection-start="31954" selection-end="31954" vertical-scroll-proportion="0.76755446">
+        <state line="789" column="9" selection-start="31964" selection-end="31964" vertical-scroll-proportion="0.8038741">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

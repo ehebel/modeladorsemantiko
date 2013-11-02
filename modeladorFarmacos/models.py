@@ -786,7 +786,9 @@ class xt_mcce (models.Model):
     unidad_medida_cant = models.ForeignKey(xt_unidad_medida_cant, related_name='un_medida_cant')
     concept_vmpp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
     volumen_total_cant = models.IntegerField(max_length=20, null = True, blank=True)
-    volumen_total_u = models.ForeignKey(xt_unidad_medida_cant, related_name='vol_total_u' , null=True, blank=True, limit_choices_to = {'id_unidad_medida_cant__in':{'25','39','40'}}, verbose_name='Volumen total U' )
+    volumen_total_u = models.ForeignKey(xt_unidad_medida_cant, related_name='vol_total_u' , null=True, blank=True
+        #, limit_choices_to = {'id_unidad_medida_cant__in':{'25','39','40'}}
+        , verbose_name='Volumen total U' )
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion

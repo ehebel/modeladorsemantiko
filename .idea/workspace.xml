@@ -29,28 +29,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="5" selection-start="6298" selection-end="6298" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="9" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="512" column="0" selection-start="20225" selection-end="20225" vertical-scroll-proportion="0.9128329">
+            <state line="788" column="113" selection-start="31954" selection-end="31954" vertical-scroll-proportion="0.76755446">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -1157,7 +1139,11 @@
       <created>1383360192839</created>
       <updated>1383360192839</updated>
     </task>
-    <option name="localTasksCounter" value="163" />
+    <task id="LOCAL-00163" summary="Agrego campo MedlinePlus">
+      <created>1383360499952</created>
+      <updated>1383360499953</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1241,7 +1227,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comentado Modif a modelo MC y MCCE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agrego campo MedlinePlus" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1254,7 +1240,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Sistema usando SQLite3" />
     <MESSAGE value="Sistema usando MySQL" />
     <MESSAGE value="Sistema usando Subiendo modelos y tablas" />
     <MESSAGE value="Sistema usando busqueda en cualquier parte del string" />
@@ -1279,6 +1264,7 @@
     <MESSAGE value="Agrego ATC y DBNET a modelo de Farmacos" />
     <MESSAGE value="Modif a modelo privilegiosCAS" />
     <MESSAGE value="Comentado Modif a modelo MC y MCCE" />
+    <MESSAGE value="Agrego campo MedlinePlus" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1359,23 +1345,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="9" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.0">
+        <state line="168" column="5" selection-start="6298" selection-end="6298" vertical-scroll-proportion="0.2733485">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
+    <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="5" selection-start="6298" selection-end="6298" vertical-scroll-proportion="0.0">
+        <state line="31" column="9" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.03318584">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="512" column="0" selection-start="20225" selection-end="20225" vertical-scroll-proportion="0.9128329">
+        <state line="788" column="113" selection-start="31954" selection-end="31954" vertical-scroll-proportion="0.76755446">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

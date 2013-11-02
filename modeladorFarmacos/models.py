@@ -510,7 +510,7 @@ class xt_mc (models.Model):
 
     rel_mc = models.ManyToManyField(xt_sustancias, through='rel_mc_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
-#    medlineplus_ulr = models.URLField("URL a MedlinePlus",max_length=255, blank=True, null=True)
+    medlineplus_ulr = models.URLField("URL a MedlinePlus",max_length=255, blank=True, null=True)
 
     def get_pc(self):
         return '<br/>'.join([k.descripcion for k in self.xt_pc_set.order_by('id_xt_pc').all()[:6]])

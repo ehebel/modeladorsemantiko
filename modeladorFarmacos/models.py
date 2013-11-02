@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import Q
 
 # Create your models here.
 class dbnet (models.Model):
@@ -489,11 +490,18 @@ class xt_mc (models.Model):
 
     tipo_forma_farm = models.SmallIntegerField(choices=OPCIONES_FORMA_FARM, null=True, blank=True)
 
-    tamano_dosis_u = models.IntegerField(null=True, blank=True)
-    unidad_dosis_u = models.ForeignKey(xt_unidad_dosis_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'})
-    unidad_medida_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'})
-    dosis_total_num = models.FloatField(null=True, blank=True)
-    dosis_total_u = models.ForeignKey(xt_unidad_medida_cant, null=True, blank=True, limit_choices_to = {'id_unidad_medida_cant':'40'} )
+    u_logistica_cant = models.IntegerField("U_logistica_cant",null=True, blank=True)
+    u_logistica_u = models.ForeignKey(xt_unidad_dosis_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'}, verbose_name="U Logistica U")
+    unidosis_asist_cant = models.FloatField("unidosis asist cant", blank=True,null=True)
+    unidosis_asist_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'}, verbose_name="unidosis asist_u")
+    volumen_total_cant = models.FloatField("Volumen Total num",null=True, blank=True)
+
+    limit = models.Q(id_unidad_medida_cant = '25')  | models.Q(id_unidad_medida_cant = '40')
+    volumen_total_u = models.ForeignKey(xt_unidad_medida_cant, null=True, blank=True
+        , verbose_name='Volumen total U'
+        , limit_choices_to = {'id_unidad_medida_cant__in': {'25','39','40'}})
+#        , limit_choices_to = limit) #Ambas formas de limitar la query funcionan
+
     forma_farmaceutica_agrup = models.ForeignKey(xt_formas_agrupadas, null=True, blank=True, limit_choices_to = {'estado':'0'})
     condicion_venta = models.ForeignKey(xt_condicion_venta, null=True, blank=True, limit_choices_to = {'estado':'0'})
     concept_vmp_dmd = models.ForeignKey(uk_dmd_conceptos, null=True, blank=True)
@@ -502,7 +510,7 @@ class xt_mc (models.Model):
 
     rel_mc = models.ManyToManyField(xt_sustancias, through='rel_mc_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
-
+    medlineplus_ulr = models.URLField("URL a MedlinePlus",max_length=255, blank=True, null=True)
 
     def get_pc(self):
         return '<br/>'.join([k.descripcion for k in self.xt_pc_set.order_by('id_xt_pc').all()[:6]])
@@ -757,7 +765,8 @@ class xt_mcce (models.Model):
         (1,'UNIDOSIS'),
         (2,'ENVASE CLINICO'),
         (3,'VENTA PUBLICO'),
-        (4,'MUESTRA MEDICA')
+        (4,'MUESTRA MEDICA'),
+        (5,'FRACCIONADO')
     )
     id_xt_mcce = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
@@ -774,8 +783,10 @@ class xt_mcce (models.Model):
 
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico')
     cantidad = models.IntegerField()
-    unidad_medida_cant = models.ForeignKey(xt_unidad_medida_cant)
+    unidad_medida_cant = models.ForeignKey(xt_unidad_medida_cant, related_name='un_medida_cant')
     concept_vmpp_dmd = models.ForeignKey(uk_dmd_conceptos, null = True, blank=True)
+    volumen_total_cant = models.IntegerField(max_length=20, null = True, blank=True)
+    volumen_total_u = models.ForeignKey(xt_unidad_medida_cant, related_name='vol_total_u' , null=True, blank=True, limit_choices_to = {'id_unidad_medida_cant':'40'}, verbose_name='Volumen total U' )
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion

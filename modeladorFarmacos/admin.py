@@ -164,7 +164,8 @@ admin.site.register(xt_sustancias,xt_sustanciasAdmin)
 
 class mcAdmin (admin.ModelAdmin):
     formfield_overrides = {
-        models.CharField: {'widget': TextInput(attrs={'size':'100'})}
+        models.CharField: {'widget': TextInput(attrs={'size':'100'})},
+        models.URLField: {'widget': TextInput(attrs={'size':'100'})}
     }
     form = autocomplete_light.modelform_factory(xt_mc)
     inlines = [SustanciaClinicoInline] # ,ProductoComercialInline]

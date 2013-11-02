@@ -10,7 +10,7 @@ admin.site.register(area)
 class amcaAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'100'})}}
-    #fields = ['amca_cod','amca_desc','homologadocas']
+    #   fields = ['amca_cod','amca_desc','homologadocas']
     list_display = ['amca_cod','amca_desc','homologadocas']
     radio_fields = {
         "homologadocas": admin.HORIZONTAL}

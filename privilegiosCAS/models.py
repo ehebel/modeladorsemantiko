@@ -29,7 +29,8 @@ class amca(models.Model):
     amca_desc = models.CharField(max_length=255)
     homologadocas = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_HOMOLOGADO, default=1)
     def __unicode__(self):
-        return self.amca_desc
+        #return self.amca_desc
+        return u'%s - %s' % (self.amca_cod,self.amca_desc)
 
 class intervencion(models.Model):
     id_intev = models.CharField(max_length=20,primary_key=True)
@@ -39,7 +40,7 @@ class intervencion(models.Model):
     amca_cod = models.ForeignKey(amca,blank=True, null=True)
     #amca_desc = models.CharField(max_length=255)
     def __unicode__(self):
-        return self.interv_glosa
+        return u'%s - %s' % (self.id_intev,self.interv_glosa)
 
 
 class tipo_privilegio(models.Model):

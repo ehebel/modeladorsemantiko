@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privilegiosCAS/admin.py" afterPath="$PROJECT_DIR$/privilegiosCAS/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privilegiosCAS/models.py" afterPath="$PROJECT_DIR$/privilegiosCAS/models.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -29,13 +31,58 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="790" column="73" selection-start="32146" selection-end="32146" vertical-scroll-proportion="0.4552058">
+            <state line="517" column="0" selection-start="20437" selection-end="20658" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modeladorges/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/snomedct/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="0" selection-start="967" selection-end="967" vertical-scroll-proportion="0.90697676">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/privilegiosCAS/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="4" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="0" selection-start="2815" selection-end="2815" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="34" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,7 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/templates/search_results.html" />
         <option value="$PROJECT_DIR$/templates/seleccion_medclin.html" />
         <option value="$PROJECT_DIR$/templates/search_form.html" />
         <option value="$PROJECT_DIR$/efectoresCAS/admin.py" />
@@ -63,12 +109,13 @@
         <option value="$PROJECT_DIR$/templates/efectores.html" />
         <option value="$PROJECT_DIR$/templates/efectores_old.html" />
         <option value="$PROJECT_DIR$/efectoresCAS/views.py" />
-        <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
-        <option value="$PROJECT_DIR$/privilegiosCAS/admin.py" />
-        <option value="$PROJECT_DIR$/privilegiosCAS/models.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
+        <option value="$PROJECT_DIR$/snomedct/models.py" />
+        <option value="$PROJECT_DIR$/privilegiosCAS/models.py" />
+        <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
+        <option value="$PROJECT_DIR$/privilegiosCAS/admin.py" />
       </list>
     </option>
   </component>
@@ -132,21 +179,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="privilegiosCAS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="modeladorsemantiko" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modeladorsemantiko" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modeladorges" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -173,14 +206,14 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="102" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="96" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="96" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="105" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="899" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="896" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="899" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="101" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="98" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -199,8 +232,8 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -1159,7 +1192,11 @@
       <created>1383360986981</created>
       <updated>1383360986990</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="Dejo Limit_choices_to usando Q">
+      <created>1383361181670</created>
+      <updated>1383361181670</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1183,15 +1220,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1248" height="774" extended-state="6" />
+    <frame x="0" y="22" width="1248" height="774" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.49675325" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31166914" sideWeight="0.9667747" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22156574" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28200972" sideWeight="0.6912851" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19773096" sideWeight="0.21855345" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21963394" sideWeight="0.70753324" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22379367" sideWeight="0.70753324" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990461" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1337115" sideWeight="0.20531757" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44608566" sideWeight="0.49675852" order="10" side_tool="true" content_ui="tabs" />
@@ -1202,6 +1238,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43131462" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.7784343" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.49675325" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1288,20 +1325,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="1" selection-start="74" selection-end="74" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/autocomplete_light_env/lib/python2.7/site-packages/django/utils/importlib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.6139706" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/efectoresCAS/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="106" column="27" selection-start="3835" selection-end="3835" vertical-scroll-proportion="0.0" />
@@ -1339,48 +1362,62 @@
         <state line="71" column="56" selection-start="2398" selection-end="2398" vertical-scroll-proportion="0.31490386" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="43" selection-start="443" selection-end="448" vertical-scroll-proportion="0.11083744" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gfk_autocomplete/autocomplete_light_registry.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/privilegiosCAS/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="8" selection-start="368" selection-end="368" vertical-scroll-proportion="0.23726115" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="66" selection-start="5018" selection-end="5018" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="113" column="66" selection-start="5018" selection-end="5018" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="5" selection-start="6298" selection-end="6298" vertical-scroll-proportion="0.2733485">
-          <folding />
-        </state>
+        <state line="168" column="5" selection-start="6298" selection-end="6298" vertical-scroll-proportion="0.2733485" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
+    <entry file="file://$PROJECT_DIR$/modeladorges/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="9" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.03318584">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="790" column="73" selection-start="32146" selection-end="32146" vertical-scroll-proportion="0.4552058">
+        <state line="517" column="0" selection-start="20437" selection-end="20658" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="34" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="0" selection-start="2815" selection-end="2815" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/privilegiosCAS/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="4" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snomedct/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="967" selection-end="967" vertical-scroll-proportion="0.90697676">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -28,6 +28,7 @@ class privilAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'100'})}}
     form = autocomplete_light.modelform_factory(privilegio)
+    list_display = ['descripcion','get_area','get_amca']
 admin.site.register(privilegio,privilAdmin)
 
 admin.site.register(tipo_documento)

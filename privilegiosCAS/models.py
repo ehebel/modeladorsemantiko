@@ -97,3 +97,12 @@ class privilegio(models.Model):
     def __unicode__(self):
         return self.descripcion
 
+    def get_area(objeto):
+        return "<br/>".join([s.area for s in objeto.rel_area.order_by('id_area').all()[:6]])
+    get_area.allow_tags = True
+    get_area.short_description = 'Areas'
+
+    def get_amca(objeto):
+        return "<br/>".join([s.amca_desc for s in objeto.rel_amca.order_by('amca_cod').all()[:6]])
+    get_amca.allow_tags = True
+    get_amca.short_description = 'AMCA'

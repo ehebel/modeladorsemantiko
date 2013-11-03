@@ -20,7 +20,8 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         #Produccion
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS'  : { 'init_command' : 'SET storage_engine=MyISAM', },# Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'semantik_modelador',
         'USER':'semantik_ehebel',
         'PASSWORD':'h^Og5UO&}bOR',

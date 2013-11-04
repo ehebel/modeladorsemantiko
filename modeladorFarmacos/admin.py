@@ -1,6 +1,6 @@
 import autocomplete_light
 autocomplete_light.autodiscover()
-from django.forms import TextInput, Textarea
+from django.forms import TextInput
 from django.contrib import admin
 admin.autodiscover()
 from modeladorFarmacos.models import *

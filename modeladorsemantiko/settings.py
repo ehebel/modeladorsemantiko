@@ -173,7 +173,8 @@ INSTALLED_APPS = (
     'modeladorges',
     'efectoresCAS',
     'modeladorFarmacos',
-    'privilegiosCAS',
+    #'privilegiosCAS',
+    'snomedct',
 )
 
 # A sample logging configuration. The only tangible logging

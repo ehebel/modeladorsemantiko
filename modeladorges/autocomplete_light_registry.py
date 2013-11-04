@@ -5,6 +5,8 @@ from modeladorges.models import ciediez,casdiagnostico,casprocedimiento,concepto
 from efectoresCAS.models import conceptosCASporarea,efector
 from modeladorFarmacos.models import *
 from privilegiosCAS.models import amca, area, intervencion,especialidad,documento,atributo
+from snomedct.models import sct_concept
+
 
 autocomplete_light.register(ciediez, search_fields=('descriptor','^codigo'),
     autocomplete_js_attributes={'minimum_characters': 3,
@@ -104,6 +106,7 @@ autocomplete_light.register(atc, search_fields=('atc_desc','cod_atc'),
 
 autocomplete_light.register(kairos_productos, search_fields=('descripcion',),)
 
+## Aplicacion de Privilegios CAS
 
 autocomplete_light.register(area, search_fields=('area',),
     autocomplete_js_attributes={'placeholder': 'Area'})
@@ -120,6 +123,10 @@ autocomplete_light.register(documento, search_fields=('estado',),
 autocomplete_light.register(atributo, search_fields=('atributo',),
     autocomplete_js_attributes={'placeholder': 'Atributo'})
 
-
 autocomplete_light.register(especialidad, search_fields=('espe_descripcion',),
     autocomplete_js_attributes={'placeholder': 'Especialidad'})
+
+## Aplicacion para SNOMED-CT
+
+autocomplete_light.register(sct_concept, search_fields=('fullyspecifiedname',),
+    autocomplete_js_attributes={'placeholder': 'FNS...'})

@@ -509,6 +509,7 @@ class xt_mc (models.Model):
     rel_mc = models.ManyToManyField(xt_sustancias, through='rel_mc_sust')
     observacion = models.CharField(max_length=255, blank=True, null=True)
     medlineplus_ulr = models.URLField("URL a MedlinePlus",max_length=255, blank=True, null=True)
+    descrip_auto = models.CharField(blank=True, default='')
 
     def get_pc(self):
         return '<br/>'.join([k.descripcion for k in self.xt_pc_set.order_by('id_xt_pc').all()[:6]])
@@ -524,13 +525,16 @@ class xt_mc (models.Model):
         return object.atc_code
     get_atc.short_description = 'ATC'
 
+    def descrip_auto(self):
+        return 'KAM%s' % self.med_basico
+
+
     def __unicode__(self):
         return self.descripcion
 
     class Meta:
         ordering=['id_xt_mc']
         verbose_name_plural = "XT medicamento clinico (extension)"
-
 
 ## ##-
 ## table 'xt_unidad_potencia'

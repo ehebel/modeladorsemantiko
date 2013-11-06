@@ -94,6 +94,7 @@ class privilegio(models.Model):
     rel_documento = models.ManyToManyField(documento, blank=True, null=True)
     rel_atributo = models.ManyToManyField(atributo, blank=True, null=True)
     rel_especialidad = models.ManyToManyField(especialidad, blank=True, null=True)
+    observacion = models.TextField(blank=True, default='')
     def __unicode__(self):
         return self.descripcion
 
@@ -106,3 +107,8 @@ class privilegio(models.Model):
         return "<br/>".join([s.amca_desc for s in objeto.rel_amca.order_by('amca_cod').all()[:6]])
     get_amca.allow_tags = True
     get_amca.short_description = 'AMCA'
+
+    def get_especialidad(objeto):
+        return "<br/>".join([s.espe_descripcion for s in objeto.rel_especialidad.order_by('espe_codigo').all()[:6]])
+    get_amca.allow_tags = True
+    get_amca.short_description = 'Especialidad'

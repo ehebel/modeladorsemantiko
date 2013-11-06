@@ -61,6 +61,7 @@ autocomplete_light.register(uk_dmd_conceptos, search_fields=('fullyspecifiedname
     autocomplete_js_attributes={'placeholder': 'UK DMD .. '})
 
 autocomplete_light.register(xt_sustancias, search_fields=('descripcion',),
+    choices=xt_sustancias.objects.filter(estado=False),
     autocomplete_js_attributes={'placeholder': 'ej. paracetamol'})
 
 autocomplete_light.register(vmp_hiba, search_fields=('term_vmp',),
@@ -128,5 +129,10 @@ autocomplete_light.register(especialidad, search_fields=('espe_descripcion',),
 
 ## Aplicacion para SNOMED-CT
 
-autocomplete_light.register(sct_concept, search_fields=('fullyspecifiedname',),
+autocomplete_light.register(sct_concept, search_fields=('fullyspecifiedname',), name='concepto',
     autocomplete_js_attributes={'placeholder': 'FNS...'})
+
+#autocomplete_light.register(sct_concept, search_fields=('fullyspecifiedname',), name='atributo',
+#    choices=sct_concept.objects.filter(conceptid='116680003'),
+#    autocomplete_js_attributes={'placeholder': 'Atributo...'})
+

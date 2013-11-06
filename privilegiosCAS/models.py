@@ -94,7 +94,7 @@ class privilegio(models.Model):
     rel_documento = models.ManyToManyField(documento, blank=True, null=True)
     rel_atributo = models.ManyToManyField(atributo, blank=True, null=True)
     rel_especialidad = models.ManyToManyField(especialidad, blank=True, null=True)
-    observacion = models.TextField(blank=True, default='')
+    #observacion = models.TextField(blank=True, default='')
     def __unicode__(self):
         return self.descripcion
 

@@ -24,7 +24,9 @@ class amcaAdmin(admin.ModelAdmin):
 admin.site.register(amca,amcaAdmin)
 
 class intervAdmin(admin.ModelAdmin):
-    search_fields = ['interv_glosa',]
+    form = autocomplete_light.modelform_factory(intervencion)
+    search_fields = ['interv_glosa','amca_cod__amca_cod','amca_cod__amca_desc']
+    list_filter = ['grpdescripcion','sgrdescripcion',]
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'100'})}}
     list_display = ['id_intev','interv_glosa','grpdescripcion','sgrdescripcion','amca_cod']
@@ -37,7 +39,7 @@ class privilAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'100'})}}
     form = autocomplete_light.modelform_factory(privilegio)
-    list_display = ['descripcion','get_area','get_amca', 'get_especialidad']
+    list_display = ['descripcion','get_area','get_amca','get_especialidad',]
 admin.site.register(privilegio,privilAdmin)
 
 admin.site.register(tipo_documento)

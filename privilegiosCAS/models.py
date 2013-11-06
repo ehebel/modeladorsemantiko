@@ -88,6 +88,7 @@ class privilegio(models.Model):
     desc_abreviada = models.CharField(max_length=255)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     tipo = models.ForeignKey(tipo_privilegio, blank=True, null=True)
+    #seleccionado = models.NullBooleanField()
     rel_area = models.ManyToManyField(area, blank=True, null=True)
     rel_amca = models.ManyToManyField(amca, blank=True, null=True)
     rel_intervenciones = models.ManyToManyField(intervencion, blank=True, null=True)
@@ -104,11 +105,11 @@ class privilegio(models.Model):
     get_area.short_description = 'Areas'
 
     def get_amca(objeto):
-        return "<br/>".join([s.amca_desc for s in objeto.rel_amca.order_by('amca_cod').all()[:6]])
+        return u"<br/>".join([s.amca_desc for s in objeto.rel_amca.order_by('amca_cod').all()[:6]])
     get_amca.allow_tags = True
     get_amca.short_description = 'AMCA'
 
     def get_especialidad(objeto):
-        return "<br/>".join([s.espe_descripcion for s in objeto.rel_especialidad.order_by('espe_codigo').all()[:6]])
-    get_amca.allow_tags = True
-    get_amca.short_description = 'Especialidad'
+        return u"<br/>".join([s.espe_descripcion for s in objeto.rel_especialidad.order_by('espe_codigo').all()[:6]])
+    get_especialidad.allow_tags = True
+    get_especialidad.short_description = 'Especialidad'

@@ -88,14 +88,14 @@ class privilegio(models.Model):
     desc_abreviada = models.CharField(max_length=255)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     tipo = models.ForeignKey(tipo_privilegio, blank=True, null=True)
-    #seleccionado = models.NullBooleanField()
+    seleccionado = models.NullBooleanField()
     rel_area = models.ManyToManyField(area, blank=True, null=True)
     rel_amca = models.ManyToManyField(amca, blank=True, null=True)
     rel_intervenciones = models.ManyToManyField(intervencion, blank=True, null=True)
     rel_documento = models.ManyToManyField(documento, blank=True, null=True)
     rel_atributo = models.ManyToManyField(atributo, blank=True, null=True)
     rel_especialidad = models.ManyToManyField(especialidad, blank=True, null=True)
-    #observacion = models.TextField(blank=True, default='')
+    observacion = models.TextField(blank=True, default='')
     def __unicode__(self):
         return self.descripcion
 

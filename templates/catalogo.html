@@ -24,20 +24,20 @@
 
     <div class="list">
         <ul>
-            <strong>Medicamentos Clínicos Con Envase:</strong>
+            <strong>Envases:</strong>
 
             {% for mcce in mc.xt_mcce_set.all %}
-                <li class="tab">{{ mcce.id_xt_mcce }} - {{ mcce.descripcion }} ({{ mcce.cantidad }} {{ mcce.unidad_medida_cant }})</li>
+                <li class="tab">{{ mcce.get_tipo_display }} ({{ mcce.cantidad }} {{ mcce.unidad_medida_cant }})</li>
             {% empty %}
                 <li>Sin MCCE</li>
             {% endfor %}
-           <strong>Productos Comerciales:</strong>
+           <strong>Productos Comerciales con Envase:</strong>
 
             {% for producto in mc.xt_pc_set.all %}
-                <li class="tab">{{ producto.id_xt_pc }} - {{ producto.descripcion }}</li>
-                <strong class="tab">Productos Comerciales Con Envase:</strong>
+{#                <li class="tab">{{ producto.id_xt_pc }} - {{ producto.descripcion }}</li>#}
+{#                <strong class="tab">Productos Comerciales Con Envase:</strong>#}
                 {% for pcce in producto.xt_pcce_set.all %}
-                    <ul class="tab">{{ pcce.descripcion }}</ul>
+                    <li class="tab">{{ pcce.descripcion }}</li>
                 {% endfor %}
 
 

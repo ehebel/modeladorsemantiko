@@ -343,6 +343,8 @@ class mcceAdmin(admin.ModelAdmin):
     list_filter = ['revisado','consultar','estado',('concept_vmpp_dmd', IsNullFieldListFilter)] #TODO con/Sin observacion
     search_fields = ['descripcion',]
     readonly_fields=('id_xt_mcce',)
+
+    actions = [export_as_csv]
     radio_fields = {
         "estado": admin.HORIZONTAL
         ,"consultar": admin.HORIZONTAL
@@ -411,6 +413,7 @@ class mcceAdmin(admin.ModelAdmin):
 admin.site.register(xt_mcce,mcceAdmin)
 
 class pcAdmin(admin.ModelAdmin):
+    actions = [export_as_csv]
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'100'})}
     }
@@ -508,6 +511,7 @@ class pcceAdmin(admin.ModelAdmin):
     search_fields = ['descripcion',]
 #    raw_id_fields = ['id_presentacion_kairos']
     readonly_fields=('id_xt_pcce',)
+    actions = [export_as_csv]
     radio_fields = {
         "estado": admin.HORIZONTAL
         ,"consultar": admin.HORIZONTAL

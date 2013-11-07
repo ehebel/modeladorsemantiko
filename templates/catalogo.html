@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<!--CSS Code-->
+<style type="text/css">
+    .row {vertical-align: top; height:auto !important;}
+    .list {display:none;}
+    .show {display:none;}
+    .hide:target + .show {display:inline;}
+    .hide:target {display:none;}
+    .hide:target ~ .list {display:inline;}
+    @media print {.hide, .show {display:none;}}
+    <!--
+    .tab { margin-left: 40px; }
+    -->
+</style>
+<head>
+    <title>Catagolo Farmacos</title>
+</head>
+<body>
+{% for mc in listado_mc %}
+    <div class="row">
+    <a href="#hide{{ mc.id_xt_mc }}" class="hide" id="hide{{ mc.id_xt_mc }}">[+]</a>
+    <a href="#show{{ mc.id_xt_mc }}" class="show" id="show{{ mc.id_xt_mc }}">[-]</a> &nbsp;<b>{{ mc.id_xt_mc }} - {{ mc.descripcion }}</b>
+
+    <div class="list">
+        <ul>
+            <strong>Medicamentos Clínicos Con Envase:</strong>
+
+            {% for mcce in mc.xt_mcce_set.all %}
+                <li class="tab">{{ mcce.id_xt_mcce }} - {{ mcce.descripcion }} ({{ mcce.cantidad }} {{ mcce.unidad_medida_cant }})</li>
+            {% empty %}
+                <li>Sin MCCE</li>
+            {% endfor %}
+           <strong>Productos Comerciales:</strong>
+
+            {% for producto in mc.xt_pc_set.all %}
+                <li class="tab">{{ producto.id_xt_pc }} - {{ producto.descripcion }}</li>
+                <strong class="tab">Productos Comerciales Con Envase:</strong>
+                {% for pcce in producto.xt_pcce_set.all %}
+                    <ul class="tab">{{ pcce.descripcion }}</ul>
+                {% endfor %}
+
+
+            {% empty %}
+                ¡Sin PC!
+            {% endfor %}
+        </ul>
+    </div>
+{% endfor %}
+<hr>
+</body>
+</html>

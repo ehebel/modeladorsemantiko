@@ -1,7 +1,6 @@
-# Create your views here.
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, Http404
-from modeladorFarmacos.models import xt_mc
+from modeladorFarmacos.models import xt_mc,xt_pc,xt_pcce, xt_mcce
 
 
 def search_form(request):
@@ -15,7 +14,7 @@ def search(request):
         return render(request, 'search_results.html',
             {'medicmentos': med_clinicos, 'query': q})
     else:
-        return HttpResponse('Please submit a search term.')
+        return HttpResponse('Favor elija un termino valido.')
 
 def selec_medclin(solicitud, medclinid):
     try:
@@ -27,4 +26,17 @@ def selec_medclin(solicitud, medclinid):
     return render_to_response('seleccion_medclin.html'
         ,{'listado_mc': medclinicos
         ,'listado_pc': prodcomercial
+          })
+
+
+def lista_mc(solicitud):
+    mc = xt_mc.objects.order_by('descripcion').filter(descripcion__contains='Valsart')
+    pc = xt_pc.objects.order_by('id_xt_pc')
+    pcce = xt_pcce.objects.order_by('id_xt_pcce')
+    mcce = xt_mcce.objects.order_by('id_xt_mcce')
+    return render_to_response('catalogo.html'
+        ,{'listado_mc':mc,
+          'listado_pc': pc,
+          'listado_pcce':pcce,
+          'listado_mcce':mcce,
           })

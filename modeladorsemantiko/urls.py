@@ -8,7 +8,7 @@ autocomplete_light.autodiscover()
 from django.contrib import admin
 admin.autodiscover()
 from efectoresCAS.views import  lista_areas
-from modeladorFarmacos.views import search, selec_medclin
+from modeladorFarmacos.views import search, selec_medclin,lista_mc
 
 #urlpatterns = patterns('',
 #    # Examples:
@@ -55,6 +55,7 @@ urlpatterns = patterns('',
     (r'^modelador/search-form/$', generic.TemplateView.as_view(template_name='search_form.html')),
     (r'^modelador/search/$', search),
     (r'^modelador/seleccion_medclin/(\d{1,4})/$', selec_medclin ),
+    (r'^modelador/catalogo/$', lista_mc),
 )
 
 

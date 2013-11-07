@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<style>
+<!--CSS Code-->
+<style type="text/css">
+    .row {vertical-align: top; height:auto !important;}
+    .list {display:none;}
+    .show {display:none;}
+    .hide:target + .show {display:inline;}
+    .hide:target {display:none;}
+    .hide:target ~ .list {display:inline;}
+    @media print {.hide, .show {display:none;}}
     <!--
     .tab { margin-left: 40px; }
     -->
 </style>
-
 <html>
 <head>
     <title>Resultados de Busqueda</title>
 </head>
-
+<body>
 <p>Usted buscó: <strong>{{ query }}</strong></p>
 
 {% if medicmentos %}

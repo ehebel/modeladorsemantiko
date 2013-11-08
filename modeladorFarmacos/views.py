@@ -10,7 +10,7 @@ def search_form(request):
 def search(request):
     if 'q' in request.GET and request.GET['q']:
         q = request.GET['q']
-        med_clinicos = xt_mc.objects.filter(descripcion__icontains=q,estado=1).order_by('med_basico')
+        med_clinicos = xt_mc.objects.filter(descripcion__icontains=q,estado=0).order_by('med_basico')
         return render(request, 'search_results.html',
             {'medicmentos': med_clinicos, 'query': q})
     else:

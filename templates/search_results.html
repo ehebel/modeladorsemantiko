@@ -23,9 +23,33 @@
     <p>Encontramos {{ medicmentos|length }} medicamentos clinicos{{ medicamentos|pluralize }}.</p>
     <ul>
         {% for medicamentos in medicmentos %}
-            <li><a href="/modelador/seleccion_medclin/{{ medicamentos.id_xt_mc }}">{{ medicamentos.descripcion }}</a></li>
-            <p class="tab"> Medicamento Basico: {{ medicamentos.med_basico }} <br>
-            </p>
+        <div class="row">
+        <a href="#hide{{ medicamentos.id_xt_mc }}" class="hide" id="hide{{ medicamentos.id_xt_mc }}">[+]</a>
+        <a href="#show{{ medicamentos.id_xt_mc }}" class="show" id="show{{ medicamentos.id_xt_mc }}">[-]</a> &nbsp;<b>{{ medicamentos.descripcion }}</b>
+        <div class="list">
+            <ul>
+                <strong>Envases:</strong>
+
+                {% for mcce in medicamentos.xt_mcce_set.all  %}
+
+                    <li>{{ mcce.get_tipo_display }} ({{ mcce.cantidad }} {{ mcce.unidad_medida_cant }})</li>
+                {% empty %}
+                    Sin Envases<br>
+                {% endfor %}
+                <strong>PCCE:</strong>
+                {% for producto in medicamentos.xt_pc_set.all %}
+
+
+                    {% for pcce in producto.xt_pcce_set.all %}
+
+                        <li class="tab">{{ pcce.descripcion }}</li>
+                        {% endfor %}
+                {% empty %}
+                Sin PCCE
+
+            {% endfor %}
+            </ul>
+        </div>
         {% endfor %}
     </ul>
 {% else %}

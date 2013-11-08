@@ -39,8 +39,6 @@
                 {% for pcce in producto.xt_pcce_set.all %}
                     <li class="tab">{{ pcce.descripcion }}</li>
                 {% endfor %}
-
-
             {% empty %}
                 ¡Sin PC!
             {% endfor %}

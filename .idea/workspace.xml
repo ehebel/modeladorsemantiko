@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/views.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/views.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -47,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="77" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0">
+            <state line="12" column="100" selection-start="443" selection-end="443" vertical-scroll-proportion="0.26273885">
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
               </folding>
@@ -58,10 +58,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="165" column="27" selection-start="6142" selection-end="6142" vertical-scroll-proportion="0.53650254">
+            <state line="165" column="27" selection-start="6142" selection-end="6142" vertical-scroll-proportion="-12.153846">
               <folding />
             </state>
           </provider>
@@ -112,8 +112,8 @@
         <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
         <option value="$PROJECT_DIR$/templates/catalogo.html" />
         <option value="$PROJECT_DIR$/templates/search_results.html" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos/views.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos/views.py" />
       </list>
     </option>
   </component>
@@ -1264,7 +1264,11 @@
       <created>1383936896397</created>
       <updated>1383936896397</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="Mejoras al buscador de Farmacos">
+      <created>1383937126334</created>
+      <updated>1383937126334</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1478,19 +1482,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/views.py">
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="77" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
+        <state line="165" column="27" selection-start="6142" selection-end="6142" vertical-scroll-proportion="-12.153846">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="27" selection-start="6142" selection-end="6142" vertical-scroll-proportion="0.53650254">
-          <folding />
+        <state line="12" column="100" selection-start="443" selection-end="443" vertical-scroll-proportion="0.26273885">
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

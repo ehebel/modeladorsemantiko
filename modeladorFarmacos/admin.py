@@ -170,9 +170,10 @@ class mcAdmin (admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_mc)
     inlines = [SustanciaClinicoInline] # ,ProductoComercialInline]
     search_fields = ['descripcion']
-    list_display = ['id_xt_mc','descripcion','med_basico'#,'get_sustancia'
+    list_display = ['id_xt_mc','descripcion','med_basico'#'get_sustancia'
             ,'get_pc'
             ,'get_atc'
+            ,'estado'
             ]
     list_filter = ['revisado','consultar','estado'
         ,('med_basico', IsNullFieldListFilter)

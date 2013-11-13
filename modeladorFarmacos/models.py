@@ -456,7 +456,7 @@ class xt_unidad_medida_cant (models.Model):
     def __unicode__(self):
         return self.descripcion
     class Meta:
-        ordering=['id_unidad_medida_cant']
+        ordering=['descripcion']
         verbose_name_plural ='XT unidad de medida de cantidad'
 
 

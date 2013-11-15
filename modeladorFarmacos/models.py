@@ -533,7 +533,7 @@ class xt_mc (models.Model):
         return self.descripcion
 
     class Meta:
-        ordering=['id_xt_mc']
+        ordering=['descripcion']
         verbose_name_plural = "XT medicamento clinico (extension)"
 
 ## ##-

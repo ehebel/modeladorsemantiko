@@ -2,7 +2,7 @@ from django.db import models
 
 
 class concepto(models.Model):
-    OPCIONES_DOMINIO = ((1, 'Imagenes'),(2, 'Procedimientos'),(3,'Laboratorio'))
+    OPCIONES_DOMINIO = ((1, 'Imagenes'),(2, 'Procedimientos'),(3,'Laboratorio'),(4,'Takion'))
     fsn = models.CharField('Fully Specified Name',max_length=255, )
     revisado = models.BooleanField()
     dominio = models.IntegerField(choices=OPCIONES_DOMINIO)

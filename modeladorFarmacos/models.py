@@ -530,7 +530,7 @@ class xt_mc (models.Model):
 
 
     def __unicode__(self):
-        return self.descripcion
+        return u"%s | %s | %s" % (self.id_xt_mc, self.estado, self.descripcion)
 
     class Meta:
         ordering=['descripcion']

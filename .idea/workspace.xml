@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectoresCAS/models.py" afterPath="$PROJECT_DIR$/efectoresCAS/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
@@ -29,13 +30,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="535" column="30" selection-start="20982" selection-end="20982" vertical-scroll-proportion="1.8243021">
+            <state line="532" column="78" selection-start="20981" selection-end="20981" vertical-scroll-proportion="-11.461538">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="30" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.8305369">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,7 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/templates/efectores.html" />
         <option value="$PROJECT_DIR$/templates/efectores_old.html" />
         <option value="$PROJECT_DIR$/efectoresCAS/views.py" />
         <option value="$PROJECT_DIR$/snomedct/models.py" />
@@ -68,6 +77,7 @@
         <option value="$PROJECT_DIR$/templates/search_results.html" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/views.py" />
+        <option value="$PROJECT_DIR$/efectoresCAS/models.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
       </list>
     </option>
@@ -160,7 +170,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modeladorFarmacos" />
+              <option name="myItemId" value="efectoresCAS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1231,7 +1241,11 @@
       <created>1384354219220</created>
       <updated>1384354219220</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="Cambio de Orden a Unidad_Medida_Cantidad según Descripción">
+      <created>1384529982879</created>
+      <updated>1384529982879</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1361,11 +1375,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="26" selection-start="3863" selection-end="3863" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/privilegiosCAS/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="42" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0" />
@@ -1440,10 +1449,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="535" column="30" selection-start="20982" selection-end="20982" vertical-scroll-proportion="1.8243021">
+        <state line="532" column="78" selection-start="20981" selection-end="20981" vertical-scroll-proportion="-11.461538">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/efectoresCAS/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="30" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.8305369">
+          <folding />
         </state>
       </provider>
     </entry>

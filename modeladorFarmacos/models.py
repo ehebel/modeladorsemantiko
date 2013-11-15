@@ -746,7 +746,7 @@ class xt_pc (models.Model):
     #bioequivalente = models.ManyToManyField('self', through='xt_bioequivalente', symmetrical=False)
 
     def __unicode__(self):
-        return self.descripcion
+        return u"%s | %s | %s" % (self.id_xt_pc, self.estado, self.descripcion)
     class Meta:
         ordering=['descripcion']
         verbose_name_plural ='XT productos comerciales (extension)'
@@ -794,7 +794,7 @@ class xt_mcce (models.Model):
         , verbose_name='Volumen total U' )
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
-        return self.descripcion
+        return u"%s | %s | %s" % (self.id_xt_mcce, self.estado, self.descripcion)
     class Meta:
         ordering=['id_xt_mcce']
         verbose_name_plural ='XT medicamento clinico con envase (extension)'
@@ -831,7 +831,7 @@ class xt_pcce (models.Model):
     id_presentacion_kairos = models.ForeignKey(kairos_presentaciones, verbose_name='Presentacion Kairos',blank=True, null=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
     def __unicode__(self):
-        return self.descripcion
+        return u"%s | %s | %s" % (self.id_xt_pcce, self.estado, self.descripcion)
     class Meta:
         ordering=['id_xt_pcce']
         verbose_name_plural ='XT productos comerciales con envase (extension)'

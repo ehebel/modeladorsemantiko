@@ -8,8 +8,6 @@ from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
 
 
-
-
 import autocomplete_light
 autocomplete_light.autodiscover()
 

@@ -8,7 +8,11 @@ autocomplete_light.autodiscover()
 from django.contrib import admin
 admin.autodiscover()
 from efectoresCAS.views import  lista_areas
-from modeladorFarmacos.views import search, selec_medclin,lista_mc
+from modeladorFarmacos.views import search, selec_medclin,lista_mc, MCDetailView
+
+#from .views import MCDetailView
+#from .views import MCResultsView
+
 
 #urlpatterns = patterns('',
 #    # Examples:
@@ -56,6 +60,17 @@ urlpatterns = patterns('',
     (r'^modelador/search/$', search),
     (r'^modelador/seleccion_medclin/(\d{1,4})/$', selec_medclin ),
     (r'^modelador/catalogo/$', lista_mc),
+#
+#    url(
+#        regex=r"^modelador/xt_mc/(?P<pk>\d+)/$",
+#        view = MCDetailView.as_view(),
+#        name = "detail"
+#    ),
+#    url(
+#        regex=r"^modelador/xt_mc/(?P<pk>\d+)/$",
+#        view = MCResultsView.as_view(),
+#        name = "results"
+#    ),
 )
 
 

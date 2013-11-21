@@ -10,6 +10,7 @@ class especialidad(models.Model):
         return self.espe_descripcion
     class META:
         verbose_name_plural = "Especialidades"
+        ordering = ['espe_descripcion',]
 
 class area(models.Model):
     OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
@@ -18,9 +19,10 @@ class area(models.Model):
     funcion = models.CharField(max_length=250)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     def __unicode__(self):
-        return self.area
+        return u'%s - %s' % (self.id_area,self.area)
     class META:
         verbose_name_plural = "Areas"
+        ordering = ['area',]
 
 
 class amca(models.Model):
@@ -31,6 +33,8 @@ class amca(models.Model):
     def __unicode__(self):
         #return self.amca_desc
         return u'%s - %s' % (self.amca_cod,self.amca_desc)
+    class META:
+        ordering = ['amca_desc',]
 
 class intervencion(models.Model):
     id_intev = models.CharField(max_length=20,primary_key=True)
@@ -81,6 +85,7 @@ class documento(models.Model):
         return self.estado
 
 
+
 class privilegio(models.Model):
     OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     id_privilegio = models.AutoField(primary_key=True)
@@ -99,17 +104,18 @@ class privilegio(models.Model):
     def __unicode__(self):
         return self.descripcion
 
+
     def get_area(objeto):
-        return "<br/>".join([s.area for s in objeto.rel_area.order_by('id_area').all()[:6]])
+        return u"<br/>-".join([s.area for s in objeto.rel_area.order_by('id_area').all()[:6]])
     get_area.allow_tags = True
     get_area.short_description = 'Areas'
 
     def get_amca(objeto):
-        return u"<br/>".join([s.amca_desc for s in objeto.rel_amca.order_by('amca_cod').all()[:6]])
+        return u"<br/>-".join([s.amca_desc for s in objeto.rel_amca.order_by('amca_cod').all()[:6]])
     get_amca.allow_tags = True
     get_amca.short_description = 'AMCA'
 
     def get_especialidad(objeto):
-        return u"<br/>".join([s.espe_descripcion for s in objeto.rel_especialidad.order_by('espe_codigo').all()[:6]])
+        return u"<br/>-".join([s.espe_descripcion for s in objeto.rel_especialidad.order_by('espe_codigo').all()[:6]])
     get_especialidad.allow_tags = True
     get_especialidad.short_description = 'Especialidad'

@@ -1,5 +1,6 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, Http404
+from django.views.generic import DetailView
 from modeladorFarmacos.models import xt_mc,xt_pc,xt_pcce, xt_mcce
 
 
@@ -40,3 +41,10 @@ def lista_mc(solicitud):
           'listado_pcce':pcce,
           'listado_mcce':mcce,
           })
+
+class MCDetailView(
+        DetailView):
+    model = xt_mc
+
+class MCResultsView(MCDetailView):
+    template_name = "templates/resultados.html"

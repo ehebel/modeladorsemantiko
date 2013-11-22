@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privilegiosCAS/admin.py" afterPath="$PROJECT_DIR$/privilegiosCAS/admin.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
@@ -32,7 +33,7 @@
       <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/privilegiosCAS/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="160" selection-end="160" vertical-scroll-proportion="0.13297872">
+            <state line="165" column="50" selection-start="6213" selection-end="6213" vertical-scroll-proportion="0.44067797">
               <folding />
             </state>
           </provider>
@@ -41,8 +42,19 @@
       <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="485" vertical-scroll-proportion="-0.0">
-              <folding />
+            <state line="10" column="0" selection-start="333" selection-end="485" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#2585#2653#0" expanded="false" />
+                <element signature="e#2710#2856#0" expanded="false" />
+                <element signature="e#2912#3069#0" expanded="false" />
+                <element signature="e#3120#3239#0" expanded="false" />
+                <element signature="e#3362#6025#0" expanded="false" />
+                <element signature="e#7419#7945#0" expanded="false" />
+                <element signature="e#7999#8615#0" expanded="false" />
+                <element signature="e#8679#9052#0" expanded="false" />
+                <element signature="e#9121#9556#0" expanded="false" />
+                <element signature="e#9157#9325#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,7 +73,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="20" selection-start="4539" selection-end="4539" vertical-scroll-proportion="0.0">
+            <state line="88" column="16" selection-start="3467" selection-end="3477" vertical-scroll-proportion="0.0">
               <folding>
                 <marker date="1385045997000" expanded="true" signature="90:478" placeholder="..." />
                 <marker date="1385045997000" expanded="true" signature="431:478" placeholder="..." />
@@ -94,7 +106,6 @@
         <option value="$PROJECT_DIR$/templates/search_form.html" />
         <option value="$PROJECT_DIR$/templates/catalogo.html" />
         <option value="$PROJECT_DIR$/templates/search_results.html" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
         <option value="$PROJECT_DIR$/efectoresCAS/models.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/views.py" />
@@ -102,13 +113,14 @@
         <option value="$PROJECT_DIR$/modeladorsemantiko/local_settings.py" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
         <option value="$PROJECT_DIR$/privilegiosCAS/models.py" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
         <option value="$PROJECT_DIR$/privilegiosCAS/admin.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="685" />
+    <option name="width" value="711" />
     <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -1253,7 +1265,11 @@
       <created>1385046028326</created>
       <updated>1385046028326</updated>
     </task>
-    <option name="localTasksCounter" value="190" />
+    <task id="LOCAL-00190" summary="Mejoras al modelo de Privilegios CAS">
+      <created>1385123193727</created>
+      <updated>1385123193727</updated>
+    </task>
+    <option name="localTasksCounter" value="191" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1277,7 +1293,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="685" height="774" extended-state="0" />
+    <frame x="0" y="22" width="711" height="774" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.49675325" order="11" side_tool="false" content_ui="tabs" />
@@ -1462,9 +1478,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="333" selection-end="485" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2585#2653#0" expanded="false" />
+            <element signature="e#2710#2856#0" expanded="false" />
+            <element signature="e#2912#3069#0" expanded="false" />
+            <element signature="e#3120#3239#0" expanded="false" />
+            <element signature="e#3362#6025#0" expanded="false" />
+            <element signature="e#7419#7945#0" expanded="false" />
+            <element signature="e#7999#8615#0" expanded="false" />
+            <element signature="e#8679#9052#0" expanded="false" />
+            <element signature="e#9121#9556#0" expanded="false" />
+            <element signature="e#9157#9325#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/privilegiosCAS/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="20" selection-start="4539" selection-end="4539" vertical-scroll-proportion="0.0">
+        <state line="88" column="16" selection-start="3467" selection-end="3477" vertical-scroll-proportion="0.0">
           <folding>
             <marker date="1385045997000" expanded="true" signature="90:478" placeholder="..." />
             <marker date="1385045997000" expanded="true" signature="431:478" placeholder="..." />
@@ -1476,16 +1510,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="485" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/privilegiosCAS/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="160" selection-end="160" vertical-scroll-proportion="0.13297872">
+        <state line="165" column="50" selection-start="6213" selection-end="6213" vertical-scroll-proportion="0.44067797">
           <folding />
         </state>
       </provider>

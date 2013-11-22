@@ -179,11 +179,10 @@ class mcAdmin (admin.ModelAdmin):
         ,('med_basico', IsNullFieldListFilter)
         ,('concept_vmp_dmd', IsNullFieldListFilter)
         ,('atc_code', IsNullFieldListFilter)
-        ] #TODO con/sin observacion
+        ]
     list_display_links = ['id_xt_mc','descripcion']
     actions = [export_as_csv]
     readonly_fields=('id_xt_mc',)
-
     radio_fields = {
                 "estado": admin.HORIZONTAL
                 ,"consultar": admin.HORIZONTAL

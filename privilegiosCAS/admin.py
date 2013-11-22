@@ -1,8 +1,11 @@
 import autocomplete_light
 autocomplete_light.autodiscover()
 import csv
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.core.exceptions import PermissionDenied
+from django.utils.translation import ugettext_lazy as _
+from django.contrib.admin import FieldListFilter
+from django.utils.encoding import force_unicode
 
 from privilegiosCAS.models import *
 from django.contrib import admin
@@ -102,6 +105,72 @@ class privilAdmin(admin.ModelAdmin):
         models.CharField: {'widget': TextInput(attrs={'size':'100'})}}
     form = autocomplete_light.modelform_factory(privilegio)
     list_display = ['descripcion','get_area','get_amca','get_especialidad',]
+
+
+    def add_view(self, request, *args, **kwargs):
+        result = super(privilAdmin, self).add_view(request, *args, **kwargs )
+        request.session['filtered'] =  None
+        return result
+
+    def change_view(self, request, object_id, form_url='', extra_context=None):
+
+        result = super(privilAdmin, self).change_view(request, object_id, form_url, extra_context )
+
+        ref = request.META.get('HTTP_REFERER', '')
+        if ref.find('?') != -1:
+            request.session['filtered'] =  ref
+
+        if request.POST.has_key('_save'):
+            try:
+                if request.session['filtered'] is not None:
+                    result['Location'] = request.session['filtered']
+                    request.session['filtered'] = None
+            except:
+                pass
+
+        return result
+    def response_change(self, request, obj):
+        """
+        Determines the HttpResponse for the change_view stage.
+        """
+        if request.POST.has_key("_viewnext"):
+            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+                   {'name': force_unicode(obj._meta.verbose_name),
+                    'obj': force_unicode(obj)})
+            next = obj.__class__.objects.filter(id_xt_mc__gt=obj.id_xt_mc).order_by('id_xt_mc')[:1]
+            if next:
+                self.message_user(request, msg)
+                return HttpResponseRedirect("../%s/" % next[0].pk)
+        return super(privilAdmin, self).response_change(request, obj)
+    def save_model(self, request, obj, form, change):
+
+        if not hasattr(obj, 'usuario_creador'):
+            obj.usuario_creador = request.user
+        obj.save()
+
+        instance = form.save(commit=False)
+        if not hasattr(instance,'usuario_ult_mod'):
+            instance.usuario_ult_mod = request.user
+        instance.usuario_ult_mod = request.user
+        instance.save()
+        form.save_m2m()
+        return instance
+
+    def save_formset(self, request, form, formset, change):
+        def set_user(instance):
+            if not instance.usuario_ult_mod:
+                instance.usuario_ult_mod = request.user
+            instance.usuario_ult_mod = request.user
+            instance.save()
+        if formset.model == privilegio:
+            instances = formset.save(commit=False)
+            map(set_user, instances)
+            formset.save_m2m()
+            return instances
+        else:
+            return formset.save()
+
+
 admin.site.register(privilegio,privilAdmin)
 
 

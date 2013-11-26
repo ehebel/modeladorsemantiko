@@ -77,7 +77,7 @@ class tipo_documento(models.Model):
 class documento(models.Model):
     OPCIONES_ESTADO = ((0, 'No Vigente'),(1, 'Vigente'))
     id_documento = models.AutoField(primary_key=True)
-    documento = models.BigIntegerField(blank=True, null=True)
+    documento = models.CharField(max_length=200, blank=True, null=True)
     tipo = models.ForeignKey(tipo_documento,blank=True, null=True)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     rel_atributo = models.ManyToManyField(atributo,blank=True, null=True)

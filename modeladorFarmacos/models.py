@@ -743,7 +743,7 @@ class xt_pc (models.Model):
     reg_isp_num = models.CharField(max_length=10, null = True, blank=True)
     reg_isp_ano = models.PositiveIntegerField(max_length=2, null=True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
-    #bioequivalente = models.ManyToManyField('self', through='xt_bioequivalente', symmetrical=False)
+    bioequivalente = models.ManyToManyField('self', through='xt_bioequivalente', symmetrical=False)
 
     def __unicode__(self):
         return u"%s | %s | %s" % (self.id_xt_pc, self.estado, self.descripcion)

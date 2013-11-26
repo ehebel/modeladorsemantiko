@@ -42,9 +42,15 @@ def lista_mc(solicitud):
           'listado_mcce':mcce,
           })
 
-class MCDetailView(
-        DetailView):
+def pendientes(solicitud):
+    mc = xt_mc.objects.order_by('descripcion').filter(descripcion__contains='Zopiclona').all()
+    return render_to_response('listado_trabajo.html'
+        ,{'pendientes_mc':mc})
+
+class MCDetailView(DetailView):
     model = xt_mc
 
 class MCResultsView(MCDetailView):
     template_name = "templates/resultados.html"
+
+

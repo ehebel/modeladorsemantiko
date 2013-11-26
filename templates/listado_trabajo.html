@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Listado de Trabajo</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>xt_mc</th>
+        <th>xt_pc</th>
+        <th>xt_pcce</th>
+        <th>referente</th>
+
+    </tr>
+    {% for item in pendientes_mc %}
+        <tr>
+            <td>{{ item.descripcion }}</td>
+            <td>
+            {% for pc in item.xt_pc_set.all%}
+                <li> {{ pc.descripcion }} </li>
+            {% endfor %}
+            </td>
+            <td>
+                {% for producto in item.xt_pc_set.all %}
+                    {% for pcce in producto.xt_pcce_set.all %}
+                        <li>{{ pcce.descripcion }}</li>
+                    {% endfor %}
+                {% empty %}
+                    Sin PCCE
+                {% endfor %}
+            </td>
+            <td>
+                {% for producto in item.xt_pc_set.all %}
+                    {% for bioeq in producto.xt_bioequivalente.all %}
+                        <li>{{ bioeq.referencia }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </td>
+
+
+        </tr>
+    {% endfor %}
+</table>
+
+<table border="1" >
+    <tr>
+        <td>First column, First Row, Parent Table</td>
+        <td rowspan="2">
+            <table cellpadding="1" cellspacing="1">
+                <tr>
+                    <td>First column, First row, Nested Table</td>
+                </tr>
+                <tr>
+                    <td>First column, Second row, Nested Table</td>
+                </tr>
+            </table>
+        </td>
+        <tr>
+            <td>First column, Second row, Parent Table</td>
+        </tr>
+    </tr>
+</table>
+
+<table border=3 cellpadding=5>
+    <tr>
+        <td rowspan=3>
+            Content 1
+        </td><td>
+        Content 2
+    </td>
+    </tr><tr>
+    <td>
+        Content 3
+    </td>
+</tr>
+    <tr>
+        <td>
+            Content 4
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

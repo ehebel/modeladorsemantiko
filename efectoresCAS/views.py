@@ -5,7 +5,7 @@ from efectoresCAS.models import *
 
 def lista_areas(solicitud):
     areas = cas_area.objects.order_by('id')
-    conceptos = concepto.objects.order_by('id')
+    conceptos = concepto.objects.order_by('id').filter(pedible__exact=1)
     descripciones = descripcion.objects.order_by('id')
     return render_to_response('efectores.html'
         ,{'listado_areas':areas,

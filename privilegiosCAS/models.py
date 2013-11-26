@@ -82,7 +82,7 @@ class documento(models.Model):
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, default=1)
     rel_atributo = models.ManyToManyField(atributo,blank=True, null=True)
     def __unicode__(self):
-        return self.estado
+        return self.documento
 
 
 

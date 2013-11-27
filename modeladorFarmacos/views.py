@@ -43,7 +43,7 @@ def lista_mc(solicitud):
           })
 
 def pendientes(solicitud):
-    mc = xt_mc.objects.order_by('descripcion').all()
+    mc = xt_mc.objects.order_by('descripcion').filter(estado__exact=0).all()
     return render_to_response('listado_trabajo.html'
         ,{'pendientes_mc':mc})
 

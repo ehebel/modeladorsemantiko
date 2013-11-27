@@ -4,8 +4,6 @@
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/views.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" afterPath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_trabajo.html" afterPath="$PROJECT_DIR$/templates/listado_trabajo.html" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -52,7 +50,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="722" column="0" selection-start="28430" selection-end="28430" vertical-scroll-proportion="-6.9615383">
+            <state line="486" column="10" selection-start="18261" selection-end="18267" vertical-scroll-proportion="-13.307693">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -63,7 +61,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="46" selection-start="1576" selection-end="1576" vertical-scroll-proportion="0.6076923">
+            <state line="45" column="54" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.6076923">
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
               </folding>
@@ -1266,7 +1264,11 @@
       <created>1385503449797</created>
       <updated>1385503449797</updated>
     </task>
-    <option name="localTasksCounter" value="194" />
+    <task id="LOCAL-00194" summary="Mejoras al modelo de Privilegios CAS">
+      <created>1385572459228</created>
+      <updated>1385572459228</updated>
+    </task>
+    <option name="localTasksCounter" value="195" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1504,15 +1506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="722" column="0" selection-start="28430" selection-end="28430" vertical-scroll-proportion="-6.9615383">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/search_results.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="48" selection-start="1157" selection-end="1173" vertical-scroll-proportion="-21.25">
@@ -1527,9 +1520,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="486" column="10" selection-start="18261" selection-end="18267" vertical-scroll-proportion="-13.307693">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="46" selection-start="1576" selection-end="1576" vertical-scroll-proportion="0.6076923">
+        <state line="45" column="54" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.6076923">
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>

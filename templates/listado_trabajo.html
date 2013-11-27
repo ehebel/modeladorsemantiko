@@ -23,8 +23,7 @@
             </td>
             <td>
                     {% for pcce in pc.xt_pcce_set.all %}
-                        <li>{{ pcce.descripcion }}</li>
-
+                        <li>{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</li>
                 {% empty %}
                         Sin PCCE!
                 {% endfor %}
@@ -35,7 +34,8 @@
         <tr>
             {% endfor %}
         {% endfor %}
-    </tr>
+        </tr>
+
 </table>
 
 

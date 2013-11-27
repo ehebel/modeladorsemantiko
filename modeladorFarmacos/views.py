@@ -43,7 +43,7 @@ def lista_mc(solicitud):
           })
 
 def pendientes(solicitud):
-    mc = xt_mc.objects.order_by('descripcion').filter(descripcion__contains='Zopiclona').all()
+    mc = xt_mc.objects.order_by('descripcion').all()
     return render_to_response('listado_trabajo.html'
         ,{'pendientes_mc':mc})
 

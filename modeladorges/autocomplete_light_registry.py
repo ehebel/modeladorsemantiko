@@ -118,7 +118,7 @@ autocomplete_light.register(amca, search_fields=('amca_desc','amca_cod',),
 autocomplete_light.register(intervencion, search_fields=('id_intev','interv_glosa',),
     autocomplete_js_attributes={'placeholder': 'Intervencion'})
 
-autocomplete_light.register(documento, search_fields=('estado',),
+autocomplete_light.register(documento, search_fields=('documento',),
     autocomplete_js_attributes={'placeholder': 'Documento'})
 
 autocomplete_light.register(atributo, search_fields=('atributo',),

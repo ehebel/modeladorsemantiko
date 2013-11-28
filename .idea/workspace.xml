@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/views.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_trabajo.html" afterPath="$PROJECT_DIR$/templates/listado_trabajo.html" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -42,10 +40,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="843" column="38" selection-start="34639" selection-end="34639" vertical-scroll-proportion="0.52506596">
+                <state line="843" column="38" selection-start="34639" selection-end="34639" vertical-scroll-proportion="-7.6538463">
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
                   </folding>
@@ -53,10 +51,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="40" column="30" selection-start="1457" selection-end="1457" vertical-scroll-proportion="0.0">
+                <state line="47" column="24" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.60493827">
                   <folding>
                     <element signature="e#0#55#0" expanded="true" />
                   </folding>
@@ -68,7 +66,7 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="listado_trabajo.html" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="listado_trabajo.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/listado_trabajo.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="46" column="0" selection-start="1149" selection-end="1383" vertical-scroll-proportion="0.6277916">
@@ -105,9 +103,9 @@
         <option value="$PROJECT_DIR$/efectoresCAS/views.py" />
         <option value="$PROJECT_DIR$/privilegiosCAS/models.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos/views.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos/models.py" />
         <option value="$PROJECT_DIR$/templates/listado_trabajo.html" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos/views.py" />
       </list>
     </option>
   </component>
@@ -1286,7 +1284,11 @@
       <created>1385583857374</created>
       <updated>1385583857374</updated>
     </task>
-    <option name="localTasksCounter" value="197" />
+    <task id="LOCAL-00197" summary="Con listado de pendientes filtrado por vigentes">
+      <created>1385604660399</created>
+      <updated>1385604660399</updated>
+    </task>
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1524,15 +1526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="30" selection-start="1457" selection-end="1457" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/search_results.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="48" selection-start="1157" selection-end="1173" vertical-scroll-proportion="-17.5">
@@ -1542,7 +1535,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="843" column="38" selection-start="34639" selection-end="34639" vertical-scroll-proportion="0.52506596">
+        <state line="843" column="38" selection-start="34639" selection-end="34639" vertical-scroll-proportion="-7.6538463">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -1553,6 +1546,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="0" selection-start="1149" selection-end="1383" vertical-scroll-proportion="0.6277916">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="24" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.60493827">
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

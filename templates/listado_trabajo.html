@@ -11,6 +11,8 @@
             <th>xt_mc</th>
             <th>xt_pc</th>
             <th>xt_pcce</th>
+            <th>referente</th>
+
         </tr>
         {% for item in pendientes_mc %}
         <tr>
@@ -29,15 +31,26 @@
                 {% endfor %}
 
             </td>
-        </tr>
+                 <td>
+                    {% for foo in pc.equivalente.all %}
+                       <li> {{ foo.descripcion }} </li>
+                    {% endfor %}
+                 </td>
+            </tr>
 
         <tr>
             {% endfor %}
         {% endfor %}
         </tr>
-
 </table>
 
+{#{% for item in pendientes_mc  %}#}
+{#    {% for pc in item.xt_pc_set.all %}#}
+{#      {% for pcce in pc.equivalente.all %}#}
+{#          <li>{{ pcce.descripcion }}</li>#}
+{#      {% endfor %}#}
+{#    {% endfor %}#}
+{#{% endfor %}#}
 
 </body>
 </html>

@@ -379,7 +379,7 @@ class xt_sustancias (models.Model):
     OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     id_xt_sust = models.AutoField(primary_key=True)
-    
+
     descripcion = models.CharField(max_length=255)
     riesgo_teratogenico = models.CharField(max_length=15, null=True, blank=True)
 
@@ -553,7 +553,7 @@ class xt_unidad_potencia (models.Model):
 
 ## ##-
 ## table 'rel_mc_sust'
-## 
+##
 ## ##-
 
 
@@ -573,7 +573,7 @@ class rel_mc_sust (models.Model):
 
 ## ##-
 ## table 'rel_xt_mb_xt_sust'
-## 
+##
 ## ##-
 
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Listado de Kairos</title>
+</head>
+<body>
+
+<table border=3 cellpadding=5>
+    <tr>
+        <th>Kairos_Producto</th>
+        <th>Kairos_Presentacion</th>
+        <th>PCCE</th>
+    </tr>
+
+    {% for item in pendientes_kairos %}
+        <tr>
+
+        <td rowspan={{ item.kairos_presentaciones_set.all|length }}>
+                {{ item.descripcion }} ({{ item.laboratorioproductor.abreviatura }})
+                {% for pres in item.kairos_presentaciones_set.all %}
+                    </td>
+                    <td>
+                        {{ pres.descripcion }}
+                    </td>
+                    <td>
+
+                        {% for pcce in pres.xt_pcce_set.all %}
+                            <li>{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</li>
+                        {% empty %}
+                            <a href="/modelador/admin/modeladorFarmacos/xt_pcce/{{ pcce.id_xt_pcce }}">Sin PCCE!</a>
+                        {% endfor %}
+
+                    </td>
+
+                    </tr>
+                    <tr>
+                {% endfor %}
+    {% endfor %}
+    </tr>
+</table>
+
+
+</body>
+</html>

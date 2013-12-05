@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Listado de Trabajo</title>
 </head>
@@ -16,17 +16,17 @@
         {% for item in pendientes_mc %}
         <tr>
                 <td rowspan={{ item.xt_pc_set.all|length }}>
-                        {{ item.descripcion }}
+                        <a href="/modelador/admin/modeladorFarmacos/xt_mc/{{ item.id_xt_mc }}">{{ item.descripcion }}</a>
                     {% for pc in item.xt_pc_set.all %}
                         </td>
             <td>
-                {{ pc.descripcion }}
+                <a href="/modelador/admin/modeladorFarmacos/xt_pc/{{ pc.id_xt_pc }}">{{ pc.descripcion }}</a>
             </td>
             <td>
                     {% for pcce in pc.xt_pcce_set.all %}
-                        <li>{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</li>
+                        <li><a href="/modelador/admin/modeladorFarmacos/xt_pcce/{{ pcce.id_xt_pcce }}">{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</a></li>
                 {% empty %}
-                        Sin PCCE!
+                        <a href="/modelador/admin/modeladorFarmacos/xt_pcce/add/">Sin PCCE!</a>
                 {% endfor %}
 
             </td>

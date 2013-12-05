@@ -1,7 +1,8 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, Http404
 from django.views.generic import DetailView
-from modeladorFarmacos.models import xt_mc,xt_pc,xt_pcce, xt_mcce
+from django.views.generic.base import View
+from modeladorFarmacos.models import xt_mc,xt_pc,xt_pcce, xt_mcce, kairos_productos
 
 
 def search_form(request):
@@ -50,10 +51,9 @@ def pendientes(solicitud):
     return render_to_response('listado_trabajo.html'
         ,{'pendientes_mc':mc})
 
-class MCDetailView(DetailView):
-    model = xt_mc
-
-class MCResultsView(MCDetailView):
-    template_name = "templates/resultados.html"
+def kairos(self):
+    kairos_prod = kairos_productos.objects.order_by('descripcion')
+    return render_to_response('listado_kairos.html'
+        ,{'pendientes_kairos':kairos_prod})
 
 

@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Listado de Kairos</title>
+    <style type="text/css">
+        .pg-normal {
+            color: black;
+            font-weight: normal;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .pg-selected {
+            color: black;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,7 +27,7 @@
         <th>PCCE</th>
     </tr>
 
-    {% for item in pendientes_kairos %}
+    {% for item in pendientes_kairos.object_list %}
         <tr>
 
         <td rowspan={{ item.kairos_presentaciones_set.all|length }}>
@@ -40,6 +54,21 @@
     </tr>
 </table>
 
+<div class="pagination">
+    {% if pendientes_kairos.has_previous %}
+        <a href="?page={{ pendientes_kairos.previous_page_number }}">&#171 Anterior</a>
+    {% endif %}
+    {% for pg in pendientes_kairos.paginator.page_range %}
+        {% if pendientes_kairos.number == pg %}
+            <span class="active"><a href="?page={{ pg }}">{{ pg }}</a>|</span>
+        {% else %}
+            <span><a href="?page={{ pg }}">{{ pg }}</a> |</span>
+        {% endif %}
+    {% endfor %}
+    {% if pendientes_kairos.has_next %}
+            <span><a href="?page={{ pendientes_kairos.next_page_number }}">Siguiente &#187;</a></span>
+    {% endif %}
+</div>
 
 </body>
 </html>

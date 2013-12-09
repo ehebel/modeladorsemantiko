@@ -272,7 +272,7 @@ class xt_forma_agrupada(models.Model):
 
 
 
-class xt_formas_farm (models.Model):
+class xt_forma_farm (models.Model):
     OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
 
     id_xt_formafarm = models.AutoField(primary_key=True)
@@ -327,7 +327,7 @@ class xt_condicion_venta (models.Model):
     usuario_ult_mod = models.ForeignKey(User, related_name="%(app_label)s_%(class)s_related_mod", null=True, blank=True, editable=False)
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
-
+    observacion = models.CharField(max_length=255,blank=True, null=True)
     cl_concepto = models.CharField(max_length=20, blank=True, null=True)
 
     def __unicode__(self):
@@ -857,6 +857,9 @@ class xt_mcce (models.Model):
 
     cantidad = models.IntegerField()
     unidad_medida_cant = models.ForeignKey(xt_unidad, related_name='un_medida_cant')
+
+    pack_multi_cant = models.IntegerField()
+    pack_multi_u = models.ForeignKey(xt_unidad, related_name='pack_multi_unidad')
 
     volumen_total_cant = models.FloatField(null = True, blank=True)
     limit = models.Q(id_unidad_medida_cant = '25') | models.Q(id_unidad_medida_cant = '39') | models.Q(id_unidad_medida_cant = '40')

@@ -7,7 +7,7 @@ autocomplete_light.autodiscover()
 
 from django.contrib import admin
 admin.autodiscover()
-from efectoresCAS.views import  lista_areas
+from efectorescas.views import  lista_areas
 from django.conf.urls import patterns
 from modeladorFarmacos.views import search, selec_medclin,lista_mc, pendientes, kairos
 

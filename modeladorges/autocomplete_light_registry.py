@@ -2,7 +2,7 @@ import autocomplete_light
 
 
 from modeladorges.models import ciediez,casdiagnostico,casprocedimiento,concepto, oms2008ciediez
-from efectoresCAS.models import conceptosCASporarea,efector
+from efectorescas.models import conceptosCASporarea,efector
 from modeladorFarmacos.models import *
 from privilegiosCAS.models import amca, area, intervencion,especialidad,documento,atributo
 from snomedct.models import sct_concept

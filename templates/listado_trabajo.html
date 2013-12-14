@@ -12,6 +12,7 @@
             <th>xt_pc</th>
             <th>xt_pcce</th>
             <th>referente</th>
+            <th>Precio Kairos</th>
         </tr>
         {% for item in pendientes_mc %}
         <tr>
@@ -24,7 +25,13 @@
             </td>
             <td>
                     {% for pcce in pc.xt_pcce_set.all %}
-                        <li><a href="/modelador/admin/modeladorFarmacos/xt_pcce/{{ pcce.id_xt_pcce }}">{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</a></li>
+                        <li><a href="/modelador/admin/modeladorFarmacos/xt_pcce/{{ pcce.id_xt_pcce }}">{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</a>
+                                (
+                                {% for bar in pcce.id_presentacion_kairos.id_kairos_precio.all %}
+                                 $ {{ bar.id_presentacion_kairos }} |
+                                {% endfor %}
+
+                                )</li>
                 {% empty %}
                         <a href="/modelador/admin/modeladorFarmacos/xt_pcce/add/">Sin PCCE!</a>
                 {% endfor %}
@@ -35,6 +42,11 @@
                        <li> {{ foo.descripcion }} </li>
                     {% endfor %}
                  </td>
+                <td>
+
+                    test
+
+                </td>
             </tr>
         <tr>
             {% endfor %}

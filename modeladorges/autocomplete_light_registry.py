@@ -25,7 +25,6 @@ autocomplete_light.register(casprocedimiento, search_fields=('^integlosa',),
         'bootstrap': 'normal',
         }
 )
-
 autocomplete_light.register(concepto, search_fields=('fsn',),
     autocomplete_js_attributes={'minimum_characters': 3,
                                 'placeholder': 'SNOMED Conceptos .. '})
@@ -56,9 +55,6 @@ autocomplete_light.register(xt_formas_farm, search_fields=('descripcion',),
 
 autocomplete_light.register(xt_condicion_venta, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'Cond Venta .. '})
-
-autocomplete_light.register(uk_dmd_conceptos, search_fields=('fullyspecifiedname',),
-    autocomplete_js_attributes={'placeholder': 'UK DMD .. '})
 
 autocomplete_light.register(xt_sustancias, search_fields=('descripcion',),
     choices=xt_sustancias.objects.filter(estado=False),

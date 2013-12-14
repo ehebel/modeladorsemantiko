@@ -171,7 +171,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'modeladorsemantiko',
     'modeladorges',
-    'efectorescas',
+#    'efectorescas',
     'modeladorFarmacos',
     'modeladorFarmacos2',
     'privilegiosCAS',

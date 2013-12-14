@@ -191,18 +191,51 @@ class kairos_precio(models.Model):
         return u"%s" % self.claveproducto
 
 
+#########################################################################
 
 ## ##-
 ## table 'xt_unidad'
 ## unidad de dosis de extension
 ## ##-
 
+#
+#
+#class xt_unidad (models.Model):
+#    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
+#
+#    id_xt_unidad = models.AutoField(primary_key=True)
+#
+#    descripcion = models.CharField(max_length=255)
+#
+#    fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
+#    usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='%(app_label)s_%(class)s_related_crea')
+#    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
+#    usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
+#
+#    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+#
+##    '''
+##    Terminos que salen desde ITServer
+##    '''
+#    sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
+#    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+#
+#    hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
+#    hiba_term = models.CharField(max_length=255, null=True, blank=True)
+#
+#    observacion = models.CharField(max_length=255, blank=True, null=True)
+#    cl_concepto = models.CharField(max_length=20, blank=True, null=True)
+#
+#    def __unicode__(self):
+#        return self.descripcion
+#    class Meta:
+#        ordering=['id_xt_unidad']
+#        verbose_name_plural ='XT unidad de dosis'
 
-
-class xt_unidad (models.Model):
+class xt_unidad_dosis_unitaria (models.Model):
     OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
 
-    id_xt_unidad = models.AutoField(primary_key=True)
+    id_xt_unidad_dosis_u = models.AutoField(primary_key=True)
 
     descripcion = models.CharField(max_length=255)
 
@@ -213,9 +246,6 @@ class xt_unidad (models.Model):
 
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
 
-#    '''
-#    Terminos que salen desde ITServer
-#    '''
     sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
     sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
 
@@ -228,10 +258,87 @@ class xt_unidad (models.Model):
     def __unicode__(self):
         return self.descripcion
     class Meta:
-        ordering=['id_xt_unidad']
-        verbose_name_plural ='XT unidad de dosis'
+        ordering=['id_xt_unidad_dosis_u']
+        verbose_name_plural ='XT unidad de dosis unitaria'
 
 
+class xt_unidad_medida_unitaria (models.Model):
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
+
+    id_xt_unidad_medida_u = models.AutoField(primary_key=True)
+
+    descripcion = models.CharField(max_length=255)
+
+    fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
+    usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='%(app_label)s_%(class)s_related_crea')
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
+    usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
+
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+
+    sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+
+    hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
+    hiba_term = models.CharField(max_length=255, null=True, blank=True)
+
+    observacion = models.CharField(max_length=255, blank=True, null=True)
+    cl_concepto = models.CharField(max_length=20, blank=True, null=True)
+    def __unicode__(self):
+        return self.descripcion
+    class Meta:
+        ordering=['id_xt_unidad_medida_u']
+        verbose_name_plural ='XT unidades de medida unitaria'
+
+
+class xt_unidad_medida_cant (models.Model):
+    id_unidad_medida_cant = models.AutoField(primary_key=True)
+    descripcion = models.CharField(max_length=255)
+
+    fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
+    usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='%(app_label)s_%(class)s_related_crea')
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
+    usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
+
+    sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+
+    hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
+    hiba_term = models.CharField(max_length=255, null=True, blank=True)
+
+    observacion = models.CharField(max_length=255, blank=True, null=True)
+    cl_concepto = models.CharField(max_length=20, blank=True, null=True)
+    def __unicode__(self):
+        return self.descripcion
+    class Meta:
+        ordering=['descripcion']
+        verbose_name_plural ='XT unidad de medida de cantidad'
+
+
+
+class xt_unidad_potencia (models.Model):
+    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
+    id_unidad_potencia = models.AutoField(primary_key=True)
+    descripcion = models.CharField(max_length=255)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+
+    fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
+    usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='%(app_label)s_%(class)s_related_crea')
+    fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
+    usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
+
+    sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+
+    hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
+    hiba_term = models.CharField(max_length=255, null=True, blank=True)
+
+    observacion = models.CharField(max_length=255, blank=True, null=True)
+    cl_concepto = models.CharField(max_length=20, blank=True, null=True)
+    def __unicode__(self):
+        return self.descripcion
+
+#########################################################################
 
 
 
@@ -507,15 +614,15 @@ class xt_mc (models.Model):
     tipo_forma_farm = models.SmallIntegerField(choices=OPCIONES_FORMA_FARM, null=False, blank=False)
 
     u_logistica_cant = models.IntegerField("U_logistica_cant",null=True, blank=True)
-    u_logistica_u = models.ForeignKey(xt_unidad, null=True, blank=True, limit_choices_to = {'estado':'0'},related_name='u_logistica_u'
+    u_logistica_u = models.ForeignKey(xt_unidad_dosis_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'},related_name='u_logistica_u'
         ,verbose_name="U Logistica U")
     unidosis_asist_cant = models.FloatField("unidosis asist cant", blank=True,null=True)
-    unidosis_asist_u = models.ForeignKey(xt_unidad, null=True, blank=True, limit_choices_to = {'estado':'0'}, related_name='unidosis_asist_u'
+    unidosis_asist_u = models.ForeignKey(xt_unidad_medida_unitaria, null=True, blank=True, limit_choices_to = {'estado':'0'}, related_name='unidosis_asist_u'
         , verbose_name="unidosis asist_u")
     volumen_total_cant = models.FloatField("Volumen Total num",null=True, blank=True)
 
-    limit = models.Q(xt_unidad = '25') | models.Q(xt_unidad = '39') | models.Q(xt_unidad = '40')
-    volumen_total_u = models.ForeignKey(xt_unidad, null=True, blank=True
+    limit = models.Q(id_unidad_medida_cant = '25') | models.Q(id_unidad_medida_cant = '39') | models.Q(id_unidad_medida_cant = '40')
+    volumen_total_u = models.ForeignKey(xt_unidad_medida_cant, null=True, blank=True
         , verbose_name='Volumen total U'
         , limit_choices_to = limit
         , related_name='volumen_total_u' )
@@ -528,7 +635,7 @@ class xt_mc (models.Model):
 #    Terminos que salen desde ITServer
 #    '''
     sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
-    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino',blank=True, null=True)
 
     hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
     hiba_term = models.CharField(max_length=255, null=True, blank=True)
@@ -539,7 +646,7 @@ class xt_mc (models.Model):
     medlineplus_ulr = models.URLField("URL a MedlinePlus",max_length=255, blank=True, null=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
 
-    cl_concepto = models.CharField(max_length=20)
+    cl_concepto = models.CharField(max_length=20, blank=True, null=True)
 
     rel_mc_sust = models.ManyToManyField(xt_sustancia, through='rel_mc_sust')
 
@@ -586,9 +693,9 @@ class rel_mc_sust (models.Model):
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO)
     potencia = models.FloatField(null=True, blank=True)
 
-    id_unidad_potencia = models.ForeignKey(xt_unidad, related_name='%(app_label)s_%(class)s_related_potencia', null=True, blank=True)
+    id_unidad_potencia = models.ForeignKey(xt_unidad_potencia, related_name='%(app_label)s_%(class)s_related_potencia', null=True, blank=True)
     partido_por = models.FloatField(null=True,blank=True)
-    id_unidad_partido_por = models.ForeignKey(xt_unidad, related_name='%(app_label)s_%(class)s_related_partido',null=True, blank=True)
+    id_unidad_partido_por = models.ForeignKey(xt_unidad_potencia, related_name='%(app_label)s_%(class)s_related_partido',null=True, blank=True)
 
 
 
@@ -770,7 +877,10 @@ class xt_pc (models.Model):
     descripcion = models.CharField(max_length=255)
     descripcion_abreviada = models.CharField(max_length=255, verbose_name='Descripcion Abreviada', blank=True)
 
-    sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=1)
+    sensible_mayusc = models.PositiveSmallIntegerField(max_length=1
+        , choices=OPCIONES_SENSIBLE
+        , blank=False, null=False
+        , default=1)
 
     creac_nombre = models.SmallIntegerField(max_length=1, choices=OPCIONES_CREC, null=False, blank=False, default=0)
 
@@ -795,10 +905,11 @@ class xt_pc (models.Model):
 
 
     reg_isp_num = models.CharField(max_length=10, null = True, blank=True)
-    reg_isp_ano = models.PositiveIntegerField(max_length=2, null=True, blank=True)
+    reg_isp_ano = models.PositiveIntegerField(max_length=4, null=True, blank=True)
 
     observacion = models.CharField(max_length=255, blank=True, null=True)
     cl_concepto = models.CharField(max_length=20, blank=True, null=True)
+
     equivalente = models.ManyToManyField('self', through='xt_bioequivalente', symmetrical=False)
 
     def __unicode__(self):
@@ -856,14 +967,14 @@ class xt_mcce (models.Model):
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico')
 
     cantidad = models.IntegerField()
-    unidad_medida_cant = models.ForeignKey(xt_unidad, related_name='un_medida_cant')
+    unidad_medida_cant = models.ForeignKey(xt_unidad_medida_cant, related_name='un_medida_cant')
 
     pack_multi_cant = models.IntegerField()
-    pack_multi_u = models.ForeignKey(xt_unidad, related_name='pack_multi_unidad')
+    pack_multi_u = models.ForeignKey(xt_unidad_medida_cant, related_name='pack_multi_unidad')
 
     volumen_total_cant = models.FloatField(null = True, blank=True)
     limit = models.Q(id_unidad_medida_cant = '25') | models.Q(id_unidad_medida_cant = '39') | models.Q(id_unidad_medida_cant = '40')
-    volumen_total_u = models.ForeignKey(xt_unidad, related_name='vol_total_u' , null=True, blank=True
+    volumen_total_u = models.ForeignKey(xt_unidad_medida_cant, related_name='vol_total_u' , null=True, blank=True
         , limit_choices_to = limit
         , verbose_name='Volumen total U' )
 
@@ -926,7 +1037,7 @@ class xt_pcce (models.Model):
     #Campos relacionados con el catalogo de compras de CENABAST
     #'''
     pack_cant = models.IntegerField(max_length=6, null=True,blank=True)
-    pack_u =    models.ForeignKey(xt_unidad, null=True,blank=True)
+    pack_u =    models.ForeignKey(xt_unidad_medida_cant, null=True,blank=True)
 
     id_xt_pc = models.ForeignKey(xt_pc, verbose_name= 'Producto Comercial', null=False)
     id_xt_mcce = models.ForeignKey(xt_mcce, verbose_name='Medicamento Clinico Con Envase', null=True)

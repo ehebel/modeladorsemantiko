@@ -437,6 +437,7 @@ class pcAdmin(admin.ModelAdmin):
     list_display = ['id_xt_pc','descripcion'] #TODO BOOL Bioequivalente
     list_filter = ['estado','revisado','consultar'
         ,('id_xt_mc', IsNullFieldListFilter)
+        ,('id_xt_lab', IsNullFieldListFilter)
     ] #TODO BOOL Observacion
     form = autocomplete_light.modelform_factory(xt_pc)
 

@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
+OPCIONES_BOOL = ((1,'Si'),(0,'No'))
 
 # Create your models here.
 class dbnet (models.Model):
@@ -233,7 +235,6 @@ class kairos_precio(models.Model):
 #        verbose_name_plural ='XT unidad de dosis'
 
 class xt_unidad_dosis_unitaria (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
 
     id_xt_unidad_dosis_u = models.AutoField(primary_key=True)
 
@@ -244,10 +245,10 @@ class xt_unidad_dosis_unitaria (models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
 
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True,default=0)
 
     sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
-    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino', null=True, blank=True)
 
     hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
     hiba_term = models.CharField(max_length=255, null=True, blank=True)
@@ -263,7 +264,7 @@ class xt_unidad_dosis_unitaria (models.Model):
 
 
 class xt_unidad_medida_unitaria (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
+
 
     id_xt_unidad_medida_u = models.AutoField(primary_key=True)
 
@@ -274,10 +275,10 @@ class xt_unidad_medida_unitaria (models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
 
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True, default=0)
 
     sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
-    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino', null=True, blank=True)
 
     hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
     hiba_term = models.CharField(max_length=255, null=True, blank=True)
@@ -300,8 +301,10 @@ class xt_unidad_medida_cant (models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
 
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True, default=0)
+
     sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
-    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino', null=True, blank=True)
 
     hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
     hiba_term = models.CharField(max_length=255, null=True, blank=True)
@@ -317,7 +320,6 @@ class xt_unidad_medida_cant (models.Model):
 
 
 class xt_unidad_potencia (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_unidad_potencia = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
     estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
@@ -327,8 +329,10 @@ class xt_unidad_potencia (models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
 
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True, default=0)
+
     sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
-    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino', null=True, blank=True)
 
     hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
     hiba_term = models.CharField(max_length=255, null=True, blank=True)
@@ -343,7 +347,6 @@ class xt_unidad_potencia (models.Model):
 
 
 class xt_forma_agrupada(models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_xt_forma_agrupada = models.AutoField(primary_key=True)
 
     descripcion = models.CharField(max_length=255)
@@ -353,12 +356,12 @@ class xt_forma_agrupada(models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_ffa')
 
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True, default=0)
 #    '''
 #    Terminos que salen desde ITServer
 #    '''
     sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
-    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino', null=True, blank=True)
 
     hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
     hiba_term = models.CharField(max_length=255, null=True, blank=True)
@@ -380,7 +383,6 @@ class xt_forma_agrupada(models.Model):
 
 
 class xt_forma_farm (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
 
     id_xt_formafarm = models.AutoField(primary_key=True)
 
@@ -391,14 +393,14 @@ class xt_forma_farm (models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_ffe')
 
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True, default=0)
     forma_agrupada = models.ForeignKey(xt_forma_agrupada, null=True, blank=True)
 
 #    '''
 #    Terminos que salen desde ITServer
 #    '''
     sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
-    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino', null=True, blank=True)
 
     hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
     hiba_term = models.CharField(max_length=255, null=True, blank=True)
@@ -422,7 +424,6 @@ class xt_forma_farm (models.Model):
 
 
 class xt_condicion_venta (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
 
     id_xt_condventa = models.AutoField(primary_key=True)
 
@@ -454,8 +455,6 @@ class xt_condicion_venta (models.Model):
 
 
 class xt_sustancia (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
-    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     OPCIONES_SENSIBLE = (
         (1,'Insensible'),
             (2,'Primera Letra Mayuscula'),
@@ -481,7 +480,7 @@ class xt_sustancia (models.Model):
 #    Terminos que salen desde ITServer
 #    '''
     sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
-    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino', null=True, blank=True)
 
     hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
     hiba_term = models.CharField(max_length=255, null=True, blank=True)
@@ -503,8 +502,6 @@ class xt_sustancia (models.Model):
 
 
 class xt_mb (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
-    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     OPCIONES_CREC = (
         (0, 'Autogenerado'),
             (1, 'Manual')
@@ -515,7 +512,7 @@ class xt_mb (models.Model):
             (3,'Sensible')
         )
     xt_id_mb = models.AutoField(primary_key=True)
-    descripcion = models.CharField(max_length=255, blank=True)
+    descripcion = models.CharField(max_length=255, blank=False, null=False)
 
 #    '''
 #    Campo determina si la descripcion es autogenerada al grabaar
@@ -532,15 +529,15 @@ class xt_mb (models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='%(app_label)s_%(class)s_related_mod')
 
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True)
-    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
-    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=True,default=0)
+    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True, default=0)
+    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True,default=0)
 
 #    '''
 #    Terminos que salen desde ITServer
 #    '''
     sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
-    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino', null=True, blank=True)
 
     hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
     hiba_term = models.CharField(max_length=255, null=True, blank=True)
@@ -569,8 +566,6 @@ class xt_mb (models.Model):
 
 
 class xt_mc (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
-    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
 
     OPCIONES_FORMA_FARM = ((1, 'Discreta'),(2,'Continua'),(3,'No Aplica'))
     OPCIONES_PRESCRIPCION = (
@@ -683,7 +678,6 @@ class xt_mc (models.Model):
 
 
 class rel_mc_sust (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_rel_mc_sust = models.AutoField(primary_key=True)
     id_xt_mc = models.ForeignKey(xt_mc, related_name='relacion_xt_mc    ')
 
@@ -707,7 +701,6 @@ class rel_mc_sust (models.Model):
 
 
 class rel_xt_mb_xt_sust (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
     id_rel_xt_mb_xt_sust = models.AutoField(primary_key=True)
     id_xt_sust = models.ForeignKey(xt_sustancia)
     id_xt_mb = models.ForeignKey(xt_mb)
@@ -723,8 +716,6 @@ class rel_xt_mb_xt_sust (models.Model):
 
 
 class xt_laboratorio (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
-    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     OPCIONES_SENSIBLE = (
         (1,'Insensible'),
             (2,'Primera Letra Mayuscula'),
@@ -732,7 +723,7 @@ class xt_laboratorio (models.Model):
         )
     id_xt_lab = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255)
-    desc_abrev = models.CharField(max_length=255, blank=True)
+    desc_abrev = models.CharField(max_length=255, blank=False)
 
     sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=1)
 
@@ -741,13 +732,13 @@ class xt_laboratorio (models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
 
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False)
-    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False)
-    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default=0)
+    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False, default=0)
+    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False, default=0)
     observacion = models.CharField(max_length=255, null=True, blank=True)
 
     def __unicode__(self):
-        return self.descripcion
+        return u"%s | %s | %s" % (self.id_xt_lab, self.estado, self.desc_abrev)
     class Meta:
         ordering=['id_xt_lab']
         verbose_name_plural ='XT laboratorios de la extension'
@@ -762,8 +753,6 @@ class xt_laboratorio (models.Model):
 
 
 class xt_gfp (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
-    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     OPCIONES_SENSIBLE = (
         (1,'Insensible'),
             (2,'Primera Letra Mayuscula'),
@@ -780,9 +769,9 @@ class xt_gfp (models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
 
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False)
-    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False)
-    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False ,default=0)
+    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False ,default=0)
+    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False ,default=0)
 
     observacion = models.CharField(max_length=255, blank=True, null=True)
     cl_concepto = models.CharField(max_length=20, blank=True, null=True)
@@ -800,8 +789,6 @@ class xt_gfp (models.Model):
 
 
 class xt_fp (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
-    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     OPCIONES_SENSIBLE = (
         (1,'Insensible'),
             (2,'Primera Letra Mayuscula'),
@@ -820,13 +807,13 @@ class xt_fp (models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
 
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False)
-    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False)
-    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False,default=0)
+    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False,default=0)
+    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False,default=0)
 
     id_gfp_xt = models.ForeignKey(xt_gfp, null=True, blank=True)
     observacion = models.CharField(max_length=255, blank=True, null=True)
-    cl_concepto = models.CharField(max_length=20)
+    cl_concepto = models.CharField(max_length=20, null=True, blank=True)
 
     def __unicode__(self):
         return self.descripcion
@@ -862,8 +849,6 @@ class xt_sabor (models.Model):
 ## ##-
 
 class xt_pc (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
-    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     OPCIONES_SENSIBLE = (
         (1,'Insensible'),
         (2,'Primera Letra Mayuscula'),
@@ -892,6 +877,8 @@ class xt_pc (models.Model):
     estado = models.SmallIntegerField(choices=OPCIONES_ESTADO, null=False, blank=False, default=0)
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False, blank=False, default=0)
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False, blank=False, default=0)
+
+    forma_farm_extendida = models.CharField(max_length=255, null=True,blank=True)
 
     sabor = models.ForeignKey(xt_sabor, null=True,blank=True)
 
@@ -928,8 +915,6 @@ class xt_pc (models.Model):
 
 
 class xt_mcce (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
-    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
     OPCIONES_TIPO = (
         (1,'UNIDOSIS'),
         (2,'ENVASE CLINICO'),
@@ -939,7 +924,7 @@ class xt_mcce (models.Model):
         )
     OPCIONES_SENSIBLE = (
         (1,'Insensible'),
-            (2,'Primera Letra Mayuscula'),
+        (2,'Primera Letra Mayuscula'),
         (3,'Sensible'),
         )
     OPCIONES_CREC = (
@@ -958,9 +943,9 @@ class xt_mcce (models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
 
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default='Unspecified')
-    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
-    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default='Unspecified')
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False, default=0)
+    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default=0)
+    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, default=0)
 
     tipo = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_TIPO, null=False, blank=False)
 
@@ -969,8 +954,8 @@ class xt_mcce (models.Model):
     cantidad = models.IntegerField()
     unidad_medida_cant = models.ForeignKey(xt_unidad_medida_cant, related_name='un_medida_cant')
 
-    pack_multi_cant = models.IntegerField()
-    pack_multi_u = models.ForeignKey(xt_unidad_medida_cant, related_name='pack_multi_unidad')
+    pack_multi_cant = models.IntegerField(null=True, blank=True)
+    pack_multi_u = models.ForeignKey(xt_unidad_medida_cant, related_name='pack_multi_unidad',null=True, blank=True)
 
     volumen_total_cant = models.FloatField(null = True, blank=True)
     limit = models.Q(id_unidad_medida_cant = '25') | models.Q(id_unidad_medida_cant = '39') | models.Q(id_unidad_medida_cant = '40')
@@ -999,8 +984,7 @@ class xt_mcce (models.Model):
 
 
 class xt_pcce (models.Model):
-    OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
-    OPCIONES_BOOL = ((1,'Si'),(0,'No'))
+
     OPCIONES_SENSIBLE = (
         (1,'Insensible'),
         (2,'Primera Letra Mayuscula'),
@@ -1019,7 +1003,6 @@ class xt_pcce (models.Model):
     descripcion = models.CharField(max_length=255)
     desc_abreviada = models.CharField(max_length=255,blank=True)
 
-
     sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=1)
 
     creac_nombre = models.SmallIntegerField(max_length=1, choices=OPCIONES_CREC, null=False, blank=False, default=0)
@@ -1030,9 +1013,9 @@ class xt_pcce (models.Model):
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='%(app_label)s_%(class)s_related_modif')
 
-    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False)
-    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False)
-    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False)
+    estado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_ESTADO, null=False,default=0)
+    revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False,default=0)
+    consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False,default=0)
     #'''
     #Campos relacionados con el catalogo de compras de CENABAST
     #'''
@@ -1040,10 +1023,9 @@ class xt_pcce (models.Model):
     pack_u =    models.ForeignKey(xt_unidad_medida_cant, null=True,blank=True)
 
     id_xt_pc = models.ForeignKey(xt_pc, verbose_name= 'Producto Comercial', null=False)
-    id_xt_mcce = models.ForeignKey(xt_mcce, verbose_name='Medicamento Clinico Con Envase', null=True)
+    id_xt_mcce = models.ForeignKey(xt_mcce, verbose_name='Medicamento Clinico Con Envase', null=True,blank=True)
 
     gtin_gs1 = models.BigIntegerField(blank=True, null=True)
-    tipo_gtin_gs1 = models.CharField(max_length=2, choices=OPCIONES_TIPO_GTIN, null=True,blank=True)
     existencia_gs1 = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL,null=True,blank=True, verbose_name=u'Existe en GS1')
 
     id_presentacion_kairos = models.ForeignKey(kairos_presentaciones, verbose_name='Presentacion Kairos',blank=True, null=True)

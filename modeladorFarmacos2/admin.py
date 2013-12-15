@@ -515,7 +515,7 @@ admin.site.register(xt_pc,  pcAdmin)
 #
 class pcceAdmin(admin.ModelAdmin):
     formfield_overrides = {
-        models.CharField: {'widget': TextInput(attrs={'size':'100'})}
+        models.CharField: {'widget': TextInput(attrs={'size':'170'})}
     }
     form = autocomplete_light.modelform_factory(xt_pcce)
     list_filter = ['estado','revisado','consultar'

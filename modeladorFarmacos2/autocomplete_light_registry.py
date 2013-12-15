@@ -57,4 +57,6 @@ autocomplete_light.register(kairos_productos, search_fields=('descripcion',),)
 
 autocomplete_light.register(dbnet, search_fields=('producto',),)
 
+autocomplete_light.register(xt_laboratorio, search_fields=('desc_abrev','descripcion'),)
+
 __author__ = 'ehebel'

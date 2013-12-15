@@ -885,7 +885,7 @@ class xt_pc (models.Model):
     id_xt_fp = models.ForeignKey(xt_fp, verbose_name='Familia de Producto', null=True, blank=True)
     id_xt_mc = models.ForeignKey(xt_mc, verbose_name='Medicamento Clinico', null=True, blank=True)
 
-    id_xt_lab = models.ForeignKey(xt_laboratorio, verbose_name=u'Laboratorio', null=False, blank=False)
+    id_xt_lab = models.ForeignKey(xt_laboratorio, verbose_name=u'Laboratorio', null=True, blank=False)
 
     hiba_descriptionid = models.CharField(max_length=20, null = True, blank=True)
     hiba_term = models.CharField(max_length=255, null = True, blank=True)

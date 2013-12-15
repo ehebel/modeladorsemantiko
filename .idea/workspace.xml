@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modeladorFarmacos2/autocomplete_light_registry.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/admin.py" afterPath="$PROJECT_DIR$/efectorescas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/views.py" afterPath="$PROJECT_DIR$/efectorescas/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/views.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos2/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos2/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos2/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos2/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" afterPath="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_trabajo.html" afterPath="$PROJECT_DIR$/templates/listado_trabajo.html" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -39,10 +31,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="441" column="0" selection-start="16287" selection-end="16287" vertical-scroll-proportion="0.0">
+            <state line="525" column="6" selection-start="19284" selection-end="19284" vertical-scroll-proportion="0.2829912">
               <folding />
             </state>
           </provider>
@@ -52,36 +44,7 @@
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="9" column="12" selection-start="268" selection-end="276" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#1769#2217#0" expanded="false" />
-                <element signature="e#2319#3274#0" expanded="false" />
-                <element signature="e#3394#4544#0" expanded="false" />
-                <element signature="e#4692#6353#0" expanded="false" />
-                <element signature="e#6396#7159#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="autocomplete_light_registry.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1961" selection-end="4649" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="autocomplete_light_registry.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/autocomplete_light_registry.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="59" selection-start="2538" selection-end="2538" vertical-scroll-proportion="0.7361809">
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,15 +76,15 @@
         <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
         <option value="$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos2/models.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos2/admin.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos2/autocomplete_light_registry.py" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos2/admin.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1280" />
-    <option name="height" value="774" />
+    <option name="width" value="849" />
+    <option name="height" value="874" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -158,48 +121,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="modeladorsemantiko">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="modeladorsemantiko">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="modeladorsemantiko">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="modeladorsemantiko">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="modeladorges">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="modeladorsemantiko">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="modeladorFarmacos2">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -1427,7 +1348,11 @@
       <created>1386589829792</created>
       <updated>1386589829792</updated>
     </task>
-    <option name="localTasksCounter" value="205" />
+    <task id="LOCAL-00205" summary="Agrego modeloFarmacos2 y bajo temporalmente modeloFarmacos">
+      <created>1386984501930</created>
+      <updated>1386984501930</updated>
+    </task>
+    <option name="localTasksCounter" value="206" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1451,24 +1376,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="0" />
+    <frame x="0" y="22" width="849" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31166914" sideWeight="0.9667747" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22156574" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42983752" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2801252" sideWeight="0.6706056" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19717138" sideWeight="0.70753324" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22204214" sideWeight="0.6986706" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2826899" sideWeight="0.7001287" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990461" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.184765" sideWeight="0.24519941" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2929448" sideWeight="0.15994021" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3013294" sideWeight="0.8295964" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2998713" sideWeight="0.8295964" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293944" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42983752" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.7784343" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.49675325" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1584,67 +1509,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="35" selection-start="2906" selection-end="2906" vertical-scroll-proportion="0.23672566">
-          <folding />
-        </state>
+        <state line="64" column="35" selection-start="2906" selection-end="2906" vertical-scroll-proportion="0.23672566" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/listado_trabajo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="90" selection-start="1163" selection-end="1163" vertical-scroll-proportion="-12.75">
-          <folding />
-        </state>
+        <state line="29" column="90" selection-start="1163" selection-end="1163" vertical-scroll-proportion="-12.75" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="8" selection-start="1793" selection-end="1793" vertical-scroll-proportion="0.2846154">
-          <folding />
-        </state>
+        <state line="50" column="8" selection-start="1793" selection-end="1793" vertical-scroll-proportion="0.2846154" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="86" selection-start="3441" selection-end="3444" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="96" column="86" selection-start="3441" selection-end="3444" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="498" column="42" selection-start="19233" selection-end="19254" vertical-scroll-proportion="0.33169532">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="498" column="42" selection-start="19233" selection-end="19254" vertical-scroll-proportion="0.33169532" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="0" selection-start="6412" selection-end="6412" vertical-scroll-proportion="0.5381166">
-          <folding />
-        </state>
+        <state line="172" column="0" selection-start="6412" selection-end="6412" vertical-scroll-proportion="0.5381166" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py">
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/autocomplete_light_registry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1961" selection-end="4649" vertical-scroll-proportion="0.0">
+        <state line="57" column="59" selection-start="2538" selection-end="2538" vertical-scroll-proportion="1.1744505">
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/admin.py">
+    <entry file="file://$PROJECT_DIR$/modeladorges/autocomplete_light_registry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="441" column="0" selection-start="16287" selection-end="16287" vertical-scroll-proportion="0.0">
+        <state line="59" column="55" selection-start="2713" selection-end="2713" vertical-scroll-proportion="1.04">
           <folding />
         </state>
       </provider>
@@ -1652,23 +1561,14 @@
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="12" selection-start="268" selection-end="276" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#1769#2217#0" expanded="false" />
-            <element signature="e#2319#3274#0" expanded="false" />
-            <element signature="e#3394#4544#0" expanded="false" />
-            <element signature="e#4692#6353#0" expanded="false" />
-            <element signature="e#6396#7159#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/autocomplete_light_registry.py">
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="59" selection-start="2538" selection-end="2538" vertical-scroll-proportion="0.7361809">
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state line="525" column="6" selection-start="19284" selection-end="19284" vertical-scroll-proportion="0.2829912">
+          <folding />
         </state>
       </provider>
     </entry>

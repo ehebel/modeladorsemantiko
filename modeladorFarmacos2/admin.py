@@ -351,10 +351,10 @@ class mcceAdmin(admin.ModelAdmin):
         models.CharField: {'widget': TextInput(attrs={'size':'100'})}
     }
     form = autocomplete_light.modelform_factory(xt_mcce)
-    list_display = ['id_xt_mcce','descripcion','id_xt_mc']
-#        ,'concept_vmpp_dmd'] #TODO sustancias m2m
+
+    list_display = ['id_xt_mcce','descripcion']
+
     list_filter = ['revisado','consultar','estado',
-#                   ('concept_vmpp_dmd', IsNullFieldListFilter)
             ] #TODO con/Sin observacion
     search_fields = ['descripcion',]
     readonly_fields=('id_xt_mcce',)
@@ -434,7 +434,7 @@ class pcAdmin(admin.ModelAdmin):
     }
     inlines = [bioeqAdminInline,]
     search_fields = ['descripcion',]
-    list_display = ['id_xt_pc','descripcion','id_xt_fp','id_xt_mc'] #TODO BOOL Bioequivalente
+    list_display = ['id_xt_pc','descripcion'] #TODO BOOL Bioequivalente
     list_filter = ['estado','revisado','consultar'
         ,('id_xt_mc', IsNullFieldListFilter)
     ] #TODO BOOL Observacion
@@ -522,9 +522,7 @@ class pcceAdmin(admin.ModelAdmin):
         ,('id_xt_mcce', IsNullFieldListFilter)
 #        ,('concept_dbnet', IsNullFieldListFilter)
         ,('id_presentacion_kairos', IsNullFieldListFilter)] #TODO BOOL Observacion
-    list_display = ['id_xt_pcce','descripcion','id_xt_pc','id_xt_mcce','id_presentacion_kairos'
-#        ,'concept_dbnet'
-                    ] #TODO BOOL Bioequivalente
+    list_display = ['id_xt_pcce','descripcion'] #TODO BOOL Bioequivalente
     search_fields = ['descripcion',]
     readonly_fields=('id_xt_pcce',)
     actions = [export_as_csv]

@@ -172,7 +172,7 @@ INSTALLED_APPS = (
     'modeladorsemantiko',
     'modeladorges',
 #    'efectorescas',
-    'modeladorFarmacos',
+#    'modeladorFarmacos',
     'modeladorFarmacos2',
     'privilegiosCAS',
     'snomedct',

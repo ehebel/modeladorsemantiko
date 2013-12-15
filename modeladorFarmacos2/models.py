@@ -878,7 +878,7 @@ class xt_pc (models.Model):
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False, blank=False, default=0)
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False, blank=False, default=0)
 
-    forma_farm_extendida = models.CharField(max_length=255, null=True,blank=True)
+    forma_farm_extendida = models.ForeignKey(xt_forma_farm, null=True,blank=True)
 
     sabor = models.ForeignKey(xt_sabor, null=True,blank=True)
 

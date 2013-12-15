@@ -674,6 +674,7 @@ class uduAdmin(admin.ModelAdmin):
         obj.save()
 admin.site.register(xt_unidad_dosis_unitaria,uduAdmin)
 
+
 class umuAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
 
@@ -682,6 +683,7 @@ class umuAdmin(admin.ModelAdmin):
         obj.save()
 admin.site.register(xt_unidad_medida_unitaria,uduAdmin)
 
+
 class ffAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
 
@@ -689,6 +691,7 @@ class ffAdmin(admin.ModelAdmin):
             obj.usuario_creador = request.user
         obj.save()
 admin.site.register(xt_forma_farm,ffAdmin)
+
 
 class condVentaAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
@@ -732,6 +735,10 @@ class gfpAdmin(admin.ModelAdmin):
 admin.site.register(xt_gfp,gfpAdmin)
 
 class fpAdmin(admin.ModelAdmin):
+    search_fields = ['descripcion']
+    list_display = ['id_xt_fp', 'descripcion','id_gfp_xt']
+    list_filter = ['familia_generica',('id_gfp_xt', IsNullFieldListFilter)]
+
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):

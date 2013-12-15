@@ -434,7 +434,7 @@ class pcAdmin(admin.ModelAdmin):
     }
     inlines = [bioeqAdminInline,]
     search_fields = ['descripcion',]
-    list_display = ['id_xt_pc','descripcion'] #TODO BOOL Bioequivalente
+    list_display = ['id_xt_pc','descripcion','id_xt_mc','id_xt_lab'] #TODO BOOL Bioequivalente
     list_filter = ['estado','revisado','consultar'
         ,('id_xt_mc', IsNullFieldListFilter)
         ,('id_xt_lab', IsNullFieldListFilter)

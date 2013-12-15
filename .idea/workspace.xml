@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/admin.py" afterPath="$PROJECT_DIR$/efectorescas/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/views.py" afterPath="$PROJECT_DIR$/efectorescas/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos2/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos2/admin.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -28,32 +31,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="autocomplete_light_registry.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/autocomplete_light_registry.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="0" selection-start="2634" selection-end="2634" vertical-scroll-proportion="-10.038462">
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="887" column="13" selection-start="37462" selection-end="37471" vertical-scroll-proportion="-4.5">
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="439" column="45" selection-start="16102" selection-end="16102" vertical-scroll-proportion="0.8068536">
+            <state line="436" column="49" selection-start="15938" selection-end="15938" vertical-scroll-proportion="0.33333334">
               <folding />
             </state>
           </provider>
@@ -1404,7 +1385,11 @@
       <created>1387141901520</created>
       <updated>1387141901520</updated>
     </task>
-    <option name="localTasksCounter" value="213" />
+    <task id="LOCAL-00213" summary="Agrego modeloFarmacos2 y bajo temporalmente modeloFarmacos">
+      <created>1387141906785</created>
+      <updated>1387141906786</updated>
+    </task>
+    <option name="localTasksCounter" value="214" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1429,7 +1414,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1041" height="874" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.49675325" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31166914" sideWeight="0.9667747" order="8" side_tool="false" content_ui="tabs" />
@@ -1440,7 +1425,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990461" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.184765" sideWeight="0.24519941" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2929448" sideWeight="0.15994021" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47361648" sideWeight="0.8295964" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47361648" sideWeight="0.8295964" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293944" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1600,14 +1585,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="1" selection-start="6454" selection-end="6454" vertical-scroll-proportion="0.0397878">
+        <state line="26" column="32" selection-start="675" selection-end="687" vertical-scroll-proportion="0.25174826">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="887" column="13" selection-start="37462" selection-end="37471" vertical-scroll-proportion="-4.5">
+        <state line="887" column="13" selection-start="37462" selection-end="37471" vertical-scroll-proportion="0.16455697">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -1616,7 +1601,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/autocomplete_light_registry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="2634" selection-end="2634" vertical-scroll-proportion="-10.038462">
+        <state line="60" column="0" selection-start="2634" selection-end="2634" vertical-scroll-proportion="0.8312236">
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -1625,7 +1610,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="439" column="45" selection-start="16102" selection-end="16102" vertical-scroll-proportion="0.8068536">
+        <state line="436" column="49" selection-start="15938" selection-end="15938" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>

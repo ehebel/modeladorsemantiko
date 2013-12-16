@@ -25,7 +25,7 @@ autocomplete_light.register(xt_mc, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. PARACETAMOL 500 MG COMPRIMIDO'})
 
 autocomplete_light.register(xt_mcce, search_fields=('descripcion',),
-    autocomplete_js_attributes={'placeholder': 'Inserte'})
+    autocomplete_js_attributes={'placeholder': 'Inserte aqui'})
 
 
 autocomplete_light.register(rel_xt_mb_xt_sust, search_fields=('descripcion',),

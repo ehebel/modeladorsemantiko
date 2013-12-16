@@ -90,7 +90,7 @@ class kairos_lab (models.Model):
     estado = models.CharField(max_length=255)
 
     def __unicode__(self):
-        return u'%s [%s]' % (self.abreviatura,self.descripcion)
+        return u'%s' % (self.abreviatura)
     class Meta:
         ordering=['clave']
         verbose_name_plural ='laboratorios de kairos'

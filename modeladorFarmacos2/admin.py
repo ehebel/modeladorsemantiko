@@ -789,8 +789,12 @@ admin.site.register(xt_forma_agrupada)
 admin.site.register(kairos_sustancia)
 admin.site.register(kairos_lab)
 admin.site.register(kairos_productos)
+
 class kairosPresAdmin(admin.ModelAdmin):
+    form = autocomplete_light.modelform_factory(kairos_presentaciones)
     search_fields = ['claveproducto__descripcion','descripcion']
+#    list_display = ['descripcion','medio','estado']
+    list_filter = ['estado','medio',]
 admin.site.register(kairos_presentaciones,kairosPresAdmin)
 
 class kairosPrecioAdmin(admin.ModelAdmin):

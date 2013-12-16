@@ -36,6 +36,10 @@
                     </td>
                     <td>
                         {{ pres.descripcion }}
+                            {% if pres.estado %}
+                                ({{ pres.estado }})
+                            {% endif %}
+
                     </td>
                     <td>
 

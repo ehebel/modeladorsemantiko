@@ -4,7 +4,7 @@ from django.views.generic import DetailView
 from django.views.generic.base import View
 from django.template import RequestContext
 from django.core.paginator import Paginator
-from modeladorFarmacos.models import xt_mc,xt_pc,xt_pcce, xt_mcce, kairos_productos
+from modeladorFarmacos.models import xt_mc,xt_pc,xt_pcce, xt_mcce
 
 
 def search_form(request):
@@ -53,23 +53,6 @@ def pendientes(solicitud):
     return render_to_response('listado_trabajo.html'
         ,{'pendientes_mc':mc})
 
-def kairos(request):
-    kairos_list = kairos_productos.objects.all().order_by('descripcion')
-    paginator = Paginator(kairos_list, 100)
 
-    try:
-        page = int(request.GET.get('page','1'))
-    except:
-        page = 1
-
-    try:
-        kairos_prod = paginator.page(page)
-    except(EmptyPage, InvalidPage):
-        kairos_prod = paginator.page(paginator.num_pages)
-
-
-    return render_to_response('listado_kairos.html'
-        ,{'pendientes_kairos':kairos_prod},
-        context_instance=RequestContext(request))
 
 

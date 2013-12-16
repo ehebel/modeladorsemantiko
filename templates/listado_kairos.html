@@ -46,7 +46,7 @@
                         {% for pcce in pres.xt_pcce_set.all %}
                             <li>{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</li>
                         {% empty %}
-                            <a href="/modelador/admin/modeladorFarmacos/xt_pcce/{{ pcce.id_xt_pcce }}">Sin PCCE!</a>
+                            <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/{{ pcce.id_xt_pcce }}">Sin PCCE!</a>
                         {% endfor %}
 
                     </td>

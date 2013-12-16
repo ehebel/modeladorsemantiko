@@ -781,11 +781,11 @@ class xt_gfp (models.Model):
         ordering=['id_xt_gfp']
         verbose_name_plural ='XT grupo de familia de productos de la extension'
 
+
 ## ##-
 ## table 'xt_fp'
 ## familia de producto de la extension
 ## ##-
-
 
 
 class xt_fp (models.Model):
@@ -970,7 +970,7 @@ class xt_mcce (models.Model):
     cl_concepto = models.CharField(max_length=20, blank=True, null=True)
 
     def __unicode__(self):
-        return u"%s | %s | %s" % (self.id_xt_mcce, self.estado, self.descripcion)
+        return u"%s | %s | %s (%s)" % (self.id_xt_mcce, self.estado, self.descripcion, self.tipo)
     class Meta:
         ordering=['id_xt_mcce']
         verbose_name_plural ='XT medicamento clinico con envase (extension)'

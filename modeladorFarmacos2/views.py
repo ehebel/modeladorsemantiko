@@ -9,7 +9,11 @@ from modeladorFarmacos2.models import kairos_productos
 
 # Create your views here.
 def kairos(request):
-    kairos_list = kairos_productos.objects.all().order_by('descripcion')
+    kairos_list = kairos_productos.objects\
+        .filter(kairos_presentaciones__medio__in=['Comp.','Caps.'])\
+        .order_by('descripcion')\
+        .exclude(kairos_presentaciones__estado__exact='B')\
+        .all()
     paginator = Paginator(kairos_list, 200)
 
     try:

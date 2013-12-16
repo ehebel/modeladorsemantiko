@@ -5,9 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/admin.py" afterPath="$PROJECT_DIR$/efectorescas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/views.py" afterPath="$PROJECT_DIR$/efectorescas/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos/views.py" afterPath="$PROJECT_DIR$/modeladorFarmacos/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos2/views.py" afterPath="$PROJECT_DIR$/modeladorFarmacos2/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/urls.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -78,7 +76,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="587" selection-end="587" vertical-scroll-proportion="0.3708791">
+            <state line="12" column="8" selection-start="435" selection-end="435" vertical-scroll-proportion="0.24725275">
               <folding />
             </state>
           </provider>
@@ -1473,7 +1471,11 @@
       <created>1387159342105</created>
       <updated>1387159342105</updated>
     </task>
-    <option name="localTasksCounter" value="217" />
+    <task id="LOCAL-00217" summary="Agrego modeloFarmacos2 y bajo temporalmente modeloFarmacos">
+      <created>1387160363132</created>
+      <updated>1387160363132</updated>
+    </task>
+    <option name="localTasksCounter" value="218" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1708,7 +1710,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="587" selection-end="587" vertical-scroll-proportion="0.3708791">
+        <state line="12" column="8" selection-start="435" selection-end="435" vertical-scroll-proportion="0.24725275">
           <folding />
         </state>
       </provider>

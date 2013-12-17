@@ -785,7 +785,13 @@ admin.site.register(atc,atcAdmin)
 admin.site.register(xt_unidad_medida_cant)
 #admin.site.register(rel_mc_sust)
 #admin.site.register(rel_xt_mb_xt_sust)
-admin.site.register(xt_forma_agrupada)
+
+class formaAgrupadaAdmin(admin.ModelAdmin):
+    search_fields = ['descripcion',]
+    list_display = ['descripcion','estado']
+admin.site.register(xt_forma_agrupada,formaAgrupadaAdmin)
+
+
 admin.site.register(kairos_sustancia)
 admin.site.register(kairos_lab)
 admin.site.register(kairos_productos)

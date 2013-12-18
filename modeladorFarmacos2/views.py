@@ -44,7 +44,7 @@ def kairos(request):
 #                    reduce(operator.and_,[c.medio for c in m.kairos_presentaciones_set.all()])]
 #    kairos_list = kairos_productos.objects.filter(clave__in=kairos_ids)
 
-    paginator = Paginator(kairos_list, 200)
+    paginator = Paginator(kairos_list, 275)
 
     try:
         page = int(request.GET.get('page','1'))

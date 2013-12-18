@@ -177,7 +177,7 @@ INSTALLED_APPS = (
     'modeladorFarmacos2',
     'privilegiosCAS',
     'snomedct',
-    'debug_toolbar',
+#    'debug_toolbar',
 )
 
 # A sample logging configuration. The only tangible logging

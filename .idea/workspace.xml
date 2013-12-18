@@ -54,7 +54,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="180" column="0" selection-start="6620" selection-end="6620" vertical-scroll-proportion="0.6420233">
+            <state line="137" column="0" selection-start="5278" selection-end="5278" vertical-scroll-proportion="1.2840466">
               <folding />
             </state>
           </provider>
@@ -1457,7 +1457,11 @@
       <created>1387314730204</created>
       <updated>1387314730204</updated>
     </task>
-    <option name="localTasksCounter" value="223" />
+    <task id="LOCAL-00223" summary="Agrego modeloFarmacos2 y bajo temporalmente modeloFarmacos">
+      <created>1387329066074</created>
+      <updated>1387329066074</updated>
+    </task>
+    <option name="localTasksCounter" value="224" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1674,7 +1678,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="0" selection-start="6620" selection-end="6620" vertical-scroll-proportion="0.6420233">
+        <state line="137" column="0" selection-start="5278" selection-end="5278" vertical-scroll-proportion="1.2840466">
           <folding />
         </state>
       </provider>

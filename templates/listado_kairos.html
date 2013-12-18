@@ -25,6 +25,7 @@
         <th>Kairos_Producto</th>
         <th>Kairos_Presentacion</th>
         <th>PCCE</th>
+        <th>PC</th>
     </tr>
 
     {% for item in pendientes_kairos.object_list %}
@@ -39,18 +40,24 @@
                             {% if pres.estado %}
                                 ({{ pres.estado }})
                             {% endif %}
-
                     </td>
-                    <td>
-
                         {% for pcce in pres.xt_pcce_set.all %}
-                            <li>{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</li>
+                            <td>
+                            <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/{{ pcce.id_xt_pcce }}">{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</a>
+                            </td>
+                            <td>
+
+                                {{ pcce.id_xt_pc.descripcion }}
+
+                            </td>
                         {% empty %}
+                            <td>
                             <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/{{ pcce.id_xt_pcce }}">Sin PCCE!</a>
+                            </td>
+                            <td>
+
+                            </td>
                         {% endfor %}
-
-                    </td>
-
                     </tr>
                     <tr>
                 {% endfor %}

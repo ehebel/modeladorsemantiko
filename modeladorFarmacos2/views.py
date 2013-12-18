@@ -9,6 +9,11 @@ import operator
 from modeladorFarmacos2.models import kairos_productos, kairos_presentaciones, xt_mc
 
 # Create your views here.
+
+def modeladorescas(solicitud):
+    pass
+
+
 def pendientes(solicitud):
     mc_list = xt_mc.objects.order_by('descripcion').filter(
         #        descripcion__contains=u'cido acetilsalic',

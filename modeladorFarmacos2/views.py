@@ -6,9 +6,32 @@ from django.template import RequestContext
 from django.core.paginator import Paginator
 import operator
 
-from modeladorFarmacos2.models import kairos_productos, kairos_presentaciones
+from modeladorFarmacos2.models import kairos_productos, kairos_presentaciones, xt_mc
 
 # Create your views here.
+def pendientes(solicitud):
+    mc_list = xt_mc.objects.order_by('descripcion').filter(
+        #        descripcion__contains=u'cido acetilsalic',
+        estado__exact=0,
+    ) #.exclude(xt_pc__xt_pcce__id_xt_mcce__tipo__in=[1,2,4,5])
+
+    paginator = Paginator(mc_list, 200)
+
+    try:
+        page = int(solicitud.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        mc = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        mc = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('listado_trabajo.html'
+        ,{'pendientes_mc':mc},
+        context_instance=RequestContext(solicitud))
+
 
 def kairos(request):
     kairos_list = kairos_productos.objects.filter(kairos_presentaciones__medio__in=['Comp.','Caps.']).order_by('clave').distinct().all()
@@ -38,12 +61,3 @@ def kairos(request):
         ,{'pendientes_kairos':kairos_prod},
         context_instance=RequestContext(request))
 
-
-#make_ids = MakeContent.objects.filter(published=True).values_list('make_id', flat=True)
-#makes = Make.objects.filter(id__in=make_ids)
-#
-#import operator
-#make_ids = [m.id for m in makes if
-#            reduce(operator.and_, [c.published for c in m.makecontent_set.all()] )
-#]
-#makes_query = Make.objects.filter(id__in=make_ids)

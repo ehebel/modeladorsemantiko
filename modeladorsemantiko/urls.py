@@ -9,8 +9,8 @@ from django.contrib import admin
 admin.autodiscover()
 from efectorescas.views import  lista_areas
 from django.conf.urls import patterns
-from modeladorFarmacos.views import search, selec_medclin,lista_mc, pendientes
-from modeladorFarmacos2.views import kairos
+from modeladorFarmacos.views import search, selec_medclin,lista_mc
+from modeladorFarmacos2.views import kairos,pendientes
 
 #from .views import MCDetailView
 #from .views import MCResultsView

@@ -12,20 +12,19 @@
             <th>xt_pc</th>
             <th>xt_pcce</th>
             <th>referente</th>
-            <th>Precio Kairos</th>
         </tr>
         {% for item in pendientes_mc %}
         <tr>
                 <td rowspan={{ item.xt_pc_set.all|length }}>
-                        <a href="/modelador/admin/modeladorFarmacos/xt_mc/{{ item.id_xt_mc }}">{{ item.descripcion }}</a>
+                        <a href="/modelador/admin/modeladorFarmacos2/xt_mc/{{ item.id_xt_mc }}">{{ item.descripcion }}</a>
                     {% for pc in item.xt_pc_set.all %}
                         </td>
             <td>
-                <a href="/modelador/admin/modeladorFarmacos/xt_pc/{{ pc.id_xt_pc }}">{{ pc.descripcion }}</a>
+                <a href="/modelador/admin/modeladorFarmacos2/xt_pc/{{ pc.id_xt_pc }}">{{ pc.descripcion }}</a>
             </td>
             <td>
                     {% for pcce in pc.xt_pcce_set.all %}
-                        <li><a href="/modelador/admin/modeladorFarmacos/xt_pcce/{{ pcce.id_xt_pcce }}">{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</a>
+                        <li><a href="/modelador/admin/modeladorFarmacos2/xt_pcce/{{ pcce.id_xt_pcce }}">{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</a>
                                 (
                                 {% for bar in pcce.id_presentacion_kairos.id_kairos_precio.all %}
                                  $ {{ bar.id_presentacion_kairos }} |
@@ -33,7 +32,7 @@
 
                                 )</li>
                 {% empty %}
-                        <a href="/modelador/admin/modeladorFarmacos/xt_pcce/add/">Sin PCCE!</a>
+                        <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/add/">Sin PCCE!</a>
                 {% endfor %}
 
             </td>
@@ -42,11 +41,7 @@
                        <li> {{ foo.descripcion }} </li>
                     {% endfor %}
                  </td>
-                <td>
 
-                    test
-
-                </td>
             </tr>
         <tr>
             {% endfor %}
@@ -54,6 +49,21 @@
         </tr>
 </table>
 
+<div class="pagination">
+    {% if pendientes_mc.has_previous %}
+        <a href="?page={{ pendientes_mc.previous_page_number }}">&#171 Anterior</a>
+    {% endif %}
+    {% for pg in pendientes_mc.paginator.page_range %}
+        {% if pendientes_mc.number == pg %}
+            <span class="active"><a href="?page={{ pg }}">{{ pg }}</a>|</span>
+        {% else %}
+            <span><a href="?page={{ pg }}">{{ pg }}</a> |</span>
+        {% endif %}
+    {% endfor %}
+    {% if pendientes_mc.has_next %}
+        <span><a href="?page={{ pendientes_mc.next_page_number }}">Siguiente &#187;</a></span>
+    {% endif %}
+</div>
 
 </body>
 </html>

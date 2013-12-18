@@ -45,13 +45,7 @@ def lista_mc(solicitud):
           'listado_mcce':mcce,
           })
 
-def pendientes(solicitud):
-    mc = xt_mc.objects.order_by('descripcion').filter(
-#        descripcion__contains=u'cido acetilsalic',
-        estado__exact=0,
-        ) #.exclude(xt_pc__xt_pcce__id_xt_mcce__tipo__in=[1,2,4,5])
-    return render_to_response('listado_trabajo.html'
-        ,{'pendientes_mc':mc})
+
 
 
 

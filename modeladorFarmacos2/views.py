@@ -11,7 +11,7 @@ from modeladorFarmacos2.models import kairos_productos, kairos_presentaciones, x
 # Create your views here.
 
 def modeladorescas(solicitud):
-    pcce_list = xt_pcce.objects.order_by('usuario_creador','-fecha_creacion','usuario_ult_mod','-fecha_ult_mod')
+    pcce_list = xt_pcce.objects.order_by('usuario_creador','-fecha_creacion','usuario_ult_mod','-fecha_ult_mod').filter(usuario_ult_mod__groups__id__exact=4)
 
     paginator = Paginator(pcce_list, 100)
 

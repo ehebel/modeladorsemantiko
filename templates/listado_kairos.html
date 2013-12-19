@@ -19,6 +19,13 @@
     </style>
 </head>
 <body>
+{% extends "base.html" %}
+
+{% block branding %}
+    <h1>Catálogo de revisión KAIROS</h1>
+{% endblock %}
+
+{% block content %}
 
 <table border=3 cellpadding=5>
     <tr>
@@ -81,5 +88,7 @@
     {% endif %}
 </div>
 
+
+{% endblock %}
 </body>
 </html>

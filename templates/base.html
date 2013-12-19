@@ -1,10 +1,24 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
     <title>{% block title %}django-autocomplete-light{% endblock %}</title>
     {% block extrahead %}{% endblock %}
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+          rel="stylesheet" media="screen">
+
 </head>
-<body style="width:800px; margin-left: auto; margin-right: auto;">
+
+<body style="margin-left: auto; margin-right: auto;">
+
+{#<div>#}
+{#    {{ user }}#}
+{#    {% if user.is_anonymous %}#}
+{#        <a href="{% url 'django.contrib.auth.views.login' %}">login</a>#}
+{#    {% else %}#}
+{#        <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>#}
+{#    {% endif %}#}
+{#</div>#}
 
 {% block branding %}
 <h1>Bienvenido al Modelador Semantiko!</h1>
@@ -12,5 +26,12 @@
 
 {% block content %}
 {% endblock %}
+
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
 </body>
 </html>
+
+
+
+

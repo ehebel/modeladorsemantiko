@@ -4,6 +4,13 @@
     <title>Resultados</title>
 </head>
 <body>
+{% extends "base.html" %}
+
+{% block branding %}
+    <h1>Catálogo de revisión PCCE</h1>
+{% endblock %}
+
+{% block content %}
 
 <ul>
 {##}
@@ -68,6 +75,8 @@
         <span><a href="?page={{ modelados_pcce.next_page_number }}">Siguiente &#187;</a></span>
     {% endif %}
 </div>
+
+{% endblock %}
 
 </body>
 </html>

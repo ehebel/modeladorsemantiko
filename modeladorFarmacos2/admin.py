@@ -426,8 +426,11 @@ class mcceAdmin(admin.ModelAdmin):
         else:
             return formset.save()
 admin.site.register(xt_mcce,mcceAdmin)
+
+
 #
 class pcAdmin(admin.ModelAdmin):
+    exclude = ('revisado',)
     actions = [export_as_csv]
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'100'})}
@@ -436,8 +439,11 @@ class pcAdmin(admin.ModelAdmin):
     search_fields = ['descripcion',]
     list_display = ['id_xt_pc','descripcion','id_xt_mc','id_xt_lab'] #TODO BOOL Bioequivalente
     list_filter = ['estado','revisado','consultar'
+
         ,('id_xt_mc', IsNullFieldListFilter)
         ,('id_xt_lab', IsNullFieldListFilter)
+        ,'fecha_ult_mod'
+
     ] #TODO BOOL Observacion
     form = autocomplete_light.modelform_factory(xt_pc)
 
@@ -515,6 +521,7 @@ admin.site.register(xt_pc,  pcAdmin)
 
 #
 class pcceAdmin(admin.ModelAdmin):
+    exclude = ('revisado',)
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'170'})}
     }

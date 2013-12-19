@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados</title>
+</head>
+<body>
+
+<ul>
+{##}
+{#{% for item in modelados_pcce %}#}
+{##}
+{#<li>{{ item.descripcion }} || {{ item.usuario_creador.username }} || {{ item.fecha_ult_mod }}</li>#}
+{##}
+{#{% endfor %}#}
+{#</ul>#}
+
+
+
+<table border=3 cellpadding=5>
+
+    <tr>
+        <th>pcce</th>
+        <th>Creador</th>
+        <th>Fecha Creacion</th>
+        <th>Ultima Modif</th>
+        <th>Fecha Ultima Modif</th>
+        <th>Revisado</th>
+    </tr>
+    {% for item in modelados_pcce %}
+        <tr>
+
+            <td rowspan=1>
+                <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/{{ item.id_xt_pcce }}">{{ item.descripcion }}</a>
+                    </td>
+                    <td>
+                        {{ item.usuario_creador.username }}
+                    </td>
+                    <td>
+                        {{ item.fecha_creacion }}
+                    </td>
+                    <td>
+                        {{ item.usuario_ult_mod.username }}
+                    </td>
+                    <td>
+                        {{ item.fecha_ult_mod }}
+                    </td>
+                    <td>
+                        <input type="checkbox" name="vehicle" value="Bike">
+                    </td>
+                    </tr>
+                    <tr>
+    {% endfor %}
+    </tr>
+</table>
+
+<div class="pagination">
+    {% if modelados_pcce.has_previous %}
+        <a href="?page={{ modelados_pcce.previous_page_number }}">&#171 Anterior</a>
+    {% endif %}
+    {% for pg in modelados_pcce.paginator.page_range %}
+        {% if modelados_pcce.number == pg %}
+            <span class="active"><a href="?page={{ pg }}">{{ pg }}</a>|</span>
+        {% else %}
+            <span><a href="?page={{ pg }}">{{ pg }}</a> |</span>
+        {% endif %}
+    {% endfor %}
+    {% if modelados_pcce.has_next %}
+        <span><a href="?page={{ modelados_pcce.next_page_number }}">Siguiente &#187;</a></span>
+    {% endif %}
+</div>
+
+</body>
+</html>

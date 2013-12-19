@@ -47,12 +47,12 @@
                             </td>
                             <td>
 
-                                {{ pcce.id_xt_pc.descripcion }}
+                                <a href="/modelador/admin/modeladorFarmacos2/xt_pc/{{ pcce.id_xt_pc.id_xt_pc }}">{{ pcce.id_xt_pc.descripcion }}</a>
 
                             </td>
                         {% empty %}
                             <td>
-                            <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/{{ pcce.id_xt_pcce }}">Sin PCCE!</a>
+                            <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/add/">Sin PCCE!</a>
                             </td>
                             <td>
 

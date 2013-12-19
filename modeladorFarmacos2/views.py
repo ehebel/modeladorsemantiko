@@ -6,13 +6,29 @@ from django.template import RequestContext
 from django.core.paginator import Paginator
 import operator
 
-from modeladorFarmacos2.models import kairos_productos, kairos_presentaciones, xt_mc
+from modeladorFarmacos2.models import kairos_productos, kairos_presentaciones, xt_mc, xt_pcce
 
 # Create your views here.
 
 def modeladorescas(solicitud):
-    pass
+    pcce_list = xt_pcce.objects.order_by('usuario_creador','-fecha_creacion','usuario_ult_mod','-fecha_ult_mod')
 
+    paginator = Paginator(pcce_list, 100)
+
+    try:
+        page = int(solicitud.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        pcce = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        pcce = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos/resultados.html'
+        ,{'modelados_pcce':pcce},
+        context_instance=RequestContext(solicitud))
 
 def pendientes(solicitud):
     mc_list = xt_mc.objects.order_by('descripcion').filter(

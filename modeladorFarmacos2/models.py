@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+from django.utils import timezone
 from django.contrib.auth.models import User
 
 OPCIONES_ESTADO = ((0, 'Vigente'),(1, 'No Vigente'))
@@ -1039,6 +1041,12 @@ class xt_pcce (models.Model):
 
     observacion = models.CharField(max_length=255, blank=True, null=True)
     cl_concepto = models.CharField(max_length=20, null=True, blank=True)
+
+    def fue_modif_reciente(self):
+        return self.fecha_ult_mod >= timezone.now() - datetime.timedelta(days=1)
+    fue_modif_reciente.admin_order_field = 'fecha_ult_mod'
+    fue_modif_reciente.boolean = True
+    fue_modif_reciente.short_description = 'Modificado Recientemente?'
 
     def __unicode__(self):
         return u"%s | %s | %s" % (self.id_xt_pcce, self.estado, self.descripcion)

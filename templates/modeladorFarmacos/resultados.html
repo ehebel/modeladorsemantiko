@@ -13,13 +13,6 @@
 {% block content %}
 
 <ul>
-{##}
-{#{% for item in modelados_pcce %}#}
-{##}
-{#<li>{{ item.descripcion }} || {{ item.usuario_creador.username }} || {{ item.fecha_ult_mod }}</li>#}
-{##}
-{#{% endfor %}#}
-{#</ul>#}
 
 
 
@@ -31,7 +24,7 @@
         <th>Fecha Creacion</th>
         <th>Ultima Modif</th>
         <th>Fecha Ultima Modif</th>
-        <th>Revisado</th>
+        <th>Rev</th>
     </tr>
     {% for item in modelados_pcce %}
         <tr>
@@ -43,22 +36,26 @@
                         {{ item.usuario_creador.username }}
                     </td>
                     <td>
-                        {{ item.fecha_creacion }}
+                        {{ item.fecha_creacion|date:"SHORT_DATE_FORMAT"  }}
                     </td>
                     <td>
                         {{ item.usuario_ult_mod.username }}
                     </td>
                     <td>
-                        {{ item.fecha_ult_mod }}
+                        {{ item.fecha_ult_mod|date:"SHORT_DATE_FORMAT"  }}
                     </td>
                     <td>
-                        <input type="checkbox" name="vehicle" value="Bike">
+                        <input type="checkbox" name="revisado" value="1"
+                            {% if item.revisado == 1  %}
+                                checked
+                            {% endif %}>
                     </td>
                     </tr>
                     <tr>
     {% endfor %}
     </tr>
 </table>
+
 
 <div class="pagination">
     {% if modelados_pcce.has_previous %}
@@ -75,6 +72,7 @@
         <span><a href="?page={{ modelados_pcce.next_page_number }}">Siguiente &#187;</a></span>
     {% endif %}
 </div>
+
 
 {% endblock %}
 

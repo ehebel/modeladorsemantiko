@@ -49,11 +49,11 @@
                             <td>
                             {% for foo in item.xt_pcce_set.all %}
 
-                                <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/{{ foo.id_xt_pc.id_xt_pc }}" target="_blank">{{ foo.descripcion }}</a>
+                                <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/{{ foo.id_xt_pcce }}" target="_blank">{{ foo.descripcion }}</a>
 
                                 <td>
 
-                                    {{ foo.id_xt_pc.descripcion }}
+                                <a href="/modelador/admin/modeladorFarmacos2/xt_pc/{{ foo.id_xt_pc.id_xt_pc }}" target="_blank">{{ foo.id_xt_pc.descripcion }}</a>
 
                                 </td>
 

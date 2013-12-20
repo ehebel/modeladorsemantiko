@@ -4,7 +4,7 @@ from django.shortcuts import render, render_to_response
 #from django.views.generic import DetailView
 #from django.views.generic.base import View
 from django.template import RequestContext
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, InvalidPage
 import operator
 from django.views.generic import ListView, UpdateView
 
@@ -107,7 +107,15 @@ def kairos(request):
 
 
 def kairos2(request):
-    kpres_list = kairos_presentaciones.objects.filter(medio__in=['Comp. ','Caps. ','Grag. ','Tab.']).exclude(estado__icontains='B').order_by('claveproducto__descripcion', 'concentracion','cantidadenvase').distinct().all()
+    kpres_list = kairos_presentaciones.objects.filter(medio__in=['Comp. '
+            ,'Caps. '
+            ,'Grag. '
+            ,'Tab.'
+        ]
+        ).exclude(estado__icontains='B').order_by('claveproducto__descripcion'
+            , 'concentracion'
+            ,'cantidadenvase'
+        ).distinct().all()
 
     paginator = Paginator(kpres_list, 275)
 

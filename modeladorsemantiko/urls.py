@@ -73,7 +73,6 @@ urlpatterns = patterns('',
     (r'^modelador/catalogo/$', lista_mc),
     (r'^modelador/pendientes/$', pendientes),
     (r'^modelador/kairos/$', kairos2),
-#    (r'^modelador/kairos2/$', kairos2),
 #
 #    url(
 #        regex=r"^modelador/xt_mc/(?P<pk>\d+)/$",

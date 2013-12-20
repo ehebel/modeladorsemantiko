@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="Agrego modeloFarmacos2 y bajo temporalmente modeloFarmacos">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html" />
+    <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/admin.py" afterPath="$PROJECT_DIR$/efectorescas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/views.py" afterPath="$PROJECT_DIR$/efectorescas/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos2/views.py" afterPath="$PROJECT_DIR$/modeladorFarmacos2/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/urls.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_kairos.html" afterPath="$PROJECT_DIR$/templates/listado_kairos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_trabajo.html" afterPath="$PROJECT_DIR$/templates/listado_trabajo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html" afterPath="$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -34,10 +34,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="185" selection-start="3262" selection-end="3262" vertical-scroll-proportion="0.51153326">
+            <state line="106" column="0" selection-start="3077" selection-end="3077" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -45,13 +45,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modeladorsemantiko/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="18" selection-start="5332" selection-end="5346" vertical-scroll-proportion="-13.846154">
+            <state line="75" column="1" selection-start="3251" selection-end="3251" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#51#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listado_kairos.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="36" selection-start="1363" selection-end="1363" vertical-scroll-proportion="0.32678822">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,39 +68,8 @@
       <file leaf-file-name="listado_trabajo.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/listado_trabajo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="1556" selection-end="1556" vertical-scroll-proportion="-18.666666">
+            <state line="47" column="34" selection-start="1775" selection-end="1775" vertical-scroll-proportion="-16.916666">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listado_kairos.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/listado_kairos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="578" selection-end="597" vertical-scroll-proportion="-8.541667">
-              <folding>
-                <element signature="n#style#0;n#span#0;n#td#1;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listado_kairos.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="30" selection-start="631" selection-end="631" vertical-scroll-proportion="-19.375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modeladorsemantiko/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="1" selection-start="3292" selection-end="3292" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -119,12 +97,12 @@
         <option value="$PROJECT_DIR$/templates/modeladorFarmacos/resultados.html" />
         <option value="$PROJECT_DIR$/templates/modeladorFarmacos/pcce_editar.html" />
         <option value="$PROJECT_DIR$/templates/modeladorFarmacos/pcce_por_revisar.html" />
-        <option value="$PROJECT_DIR$/templates/listado_trabajo.html" />
         <option value="$PROJECT_DIR$/templates/listado_kairos.html" />
         <option value="$PROJECT_DIR$/modeladorFarmacos2/models.py" />
-        <option value="$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html" />
-        <option value="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos2/views.py" />
+        <option value="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
+        <option value="$PROJECT_DIR$/templates/listado_trabajo.html" />
+        <option value="$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html" />
       </list>
     </option>
   </component>
@@ -212,20 +190,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="modeladorFarmacos">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="modeladorsemantiko">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="modeladorFarmacos2">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -1570,7 +1534,11 @@
       <created>1387536191763</created>
       <updated>1387536191763</updated>
     </task>
-    <option name="localTasksCounter" value="234" />
+    <task id="LOCAL-00234" summary="Agrego modeloFarmacos2 y bajo temporalmente modeloFarmacos">
+      <created>1387558259467</created>
+      <updated>1387558259467</updated>
+    </task>
+    <option name="localTasksCounter" value="235" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1602,7 +1570,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22156574" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22453372" sideWeight="0.6718147" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.204647" sideWeight="0.47490346" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43142477" sideWeight="0.71428573" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18651363" sideWeight="0.71428573" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990461" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.204647" sideWeight="0.4800515" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2921493" sideWeight="0.15994021" order="12" side_tool="true" content_ui="tabs" />
@@ -1772,53 +1740,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/listado_kairos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="578" selection-end="597" vertical-scroll-proportion="-8.541667">
-          <folding>
-            <element signature="n#style#0;n#span#0;n#td#1;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/listado_trabajo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1556" selection-end="1556" vertical-scroll-proportion="-18.666666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="18" selection-start="5332" selection-end="5346" vertical-scroll-proportion="-13.846154">
+        <state line="142" column="46" selection-start="5025" selection-end="5025" vertical-scroll-proportion="0.3701016">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html">
+    <entry file="file://$PROJECT_DIR$/templates/listado_kairos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="30" selection-start="631" selection-end="631" vertical-scroll-proportion="-19.375">
-          <folding />
+        <state line="27" column="0" selection-start="578" selection-end="597" vertical-scroll-proportion="0.28751752">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#td#1;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="1" selection-start="3292" selection-end="3292" vertical-scroll-proportion="0.0">
+        <state line="75" column="1" selection-start="3251" selection-end="3251" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/listado_trabajo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="34" selection-start="1775" selection-end="1775" vertical-scroll-proportion="-16.916666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="185" selection-start="3262" selection-end="3262" vertical-scroll-proportion="0.51153326">
+        <state line="106" column="0" selection-start="3077" selection-end="3077" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="36" selection-start="1363" selection-end="1363" vertical-scroll-proportion="0.32678822">
+          <folding />
         </state>
       </provider>
     </entry>

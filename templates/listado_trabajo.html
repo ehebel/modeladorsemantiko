@@ -44,6 +44,8 @@ Se han encontrado {{ pendientes_mc|length }} MC con Bioequivalentes
                  <td>
                     {% for foo in pc.equivalente.all %}
                        <li> {{ foo.descripcion }} </li>
+                    {% empty %}
+                        REFERENTE?
                     {% endfor %}
                  </td>
 

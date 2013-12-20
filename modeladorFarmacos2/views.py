@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.shortcuts import render, render_to_response
 #from django.http import HttpResponse, Http404
 #from django.views.generic import DetailView
@@ -5,10 +6,36 @@ from django.shortcuts import render, render_to_response
 from django.template import RequestContext
 from django.core.paginator import Paginator
 import operator
+from django.views.generic import ListView, UpdateView
 
-from modeladorFarmacos2.models import kairos_productos, kairos_presentaciones, xt_mc, xt_pcce
+from modeladorFarmacos2.models import kairos_productos, kairos_presentaciones, xt_mc, xt_pcce, xt_bioequivalente
 
 # Create your views here.
+class VistaListaPCCE(ListView):
+    model = xt_pcce
+    template_name = 'modeladorFarmacos/pcce_por_revisar.html'
+
+    def get_queryset(self):
+
+        return xt_pcce.objects.order_by('usuario_ult_mod','-fecha_ult_mod').filter(usuario_ult_mod__groups__id__exact=4, estado__exact=0)
+
+
+class VistaEditarPCCE(UpdateView):
+    model = xt_pcce
+    template_name = 'modeladorFarmacos/pcce_editar.html'
+
+    def get_success_url(self):
+        return reverse('contacts-list')
+
+    def get_context_data(self, **kwargs):
+
+        context = super(VistaEditarPCCE, self).get_context_data(**kwargs)
+        context['action'] = reverse('pcce-edit',
+            kwargs={'pk': self.get_object().id})
+
+        return context
+
+
 
 def modeladorescas(solicitud):
     pcce_list = xt_pcce.objects.order_by('usuario_ult_mod','-fecha_ult_mod').filter(usuario_ult_mod__groups__id__exact=4)
@@ -31,10 +58,11 @@ def modeladorescas(solicitud):
         context_instance=RequestContext(solicitud))
 
 def pendientes(solicitud):
+    inner_qs = xt_bioequivalente.objects.values('referencia').distinct()
     mc_list = xt_mc.objects.order_by('descripcion').filter(
-        #        descripcion__contains=u'cido acetilsalic',
+        xt_pc__id_xt_pc__in= inner_qs ,
         estado__exact=0,
-    ) #.exclude(xt_pc__xt_pcce__id_xt_mcce__tipo__in=[1,2,4,5])
+    ).distinct()
 
     paginator = Paginator(mc_list, 200)
 

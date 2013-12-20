@@ -10,7 +10,8 @@ admin.autodiscover()
 from efectorescas.views import  lista_areas
 from django.conf.urls import patterns
 from modeladorFarmacos.views import search, selec_medclin,lista_mc
-from modeladorFarmacos2.views import kairos,pendientes, modeladorescas
+from modeladorFarmacos2.views import modeladorescas,pendientes,kairos
+import modeladorFarmacos2.views
 
 #from .views import MCDetailView
 #from .views import MCResultsView
@@ -57,6 +58,11 @@ urlpatterns = patterns('',
     (r'^just_javascript/$', generic.TemplateView.as_view(
         template_name='just_javascript.html')),
     (r'^modelador/$', generic.TemplateView.as_view(template_name='index.html')),
+
+    url(r'^$', modeladorFarmacos2.views.VistaListaPCCE.as_view(),
+        name='pcce-list',),
+    url(r'^new$', modeladorFarmacos2.views.VistaEditarPCCE.as_view(),
+        name='pcce-edit',),
 
     (r'^modelador/CAS/efectores/$', lista_areas),
     (r'^modelador/CAS/modeladores/$', modeladorescas),

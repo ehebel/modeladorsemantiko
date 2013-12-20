@@ -5,6 +5,11 @@
     <title>Listado de Trabajo</title>
 </head>
 <body>
+{% extends "base.html" %}
+{% block content %}
+
+Se han encontrado {{ pendientes_mc|length }} MC con Bioequivalentes
+
 <table border=3 cellpadding=5>
 
 <tr>
@@ -65,5 +70,7 @@
     {% endif %}
 </div>
 
+
+{% endblock %}
 </body>
 </html>

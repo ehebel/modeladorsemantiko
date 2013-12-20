@@ -45,7 +45,9 @@
                     <td>
                         {{ pres.descripcion }}
                             {% if pres.estado %}
-                                ({{ pres.estado }})
+                                <span style="color: red">
+                                       ({{ pres.estado }})
+                                </span>
                             {% endif %}
                     </td>
                         {% for pcce in pres.xt_pcce_set.all %}

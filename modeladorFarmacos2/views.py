@@ -8,7 +8,8 @@ from django.core.paginator import Paginator
 import operator
 from django.views.generic import ListView, UpdateView
 
-from modeladorFarmacos2.models import kairos_productos, kairos_presentaciones, xt_mc, xt_pcce, xt_bioequivalente
+from modeladorFarmacos2.models import kairos_productos\
+    , kairos_presentaciones, xt_mc, xt_pcce, xt_bioequivalente
 
 # Create your views here.
 class VistaListaPCCE(ListView):
@@ -60,7 +61,9 @@ def modeladorescas(solicitud):
 def pendientes(solicitud):
     inner_qs = xt_bioequivalente.objects.values('referencia').distinct()
     mc_list = xt_mc.objects.order_by('descripcion').filter(
+
         xt_pc__id_xt_pc__in= inner_qs ,
+
         estado__exact=0,
     ).distinct()
 
@@ -84,14 +87,6 @@ def pendientes(solicitud):
 
 def kairos(request):
     kairos_list = kairos_productos.objects.filter(kairos_presentaciones__medio__in=['Comp.','Caps.']).order_by('clave').distinct().all()
-#
-#    kairos_ids = kairos_presentaciones.objects.filter(medio__in=['Comp.','Caps.']).exclude(estado__exact='B').values_list('claveproducto_id',flat=True)
-#    kairos_list = kairos_productos.objects.filter(clave__in=kairos_ids).order_by('clave').all()
-#    kairos_list = kairos_productos.objects.filter(kairos_presentaciones__estado__exact='B').order_by('clave').distinct()
-
-#    kairos_ids = [m.clave for m in kairos_productos if
-#                    reduce(operator.and_,[c.medio for c in m.kairos_presentaciones_set.all()])]
-#    kairos_list = kairos_productos.objects.filter(clave__in=kairos_ids)
 
     paginator = Paginator(kairos_list, 275)
 
@@ -110,3 +105,23 @@ def kairos(request):
         ,{'pendientes_kairos':kairos_prod},
         context_instance=RequestContext(request))
 
+
+def kairos2(request):
+    kpres_list = kairos_presentaciones.objects.filter(medio__in=['Comp. ','Caps. ','Grag. ','Tab.']).exclude(estado__icontains='B').order_by('claveproducto__descripcion', 'concentracion','cantidadenvase').distinct().all()
+
+    paginator = Paginator(kpres_list, 275)
+
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        kairos_pres = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        kairos_pres = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos/listado_kairos.html'
+        ,{'kpres_kairos':kairos_pres},
+        context_instance=RequestContext(request))

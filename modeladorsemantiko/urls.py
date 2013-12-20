@@ -10,7 +10,7 @@ admin.autodiscover()
 from efectorescas.views import  lista_areas
 from django.conf.urls import patterns
 from modeladorFarmacos.views import search, selec_medclin,lista_mc
-from modeladorFarmacos2.views import modeladorescas,pendientes,kairos
+from modeladorFarmacos2.views import modeladorescas,pendientes,kairos,kairos2
 import modeladorFarmacos2.views
 
 #from .views import MCDetailView
@@ -72,7 +72,8 @@ urlpatterns = patterns('',
     (r'^modelador/seleccion_medclin/(\d{1,4})/$', selec_medclin ),
     (r'^modelador/catalogo/$', lista_mc),
     (r'^modelador/pendientes/$', pendientes),
-    (r'^modelador/kairos/$', kairos),
+    (r'^modelador/kairos/$', kairos2),
+#    (r'^modelador/kairos2/$', kairos2),
 #
 #    url(
 #        regex=r"^modelador/xt_mc/(?P<pk>\d+)/$",

@@ -59,7 +59,8 @@ def modeladorescas(solicitud):
         context_instance=RequestContext(solicitud))
 
 def pendientes(solicitud):
-    inner_qs = xt_bioequivalente.objects.values('referencia').distinct()
+    inner_qs = xt_bioequivalente.objects.values_list('referencia', flat=True).distinct()
+
     mc_list = xt_mc.objects.order_by('descripcion').filter(
 
         xt_pc__id_xt_pc__in= inner_qs ,
@@ -81,7 +82,8 @@ def pendientes(solicitud):
 
 
     return render_to_response('listado_trabajo.html'
-        ,{'pendientes_mc':mc},
+        ,{'pendientes_mc':mc
+        ,'bioeq_referentes':inner_qs},
         context_instance=RequestContext(solicitud))
 
 
@@ -103,6 +105,7 @@ def kairos(request):
 
     return render_to_response('listado_kairos.html'
         ,{'pendientes_kairos':kairos_prod},
+
         context_instance=RequestContext(request))
 
 

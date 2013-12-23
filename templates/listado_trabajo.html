@@ -30,14 +30,14 @@ Se han encontrado {{ pendientes_mc|length }} MC con Bioequivalentes
             <td>
                     {% for pcce in pc.xt_pcce_set.all %}
                         <li><a href="/modelador/admin/modeladorFarmacos2/xt_pcce/{{ pcce.id_xt_pcce }}">{{ pcce.descripcion }} [{{ pcce.id_xt_mcce.get_tipo_display }}]</a>
-                                (
-                                {% for bar in pcce.id_presentacion_kairos.id_kairos_precio.all %}
-                                 $ {{ bar.id_presentacion_kairos }} |
-                                {% endfor %}
 
-                                )</li>
+{#                                {% for bar in pcce.id_presentacion_kairos.id_kairos_precio.all %}#}
+{#                                 ($ {{ bar.id_presentacion_kairos }} )#}
+{#                                {% endfor %}#}
+
+                                </li>
                 {% empty %}
-                        <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/add/">Sin PCCE!</a>
+                        <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/">Sin PCCE!</a>
                 {% endfor %}
 
             </td>
@@ -45,10 +45,16 @@ Se han encontrado {{ pendientes_mc|length }} MC con Bioequivalentes
                     {% for foo in pc.equivalente.all %}
                        <li> {{ foo.descripcion }} </li>
                     {% empty %}
-                        REFERENTE?
+                            {% if pc.id_xt_pc in bioeq_referentes %}
+                                 <span style="color: red">Referente</span>
+
+                                    {% elif pc.id_xt_pc not in bioeq_referentes %}
+
+                                 <span style="color: #ff8c00">No Certificado</span>
+
+                            {% endif %}
                     {% endfor %}
                  </td>
-
             </tr>
         <tr>
             {% endfor %}
@@ -72,6 +78,15 @@ Se han encontrado {{ pendientes_mc|length }} MC con Bioequivalentes
     {% endif %}
 </div>
 
+{% if var in bioeq_referentes %}
+
+{% endif %}
+
+<div>
+    {% for baz in bioeq_referentes %}
+        {{ baz.referencia }}
+    {% endfor %}
+</div>
 
 {% endblock %}
 </body>

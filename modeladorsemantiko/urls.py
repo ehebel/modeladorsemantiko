@@ -59,9 +59,9 @@ urlpatterns = patterns('',
         template_name='just_javascript.html')),
     (r'^modelador/$', generic.TemplateView.as_view(template_name='index.html')),
 
-    url(r'^$', modeladorFarmacos2.views.VistaListaPCCE.as_view(),
+    url(r'^modelador/lista_pcce/$', modeladorFarmacos2.views.VistaListaPCCE.as_view(),
         name='pcce-list',),
-    url(r'^new$', modeladorFarmacos2.views.VistaEditarPCCE.as_view(),
+    url(r'^modelador/list_pcce/editar/$', modeladorFarmacos2.views.VistaEditarPCCE.as_view(),
         name='pcce-edit',),
 
     (r'^modelador/CAS/efectores/$', lista_areas),

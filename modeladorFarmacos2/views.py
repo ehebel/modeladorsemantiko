@@ -1,4 +1,5 @@
 from django.core.urlresolvers import reverse
+from django.db.models import Q
 from django.shortcuts import render, render_to_response
 #from django.http import HttpResponse, Http404
 #from django.views.generic import DetailView
@@ -9,7 +10,7 @@ import operator
 from django.views.generic import ListView, UpdateView
 
 from modeladorFarmacos2.models import kairos_productos\
-    , kairos_presentaciones, xt_mc, xt_pcce, xt_bioequivalente
+    , kairos_presentaciones, xt_mc, xt_pcce, xt_bioequivalente, xt_mcce
 
 # Create your views here.
 class VistaListaPCCE(ListView):
@@ -63,9 +64,11 @@ def pendientes(solicitud):
 
     mc_list = xt_mc.objects.order_by('descripcion').filter(
 
-        xt_pc__id_xt_pc__in= inner_qs ,
+        xt_pc__id_xt_pc__in = inner_qs ,
 
         estado__exact=0,
+
+
     ).distinct()
 
     paginator = Paginator(mc_list, 200)

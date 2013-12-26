@@ -43,7 +43,7 @@ Se han encontrado {{ pendientes_mc|length }} MC con Bioequivalentes
             </td>
                  <td>
                     {% for foo in pc.equivalente.all %}
-                       <li> {{ foo.descripcion }} </li>
+                       <li><a href="/modelador/admin/modeladorFarmacos2/xt_pc/{{ foo.id_xt_pc }}"> {{ foo.descripcion }} </a></li>
                     {% empty %}
                             {% if pc.id_xt_pc in bioeq_referentes %}
                                  <span style="color: red">Referente</span>

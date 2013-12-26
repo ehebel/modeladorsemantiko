@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 import datetime
 from django.utils import timezone
@@ -727,7 +728,7 @@ class xt_laboratorio (models.Model):
     descripcion = models.CharField(max_length=255)
     desc_abrev = models.CharField(max_length=255, blank=False)
 
-    sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=1)
+    sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=3)
 
     fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='%(app_label)s_%(class)s_related_crea')
@@ -867,7 +868,7 @@ class xt_pc (models.Model):
     sensible_mayusc = models.PositiveSmallIntegerField(max_length=1
         , choices=OPCIONES_SENSIBLE
         , blank=False, null=False
-        , default=1)
+        , default=3)
 
     creac_nombre = models.SmallIntegerField(max_length=1, choices=OPCIONES_CREC, null=False, blank=False, default=0)
 
@@ -1005,7 +1006,7 @@ class xt_pcce (models.Model):
     descripcion = models.CharField(max_length=255)
     desc_abreviada = models.CharField(max_length=255,blank=True)
 
-    sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=1)
+    sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=3)
 
     creac_nombre = models.SmallIntegerField(max_length=1, choices=OPCIONES_CREC, null=False, blank=False, default=0)
 
@@ -1050,10 +1051,14 @@ class xt_pcce (models.Model):
 
     def __unicode__(self):
         return u"%s | %s | %s" % (self.id_xt_pcce, self.estado, self.descripcion)
+
     class Meta:
         ordering=['id_xt_pcce']
         verbose_name_plural ='XT productos comerciales con envase (extension)'
 
+    def get_absolute_url(self):
+
+        return reverse('contacts-view', kwargs={'pk': self.id})
 
 
 
@@ -1063,7 +1068,7 @@ class xt_bioequivalente(models.Model):
     referencia = models.ForeignKey(xt_pc, related_name='referencial')
 
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
-    usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='usuariocrea_bioeq')
+    usuario_creador = models.ForeignKey(User, null=False, blank=False, related_name='usuariocrea_bioeq')
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_bioeq')
 

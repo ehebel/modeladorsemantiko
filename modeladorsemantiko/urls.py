@@ -58,6 +58,7 @@ urlpatterns = patterns('',
     (r'^i18n/', include('django.conf.urls.i18n')),
     (r'^just_javascript/$', generic.TemplateView.as_view(
         template_name='just_javascript.html')),
+
     (r'^modelador/$', generic.TemplateView.as_view(template_name='index.html')),
 
 
@@ -67,26 +68,23 @@ urlpatterns = patterns('',
 
 
     url(r'^modelador/lista_pcce/$', modeladorFarmacos2.views.VistaListaPCCE.as_view(),
-        name='pcce-lista',),
+        name='pcce_lista',),
 
 
 
     url(r'^modelador/lista_pcce/nuevo/$', modeladorFarmacos2.views.VistaCrearPCCE.as_view(),
-        name='pcce-nuevo',),
+        name='pcce_nuevo',),
 
-    url(r'^modelador/lista_pcce/editar/(?P<pk>\d+)/$', modeladorFarmacos2.views.VistaEditarPCCE.as_view(
-        model=xt_pcce
-        , form_class=pcceForm
-        )
-        , name='pcce-editar'),
+    url(r'^modelador/lista_pcce/editar/(?P<pk>\d+)/$'
+        , modeladorFarmacos2.views.VistaEditarPCCE.as_view(
+            model=xt_pcce
+            ,form_class=pcceForm)
+            , name='pcce_editar'),
 
 
     url(r'^modelador/lista_pcce/(?P<pk>\d+)/$', modeladorFarmacos2.views.VistaPCCE.as_view(),
-        name='pcce-detalle',),
+        name='pcce_detalle',),
 
-#    url(r'^modelador/non_admin/', include('modeladorFarmacos2.urls', namespace='non_admin')),
-#    generic.CreateView.as_view(
-#        model=Widget, form_class=WidgetForm)),
 
     url(r'^modelador/crear_pcce/$'
 #        , 'modeladorFarmacos2.views.create'

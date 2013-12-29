@@ -68,12 +68,12 @@ class VistaEditarPCCE(LoggedInMixin,UpdateView):
 
 
     def get_success_url(self):
-        return reverse('pcce-lista')
+        return reverse('pcce_lista')
 
     def get_context_data(self, **kwargs):
 
         context = super(VistaEditarPCCE, self).get_context_data(**kwargs)
-        context['action'] = reverse('pcce-editar',
+        context['action'] = reverse('pcce_editar',
             kwargs={'pk': self.get_object().id_xt_pcce})
 
         return context

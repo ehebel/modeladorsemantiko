@@ -14,7 +14,7 @@
 {% block content %}
     <h1>Agregar PCCE</h1>
 
-    <form action="{% url "pcce-nuevo" %}" method="POST">
+    <form action="{% url "pcce_nuevo" %}" method="POST">
         {% csrf_token %}
         <ul>
             {{ form.as_ul }}
@@ -22,7 +22,7 @@
         <input id="save_pcce" type="submit" value="Grabar" />
     </form>
 
-    <a href="{% url "pcce-lista" %}">Volver a la Lista</a>
+    <a href="{% url "pcce_lista" %}">Volver a la Lista</a>
 
 {% endblock %}
 

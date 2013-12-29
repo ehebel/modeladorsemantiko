@@ -1,18 +1,5 @@
 {% extends "base.html" %}
 
-
-{% block extrahead %}
-    {# These are needed to enable autocompletes in forms #}
-
-
-{#        {% if user.is_authenticated %}#}
-{#    This script enables global navigation autocomplete#}
-{#    refer to the docs about global navigation autocomplete for more information#}
-{#            {% include 'navigation_autocomplete/script.html' %}#}
-{#        {% endif %}#}
-
-{% endblock %}
-
 {% block branding %}{% endblock %}
 
 {% block content %}
@@ -26,7 +13,7 @@
         <input id="save_pcce" type="submit" value="Grabar" />
     </form>
 
-    <a href="{% url "pcce-lista" %}">Volver a la Lista</a>
+    <a href="{% url 'pcce_lista' %}">Volver a la Lista</a>
 
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js" type="text/javascript"></script>

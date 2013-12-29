@@ -137,7 +137,7 @@ MIDDLEWARE_CLASSES = (
 #    Uncomment the next line for simple clickjacking protection:
 #    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+#    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'modeladorsemantiko.urls'
@@ -178,7 +178,7 @@ INSTALLED_APPS = (
     'modeladorFarmacos2',
     'privilegiosCAS',
     'snomedct',
-    'debug_toolbar',
+#    'debug_toolbar',
 )
 
 # A sample logging configuration. The only tangible logging

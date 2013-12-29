@@ -7,18 +7,15 @@ from modeladorFarmacos2.forms import pcceForm
 from modeladorFarmacos2.models import xt_pcce
 
 autocomplete_light.autodiscover()
-
 from django.contrib import admin
 admin.autodiscover()
+
 from efectorescas.views import  lista_areas
-from django.conf.urls import patterns
 from modeladorFarmacos.views import search, selec_medclin,lista_mc
 from modeladorFarmacos2.views import modeladorescas,pendientes,kairos,kairos2
 import modeladorFarmacos2.views
 from modeladorFarmacos2.views import pcceForm
 
-#from .views import MCDetailView
-#from .views import MCResultsView
 
 
 #urlpatterns = patterns('',
@@ -65,7 +62,7 @@ urlpatterns = patterns('',
 
 
     url(r'^modelador/login/$', 'django.contrib.auth.views.login'),
-    url(r'^modelador/logout/$', 'django.contrib.auth.views.logout'),
+    url(r'^modelador/logout/$', include('django.contrib.auth.urls')),
 
 
 

@@ -5,7 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/admin.py" afterPath="$PROJECT_DIR$/efectorescas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/views.py" afterPath="$PROJECT_DIR$/efectorescas/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/urls.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -88,7 +88,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeladorsemantiko/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="61" selection-start="2355" selection-end="2355" vertical-scroll-proportion="0.0">
+            <state line="63" column="64" selection-start="2719" selection-end="2719" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1552,7 +1552,11 @@
       <created>1388322721812</created>
       <updated>1388322721813</updated>
     </task>
-    <option name="localTasksCounter" value="244" />
+    <task id="LOCAL-00244" summary="Gran modificación al sistema, que agrega pantalla de gestión para QF">
+      <created>1388322803280</created>
+      <updated>1388322803280</updated>
+    </task>
+    <option name="localTasksCounter" value="245" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1770,7 +1774,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorsemantiko/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="61" selection-start="2355" selection-end="2355" vertical-scroll-proportion="0.0">
+        <state line="63" column="64" selection-start="2719" selection-end="2719" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

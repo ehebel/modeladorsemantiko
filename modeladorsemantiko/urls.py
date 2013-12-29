@@ -62,7 +62,7 @@ urlpatterns = patterns('',
 
 
     url(r'^modelador/login/$', 'django.contrib.auth.views.login'),
-    url(r'^modelador/logout/$', include('django.contrib.auth.urls')),
+    url(r'^modelador/logout/$', 'django.contrib.auth.views.logout'),
 
 
 

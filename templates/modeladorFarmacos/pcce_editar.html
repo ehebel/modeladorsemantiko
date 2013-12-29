@@ -4,13 +4,13 @@
 {% block extrahead %}
     {# These are needed to enable autocompletes in forms #}
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js" type="text/javascript"></script>
-    {% include 'autocomplete_light/static.html' %}#}
+    {% include 'autocomplete_light/static.html' %}
 
-        {% if user.is_authenticated %}
+{#        {% if user.is_authenticated %}#}
 {#    This script enables global navigation autocomplete#}
 {#    refer to the docs about global navigation autocomplete for more information#}
-            {% include 'navigation_autocomplete/script.html' %}
-        {% endif %}
+{#            {% include 'navigation_autocomplete/script.html' %}#}
+{#        {% endif %}#}
 
 {% endblock %}
 
@@ -22,7 +22,7 @@
     <form action="{{ action }}" method="POST">
         {% csrf_token %}
         <ul>
-            {{ form.as_p }}
+            {{ form.as_ul }}
         </ul>
         <input id="save_pcce" type="submit" value="Grabar" />
     </form>

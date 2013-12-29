@@ -41,7 +41,14 @@ class atc (models.Model):
     atc_desc = models.CharField(max_length=255)
 
     def __unicode__(self):
-        return u"%s > %s > %s > %s > %s > %s" % (self.cod_atc,self.atc_desc,self.n1_desc,self.n2_desc,self.n3_desc,self.n4_desc)
+        return u"%s > %s > %s > %s > %s > %s" % (
+             self.cod_atc
+            ,self.atc_desc
+            ,self.n1_desc
+            ,self.n2_desc
+            ,self.n3_desc
+            ,self.n4_desc
+            )
     class META:
         verbose_name_plural ='Codigos ATC'
 
@@ -1058,7 +1065,7 @@ class xt_pcce (models.Model):
 
     def get_absolute_url(self):
 
-        return reverse('contacts-view', kwargs={'pk': self.id})
+        return reverse('pcce-detalle', kwargs={'pk': self.id_xt_pcce})
 
 
 
@@ -1068,7 +1075,7 @@ class xt_bioequivalente(models.Model):
     referencia = models.ForeignKey(xt_pc, related_name='referencial')
 
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
-    usuario_creador = models.ForeignKey(User, null=False, blank=False, related_name='usuariocrea_bioeq')
+    usuario_creador = models.ForeignKey(User, null=True, blank=False, editable=False, related_name='usuariocrea_bioeq')
     fecha_ult_mod = models.DateTimeField(null=True, auto_now=True)
     usuario_ult_mod = models.ForeignKey(User, null=True, blank=True, editable=False, related_name='usuariomod_bioeq')
 
@@ -1077,3 +1084,4 @@ class xt_bioequivalente(models.Model):
     class Meta:
         ordering=['id_xt_bioequivalente']
         verbose_name_plural ='XT Productos Bioequivalentes'
+

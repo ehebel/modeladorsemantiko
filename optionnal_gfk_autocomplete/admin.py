@@ -6,4 +6,4 @@ from models import OptionnalTaggedItem
 
 class OptionnalTaggedItemAdmin(admin.ModelAdmin):
     form = OptionnalTaggedItemForm
-#admin.site.register(OptionnalTaggedItem, OptionnalTaggedItemAdmin)
+#admin.site.registration(OptionnalTaggedItem, OptionnalTaggedItemAdmin)

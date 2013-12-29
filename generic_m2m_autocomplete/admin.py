@@ -6,4 +6,4 @@ from forms import ModelGroupForm
 
 class ModelGroupAdmin(admin.ModelAdmin):
     form = ModelGroupForm
-#admin.site.register(ModelGroup, ModelGroupAdmin)
+#admin.site.registration(ModelGroup, ModelGroupAdmin)

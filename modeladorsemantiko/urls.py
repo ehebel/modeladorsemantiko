@@ -3,6 +3,9 @@ from django.views import generic
 
 import autocomplete_light
 # import every app/autocomplete_light_registry.py
+from modeladorFarmacos2.forms import pcceForm
+from modeladorFarmacos2.models import xt_pcce
+
 autocomplete_light.autodiscover()
 
 from django.contrib import admin
@@ -12,6 +15,7 @@ from django.conf.urls import patterns
 from modeladorFarmacos.views import search, selec_medclin,lista_mc
 from modeladorFarmacos2.views import modeladorescas,pendientes,kairos,kairos2
 import modeladorFarmacos2.views
+from modeladorFarmacos2.views import pcceForm
 
 #from .views import MCDetailView
 #from .views import MCResultsView
@@ -59,10 +63,40 @@ urlpatterns = patterns('',
         template_name='just_javascript.html')),
     (r'^modelador/$', generic.TemplateView.as_view(template_name='index.html')),
 
+
+    url(r'^modelador/login/$', 'django.contrib.auth.views.login'),
+    url(r'^modelador/logout/$', 'django.contrib.auth.views.logout'),
+
+
+
     url(r'^modelador/lista_pcce/$', modeladorFarmacos2.views.VistaListaPCCE.as_view(),
-        name='pcce-list',),
-    url(r'^modelador/list_pcce/editar/$', modeladorFarmacos2.views.VistaEditarPCCE.as_view(),
-        name='pcce-edit',),
+        name='pcce-lista',),
+
+
+
+    url(r'^modelador/lista_pcce/nuevo/$', modeladorFarmacos2.views.VistaCrearPCCE.as_view(),
+        name='pcce-nuevo',),
+
+    url(r'^modelador/lista_pcce/editar/(?P<pk>\d+)/$', modeladorFarmacos2.views.VistaEditarPCCE.as_view(
+        model=xt_pcce
+        , form_class=pcceForm
+        )
+        , name='pcce-editar'),
+
+
+    url(r'^modelador/lista_pcce/(?P<pk>\d+)/$', modeladorFarmacos2.views.VistaPCCE.as_view(),
+        name='pcce-detalle',),
+
+#    url(r'^modelador/non_admin/', include('modeladorFarmacos2.urls', namespace='non_admin')),
+#    generic.CreateView.as_view(
+#        model=Widget, form_class=WidgetForm)),
+
+    url(r'^modelador/crear_pcce/$'
+#        , 'modeladorFarmacos2.views.create'
+        ,  generic.CreateView.as_view(
+            model=xt_pcce, form_class=pcceForm
+        )),
+
 
     (r'^modelador/CAS/efectores/$', lista_areas),
     (r'^modelador/CAS/modeladores/$', modeladorescas),

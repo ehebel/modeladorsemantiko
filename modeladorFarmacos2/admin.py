@@ -90,6 +90,21 @@ class bioeqAdminInline(admin.TabularInline):
     model = xt_bioequivalente
     form = autocomplete_light.modelform_factory(xt_bioequivalente)
     fk_name = 'referencia'
+
+    def save_model(self, request, obj, form, change):
+
+        if not hasattr(obj, 'usuario_creador'):
+            obj.usuario_creador = request.user
+        obj.save()
+
+        instance = form.save(commit=False)
+        if not hasattr(instance,'usuario_ult_mod'):
+            instance.usuario_ult_mod = request.user
+        instance.usuario_ult_mod = request.user
+        instance.save()
+        form.save_m2m()
+        return instance
+
 #
 ##Inicia ADMIN de modelos Completos
 ##Para mejorar facilidad de busqueda
@@ -121,6 +136,7 @@ class xt_sustanciaAdmin (admin.ModelAdmin):
                 pass
 
         return result
+
     def response_change(self, request, obj):
         """
         Determines the HttpResponse for the change_view stage.
@@ -149,6 +165,7 @@ class xt_sustanciaAdmin (admin.ModelAdmin):
         form.save_m2m()
         return instance
     def save_formset(self, request, form, formset, change):
+
         def set_user(instance):
             if not instance.usuario_ult_mod:
                 instance.usuario_ult_mod = request.user
@@ -161,6 +178,7 @@ class xt_sustanciaAdmin (admin.ModelAdmin):
             return instances
         else:
             return formset.save()
+
 admin.site.register(xt_sustancia,xt_sustanciaAdmin)
 
 
@@ -233,6 +251,7 @@ class mcAdmin (admin.ModelAdmin):
                 self.message_user(request, msg)
                 return HttpResponseRedirect("../%s/" % next[0].pk)
         return super(mcAdmin, self).response_change(request, obj)
+
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -246,6 +265,7 @@ class mcAdmin (admin.ModelAdmin):
         instance.save()
         form.save_m2m()
         return instance
+
     def save_formset(self, request, form, formset, change):
         def set_user(instance):
             if not instance.usuario_ult_mod:
@@ -259,8 +279,9 @@ class mcAdmin (admin.ModelAdmin):
             return instances
         else:
             return formset.save()
+
 admin.site.register(xt_mc,  mcAdmin)
-#
+
 
 
 class mbAdmin(admin.ModelAdmin):
@@ -342,6 +363,7 @@ class mbAdmin(admin.ModelAdmin):
             return instances
         else:
             return formset.save()
+
 admin.site.register(xt_mb,  mbAdmin)
 
 
@@ -517,6 +539,7 @@ class pcAdmin(admin.ModelAdmin):
             return instances
         else:
             return formset.save()
+
 admin.site.register(xt_pc,  pcAdmin)
 
 #
@@ -603,12 +626,15 @@ class pcceAdmin(admin.ModelAdmin):
             return instances
         else:
             return formset.save()
+
+
 admin.site.register(xt_pcce,pcceAdmin)
 
 class xtlabAdmin(admin.ModelAdmin):
     list_display = ['id_xt_lab','descripcion']
     list_filter = ['revisado','consultar','estado']
     search_fields = ['descripcion',]
+
     def response_change(self, request, obj):
         """
         Determines the HttpResponse for the change_view stage.
@@ -790,8 +816,8 @@ admin.site.register(atc,atcAdmin)
 
 
 admin.site.register(xt_unidad_medida_cant)
-#admin.site.register(rel_mc_sust)
-#admin.site.register(rel_xt_mb_xt_sust)
+#admin.site.registration(rel_mc_sust)
+#admin.site.registration(rel_xt_mb_xt_sust)
 
 class formaAgrupadaAdmin(admin.ModelAdmin):
     search_fields = ['descripcion',]

@@ -1,23 +1,17 @@
 __author__ = 'ehebel'
 from django import forms
-from django.core.exceptions import ValidationError
+
+import autocomplete_light
+
 
 from modeladorFarmacos2.models import xt_pcce
 
 
 class pcceForm(forms.ModelForm):
-
-    revisar_pcce = forms.CheckboxInput(
-        "Revisado",
-    )
-
+    descripcion = forms.CharField(widget=forms.TextInput(attrs={'size': 100, 'title': 'Descripcion:',}))
+    desc_abreviada = forms.CharField(widget=forms.TextInput(attrs={'size': 100, 'title': 'Descripcion Abreviada:',}))
     class Meta:
+        widgets = autocomplete_light.get_widgets_dict(xt_pcce)
         model = xt_pcce
 
-    def __init__(self, *args, **kwargs):
 
-        if kwargs.get('instance'):
-            revisado = kwargs['instance'].revisado
-            kwargs.setdefault('initial', {})['revisar_pcce'] = revisado
-
-        return super(pcceForm, self).__init__(*args, **kwargs)

@@ -13,7 +13,7 @@ autocomplete_light.register(xt_unidad_medida_unitaria, search_fields=('descripci
 autocomplete_light.register(xt_forma_farm, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. comprimido efervescente '})
 
-#autocomplete_light.register(xt_condicion_venta, search_fields=('descripcion',),
+#autocomplete_light.registration(xt_condicion_venta, search_fields=('descripcion',),
 #    autocomplete_js_attributes={'placeholder': 'Cond Venta .. '})
 
 autocomplete_light.register(xt_sustancia, search_fields=('descripcion',),
@@ -39,7 +39,7 @@ autocomplete_light.register(xt_pc, search_fields=('descripcion',),
     autocomplete_js_attributes={'placeholder': 'ej. TAREG 160 MG COMPRIMIDOS RECUBIERTOS (NOVARTIS)'})
 
 #
-#autocomplete_light.register(kairos_sustancia, search_fields=('descripcion',),
+#autocomplete_light.registration(kairos_sustancia, search_fields=('descripcion',),
 #    autocomplete_js_attributes={'placeholder': 'ej. Ibuprofeno...'})
 
 

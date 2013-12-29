@@ -1,41 +1,89 @@
+from django.contrib.auth.decorators import login_required
+from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse
-from django.db.models import Q
+from django.http import HttpResponse, HttpResponseRedirect
+
 from django.shortcuts import render, render_to_response
 #from django.http import HttpResponse, Http404
-#from django.views.generic import DetailView
 #from django.views.generic.base import View
 from django.template import RequestContext
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 import operator
-from django.views.generic import ListView, UpdateView
+from django.utils.decorators import method_decorator
+from django.views.generic import ListView, UpdateView, CreateView, DetailView
 
 from modeladorFarmacos2.models import kairos_productos\
     , kairos_presentaciones, xt_mc, xt_pcce, xt_bioequivalente, xt_mcce
 
-# Create your views here.
-class VistaListaPCCE(ListView):
+from modeladorFarmacos2.forms import pcceForm
+
+
+class LoggedInMixin(object):
+    @method_decorator(login_required)
+    def dispatch(self, *args,**kwargs):
+        return super(LoggedInMixin, self).dispatch(*args,**kwargs)
+
+def create(request):
+    if request.POST:
+        form = pcceForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            return HttpResponseRedirect('/articles/all')
+
+    else:
+        form = pcceForm()
+
+    args = {}
+    args.update(csrf(request))
+
+    args['form'] = form
+
+    return render_to_response('modeladorFarmacos/crear_pcce.html', args)
+
+
+
+class VistaListaPCCE(LoggedInMixin, ListView):
     model = xt_pcce
     template_name = 'modeladorFarmacos/pcce_por_revisar.html'
 
     def get_queryset(self):
 
-        return xt_pcce.objects.order_by('usuario_ult_mod','-fecha_ult_mod').filter(usuario_ult_mod__groups__id__exact=4, estado__exact=0)
+        return xt_pcce.objects.filter(revisado__exact=0)
 
 
-class VistaEditarPCCE(UpdateView):
+
+class VistaCrearPCCE(CreateView):
     model = xt_pcce
     template_name = 'modeladorFarmacos/pcce_editar.html'
 
     def get_success_url(self):
-        return reverse('contacts-list')
+        return reverse('pcce-lista')
+
+
+class VistaEditarPCCE(LoggedInMixin,UpdateView):
+
+    model = xt_pcce
+    template_name = 'modeladorFarmacos/pcce_editar.html'
+
+    def get_success_url(self):
+        return reverse('pcce-lista')
 
     def get_context_data(self, **kwargs):
 
         context = super(VistaEditarPCCE, self).get_context_data(**kwargs)
-        context['action'] = reverse('pcce-edit',
-            kwargs={'pk': self.get_object().id})
+        context['action'] = reverse('pcce-editar',
+            kwargs={'pk': self.get_object().id_xt_pcce})
 
         return context
+
+
+
+
+class  VistaPCCE(DetailView):
+    model = xt_pcce
+    template_name = 'modeladorFarmacos/pcce_detalle.html'
+
 
 
 

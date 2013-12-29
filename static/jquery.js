@@ -9543,7 +9543,7 @@ window.jQuery = window.$ = jQuery;
 // specifying define.amd.jQuery = true. Register as a named module,
 // since jQuery can be concatenated with other files that may use define,
 // but not use a proper concatenation script that understands anonymous
-// AMD modules. A named AMD is safest and most robust way to register.
+// AMD modules. A named AMD is safest and most robust way to registration.
 // Lowercase jquery is used because AMD module names are derived from
 // file names, and jQuery is normally delivered in a lowercase file name.
 // Do this after creating the global so that if an AMD module wants to call

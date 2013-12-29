@@ -795,8 +795,8 @@ admin.site.register(atc,atcAdmin)
 
 
 admin.site.register(xt_unidad_medida_cant)
-#admin.site.register(rel_mc_sust)
-#admin.site.register(rel_xt_mb_xt_sust)
+#admin.site.registration(rel_mc_sust)
+#admin.site.registration(rel_xt_mb_xt_sust)
 admin.site.register(xt_formas_agrupadas)
 admin.site.register(kairos_sustancia)
 admin.site.register(kairos_lab)

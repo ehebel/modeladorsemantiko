@@ -12,11 +12,16 @@
     <ul>
         {% for pcce in object_list %}
             <li class="pcce">
-                <a href="{{ pcce.get_absolute_url }}">{{ pcce }}</a>
-                (<a href="{% url "pcce-edit" pk=pcce.id %}">edit</a>)
+                <a href="{{ pcce.get_absolute_url }}">{{ pcce.descripcion }}</a>
+
+            (<a href="{% url 'pcce-editar' pk=pcce.id_xt_pcce %}">editar</a>)
+
+
             </li>
         {% endfor %}
     </ul>
+
+
 
 {% endblock %}
 

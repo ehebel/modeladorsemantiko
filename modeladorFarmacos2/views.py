@@ -65,6 +65,8 @@ class VistaEditarPCCE(LoggedInMixin,UpdateView):
     model = xt_pcce
     template_name = 'modeladorFarmacos/pcce_editar.html'
 
+
+
     def get_success_url(self):
         return reverse('pcce-lista')
 

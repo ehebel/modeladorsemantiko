@@ -1,27 +1,26 @@
 from django.contrib.auth.decorators import login_required
 from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import  HttpResponseRedirect
 
-from django.shortcuts import render, render_to_response
-#from django.http import HttpResponse, Http404
-#from django.views.generic.base import View
+from django.shortcuts import  render_to_response
 from django.template import RequestContext
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
-import operator
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, UpdateView, CreateView, DetailView
 
 from modeladorFarmacos2.models import kairos_productos\
-    , kairos_presentaciones, xt_mc, xt_pcce, xt_bioequivalente, xt_mcce
+    , kairos_presentaciones, xt_mc, xt_pcce, xt_bioequivalente
 
 from modeladorFarmacos2.forms import pcceForm
 
 
 class LoggedInMixin(object):
+
     @method_decorator(login_required)
     def dispatch(self, *args,**kwargs):
         return super(LoggedInMixin, self).dispatch(*args,**kwargs)
+
 
 def create(request):
     if request.POST:

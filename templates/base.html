@@ -12,14 +12,14 @@
 
 <body style="margin-left: auto; margin-right: auto;">
 
-{#<div>#}
-{#    Bienvenido {{ user }}#}
-{#    {% if user.is_anonymous %}#}
-{#        <a href="{% url 'django.contrib.auth.views.login' %}">login</a>#}
-{#    {% else %}#}
+<div>
+    Bienvenido {{ user }}
+    {% if user.is_anonymous %}
+        <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
+    {% else %}
 {#        <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>#}
-{#    {% endif %}#}
-{#</div>#}
+    {% endif %}
+</div>
 
 
 {% block branding %}

@@ -79,7 +79,7 @@
       <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="325" selection-end="572" vertical-scroll-proportion="0.40289256">
+            <state line="14" column="0" selection-start="328" selection-end="602" vertical-scroll-proportion="0.4338843">
               <folding />
             </state>
           </provider>
@@ -1548,7 +1548,11 @@
       <created>1388321540229</created>
       <updated>1388321540229</updated>
     </task>
-    <option name="localTasksCounter" value="243" />
+    <task id="LOCAL-00243" summary="Gran modificación al sistema, que agrega pantalla de gestión para QF">
+      <created>1388322721812</created>
+      <updated>1388322721813</updated>
+    </task>
+    <option name="localTasksCounter" value="244" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1773,7 +1777,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="325" selection-end="572" vertical-scroll-proportion="0.40289256">
+        <state line="14" column="0" selection-start="328" selection-end="602" vertical-scroll-proportion="0.4338843">
           <folding />
         </state>
       </provider>

@@ -3,8 +3,9 @@
 
 {% block extrahead %}
     {# These are needed to enable autocompletes in forms #}
-    <script src="{{ STATIC_URL }}jquery.js" type="text/javascript"></script>
-    {% include 'autocomplete_light/static.html' %}
+{#    <script src="{{ STATIC_URL }}jquery.js" type="text/javascript"></script>#}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+    {% include 'autocomplete_light/static.html' %}#}
 
     {#    {% if user.is_authenticated %}#}
     {# This script enables global navigation autocomplete #}
@@ -29,5 +30,5 @@
     <a href="{% url "pcce-lista" %}">Volver a la Lista</a>
 
 {% endblock %}
-<script src="{{ STATIC_URL }}jquery.js" type="text/javascript"></script>
-{% include 'autocomplete_light/static.html' %}
+
+

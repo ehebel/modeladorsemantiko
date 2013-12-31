@@ -179,6 +179,7 @@ INSTALLED_APPS = (
     'privilegiosCAS',
     'snomedct',
 #    'debug_toolbar',
+    'non_admin',
 )
 
 # A sample logging configuration. The only tangible logging

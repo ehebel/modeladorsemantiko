@@ -5,6 +5,8 @@ import autocomplete_light
 # import every app/autocomplete_light_registry.py
 from modeladorFarmacos2.forms import pcceForm
 from modeladorFarmacos2.models import xt_pcce
+from non_admin.forms import WidgetForm
+from non_admin.models import Widget
 
 autocomplete_light.autodiscover()
 from django.contrib import admin
@@ -102,17 +104,10 @@ urlpatterns = patterns('',
     (r'^modelador/catalogo/$', lista_mc),
     (r'^modelador/pendientes/$', pendientes),
     (r'^modelador/kairos/$', kairos2),
-#
-#    url(
-#        regex=r"^modelador/xt_mc/(?P<pk>\d+)/$",
-#        view = MCDetailView.as_view(),
-#        name = "detail"
-#    ),
-#    url(
-#        regex=r"^modelador/xt_mc/(?P<pk>\d+)/$",
-#        view = MCResultsView.as_view(),
-#        name = "results"
-#    ),
+
+
+    url(r'^modelador/non_admin/', include('non_admin.urls', namespace='non_admin')),
+
 )
 
 

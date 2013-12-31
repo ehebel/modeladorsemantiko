@@ -16,5 +16,3 @@ class pcceForm(forms.ModelForm):
         widgets = autocomplete_light.get_widgets_dict(xt_pcce)
         model = xt_pcce
         exclude = ('id_xt_mcce','id_presentacion_kairos','codigo_dbnet')
-
-

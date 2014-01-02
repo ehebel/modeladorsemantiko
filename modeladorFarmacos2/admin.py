@@ -5,6 +5,7 @@ from django.forms import TextInput
 from django.contrib import admin
 admin.autodiscover()
 from modeladorFarmacos2.models import *
+
 import csv
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -544,15 +545,27 @@ admin.site.register(xt_pc,  pcAdmin)
 
 #
 class pcceAdmin(admin.ModelAdmin):
-    exclude = ('revisado',)
+#    exclude = ('revisado',)
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'170'})}
     }
     form = autocomplete_light.modelform_factory(xt_pcce)
     list_filter = ['estado','revisado','consultar'
+        ,'usuario_creador__username'
         ,('id_xt_mcce', IsNullFieldListFilter)
-#        ,('concept_dbnet', IsNullFieldListFilter)
-        ,('id_presentacion_kairos', IsNullFieldListFilter)] #TODO BOOL Observacion
+        ,('id_presentacion_kairos', IsNullFieldListFilter)
+    ] #TODO BOOL Observacion
+    fieldsets = (
+        (None, {
+            'fields': ('descripcion', 'desc_abreviada', 'sensible_mayusc', 'creac_nombre'
+                       ,'estado','revisado','consultar','id_presentacion_kairos','codigo_dbnet','observacion')
+        }),
+        ('Avanzandos', {
+            'classes': ('collapse',),
+            'fields': ('pack_cant', 'pack_u', 'gtin_gs1','existencia_gs1','codigo_cenabast','hiba_descriptionid','hiba_term','cl_concepto','id_xt_pcce')
+        }),
+        )
+
     list_display = ['id_xt_pcce','descripcion'] #TODO BOOL Bioequivalente
     search_fields = ['descripcion',]
     readonly_fields=('id_xt_pcce',)
@@ -838,6 +851,8 @@ admin.site.register(kairos_presentaciones,kairosPresAdmin)
 
 class kairosPrecioAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(kairos_precio)
+
+
 admin.site.register(kairos_precio,kairosPrecioAdmin)
 
 

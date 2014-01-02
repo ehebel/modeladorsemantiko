@@ -19,7 +19,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        #Produccion
+#        #Produccion
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS'  : { 'init_command' : 'SET storage_engine=MyISAM', },# Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'semantik_modelador',
@@ -28,9 +28,9 @@ DATABASES = {
         'HOST': 'localhost',             # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
         #PRUEBAS:
-        #TODO Cambiar Conexión de BD a MySQL NO OLVIDAR
+#        #TODO Cambiar Conexión de BD a MySQL NO OLVIDAR
 #        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#        'NAME': , # Or path to database file if using sqlite3.
+#        'NAME': 'semantik_modelador.sqlite3', # Or path to database file if using sqlite3.
 #        # The following settings are not used with sqlite3:
 #        'USER':'',
 #        'PASSWORD':'',
@@ -168,7 +168,7 @@ INSTALLED_APPS = (
     'gfk_autocomplete',
     'optionnal_gfk_autocomplete',
     'generic_m2m_autocomplete',
-    'genericm2m',
+#    'genericm2m',
     #'navigation_autocomplete',
     # Uncomment the next line to enable admin documentation:
     'modeladorsemantiko',

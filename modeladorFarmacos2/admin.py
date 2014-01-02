@@ -16,7 +16,7 @@ from django.utils.encoding import force_unicode
 
 
 class UsuarioFilter(SimpleListFilter):
-    title = 'usuario' # or use _('country') for translated title
+    title = 'Usuario creador' # or use _('country') for translated title
     parameter_name = 'usuario'
 
     def lookups(self, request, model_admin):
@@ -467,7 +467,7 @@ admin.site.register(xt_mcce,mcceAdmin)
 
 #
 class pcAdmin(admin.ModelAdmin):
-    exclude = ('revisado',)
+#    exclude = ('revisado',)
     actions = [export_as_csv]
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'100'})}
@@ -476,13 +476,29 @@ class pcAdmin(admin.ModelAdmin):
     search_fields = ['descripcion',]
     list_display = ['id_xt_pc','descripcion','id_xt_mc','id_xt_lab'] #TODO BOOL Bioequivalente
     list_filter = ['estado','revisado','consultar'
-
+        , UsuarioFilter
         ,('id_xt_mc', IsNullFieldListFilter)
         ,('id_xt_lab', IsNullFieldListFilter)
         ,'fecha_ult_mod'
 
     ] #TODO BOOL Observacion
     form = autocomplete_light.modelform_factory(xt_pc)
+
+    fieldsets = (
+        (None, {
+            'fields': ('descripcion', 'descripcion_abreviada', 'sensible_mayusc', 'creac_nombre'
+                       ,'estado'
+                       ,'revisado'
+                       ,'consultar'
+                       ,'forma_farm_extendida','sabor','id_xt_fp'
+                        ,'id_xt_mc','id_xt_lab'
+                       ,'reg_isp_num','reg_isp_ano','observacion')
+        }),
+        ('Avanzados', {
+            'classes': ('collapse',),
+            'fields': ('hiba_descriptionid', 'hiba_term','cl_concepto')
+        }),
+        )
 
     readonly_fields=('id_xt_pc',)
     radio_fields = {

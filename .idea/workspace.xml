@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/modeladorFarmacos2/change_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modeladorsemantiko.iml" afterPath="$PROJECT_DIR$/.idea/modeladorsemantiko.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/admin.py" afterPath="$PROJECT_DIR$/efectorescas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/views.py" afterPath="$PROJECT_DIR$/efectorescas/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos2/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos2/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorsemantiko/settings.py" afterPath="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -40,7 +36,7 @@
           <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/admin.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="544" column="0" selection-start="19346" selection-end="19346" vertical-scroll-proportion="0.1446541">
+                <state line="25" column="13" selection-start="937" selection-end="937" vertical-scroll-proportion="0.6163522">
                   <folding />
                 </state>
               </provider>
@@ -53,7 +49,7 @@
           <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1021" column="71" selection-start="42517" selection-end="42532" vertical-scroll-proportion="0.33913043">
+                <state line="1018" column="0" selection-start="42371" selection-end="42371" vertical-scroll-proportion="0.33913043">
                   <folding>
                     <element signature="e#0#44#0" expanded="true" />
                   </folding>
@@ -1591,7 +1587,15 @@
       <created>1388500962628</created>
       <updated>1388500962628</updated>
     </task>
-    <option name="localTasksCounter" value="257" />
+    <task id="LOCAL-00257" summary="Test para non_admin">
+      <created>1388628130210</created>
+      <updated>1388628130210</updated>
+    </task>
+    <task id="LOCAL-00258" summary="Test para non_admin">
+      <created>1388629066979</created>
+      <updated>1388629066979</updated>
+    </task>
+    <option name="localTasksCounter" value="259" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1618,6 +1622,7 @@
     <frame x="0" y="22" width="1349" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.49675325" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31166914" sideWeight="0.9667747" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22156574" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22453372" sideWeight="0.6718147" order="3" side_tool="false" content_ui="tabs" />
@@ -1634,7 +1639,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42857143" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.7784343" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791728" sideWeight="0.49675325" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1799,7 +1803,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1021" column="71" selection-start="42517" selection-end="42532" vertical-scroll-proportion="0.33913043">
+        <state line="1018" column="0" selection-start="42371" selection-end="42371" vertical-scroll-proportion="0.33913043">
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
@@ -1808,7 +1812,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="544" column="0" selection-start="19346" selection-end="19346" vertical-scroll-proportion="0.1446541">
+        <state line="25" column="13" selection-start="937" selection-end="937" vertical-scroll-proportion="0.6163522">
           <folding />
         </state>
       </provider>

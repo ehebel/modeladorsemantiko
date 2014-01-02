@@ -27,7 +27,7 @@ class UsuarioFilter(SimpleListFilter):
 
     def queryset(self, request, queryset):
         if self.value():
-            return queryset.filter(User__id__exact=self.value())
+            return queryset.filter(usuario_creador__id__exact=self.value())
         else:
             return queryset
 

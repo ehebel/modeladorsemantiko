@@ -11,11 +11,25 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.core.exceptions import PermissionDenied
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.admin import FieldListFilter
+from django.contrib.admin import FieldListFilter, SimpleListFilter
 from django.utils.encoding import force_unicode
 
 
+class UsuarioFilter(SimpleListFilter):
+    title = 'usuario' # or use _('country') for translated title
+    parameter_name = 'usuario'
 
+    def lookups(self, request, model_admin):
+        usuarios = set([c.usuario_creador for c in model_admin.model.objects.all()])
+        return [(c.id, c.username) for c in usuarios]
+        # You can also use hardcoded model name like "Country" instead of
+        # "model_admin.model" if this is not direct foreign key filter
+
+    def queryset(self, request, queryset):
+        if self.value():
+            return queryset.filter(User__id__exact=self.value())
+        else:
+            return queryset
 
 class IsNullFieldListFilter(FieldListFilter):
     def __init__(self, field, request, params, model, model_admin, field_path):
@@ -551,7 +565,7 @@ class pcceAdmin(admin.ModelAdmin):
     }
     form = autocomplete_light.modelform_factory(xt_pcce)
     list_filter = ['estado','revisado','consultar'
-        ,'usuario_creador__username'
+        ,UsuarioFilter
         ,('id_xt_mcce', IsNullFieldListFilter)
         ,('id_presentacion_kairos', IsNullFieldListFilter)
     ] #TODO BOOL Observacion

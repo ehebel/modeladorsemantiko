@@ -599,9 +599,8 @@ class xt_mc (models.Model):
 #    el formulario o si debe mantener como texto libre del campo DESCRIPCION
 #    '''
     creac_nombre = models.SmallIntegerField(max_length=1, choices=OPCIONES_CREC, null=False, blank=False, default=0)
-#    '''
-#
-#    '''
+
+
     sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=1)
 
     med_basico = models.ForeignKey(xt_mb, null=False, blank=False, limit_choices_to = {'estado':'0'})
@@ -656,7 +655,7 @@ class xt_mc (models.Model):
     rel_mc_sust = models.ManyToManyField(xt_sustancia, through='rel_mc_sust')
 
     def get_pc(self):
-        return '<br/>'.join([k.descripcion for k in self.xt_pc_set.order_by('id_xt_pc').all()[:6]])
+        return '<br/>'.join([u'%s - %s' % (k.id_xt_pc, k.descripcion) for k in self.xt_pc_set.order_by('id_xt_pc').all()[:6]])
     get_pc.allow_tags = True
     get_pc.short_description = 'XT Producto Comercial'
 

@@ -475,9 +475,10 @@ class pcAdmin(admin.ModelAdmin):
     }
     inlines = [bioeqAdminInline,]
     search_fields = ['descripcion',]
-    list_display = ['id_xt_pc','descripcion','id_xt_mc','id_xt_lab'] #TODO BOOL Bioequivalente
+    list_display = ['id_xt_pc','descripcion','id_xt_mc','id_xt_lab','usuario_creador'] #TODO BOOL Bioequivalente
     list_filter = ['estado','revisado','consultar'
-        , UsuarioFilter
+         ,'usuario_creador__username'
+#        , UsuarioFilter
         ,('id_xt_mc', IsNullFieldListFilter)
         ,('id_xt_lab', IsNullFieldListFilter)
         ,'fecha_ult_mod'
@@ -584,8 +585,8 @@ class pcceAdmin(admin.ModelAdmin):
     }
     form = autocomplete_light.modelform_factory(xt_pcce)
     list_filter = ['estado','revisado','consultar'
-        ,UsuarioFilter
-#        ,'usuario_creador__username'
+#        ,UsuarioFilter
+        ,'usuario_creador__username'
         ,('id_xt_mcce', IsNullFieldListFilter)
         ,('id_presentacion_kairos', IsNullFieldListFilter)
     ] #TODO BOOL Observacion
@@ -600,7 +601,7 @@ class pcceAdmin(admin.ModelAdmin):
         }),
         )
 
-    list_display = ['id_xt_pcce','descripcion'] #TODO BOOL Bioequivalente
+    list_display = ['id_xt_pcce','descripcion','usuario_creador'] #TODO BOOL Bioequivalente
     search_fields = ['descripcion',]
     readonly_fields=('id_xt_pcce',)
     actions = [export_as_csv]

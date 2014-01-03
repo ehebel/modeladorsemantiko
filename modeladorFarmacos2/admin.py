@@ -22,6 +22,7 @@ class UsuarioFilter(SimpleListFilter):
     def lookups(self, request, model_admin):
         usuarios = set([c.usuario_creador for c in model_admin.model.objects.all()])
         return [(c.id, c.username) for c in usuarios]
+
         # You can also use hardcoded model name like "Country" instead of
         # "model_admin.model" if this is not direct foreign key filter
 
@@ -490,6 +491,7 @@ class pcAdmin(admin.ModelAdmin):
                        ,'estado'
                        ,'revisado'
                        ,'consultar'
+                       ,'comercial_cl'
                        ,'forma_farm_extendida','sabor','id_xt_fp'
                         ,'id_xt_mc','id_xt_lab'
                        ,'reg_isp_num','reg_isp_ano','observacion')
@@ -505,6 +507,7 @@ class pcAdmin(admin.ModelAdmin):
         "estado": admin.HORIZONTAL
         ,"consultar": admin.HORIZONTAL
         ,"revisado": admin.HORIZONTAL
+        ,'comercial_cl': admin.HORIZONTAL
     }
     def add_view(self, request, *args, **kwargs):
         result = super(pcAdmin, self).add_view(request, *args, **kwargs )
@@ -582,6 +585,7 @@ class pcceAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(xt_pcce)
     list_filter = ['estado','revisado','consultar'
         ,UsuarioFilter
+#        ,'usuario_creador__username'
         ,('id_xt_mcce', IsNullFieldListFilter)
         ,('id_presentacion_kairos', IsNullFieldListFilter)
     ] #TODO BOOL Observacion

@@ -162,7 +162,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'django.contrib.admindocs',
-    #'south',
+    'south',
     'autocomplete_light',
     'autocomplete_light.tests',
     'gfk_autocomplete',
@@ -219,7 +219,6 @@ LOGGING = {
 #            },
         }
 }
-
 #INTERNAL_IPS = ('127.0.0.1',)
 
 LOGIN_REDIRECT_URL = '/modelador/'

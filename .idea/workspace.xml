@@ -54,7 +54,7 @@
           <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="889" column="0" selection-start="37277" selection-end="37510" vertical-scroll-proportion="0.1928934">
+                <state line="895" column="18" selection-start="37495" selection-end="37495" vertical-scroll-proportion="0.6497462">
                   <folding>
                     <element signature="e#0#44#0" expanded="true" />
                   </folding>
@@ -1589,7 +1589,11 @@
       <created>1388711772923</created>
       <updated>1388711772923</updated>
     </task>
-    <option name="localTasksCounter" value="265" />
+    <task id="LOCAL-00265" summary="Test para non_admin">
+      <created>1388712101445</created>
+      <updated>1388712101445</updated>
+    </task>
+    <option name="localTasksCounter" value="266" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1802,7 +1806,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="889" column="0" selection-start="37277" selection-end="37510" vertical-scroll-proportion="0.1928934">
+        <state line="895" column="18" selection-start="37495" selection-end="37495" vertical-scroll-proportion="0.6497462">
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>

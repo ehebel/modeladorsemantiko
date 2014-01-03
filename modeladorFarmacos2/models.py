@@ -893,7 +893,7 @@ class xt_pc (models.Model):
         null  = False,
         blank = False,
         verbose_name= 'Comecializado en Chile',
-        default='Undefined'
+        default='1'
     )
     forma_farm_extendida = models.ForeignKey(xt_forma_farm, null=True,blank=True)
 

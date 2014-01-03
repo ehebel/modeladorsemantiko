@@ -887,14 +887,14 @@ class xt_pc (models.Model):
     estado = models.SmallIntegerField(choices=OPCIONES_ESTADO, null=False, blank=False, default=0)
     revisado = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False, blank=False, default=0)
     consultar = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=False, blank=False, default=0)
-#    comercial_cl = models.PositiveSmallIntegerField(
-#        max_length=1,
-#        choices=OPCIONES_BOOL,
-#        null  = False,
-#        blank = False,
-#        verbose_name= 'Comecializado en Chile',
-#        default='Undefined'
-#    )
+    comercial_cl = models.PositiveSmallIntegerField(
+        max_length=1,
+        choices=OPCIONES_BOOL,
+        null  = False,
+        blank = False,
+        verbose_name= 'Comecializado en Chile',
+        default='Undefined'
+    )
     forma_farm_extendida = models.ForeignKey(xt_forma_farm, null=True,blank=True)
 
     sabor = models.ForeignKey(xt_sabor, null=True,blank=True)

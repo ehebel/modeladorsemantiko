@@ -54,7 +54,7 @@ class VistaUsuarioCreadorPCCE(LoggedInMixin,ListView):
 
     def get_queryset(self):
         usuario_creador = get_object_or_404(User, id__iexact=self.args[0])
-        return xt_pcce.objects.filter(usuario_creador=usuario_creador, revisado__exact=0)
+        return xt_pcce.objects.filter(usuario_creador=usuario_creador, revisado__exact=0).order_by('descripcion')
 
 
 class VistaListaPCCE(LoggedInMixin, ListView):

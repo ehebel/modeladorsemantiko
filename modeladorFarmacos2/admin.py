@@ -199,6 +199,7 @@ admin.site.register(xt_sustancia,xt_sustanciaAdmin)
 
 
 class mcAdmin (admin.ModelAdmin):
+    exclude = ['termino_autogenerado',]
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'100'})},
         models.URLField: {'widget': TextInput(attrs={'size':'100'})}
@@ -456,7 +457,7 @@ class mcceAdmin(admin.ModelAdmin):
                 instance.usuario_ult_mod = request.user
             instance.usuario_ult_mod = request.user
             instance.save()
-        if formset.model == xt_mc:
+        if formset.model == xt_mcce:
             instances = formset.save(commit=False)
             map(set_user, instances)
             formset.save_m2m()
@@ -531,21 +532,44 @@ class pcAdmin(admin.ModelAdmin):
             except:
                 pass
 
+        elif request.POST.has_key('_viewnext'):
+            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+                   {'name': force_unicode(object_id),
+                    'obj': force_unicode(object_id)})
+
+            try:
+                if request.session['filtered'] is not None:
+
+                    qs = self.model._base_manager.get_query_set().order_by('id_xt_pc')
+                    next = object_id.__class__.objects.filter(id_xt_pc__gt=object_id.id_xt_pc, id_xt_pc__in=qs).order_by('id_xt_pc')[:1]
+                    if next:
+                        self.message_user(request, msg)
+                        return HttpResponseRedirect("../%s/" % next[0].object_id)
+#                    result['Location'] = request.session['filtered']
+
+                    request.session['filtered'] = None
+
+            except:
+                pass
+
         return result
 
-    def response_change(self, request, obj):
-        """
-        Determines the HttpResponse for the change_view stage.
-        """
-        if request.POST.has_key("_viewnext"):
-            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
-                   {'name': force_unicode(obj._meta.verbose_name),
-                    'obj': force_unicode(obj)})
-            next = obj.__class__.objects.filter(id_xt_pc__gt=obj.id_xt_pc).order_by('id_xt_pc')[:1]
-            if next:
-                self.message_user(request, msg)
-                return HttpResponseRedirect("../%s/" % next[0].pk)
-        return super(pcAdmin, self).response_change(request, obj)
+#    def changelist_view(self, request, extra_context=None):
+#        super(pcAdmin,self).changelist_view(request, extra_context)
+
+#    def response_change(self, request, obj):
+#        """
+#        Determines the HttpResponse for the change_view stage.
+#        """
+#        if request.POST.has_key("_viewnext"):
+#            msg = (_('The %(name)s "%(obj)s" was changed successfully.') %
+#                   {'name': force_unicode(obj._meta.verbose_name),
+#                    'obj': force_unicode(obj)})
+#            next = obj.__class__.objects.filter(id_xt_pc__gt=obj.id_xt_pc).order_by('id_xt_pc')[:1]
+#            if next:
+#                self.message_user(request, msg)
+#                return HttpResponseRedirect("../%s/" % next[0].pk)
+#        return super(pcAdmin, self).response_change(request, obj)
 
     def save_model(self, request, obj, form, change):
 
@@ -567,7 +591,7 @@ class pcAdmin(admin.ModelAdmin):
                 instance.usuario_ult_mod = request.user
             instance.usuario_ult_mod = request.user
             instance.save()
-        if formset.model == xt_mc:
+        if formset.model == xt_pc:
             instances = formset.save(commit=False)
             map(set_user, instances)
             formset.save_m2m()

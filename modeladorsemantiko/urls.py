@@ -68,6 +68,11 @@ urlpatterns = patterns('',
     url(r'^modelador/logout/$', 'django.contrib.auth.views.logout'),
 
 
+    url(r'^modelador/lista_usuarios/$', modeladorFarmacos2.views.VistaListaPCCECreadores.as_view(),
+        name='creadores_lista',),
+
+    url(r'^modelador/lista_usuarios/(\w+)/$', modeladorFarmacos2.views.VistaUsuarioCreadorPCCE.as_view()),
+
 
     url(r'^modelador/lista_pcce/$', modeladorFarmacos2.views.VistaListaPCCE.as_view(),
         name='pcce_lista',),
@@ -82,6 +87,7 @@ urlpatterns = patterns('',
             model=xt_pcce
             ,form_class=pcceForm)
             , name='pcce_editar'),
+
 
 
     url(r'^modelador/lista_pcce/(?P<pk>\d+)/$', modeladorFarmacos2.views.VistaPCCE.as_view(),
@@ -104,6 +110,7 @@ urlpatterns = patterns('',
     (r'^modelador/catalogo/$', lista_mc),
     (r'^modelador/pendientes/$', pendientes),
     (r'^modelador/kairos/$', kairos2),
+
 
 
     url(r'^modelador/non_admin/', include('non_admin.urls', namespace='non_admin')),

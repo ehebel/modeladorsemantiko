@@ -524,14 +524,8 @@ class xt_mb (models.Model):
     xt_id_mb = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=255, blank=False, null=False)
 
-#    '''
-#    Campo determina si la descripcion es autogenerada al grabaar
-#    el formulario o si debe mantener como texto libre del campo DESCRIPCION
-#    '''
     creac_nombre = models.SmallIntegerField(max_length=1, choices=OPCIONES_CREC, null=False, blank=False, default=0)
-#    '''
-#
-#    '''
+
     sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=1)
 
     fecha_creacion = models.DateTimeField(null=False, auto_now_add=True)
@@ -654,6 +648,9 @@ class xt_mc (models.Model):
 
     rel_mc_sust = models.ManyToManyField(xt_sustancia, through='rel_mc_sust')
 
+    termino_autogenerado = models.CharField(max_length=255, blank=False, default='')
+
+
     def get_pc(self):
         return '<br/>'.join([u'%s - %s' % (k.id_xt_pc, k.descripcion) for k in self.xt_pc_set.order_by('id_xt_pc').all()[:6]])
     get_pc.allow_tags = True
@@ -668,8 +665,11 @@ class xt_mc (models.Model):
         return object.atc_code
     get_atc.short_description = 'ATC'
 
-    def descrip_auto(self):
-        return 'KAM%s' % self.med_basico
+    def save(self, force_insert=False, force_update=False):
+        self.termino_autogenerado = u'%s, %s' % (
+            ' '.join([u'%s' % (s.descripcion) for s in self.rel_mc_sust.order_by('id_xt_sust').all()])
+            , self.forma_farmaceutica_agrup.descripcion)
+        super(xt_mc, self).save(force_insert, force_update)
 
 
     def __unicode__(self):

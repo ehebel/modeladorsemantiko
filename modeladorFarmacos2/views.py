@@ -1,9 +1,10 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse
 from django.http import  HttpResponseRedirect
 
-from django.shortcuts import  render_to_response
+from django.shortcuts import  render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.utils.decorators import method_decorator
@@ -40,6 +41,20 @@ def create(request):
 
     return render_to_response('modeladorFarmacos/crear_pcce.html', args)
 
+class VistaListaPCCECreadores(LoggedInMixin,ListView):
+    model = xt_pcce
+    template_name = 'modeladorFarmacos2/creadores_pcce.html'
+
+    def get_queryset(self):
+        return xt_pcce.objects.filter(revisado__exact=0).order_by('usuario_creador')
+
+class VistaUsuarioCreadorPCCE(LoggedInMixin,ListView):
+    context_object_name = 'lista_pcce_por_usuario'
+    template_name = 'modeladorFarmacos2/pcce_por_usuario.html'
+
+    def get_queryset(self):
+        usuario_creador = get_object_or_404(User, id__iexact=self.args[0])
+        return xt_pcce.objects.filter(usuario_creador=usuario_creador, revisado__exact=0)
 
 
 class VistaListaPCCE(LoggedInMixin, ListView):
@@ -107,6 +122,7 @@ def modeladorescas(solicitud):
     return render_to_response('modeladorFarmacos/resultados.html'
         ,{'modelados_pcce':pcce},
         context_instance=RequestContext(solicitud))
+
 
 def pendientes(solicitud):
     inner_qs = xt_bioequivalente.objects.values_list('referencia', flat=True).distinct()

@@ -68,10 +68,18 @@ urlpatterns = patterns('',
     url(r'^modelador/logout/$', 'django.contrib.auth.views.logout'),
 
 
-    url(r'^modelador/lista_usuarios/$', modeladorFarmacos2.views.VistaListaPCCECreadores.as_view(),
+    url(r'^modelador/xt_pcce/lista_usuarios/$', modeladorFarmacos2.views.VistaListaPCCECreadores.as_view(),
         name='creadores_lista',),
 
-    url(r'^modelador/lista_usuarios/(\w+)/$', modeladorFarmacos2.views.VistaUsuarioCreadorPCCE.as_view()),
+    url(r'^modelador/xt_pcce/lista_usuarios/(\w+)/$', modeladorFarmacos2.views.VistaUsuarioCreadorPCCE.as_view()),
+
+
+
+    url(r'^modelador/xt_pc/lista_usuarios/$', modeladorFarmacos2.views.VistaListaPCCreadores.as_view(),
+        name='creadores_lista',),
+
+    url(r'^modelador/xt_pc/lista_usuarios/(\w+)/$', modeladorFarmacos2.views.VistaUsuarioCreadorPC.as_view()),
+
 
 
     url(r'^modelador/lista_pcce/$', modeladorFarmacos2.views.VistaListaPCCE.as_view(),

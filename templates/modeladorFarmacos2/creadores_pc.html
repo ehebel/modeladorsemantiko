@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block extrahead %}
+    {# These are needed to enable autocompletes in forms #}
+    <script src="{{ STATIC_URL }}jquery.js" type="text/javascript"></script>
+    {% include 'autocomplete_light/static.html' %}
+
+    Usuarios Creadores PCCE
+{% endblock %}
+
+{% block content %}
+
+    <h1>Creadores de PC</h1>
+
+    {#{% for pcce in object_list %}#}
+    {#    <li>{{ pcce.descripcion }}</li>#}
+    {#{% endfor %}#}
+
+
+    {% regroup object_list by usuario_creador as creadores_pc %}
+
+    <ul>
+        {% for usuario_creador in creadores_pc %}
+
+            <li><a href="../lista_usuarios/{{ usuario_creador.grouper.id }}">{{ usuario_creador.grouper }}</a> </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

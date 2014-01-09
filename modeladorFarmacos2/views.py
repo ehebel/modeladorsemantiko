@@ -11,7 +11,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import ListView, UpdateView, CreateView, DetailView
 
 from modeladorFarmacos2.models import kairos_productos\
-    , kairos_presentaciones, xt_mc, xt_pcce, xt_bioequivalente
+    , kairos_presentaciones, xt_mc, xt_pcce, xt_bioequivalente, xt_pc
 
 from modeladorFarmacos2.forms import pcceForm
 
@@ -55,6 +55,23 @@ class VistaUsuarioCreadorPCCE(LoggedInMixin,ListView):
     def get_queryset(self):
         usuario_creador = get_object_or_404(User, id__iexact=self.args[0])
         return xt_pcce.objects.filter(usuario_creador=usuario_creador, revisado__exact=0).order_by('descripcion')
+
+
+
+class VistaListaPCCreadores(LoggedInMixin,ListView):
+    model = xt_pc
+    template_name = 'modeladorFarmacos2/creadores_pc.html'
+
+    def get_queryset(self):
+        return xt_pcce.objects.filter(revisado__exact=0).order_by('usuario_creador')
+
+class VistaUsuarioCreadorPC(LoggedInMixin,ListView):
+    context_object_name = 'lista_pc_por_usuario'
+    template_name = 'modeladorFarmacos2/pc_por_usuario.html'
+
+    def get_queryset(self):
+        usuario_creador = get_object_or_404(User, id__iexact=self.args[0])
+        return xt_pc.objects.filter(usuario_creador=usuario_creador, revisado__exact=0).order_by('descripcion')
 
 
 class VistaListaPCCE(LoggedInMixin, ListView):

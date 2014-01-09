@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block extrahead %}
+{% endblock %}
+
+{% block content %}
+
+    <a href="javascript:history.go(0)">Actualizar</a>
+    <ul>
+
+
+        <table border=3 cellpadding=5>
+
+            <tr>
+                <th>Producto Comercial</th>
+                <th>Descripcion Abreviada</th>
+                <th>Forma Farmaceutica</th>
+                <th>Laboratorio</th>
+                <th>Registro Sanitario</th>
+                <th>Observacion</th>
+                <th>Fecha Creacion</th>
+                {#                <th>Rev</th>#}
+            </tr>
+            {% for item in object_list %}
+                <tr>
+
+                    <td rowspan=1>
+                        <a href="/modelador/admin/modeladorFarmacos2/xt_pc/{{ item.id_xt_pc }}" target="_blank">{{ item.descripcion }}</a>
+                    </td>
+                    <td>
+                        {{ item.descripcion_abreviada }}
+                    </td>
+                    <td>
+                        {{ item.forma_farm_extendida }}
+                    </td>
+                    <td>
+                        {{ item.id_xt_lab.descripcion }}
+                    </td>
+                    <td>
+                        {{ item.reg_isp_num }}/{{ item.reg_isp_ano }}
+                    </td>
+                    <td>
+                        {{ item.observacion }}
+                    </td>
+                    <td>
+                        {{ item.fecha_creacion|date:"SHORT_DATE_FORMAT"  }}
+                    </td>
+                </tr>
+                <tr>
+            {% endfor %}
+            </tr>
+        </table>
+    </ul>
+{% endblock %}

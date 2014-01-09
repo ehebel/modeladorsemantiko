@@ -617,11 +617,12 @@ class pcceAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             'fields': ('descripcion', 'desc_abreviada', 'sensible_mayusc', 'creac_nombre'
-                       ,'estado','revisado','consultar','id_xt_pc','id_presentacion_kairos','codigo_dbnet','observacion')
+                       ,'estado','revisado','consultar','id_xt_pc','id_xt_mcce','id_presentacion_kairos','codigo_dbnet','observacion')
         }),
         ('Avanzandos', {
             'classes': ('collapse',),
-            'fields': ('pack_cant', 'pack_u', 'gtin_gs1','existencia_gs1','codigo_cenabast','hiba_descriptionid','hiba_term','cl_concepto','id_xt_pcce')
+            'fields': ('pack_cant', 'pack_u', 'gtin_gs1','existencia_gs1','codigo_cenabast','hiba_descriptionid'
+                       ,'hiba_term','cl_concepto','id_xt_pcce')
         }),
         )
 

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/modeladorFarmacos2/creadores_pc.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/modeladorFarmacos2/pc_por_usuario.html" />
+    <list default="true" id="af0b1619-3e95-46eb-970d-83b23dc5d6da" name="Default" comment="Agrego pantalla de validación para PCCE para QF y campo autogenerado en XT_MC">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_gotas.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_jarabes.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_tabletas.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/admin.py" afterPath="$PROJECT_DIR$/efectorescas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/views.py" afterPath="$PROJECT_DIR$/efectorescas/views.py" />
@@ -34,39 +35,8 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.43758968">
       <split-first>
-        <leaf>
-          <file leaf-file-name="pc_por_usuario.html" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos2/pc_por_usuario.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="29" column="53" selection-start="909" selection-end="909" vertical-scroll-proportion="0.39551193">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="39" selection-start="286" selection-end="286" vertical-scroll-proportion="-7.5416665">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="creadores_pc.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos2/creadores_pc.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="0" selection-start="502" selection-end="502" vertical-scroll-proportion="-11.875">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
         <leaf>
           <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
@@ -82,7 +52,7 @@
           <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="69" column="60" selection-start="2326" selection-end="2326" vertical-scroll-proportion="0.0">
+                <state line="289" column="25" selection-start="7865" selection-end="7865" vertical-scroll-proportion="0.0">
                   <folding>
                     <element signature="e#0#57#0" expanded="true" />
                   </folding>
@@ -90,12 +60,90 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="listado_kairos.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="2589" vertical-scroll-proportion="34.333332">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="kairos_gotas.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_gotas.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="96" column="7" selection-start="2592" selection-end="2592" vertical-scroll-proportion="-25.041666">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="kairos_jarabes.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_jarabes.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="37" column="13" selection-start="0" selection-end="2592" vertical-scroll-proportion="-23.125">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="kairos_tabletas.html" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_tabletas.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="96" column="7" selection-start="2592" selection-end="2592" vertical-scroll-proportion="0.952">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="listado_trabajo.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/listado_trabajo.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="26" column="12" selection-start="735" selection-end="735" vertical-scroll-proportion="-8.75">
+                  <folding>
+                    <marker date="1389373756000" expanded="true" signature="884:1532" placeholder="..." />
+                    <marker date="1389373756000" expanded="true" signature="970:1379" placeholder="..." />
+                    <marker date="1389373756000" expanded="true" signature="1570:2199" placeholder="..." />
+                    <marker date="1389373756000" expanded="false" signature="1906:1916" placeholder="..." />
+                    <marker date="1389373756000" expanded="false" signature="2066:2080" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/urls.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="e#0#42#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/modeladorsemantiko/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="73" column="28" selection-start="3040" selection-end="3040" vertical-scroll-proportion="0.37482518">
+                <state line="93" column="59" selection-start="3785" selection-end="3785" vertical-scroll-proportion="0.0">
                   <folding>
                     <element signature="e#0#51#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="listado_trabajo.html" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/listado_trabajo.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="28" column="17" selection-start="868" selection-end="868" vertical-scroll-proportion="0.35764375">
+                  <folding>
+                    <element signature="n#style#0;n#span#0;n#td#3;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#1;n#td#3;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -116,10 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/non_admin/models.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos2/forms.py" />
-        <option value="$USER_HOME$/env/autocomplete_test/lib/python2.6/site-packages/django/db/backends/mysql/base.py" />
-        <option value="$PROJECT_DIR$/modeladorsemantiko/local_settings.py" />
         <option value="$PROJECT_DIR$/efectorescas/admin.py" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/settings.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos2/models.py" />
@@ -127,11 +171,15 @@
         <option value="$PROJECT_DIR$/templates/modeladorFarmacos2/creadores_pcce.html" />
         <option value="$PROJECT_DIR$/templates/modeladorFarmacos2/pcce_por_usuario.html" />
         <option value="$PROJECT_DIR$/modeladorFarmacos2/admin.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos2/views.py" />
         <option value="$PROJECT_DIR$/templates/modeladorFarmacos2/pc_por_usuario.html" />
         <option value="$PROJECT_DIR$/templates/modeladorFarmacos2/creadores_pc.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_gotas.html" />
+        <option value="$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_jarabes.html" />
         <option value="$PROJECT_DIR$/modeladorsemantiko/urls.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos2/views.py" />
+        <option value="$PROJECT_DIR$/templates/listado_trabajo.html" />
+        <option value="$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_tabletas.html" />
       </list>
     </option>
   </component>
@@ -209,20 +257,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="modeladorsemantiko" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modeladorsemantiko" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modeladorsemantiko" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modeladorFarmacos2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1638,7 +1672,11 @@
       <created>1389273557019</created>
       <updated>1389273557019</updated>
     </task>
-    <option name="localTasksCounter" value="271" />
+    <task id="LOCAL-00271" summary="Agrego pantalla de validación para PCCE para QF y campo autogenerado en XT_MC">
+      <created>1389285499009</created>
+      <updated>1389285499009</updated>
+    </task>
+    <option name="localTasksCounter" value="272" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1670,11 +1708,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22156574" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22453372" sideWeight="0.6718147" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20444763" sideWeight="0.47490346" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20195931" sideWeight="0.57123286" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.205165" sideWeight="0.5714286" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38352638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.204647" sideWeight="0.4800515" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40425533" sideWeight="0.45400593" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4287671" sideWeight="0.88728327" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42857143" sideWeight="0.88728327" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32818532" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1764,61 +1802,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="58" />
+      <option name="time" value="59" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="619" column="78" selection-start="22506" selection-end="22506" vertical-scroll-proportion="-12.576923">
-          <folding>
-            <element signature="e#4511#7154#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/pcce_por_revisar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="6" selection-start="22" selection-end="22" vertical-scroll-proportion="0.021306818">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/pcce_editar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/pcce_detalle.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/pcce_crear.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/resultados.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="74" selection-start="1045" selection-end="1095" vertical-scroll-proportion="0.4900568">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.41244572">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/listado_kairos.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.4403927">
@@ -1847,9 +1834,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos2/pc_por_usuario.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="39" selection-start="286" selection-end="286" vertical-scroll-proportion="-7.5416665">
+        <state line="18" column="35" selection-start="458" selection-end="458" vertical-scroll-proportion="-9.875">
           <folding />
         </state>
       </provider>
@@ -1863,28 +1850,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="2589" vertical-scroll-proportion="34.333332">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="59" selection-start="3785" selection-end="3785" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos/resultados.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="74" selection-start="1045" selection-end="1095" vertical-scroll-proportion="0.5073314">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="72" selection-start="510" selection-end="510" vertical-scroll-proportion="0.35190615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_gotas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="7" selection-start="2592" selection-end="2592" vertical-scroll-proportion="-25.041666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="60" selection-start="2326" selection-end="2326" vertical-scroll-proportion="0.0">
+        <state line="289" column="25" selection-start="7865" selection-end="7865" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos2/pc_por_usuario.html">
+    <entry file="file://$PROJECT_DIR$/templates/listado_trabajo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="53" selection-start="909" selection-end="909" vertical-scroll-proportion="0.39551193">
+        <state line="26" column="12" selection-start="735" selection-end="735" vertical-scroll-proportion="-8.75">
+          <folding>
+            <marker date="1389373756000" expanded="true" signature="884:1532" placeholder="..." />
+            <marker date="1389373756000" expanded="true" signature="970:1379" placeholder="..." />
+            <marker date="1389373756000" expanded="true" signature="1570:2199" placeholder="..." />
+            <marker date="1389373756000" expanded="false" signature="1906:1916" placeholder="..." />
+            <marker date="1389373756000" expanded="false" signature="2066:2080" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_jarabes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="13" selection-start="0" selection-end="2592" vertical-scroll-proportion="-23.125">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorsemantiko/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_tabletas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="28" selection-start="3040" selection-end="3040" vertical-scroll-proportion="0.37482518">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
+        <state line="96" column="7" selection-start="2592" selection-end="2592" vertical-scroll-proportion="0.952">
+          <folding />
         </state>
       </provider>
     </entry>

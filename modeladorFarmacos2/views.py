@@ -221,3 +221,88 @@ def kairos2(request):
     return render_to_response('modeladorFarmacos/listado_kairos.html'
         ,{'kpres_kairos':kairos_pres},
         context_instance=RequestContext(request))
+
+
+def kairos_tabletas(request):
+    kpres_list = kairos_presentaciones.objects.filter(medio__in=[
+        'Tab.',
+    ]
+    ).exclude(estado__icontains='B'
+    ).order_by('claveproducto__descripcion'
+            , 'concentracion'
+            ,'cantidadenvase'
+    ).distinct().all()
+
+    paginator = Paginator(kpres_list, 35)
+
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        kairos_pres = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        kairos_pres = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos2/kairos_tabletas.html'
+        ,{'kpres_kairos':kairos_pres},
+        context_instance=RequestContext(request))
+
+
+def kairos_jarabes(request):
+    kpres_list = kairos_presentaciones.objects.filter(medio__in=[
+        'Jar.',
+        'Fco.'
+        ]
+    ).exclude(estado__icontains='B'
+    ).order_by('claveproducto__descripcion'
+        , 'concentracion'
+        ,'cantidadenvase'
+    ).distinct().all()
+
+    paginator = Paginator(kpres_list, 61)
+
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        kairos_pres = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        kairos_pres = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos2/kairos_jarabes.html'
+        ,{'kpres_kairos':kairos_pres},
+        context_instance=RequestContext(request))
+
+def kairos_gotas(request):
+    kpres_list = kairos_presentaciones.objects.filter(medio__in=[
+        'Gotas',
+        'Got.'
+    ]
+    ).exclude(estado__icontains='B'
+    ).order_by('claveproducto__descripcion'
+        , 'concentracion'
+        ,'cantidadenvase'
+    ).distinct().all()
+
+    paginator = Paginator(kpres_list, 48)
+
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        kairos_pres = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        kairos_pres = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos2/kairos_gotas.html'
+        ,{'kpres_kairos':kairos_pres},
+        context_instance=RequestContext(request))

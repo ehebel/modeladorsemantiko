@@ -495,7 +495,7 @@ class pcAdmin(admin.ModelAdmin):
                        ,'comercial_cl'
                        ,'forma_farm_extendida','sabor','id_xt_fp'
                         ,'id_xt_mc','id_xt_lab'
-                       ,'reg_isp_num','reg_isp_ano','observacion')
+                       ,'reg_isp','reg_isp_num','reg_isp_ano','observacion')
         }),
         ('Avanzados', {
             'classes': ('collapse',),
@@ -509,6 +509,7 @@ class pcAdmin(admin.ModelAdmin):
         ,"consultar": admin.HORIZONTAL
         ,"revisado": admin.HORIZONTAL
         ,'comercial_cl': admin.HORIZONTAL
+        ,'reg_isp' : admin.HORIZONTAL
     }
     def add_view(self, request, *args, **kwargs):
         result = super(pcAdmin, self).add_view(request, *args, **kwargs )
@@ -917,7 +918,19 @@ admin.site.register(kairos_precio,kairosPrecioAdmin)
 
 
 class xtSaborAdmin(admin.ModelAdmin):
-    pass
+    def save_model(self, request, obj, form, change):
+
+        if not hasattr(obj, 'usuario_creador'):
+            obj.usuario_creador = request.user
+        obj.save()
+
+        instance = form.save(commit=False)
+        if not hasattr(instance,'usuario_ult_mod'):
+            instance.usuario_ult_mod = request.user
+        instance.usuario_ult_mod = request.user
+        instance.save()
+        form.save_m2m()
+        return instance
 admin.site.register(xt_sabor,xtSaborAdmin)
 
 

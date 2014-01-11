@@ -844,13 +844,15 @@ class xt_sabor (models.Model):
 #    Terminos que salen desde ITServer
 #    '''
     sn_descriptionid = models.CharField(max_length=20, null=True, blank=True, verbose_name=u'SNOMED-CT DescriptionID')
-    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino')
+    sn_term =   models.CharField(max_length=255, verbose_name=u'SNOMED-CT Termino', blank=True)
 
     hiba_descriptionid = models.CharField(max_length=20, null=True, blank=True)
     hiba_term = models.CharField(max_length=255, null=True, blank=True)
 
     def __unicode__(self):
         return self.descripcion
+    class Meta:
+        verbose_name_plural ='XT sabores'
 
 ## ##-
 ## table 'xt_pc'
@@ -906,7 +908,7 @@ class xt_pc (models.Model):
     hiba_descriptionid = models.CharField(max_length=20, null = True, blank=True)
     hiba_term = models.CharField(max_length=255, null = True, blank=True)
 
-
+    reg_isp     = models.PositiveSmallIntegerField(max_length=1,choices=OPCIONES_BOOL, null=True, blank=True)
     reg_isp_num = models.CharField(max_length=10, null = True, blank=True)
     reg_isp_ano = models.PositiveIntegerField(max_length=4, null=True, blank=True)
 

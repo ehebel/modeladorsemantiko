@@ -36,7 +36,8 @@
                         {{ item.id_xt_lab.descripcion }}
                     </td>
                     <td>
-                        {{ item.reg_isp_num }}/{{ item.reg_isp_ano }}
+                        <a href="http://registrosanitario.ispch.gob.cl/Ficha.aspx?RegistroISP={{ item.reg_isp_num }}/{% if item.reg_isp_ano < 10 %}0{{ item.reg_isp_ano }}{% else %}{{ item.reg_isp_ano }}{% endif %}">
+                            {{ item.reg_isp_num }}/{% if item.reg_isp_ano < 10 %}0{{ item.reg_isp_ano }}{% else %}{{ item.reg_isp_ano }}{% endif %} </a>
                     </td>
                     <td>
                         {{ item.observacion }}

@@ -199,7 +199,6 @@ admin.site.register(xt_sustancia,xt_sustanciaAdmin)
 
 
 class mcAdmin (admin.ModelAdmin):
-    exclude = ['termino_autogenerado',]
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'100'})},
         models.URLField: {'widget': TextInput(attrs={'size':'100'})}
@@ -225,7 +224,7 @@ class mcAdmin (admin.ModelAdmin):
     list_display_links = ['id_xt_mc','descripcion']
     actions = [export_as_csv]
 
-    readonly_fields=('id_xt_mc',)
+    readonly_fields=('id_xt_mc','termino_autogenerado',)
 
     radio_fields = {
         "estado": admin.HORIZONTAL
@@ -792,6 +791,7 @@ admin.site.register(xt_unidad_medida_unitaria,uduAdmin)
 
 
 class ffAdmin(admin.ModelAdmin):
+    search_fields = ['descripcion']
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -914,6 +914,11 @@ class kairosPrecioAdmin(admin.ModelAdmin):
 
 
 admin.site.register(kairos_precio,kairosPrecioAdmin)
+
+
+class xtSaborAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(xt_sabor,xtSaborAdmin)
 
 
 __author__ = 'ehebel'

@@ -227,7 +227,6 @@ def kairos_tabletas(request):
     kpres_list = kairos_presentaciones.objects.filter(medio__in=[
         'Tab.',
     ]
-#        ,pk__in=[7952]
     ).exclude(estado__icontains='B'
     ).order_by('claveproducto__descripcion'
             , 'concentracion'

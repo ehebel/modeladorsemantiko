@@ -22,56 +22,39 @@
 {% extends "base.html" %}
 
 {% block branding %}
-    <h1>Catálogo de revisión KAIROS</h1>
+    <h1>Catálogo de revisión KAIROS Jarabes</h1>
 
 {% endblock %}
 
 
 
 {% block content %}
-    <table border=3 cellpadding=5>
+
+    <table border=3 cellpadding=3>
         <tr>
             <th>Kairos_Producto</th>
             <th>Kairos_Presentacion</th>
             <th>PCCE</th>
             <th>PC</th>
-        </tr>
-
-
+        </tr>{% for item in kpres_kairos %}
         <tr>
-            {% for item in kpres_kairos %}
-                <td rowspan=1>
-                    {{ item.claveproducto.descripcion }} ({{ item.claveproducto.laboratorioproductor.abreviatura }})
-                </td>
-                <td>
-                    {{ item.descripcion }}
-                </td>
-                <td>
-                    {% for foo in item.xt_pcce_set.all %}
-
-                        <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/{{ foo.id_xt_pcce }}" target="_blank">{{ foo.descripcion }}</a>
-
-                        <td>
-
-                            <a href="/modelador/admin/modeladorFarmacos2/xt_pc/{{ foo.id_xt_pc.id_xt_pc }}" target="_blank">{{ foo.id_xt_pc.descripcion }}</a>
-
-                        </td>
-
-                    {% empty %}
-                        <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/" target="_blank">Sin PCCE!</a>
-
-                        <td>
-
-
-                        </td>
-
-                    {% endfor %}
-
-
-                </tr>
-                <tr>
-            {% endfor %}
+            <td rowspan={% if item.xt_pcce_set.all|length == 0 %}1{% else %}{{ item.xt_pcce_set.all|length }}{% endif %}>{{ item.claveproducto.descripcion }} ({{ item.claveproducto.laboratorioproductor.abreviatura }})
+            </td>
+            <td rowspan={% if item.xt_pcce_set.all|length == 0 %}1{% else %}{{ item.xt_pcce_set.all|length }}{% endif %}>{{ item.descripcion }}
+            </td>{% for foo in item.xt_pcce_set.all %}
+            <td><a href="/modelador/admin/modeladorFarmacos2/xt_pcce/{{ foo.id_xt_pcce }}" target="_blank">{{ foo.descripcion }}</a>
+            </td>
+            <td>
+                <a href="/modelador/admin/modeladorFarmacos2/xt_pc/{{ foo.id_xt_pc.id_xt_pc }}" target="_blank">{{ foo.id_xt_pc.descripcion }}</a>
+            </td>
             </tr>
+        {% empty %}
+            <td>
+                <a href="/modelador/admin/modeladorFarmacos2/xt_pcce/" target="_blank">Sin PCCE!</a>
+            </td>
+            <td>Sin PC</td>{% endfor %}
+
+    {% endfor %}
     </table>
 
     <div class="pagination">

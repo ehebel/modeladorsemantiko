@@ -625,7 +625,7 @@ class xt_mc (models.Model):
         , limit_choices_to = limit
         , related_name='volumen_total_u' )
 
-    forma_farmaceutica_agrup = models.ForeignKey(xt_forma_agrupada, null=True, blank=True, limit_choices_to = {'estado':'0'})
+    forma_farmaceutica_agrup = models.ForeignKey(xt_forma_agrupada, null=True, blank=False, limit_choices_to = {'estado':'0'})
 
     #condicion_venta debe ir como radiobutton de las 4 opciones de la otra table
     condicion_venta = models.ForeignKey(xt_condicion_venta, null=True, blank=True, limit_choices_to = {'estado':'0'})

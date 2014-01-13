@@ -665,11 +665,11 @@ class xt_mc (models.Model):
         return object.atc_code
     get_atc.short_description = 'ATC'
 
-    def save(self, force_insert=False, force_update=False):
-        self.termino_autogenerado = u'%s, %s' % (
-            ' '.join([u'%s' % (s.descripcion) for s in self.rel_mc_sust.order_by('id_xt_sust').all()])
-            , self.forma_farmaceutica_agrup.descripcion)
-        super(xt_mc, self).save(force_insert, force_update)
+#    def save(self, force_insert=False, force_update=False):
+#        self.termino_autogenerado = u'%s, %s' % (
+#            ' '.join([u'%s' % (s.descripcion) for s in self.rel_mc_sust.order_by('id_xt_sust').all()])
+#            , self.forma_farmaceutica_agrup.descripcion)
+#        super(xt_mc, self).save(force_insert, force_update)
 
 
     def __unicode__(self):

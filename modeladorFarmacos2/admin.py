@@ -901,7 +901,8 @@ admin.site.register(xt_forma_agrupada,formaAgrupadaAdmin)
 class kairosTxtAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(kairos_texto_producto)
     list_display = ['id','clave']
-    exclude = ('clave','texto')
+    exclude = ('texto',)
+    readonly_fields=('orden','clave','html_texto',)
 admin.site.register(kairos_texto_producto, kairosTxtAdmin)
 
 admin.site.register(kairos_lab)

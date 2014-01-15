@@ -207,6 +207,9 @@ class kairos_texto_producto(models.Model):
     clave = models.ForeignKey(kairos_productos)
     orden = models.PositiveIntegerField()
     texto = models.TextField()
+    def html_texto(self):
+        return self.texto
+    html_texto.allow_tags = True
 
     def __unicode__(self):
         return u'%s' % self.clave_id

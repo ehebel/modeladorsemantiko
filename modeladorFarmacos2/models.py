@@ -203,6 +203,16 @@ class kairos_precio(models.Model):
         return u"%s" % self.claveproducto
 
 
+class kairos_texto_producto(models.Model):
+    clave = models.ForeignKey(kairos_productos)
+    orden = models.PositiveIntegerField()
+    texto = models.TextField()
+
+    def __unicode__(self):
+        return u'%s' % self.clave_id
+    class Meta:
+        ordering=['id']
+
 #########################################################################
 
 ## ##-

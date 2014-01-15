@@ -9,7 +9,5 @@ from models import Widget
 # but we'll not use this shortcut
 
 
-class WidgetForm(forms.ModelForm):
-    class Meta:
-        widgets = autocomplete_light.get_widgets_dict(Widget)
-        model = Widget
+class WidgetForm(autocomplete_light.ModelForm):
+    model = Widget

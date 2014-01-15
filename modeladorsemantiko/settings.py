@@ -165,10 +165,10 @@ INSTALLED_APPS = (
     'south',
     'autocomplete_light',
     'autocomplete_light.tests',
-#    'gfk_autocomplete',
-#    'optionnal_gfk_autocomplete',
-#    'generic_m2m_autocomplete',
-#    'genericm2m',
+    'gfk_autocomplete',
+    'optionnal_gfk_autocomplete',
+    'generic_m2m_autocomplete',
+    'genericm2m',
     #'navigation_autocomplete',
     # Uncomment the next line to enable admin documentation:
     'modeladorsemantiko',
@@ -179,7 +179,7 @@ INSTALLED_APPS = (
     'privilegiosCAS',
     'snomedct',
 #    'debug_toolbar',
-    'non_admin',
+#    'non_admin',
 )
 
 # A sample logging configuration. The only tangible logging

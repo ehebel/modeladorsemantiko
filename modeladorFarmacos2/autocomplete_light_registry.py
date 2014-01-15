@@ -40,8 +40,8 @@ autocomplete_light.register(xt_pc, search_fields=('descripcion',),
 
 
 
-autocomplete_light.register(kairos_presentaciones, search_fields=('claveproducto__descripcion',),
-    choices=kairos_presentaciones.objects.exclude(estado__icontains='B'),
+autocomplete_light.register(kairos_presentaciones, search_fields=('claveproducto__descripcion','claveproducto__clave'),
+#    choices=kairos_presentaciones.objects.exclude(estado__icontains='B'),
     autocomplete_js_attributes={'placeholder': 'ej. Ginotex'})
 
 autocomplete_light.register(xt_fp, search_fields=('descripcion',),

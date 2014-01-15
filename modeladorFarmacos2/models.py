@@ -132,7 +132,7 @@ class kairos_productos (models.Model):
     odontologia = models.CharField(max_length=255)
 
     def __unicode__(self):
-        return u"%s (%s) - %s" % (self.descripcion,self.laboratoriocomercializador,self.estado)
+        return u"%s - %s (%s) - %s" % (self.clave,self.descripcion,self.laboratoriocomercializador,self.estado)
     class Meta:
         ordering=['clave']
         verbose_name_plural ='tabla de productos de kairos'

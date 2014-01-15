@@ -905,8 +905,16 @@ class kairosTxtAdmin(admin.ModelAdmin):
     readonly_fields=('orden','clave','html_texto',)
 admin.site.register(kairos_texto_producto, kairosTxtAdmin)
 
+
+
 admin.site.register(kairos_lab)
-admin.site.register(kairos_productos)
+
+
+class kairosProd(admin.ModelAdmin):
+    search_fields = ['descripcion']
+admin.site.register(kairos_productos,kairosProd)
+
+
 
 class kairosPresAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(kairos_presentaciones)
@@ -915,10 +923,9 @@ class kairosPresAdmin(admin.ModelAdmin):
     list_filter = ['estado','medio',]
 admin.site.register(kairos_presentaciones,kairosPresAdmin)
 
+
 class kairosPrecioAdmin(admin.ModelAdmin):
     form = autocomplete_light.modelform_factory(kairos_precio)
-
-
 admin.site.register(kairos_precio,kairosPrecioAdmin)
 
 

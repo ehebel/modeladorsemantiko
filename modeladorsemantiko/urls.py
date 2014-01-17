@@ -14,7 +14,7 @@ admin.autodiscover()
 
 from efectorescas.views import  lista_areas
 from modeladorFarmacos.views import search, selec_medclin,lista_mc
-from modeladorFarmacos2.views import modeladorescas,pendientes,kairos,kairos2, kairos_tabletas, kairos_jarabes, kairos_gotas
+from modeladorFarmacos2.views import modeladorescas,pendientes,kairos,kairos2, kairos_tabletas, kairos_jarabes, kairos_gotas, kairos_global
 import modeladorFarmacos2.views
 from modeladorFarmacos2.views import pcceForm
 
@@ -119,8 +119,9 @@ urlpatterns = patterns('',
     (r'^modelador/pendientes/$', pendientes),
 
 
-    (r'^modelador/kairos/$', kairos2),
+    (r'^modelador/kairos_capsulas/$', kairos2),
 
+    (r'^modelador/kairos/$', kairos_global),
     (r'^modelador/kairos_tabletas/$', kairos_tabletas),
     (r'^modelador/kairos_gotas/$', kairos_gotas),
     (r'^modelador/kairos_jarabes/$', kairos_jarabes),

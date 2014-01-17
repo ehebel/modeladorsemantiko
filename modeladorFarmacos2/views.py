@@ -198,7 +198,7 @@ def kairos2(request):
     kpres_list = kairos_presentaciones.objects.filter(medio__in=['Comp. '
             ,'Caps. '
             ,'Grag. '
-            ,'Tab.'
+#            ,'Tab.'
         ]
         ).exclude(estado__icontains='B').order_by('claveproducto__descripcion'
             , 'concentracion'
@@ -305,5 +305,29 @@ def kairos_gotas(request):
 
 
     return render_to_response('modeladorFarmacos2/kairos_gotas.html'
+        ,{'kpres_kairos':kairos_pres},
+        context_instance=RequestContext(request))
+
+def kairos_global(request):
+    kpres_list = kairos_presentaciones.objects.exclude(estado__icontains='B'
+    ).order_by('claveproducto__descripcion'
+        , 'concentracion'
+        ,'cantidadenvase'
+    ).distinct().all()
+
+    paginator = Paginator(kpres_list, 300)
+
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        kairos_pres = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        kairos_pres = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos2/kairos_global.html'
         ,{'kpres_kairos':kairos_pres},
         context_instance=RequestContext(request))

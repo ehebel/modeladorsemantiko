@@ -53,10 +53,10 @@ class atc (models.Model):
         verbose_name_plural ='Codigos ATC'
 
 
-## ##-
+## ##
 ## table 'kairos_sustancia'
 ## tabla de sustancias de kairos
-## ##-
+## ##
 
 
 

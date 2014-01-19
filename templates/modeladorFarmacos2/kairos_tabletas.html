@@ -37,7 +37,12 @@
             <th>PC</th>
         </tr>{% for item in kpres_kairos %}
         <tr>
-            <td rowspan={% if item.xt_pcce_set.all|length == 0 %}1{% else %}{{ item.xt_pcce_set.all|length }}{% endif %}>[{{ item.claveproducto.clave }}] {{ item.claveproducto.descripcion }} ({{ item.claveproducto.laboratorioproductor.abreviatura }})
+            <td rowspan={% if item.xt_pcce_set.all|length == 0 %}1{% else %}{{ item.xt_pcce_set.all|length }}{% endif %}>
+                [{{ item.claveproducto.clave }}] {{ item.claveproducto.descripcion }}
+                ({{ item.claveproducto.laboratorioproductor.abreviatura }})
+
+{#                <a href="../admin/modeladorFarmacos2/kairos_texto_producto/" target="_blank">i</a>#}
+
             </td>
             <td rowspan={% if item.xt_pcce_set.all|length == 0 %}1{% else %}{{ item.xt_pcce_set.all|length }}{% endif %}>{{ item.descripcion }}
             </td>{% for foo in item.xt_pcce_set.all %}

@@ -396,7 +396,7 @@ class xt_forma_agrupada(models.Model):
         return self.descripcion
     class Meta:
         ordering=['descripcion']
-        verbose_name_plural ='XT Agrupador de formas farmaceuticas de extension'
+        verbose_name_plural ='XT formas farmaceuticas Agrupadas'
 
 ## ##-
 ## table 'xt_formas_farm'
@@ -431,10 +431,10 @@ class xt_forma_farm (models.Model):
     observacion = models.CharField(max_length=255, blank=True, null=True)
     cl_concepto = models.CharField(max_length=20, blank=True, null=True)
     def __unicode__(self):
-        return self.descripcion
+        return '%s|%s' % (self.estado, self.descripcion)
     class Meta:
         ordering=['id_xt_formafarm']
-        verbose_name_plural ='XT formas farmaceuticas de extension'
+        verbose_name_plural ='XT formas farmaceuticas Extendidas'
 
 
 
@@ -564,7 +564,7 @@ class xt_mb (models.Model):
     cl_concepto = models.CharField(max_length=20, blank=True,null=True)
 
     def get_sustancia(objeto):
-        return "<br/>".join([s.descripcion for s in objeto.rel_xt_sust.order_by('id_xt_sust').all()[:6]])
+        return "<br/>".join([u'%s | %s' % (s.estado,s.descripcion) for s in objeto.rel_xt_sust.order_by('id_xt_sust').all()[:6]])
     get_sustancia.allow_tags = True
     get_sustancia.short_description = 'XT Sustancias'
 
@@ -606,7 +606,6 @@ class xt_mc (models.Model):
 #    el formulario o si debe mantener como texto libre del campo DESCRIPCION
 #    '''
     creac_nombre = models.SmallIntegerField(max_length=1, choices=OPCIONES_CREC, null=False, blank=False, default=0)
-
 
     sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=1)
 
@@ -784,7 +783,7 @@ class xt_gfp (models.Model):
 
     descripcion = models.CharField(max_length=255)
 
-    sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=1)
+    sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=3)
 
     fecha_creacion = models.DateTimeField(null=True, auto_now_add=True)
     usuario_creador = models.ForeignKey(User, null=False, blank=False, editable=False, related_name='%(app_label)s_%(class)s_related_crea')
@@ -820,7 +819,7 @@ class xt_fp (models.Model):
 
     descripcion = models.CharField(max_length=255)
 
-    sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=1)
+    sensible_mayusc = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_SENSIBLE, blank=False, null=False, default=3)
 
     familia_generica = models.PositiveSmallIntegerField(max_length=1, choices=OPCIONES_BOOL, default=0, blank=False,null=False)
 

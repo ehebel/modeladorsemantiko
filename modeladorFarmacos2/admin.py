@@ -127,7 +127,7 @@ class bioeqAdminInline(admin.TabularInline):
 #
 class xt_sustanciaAdmin (admin.ModelAdmin):
     list_display = ['id_xt_sust','descripcion','riesgo_teratogenico']
-    list_filter = ['revisado','consultar','estado']
+    list_filter = ['revisado','consultar','estado','riesgo_teratogenico']
     search_fields = ['descripcion',]
     ordering = ['descripcion',]
     def add_view(self, request, *args, **kwargs):
@@ -187,7 +187,7 @@ class xt_sustanciaAdmin (admin.ModelAdmin):
                 instance.usuario_ult_mod = request.user
             instance.usuario_ult_mod = request.user
             instance.save()
-        if formset.model == xt_mc:
+        if formset.model == xt_sustancia:
             instances = formset.save(commit=False)
             map(set_user, instances)
             formset.save_m2m()
@@ -199,12 +199,13 @@ admin.site.register(xt_sustancia,xt_sustanciaAdmin)
 
 
 class mcAdmin (admin.ModelAdmin):
+    actions = [export_as_csv]
+    form = autocomplete_light.modelform_factory(xt_mc)
+
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size':'100'})},
         models.URLField: {'widget': TextInput(attrs={'size':'100'})}
     }
-
-    form = autocomplete_light.modelform_factory(xt_mc)
 
     inlines = [SustanciaClinicoInline]
 
@@ -221,8 +222,8 @@ class mcAdmin (admin.ModelAdmin):
         ,('atc_code', IsNullFieldListFilter)
     ]
 
+
     list_display_links = ['id_xt_mc','descripcion']
-    actions = [export_as_csv]
 
     readonly_fields=('id_xt_mc','termino_autogenerado',)
 
@@ -232,6 +233,23 @@ class mcAdmin (admin.ModelAdmin):
         ,"revisado": admin.HORIZONTAL
         ,"tipo_forma_farm": admin.HORIZONTAL
     }
+
+    fieldsets = (
+        (None, {
+            'fields': ('creac_nombre', 'sensible_mayusc', 'med_basico'
+                       , 'estado_prescripcion','estado','revisado','consultar'
+                       ,'tipo_forma_farm'
+                       ,'u_logistica_cant','u_logistica_u','unidosis_asist_cant','volumen_total_cant'
+                       ,'volumen_total_u','condicion_venta','atc_code','medlineplus_ulr','observacion'
+                       ,
+                )
+        }),
+        ('Opciones Avanzadas', {
+            'classes': ('collapse',),
+            'fields': ('sn_descriptionid', 'sn_term', 'hiba_descriptionid','hiba_term'
+                       ,'cl_concepto','termino_autogenerado',)
+        }),
+        )
 
     def add_view(self, request, *args, **kwargs):
         result = super(mcAdmin, self).add_view(request, *args, **kwargs )
@@ -307,11 +325,21 @@ class mbAdmin(admin.ModelAdmin):
     inlines = [SustanciaBasicoInline,]
     ordering = ['descripcion',]
     search_fields = ['descripcion']
-    list_display = ['xt_id_mb','descripcion','get_sustancia']
+    list_display = ['xt_id_mb','descripcion','get_sustancia','estado','sensible_mayusc']
     list_filter = ['revisado','consultar','estado']
     list_display_links = ['xt_id_mb','descripcion']
     actions = [export_as_csv]
     readonly_fields=('xt_id_mb',)
+
+    fieldsets = (
+        (None, {
+            'fields': ('descripcion','creac_nombre','sensible_mayusc','estado', 'revisado', 'consultar', 'observacion')
+        }),
+        ('Opciones Avanzadas', {
+            'classes': ('collapse',),
+            'fields': ('sn_descriptionid','sn_term','hiba_descriptionid', 'hiba_term', 'cl_concepto')
+        }),
+        )
 
     radio_fields = {
         "estado": admin.HORIZONTAL
@@ -390,10 +418,17 @@ class mcceAdmin(admin.ModelAdmin):
     }
     form = autocomplete_light.modelform_factory(xt_mcce)
 
-    list_display = ['id_xt_mcce','descripcion']
+    list_display = ['id_xt_mcce','descripcion'
+        ,'tipo'
+        ,'id_xt_mc'
+        ,'cantidad'
+        ,'unidad_medida_cant'
+        ,'volumen_total_cant'
+        ,'volumen_total_u'
+    ]
 
-    list_filter = ['revisado','consultar','estado',
-            ] #TODO con/Sin observacion
+    list_filter = ['revisado','consultar','estado','tipo'
+            ]
     search_fields = ['descripcion',]
     readonly_fields=('id_xt_mcce',)
 
@@ -403,6 +438,21 @@ class mcceAdmin(admin.ModelAdmin):
         ,"consultar": admin.HORIZONTAL
         ,"revisado": admin.HORIZONTAL
     }
+
+    fieldsets = (
+        (None, {
+            'fields': ('descripcion', 'sensible_mayusc', 'creac_nombre'
+                       ,'estado','revisado','consultar','tipo','id_xt_mc'
+                       ,'cantidad','unidad_medida_cant','pack_multi_cant','pack_multi_u'
+                       ,'volumen_total_cant','volumen_total_u'
+                       ,'observacion')
+        }),
+        ('Opciones Avanzadas', {
+            'classes': ('collapse',),
+            'fields': ('hiba_descriptionid', 'hiba_term', 'cl_concepto')
+        }),
+        )
+
     def add_view(self, request, *args, **kwargs):
         result = super(mcceAdmin, self).add_view(request, *args, **kwargs )
         request.session['filtered'] =  None
@@ -475,13 +525,14 @@ class pcAdmin(admin.ModelAdmin):
     }
     inlines = [bioeqAdminInline,]
     search_fields = ['descripcion',]
-    list_display = ['id_xt_pc','descripcion','id_xt_mc','id_xt_lab','usuario_creador'] #TODO BOOL Bioequivalente
+    list_display = ['id_xt_pc','descripcion','id_xt_mc','id_xt_lab','forma_farm_extendida','usuario_creador'] #TODO BOOL Bioequivalente
     list_filter = ['estado','revisado','consultar'
          ,'usuario_creador__username'
 #        , UsuarioFilter
         ,('id_xt_mc', IsNullFieldListFilter)
         ,('id_xt_lab', IsNullFieldListFilter)
         ,'fecha_ult_mod'
+        ,'forma_farm_extendida__estado'
 
     ] #TODO BOOL Observacion
     form = autocomplete_light.modelform_factory(xt_pc)
@@ -704,7 +755,7 @@ class pcceAdmin(admin.ModelAdmin):
 admin.site.register(xt_pcce,pcceAdmin)
 
 class xtlabAdmin(admin.ModelAdmin):
-    list_display = ['id_xt_lab','descripcion']
+    list_display = ['descripcion','desc_abrev','estado','sensible_mayusc']
     list_filter = ['revisado','consultar','estado']
     search_fields = ['descripcion',]
 
@@ -792,12 +843,15 @@ admin.site.register(xt_unidad_medida_unitaria,uduAdmin)
 
 
 class ffAdmin(admin.ModelAdmin):
+    list_display = ['descripcion','forma_agrupada','estado']
+    list_filter = ['estado','forma_agrupada']
     search_fields = ['descripcion']
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
             obj.usuario_creador = request.user
         obj.save()
+
 admin.site.register(xt_forma_farm,ffAdmin)
 
 

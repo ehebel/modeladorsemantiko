@@ -6,6 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/admin.py" afterPath="$PROJECT_DIR$/efectorescas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/efectorescas/views.py" afterPath="$PROJECT_DIR$/efectorescas/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos2/admin.py" afterPath="$PROJECT_DIR$/modeladorFarmacos2/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeladorFarmacos2/models.py" afterPath="$PROJECT_DIR$/modeladorFarmacos2/models.py" />
     </list>
     <list id="d0c10962-1e88-405c-82bf-daff9efabcb5" name="NoSync" comment="NoSync" />
     <ignored path="modeladorsemantiko.iws" />
@@ -30,13 +31,13 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5">
+    <splitter split-orientation="vertical" split-proportion="0.48803186">
       <split-first>
         <leaf>
           <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/admin.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="427" column="5" selection-start="15293" selection-end="15293" vertical-scroll-proportion="0.86614174">
+                <state line="886" column="59" selection-start="32331" selection-end="32331" vertical-scroll-proportion="0.23357664">
                   <folding />
                 </state>
               </provider>
@@ -54,7 +55,7 @@
           <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="287" column="35" selection-start="7771" selection-end="7771" vertical-scroll-proportion="0.42307693">
+                <state line="327" column="49" selection-start="8821" selection-end="8822" vertical-scroll-proportion="-9.730769">
                   <folding />
                 </state>
               </provider>
@@ -67,7 +68,7 @@
           <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="342" column="0" selection-start="13577" selection-end="13577" vertical-scroll-proportion="0.41042346">
+                <state line="364" column="70" selection-start="14841" selection-end="14841" vertical-scroll-proportion="0.38291138">
                   <folding />
                 </state>
               </provider>
@@ -101,8 +102,8 @@
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/modeladorFarmacos/listado_kairos.html" />
         <option value="$PROJECT_DIR$/modeladorFarmacos2/views.py" />
-        <option value="$PROJECT_DIR$/modeladorFarmacos2/models.py" />
         <option value="$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_tabletas.html" />
+        <option value="$PROJECT_DIR$/modeladorFarmacos2/models.py" />
         <option value="$PROJECT_DIR$/modeladorFarmacos2/admin.py" />
       </list>
     </option>
@@ -1662,7 +1663,11 @@
       <created>1390162808840</created>
       <updated>1390162808841</updated>
     </task>
-    <option name="localTasksCounter" value="286" />
+    <task id="LOCAL-00286" summary="Soluciono problema de multiples resultados.">
+      <created>1390163285600</created>
+      <updated>1390163285600</updated>
+    </task>
+    <option name="localTasksCounter" value="287" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1868,20 +1873,6 @@
         <state line="41" column="0" selection-start="1818" selection-end="1818" vertical-scroll-proportion="0.4848901" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="287" column="35" selection-start="7771" selection-end="7771" vertical-scroll-proportion="0.42307693">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="342" column="0" selection-start="13577" selection-end="13577" vertical-scroll-proportion="0.41042346">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/modeladorFarmacos2/kairos_tabletas.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="16" selection-start="1144" selection-end="1144" vertical-scroll-proportion="-7.0">
@@ -1889,9 +1880,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="327" column="49" selection-start="8821" selection-end="8822" vertical-scroll-proportion="-9.730769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="364" column="70" selection-start="14841" selection-end="14841" vertical-scroll-proportion="0.38291138">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modeladorFarmacos2/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="427" column="5" selection-start="15293" selection-end="15293" vertical-scroll-proportion="0.86614174">
+        <state line="886" column="59" selection-start="32331" selection-end="32331" vertical-scroll-proportion="0.23357664">
           <folding />
         </state>
       </provider>

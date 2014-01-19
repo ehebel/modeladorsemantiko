@@ -280,9 +280,9 @@ class xt_unidad_dosis_unitaria (models.Model):
     cl_concepto = models.CharField(max_length=20, blank=True, null=True)
 
     def __unicode__(self):
-        return self.descripcion
+        return u'%s| %s' % (self.estado, self.descripcion)
     class Meta:
-        ordering=['id_xt_unidad_dosis_u']
+        ordering=['descripcion']
         verbose_name_plural ='XT unidad de dosis unitaria'
 
 
@@ -308,10 +308,12 @@ class xt_unidad_medida_unitaria (models.Model):
 
     observacion = models.CharField(max_length=255, blank=True, null=True)
     cl_concepto = models.CharField(max_length=20, blank=True, null=True)
+
     def __unicode__(self):
-        return self.descripcion
+        return u'%s| %s' % (self.estado, self.descripcion)
+
     class Meta:
-        ordering=['id_xt_unidad_medida_u']
+        ordering=['descripcion']
         verbose_name_plural ='XT unidades de medida unitaria'
 
 
@@ -364,6 +366,9 @@ class xt_unidad_potencia (models.Model):
     cl_concepto = models.CharField(max_length=20, blank=True, null=True)
     def __unicode__(self):
         return self.descripcion
+#    class META:
+#        ordering = ['id_unidad_potencia']
+
 
 #########################################################################
 
@@ -865,6 +870,7 @@ class xt_sabor (models.Model):
         return self.descripcion
     class Meta:
         verbose_name_plural ='XT sabores'
+        ordering = ['descripcion']
 
 ## ##-
 ## table 'xt_pc'

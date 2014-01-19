@@ -239,7 +239,7 @@ class mcAdmin (admin.ModelAdmin):
             'fields': ('creac_nombre', 'sensible_mayusc', 'med_basico'
                        , 'estado_prescripcion','estado','revisado','consultar'
                        ,'tipo_forma_farm'
-                       ,'u_logistica_cant','u_logistica_u','unidosis_asist_cant','volumen_total_cant'
+                       ,'u_logistica_cant','u_logistica_u','unidosis_asist_cant','unidosis_asist_u','volumen_total_cant'
                        ,'volumen_total_u','condicion_venta','atc_code','medlineplus_ulr','observacion'
                        ,
                 )
@@ -427,7 +427,7 @@ class mcceAdmin(admin.ModelAdmin):
 #        ,'volumen_total_u'
     ]
 
-    list_filter = ['revisado','consultar','estado','tipo'
+    list_filter = ['revisado','consultar','estado','tipo','unidad_medida_cant','volumen_total_u'
             ]
     search_fields = ['descripcion',]
     readonly_fields=('id_xt_mcce',)
@@ -825,6 +825,8 @@ class xtlabAdmin(admin.ModelAdmin):
 admin.site.register(xt_laboratorio,xtlabAdmin)
 
 class uduAdmin(admin.ModelAdmin):
+    list_display = ['pk','descripcion','estado']
+    search_fields = ['descripcion']
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -834,6 +836,8 @@ admin.site.register(xt_unidad_dosis_unitaria,uduAdmin)
 
 
 class umuAdmin(admin.ModelAdmin):
+    list_display = ['pk','descripcion','estado']
+    search_fields = ['descripcion']
     def save_model(self, request, obj, form, change):
 
         if not hasattr(obj, 'usuario_creador'):
@@ -863,8 +867,37 @@ class condVentaAdmin(admin.ModelAdmin):
         obj.save()
 admin.site.register(xt_condicion_venta,condVentaAdmin)
 
+class upAdmin(admin.ModelAdmin):
+    list_display = ['id_unidad_potencia','descripcion','estado']
+    search_fields = ['descripcion']
+#    ordering = ['id_unidad_potencia',]
+    def save_model(self, request, obj, form, change):
 
-admin.site.register(xt_unidad_potencia)
+        if not hasattr(obj, 'usuario_creador'):
+            obj.usuario_creador = request.user
+        obj.save()
+
+        instance = form.save(commit=False)
+        if not hasattr(instance,'usuario_ult_mod'):
+            instance.usuario_ult_mod = request.user
+        instance.usuario_ult_mod = request.user
+        instance.save()
+        form.save_m2m()
+        return instance
+    def save_formset(self, request, form, formset, change):
+        def set_user(instance):
+            if not instance.usuario_ult_mod:
+                instance.usuario_ult_mod = request.user
+            instance.usuario_ult_mod = request.user
+            instance.save()
+        if formset.model == xt_mc:
+            instances = formset.save(commit=False)
+            map(set_user, instances)
+            formset.save_m2m()
+            return instances
+        else:
+            return formset.save()
+admin.site.register(xt_unidad_potencia,upAdmin)
 
 
 class gfpAdmin(admin.ModelAdmin):
@@ -943,7 +976,38 @@ class atcAdmin(admin.ModelAdmin):
 admin.site.register(atc,atcAdmin)
 
 
-admin.site.register(xt_unidad_medida_cant)
+class umcAdmin(admin.ModelAdmin):
+    list_display = ['pk','descripcion','estado']
+    search_fields = ['descripcion']
+    def save_model(self, request, obj, form, change):
+
+        if not hasattr(obj, 'usuario_creador'):
+            obj.usuario_creador = request.user
+        obj.save()
+
+        instance = form.save(commit=False)
+        if not hasattr(instance,'usuario_ult_mod'):
+            instance.usuario_ult_mod = request.user
+        instance.usuario_ult_mod = request.user
+        instance.save()
+        form.save_m2m()
+        return instance
+    def save_formset(self, request, form, formset, change):
+        def set_user(instance):
+            if not instance.usuario_ult_mod:
+                instance.usuario_ult_mod = request.user
+            instance.usuario_ult_mod = request.user
+            instance.save()
+        if formset.model == xt_unidad_medida_cant:
+            instances = formset.save(commit=False)
+            map(set_user, instances)
+            formset.save_m2m()
+            return instances
+        else:
+            return formset.save()
+admin.site.register(xt_unidad_medida_cant,umcAdmin)
+
+
 #admin.site.registration(rel_mc_sust)
 #admin.site.registration(rel_xt_mb_xt_sust)
 

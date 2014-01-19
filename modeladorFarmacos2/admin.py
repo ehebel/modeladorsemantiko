@@ -420,11 +420,11 @@ class mcceAdmin(admin.ModelAdmin):
 
     list_display = ['id_xt_mcce','descripcion'
         ,'tipo'
-        ,'id_xt_mc'
+#        ,'id_xt_mc'
         ,'cantidad'
-        ,'unidad_medida_cant'
+#        ,'unidad_medida_cant'
         ,'volumen_total_cant'
-        ,'volumen_total_u'
+#        ,'volumen_total_u'
     ]
 
     list_filter = ['revisado','consultar','estado','tipo'

@@ -345,7 +345,7 @@ def kairos_ampollas(request):
         ,'cantidadenvase'
     ).distinct().all()
 
-    paginator = Paginator(kpres_list, 48)
+    paginator = Paginator(kpres_list, 123)
 
     try:
         page = int(request.GET.get('page','1'))

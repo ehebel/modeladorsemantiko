@@ -236,7 +236,7 @@ class mcAdmin (admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            'fields': ('creac_nombre', 'sensible_mayusc', 'med_basico'
+            'fields': ('descripcion','creac_nombre', 'sensible_mayusc', 'med_basico'
                        , 'estado_prescripcion','estado','revisado','consultar'
                        ,'tipo_forma_farm'
                        ,'u_logistica_cant','u_logistica_u','unidosis_asist_cant','unidosis_asist_u','volumen_total_cant'

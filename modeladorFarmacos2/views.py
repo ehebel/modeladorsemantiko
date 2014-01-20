@@ -331,3 +331,33 @@ def kairos_global(request):
     return render_to_response('modeladorFarmacos2/kairos_global.html'
         ,{'kpres_kairos':kairos_pres},
         context_instance=RequestContext(request))
+
+
+def kairos_ampollas(request):
+    kpres_list = kairos_presentaciones.objects.filter(medio__in=[
+        'Amp. ',
+        'F.Amp.'
+
+    ]
+    ).exclude(estado__icontains='B'
+    ).order_by('claveproducto__descripcion'
+        , 'concentracion'
+        ,'cantidadenvase'
+    ).distinct().all()
+
+    paginator = Paginator(kpres_list, 48)
+
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        kairos_pres = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        kairos_pres = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos2/kairos_ampollas.html'
+        ,{'kpres_kairos':kairos_pres},
+        context_instance=RequestContext(request))

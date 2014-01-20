@@ -125,6 +125,7 @@ urlpatterns = patterns('',
     (r'^modelador/kairos_tabletas/$', kairos_tabletas),
     (r'^modelador/kairos_gotas/$', kairos_gotas),
     (r'^modelador/kairos_jarabes/$', kairos_jarabes),
+    (r'^modelador/kairos_ampollas/$', kairos_ampollas),
 
 
     url(r'^modelador/non_admin/', include('non_admin.urls', namespace='non_admin')),

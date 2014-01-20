@@ -14,7 +14,7 @@ admin.autodiscover()
 
 from efectorescas.views import  lista_areas
 from modeladorFarmacos.views import search, selec_medclin,lista_mc
-from modeladorFarmacos2.views import modeladorescas,pendientes,kairos,kairos2, kairos_tabletas, kairos_jarabes, kairos_gotas, kairos_global
+from modeladorFarmacos2.views import modeladorescas,pendientes,kairos,kairos2, kairos_tabletas, kairos_jarabes, kairos_gotas, kairos_global, kairos_ampollas
 import modeladorFarmacos2.views
 from modeladorFarmacos2.views import pcceForm
 

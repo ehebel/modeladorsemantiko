@@ -337,7 +337,6 @@ def kairos_ampollas(request):
     kpres_list = kairos_presentaciones.objects.filter(medio__in=[
         'Amp. ',
         'F.Amp.'
-
     ]
     ).exclude(estado__icontains='B'
     ).order_by('claveproducto__descripcion'
@@ -345,7 +344,7 @@ def kairos_ampollas(request):
         ,'cantidadenvase'
     ).distinct().all()
 
-    paginator = Paginator(kpres_list, 123)
+    paginator = Paginator(kpres_list, 140)
 
     try:
         page = int(request.GET.get('page','1'))

@@ -14,7 +14,7 @@ admin.autodiscover()
 
 from efectorescas.views import  lista_areas
 from modeladorFarmacos.views import search, selec_medclin,lista_mc
-from modeladorFarmacos2.views import modeladorescas,pendientes,kairos,kairos2, kairos_tabletas, kairos_jarabes, kairos_gotas, kairos_global, kairos_ampollas
+from modeladorFarmacos2.views import modeladorescas,pendientes,kairos,kairos2, kairos_tabletas, kairos_jarabes, kairos_gotas, kairos_global, kairos_ampollas,kairos_colirios, kairos_cremas, kairos_parches, kairos_shampoo, kairos_supositorios
 import modeladorFarmacos2.views
 from modeladorFarmacos2.views import pcceForm
 
@@ -126,6 +126,12 @@ urlpatterns = patterns('',
     (r'^modelador/kairos_gotas/$', kairos_gotas),
     (r'^modelador/kairos_jarabes/$', kairos_jarabes),
     (r'^modelador/kairos_ampollas/$', kairos_ampollas),
+    (r'^modelador/kairos_colirios/$', kairos_colirios),
+    (r'^modelador/kairos_cremas/$', kairos_cremas),
+    (r'^modelador/kairos_parches/$', kairos_parches),
+    (r'^modelador/kairos_shampoo/$', kairos_shampoo),
+    (r'^modelador/kairos_supositorios/$', kairos_supositorios),
+
 
 
     url(r'^modelador/non_admin/', include('non_admin.urls', namespace='non_admin')),

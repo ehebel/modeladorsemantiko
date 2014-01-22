@@ -361,3 +361,143 @@ def kairos_ampollas(request):
     return render_to_response('modeladorFarmacos2/kairos_ampollas.html'
         ,{'kpres_kairos':kairos_pres},
         context_instance=RequestContext(request))
+
+def kairos_colirios(request):
+    kpres_list = kairos_presentaciones.objects.filter(medio__in=[
+        'Colir.',
+    ]
+    ).exclude(estado__icontains='B'
+    ).order_by('claveproducto__descripcion'
+        , 'concentracion'
+        ,'cantidadenvase'
+    ).distinct().all()
+
+    paginator = Paginator(kpres_list, 157)
+
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        kairos_pres = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        kairos_pres = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos2/kairos_colirio.html'
+        ,{'kpres_kairos':kairos_pres},
+        context_instance=RequestContext(request))
+
+
+def kairos_cremas(request):
+    kpres_list = kairos_presentaciones.objects.filter(medio__in=[
+        'Crema',
+        'Gel',
+        'Ung.',
+        'Pomo',
+        'Pda.',
+        ]
+    ).exclude(estado__icontains='B'
+    ).order_by('claveproducto__descripcion'
+        , 'concentracion'
+        ,'cantidadenvase'
+    ).distinct().all()
+
+    paginator = Paginator(kpres_list, 157)
+
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        kairos_pres = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        kairos_pres = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos2/kairos_cremas.html'
+        ,{'kpres_kairos':kairos_pres},
+        context_instance=RequestContext(request))
+
+def kairos_parches(request):
+    kpres_list = kairos_presentaciones.objects.filter(medio__in=[
+        'Parche',
+        ]
+    ).exclude(estado__icontains='B'
+    ).order_by('claveproducto__descripcion'
+        , 'concentracion'
+        ,'cantidadenvase'
+    ).distinct().all()
+
+    paginator = Paginator(kpres_list, 157)
+
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        kairos_pres = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        kairos_pres = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos2/kairos_parches.html'
+        ,{'kpres_kairos':kairos_pres},
+        context_instance=RequestContext(request))
+
+def kairos_shampoo(request):
+    kpres_list = kairos_presentaciones.objects.filter(medio__in=[
+        'Shamp.',
+        ]
+    ).exclude(estado__icontains='B'
+    ).order_by('claveproducto__descripcion'
+        , 'concentracion'
+        ,'cantidadenvase'
+    ).distinct().all()
+
+    paginator = Paginator(kpres_list, 157)
+
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        kairos_pres = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        kairos_pres = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos2/kairos_shampoo.html'
+        ,{'kpres_kairos':kairos_pres},
+        context_instance=RequestContext(request))
+
+def kairos_supositorios(request):
+    kpres_list = kairos_presentaciones.objects.filter(medio__in=[
+        'Sup.',
+        ]
+    ).exclude(estado__icontains='B'
+    ).order_by('claveproducto__descripcion'
+        , 'concentracion'
+        ,'cantidadenvase'
+    ).distinct().all()
+
+    paginator = Paginator(kpres_list, 157)
+
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+
+    try:
+        kairos_pres = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        kairos_pres = paginator.page(paginator.num_pages)
+
+
+    return render_to_response('modeladorFarmacos2/kairos_supositorios.html'
+        ,{'kpres_kairos':kairos_pres},
+        context_instance=RequestContext(request))

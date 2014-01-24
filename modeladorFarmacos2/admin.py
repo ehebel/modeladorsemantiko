@@ -211,7 +211,10 @@ class mcAdmin (admin.ModelAdmin):
 
     search_fields = ['descripcion']
 
-    list_display = ['id_xt_mc','descripcion','med_basico'#'get_sustancia'
+    list_display = ['id_xt_mc','descripcion'
+        ,'termino_autogenerado'
+        #,'med_basico'
+        #,'get_sustancia'
         ,'get_pc'
         ,'get_atc'
         ,'estado'
@@ -236,18 +239,18 @@ class mcAdmin (admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            'fields': ('descripcion','creac_nombre', 'sensible_mayusc', 'med_basico'
+            'fields': ('descripcion','termino_autogenerado','creac_nombre', 'sensible_mayusc', 'med_basico'
                        , 'estado_prescripcion','estado','revisado','consultar'
                        ,'tipo_forma_farm'
                        ,'u_logistica_cant','u_logistica_u','unidosis_asist_cant','unidosis_asist_u','volumen_total_cant'
-                       ,'volumen_total_u','condicion_venta','atc_code','medlineplus_ulr','observacion'
+                       ,'volumen_total_u','forma_farmaceutica_agrup','condicion_venta','atc_code','medlineplus_ulr','observacion'
                        ,
                 )
         }),
         ('Opciones Avanzadas', {
             'classes': ('collapse',),
             'fields': ('sn_descriptionid', 'sn_term', 'hiba_descriptionid','hiba_term'
-                       ,'cl_concepto','termino_autogenerado',)
+                       ,'cl_concepto',)
         }),
         )
 

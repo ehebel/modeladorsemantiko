@@ -1,3 +1,4 @@
+from StdSuites import row
 from django.core.urlresolvers import reverse
 from django.db import models
 import datetime
@@ -682,11 +683,17 @@ class xt_mc (models.Model):
         return object.atc_code
     get_atc.short_description = 'ATC'
 
-#    def save(self, force_insert=False, force_update=False):
-#        self.termino_autogenerado = u'%s, %s' % (
-#            ' '.join([u'%s' % (s.descripcion) for s in self.rel_mc_sust.order_by('id_xt_sust').all()])
-#            , self.forma_farmaceutica_agrup.descripcion)
-#        super(xt_mc, self).save(force_insert, force_update)
+    def save(self, force_insert=False, force_update=False):
+#        def my_custom_sql():
+#            from django.db import connection, transaction
+#            cursor = connection.cursor()
+#            cursor.execute("UPDATE modeladorFarmacos2_xt_mc SET termino_autogenerado = 'Test' WHERE 1")
+#            transaction.commit_unless_managed()
+#            return row
+        self.termino_autogenerado = u'%s, %s' % (
+            ' '.join([u'%s' % (s.descripcion) for s in self.rel_mc_sust.order_by('id_xt_sust').all()])
+            , self.forma_farmaceutica_agrup.descripcion)
+        super(xt_mc, self).save(force_insert, force_update)
 
 
     def __unicode__(self):

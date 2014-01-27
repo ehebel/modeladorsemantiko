@@ -41,6 +41,7 @@ def export_as_csv(modeladmin, request, queryset):
     return response
 export_as_csv.short_description = "Exportar elementos seleccionados como CSV"
 
+
 class GesAdmin(admin.ModelAdmin):
     search_fields = ['glosa',]
     list_display = ['id','glosa','get_cie']

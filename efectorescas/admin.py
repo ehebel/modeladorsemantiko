@@ -1,12 +1,9 @@
-import csv
 import autocomplete_light
-from django.core.exceptions import PermissionDenied
-
 autocomplete_light.autodiscover()
 from django.contrib import admin
 admin.autodiscover()
 from efectorescas.models import *
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
 

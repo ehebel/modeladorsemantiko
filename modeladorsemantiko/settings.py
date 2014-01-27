@@ -17,36 +17,36 @@ FIXTURE_DIRS = [
 
 MANAGERS = ADMINS
 
-#DATABASES = {
-#    'default': {
-##        #Produccion
-#        'ENGINE': 'django.db.backends.mysql',
-#        'OPTIONS'  : { 'init_command' : 'SET storage_engine=MyISAM', },# Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#        'NAME': 'semantik_modelador',
-#        'USER':'semantik_ehebel',
-#        'PASSWORD':'h^Og5UO&}bOR',
-#        'HOST': 'localhost',             # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-#        'PORT': '',                      # Set to empty string for default.
-#        #PRUEBAS:
-##        #TODO Cambiar Conexión de BD a MySQL NO OLVIDAR
-##        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-##        'NAME': 'semantik_modelador.sqlite3', # Or path to database file if using sqlite3.
-##        # The following settings are not used with sqlite3:
-##        'USER':'',
-##        'PASSWORD':'',
-##        'HOST': '',             # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-##        'PORT': '',                      # Set to empty string for default.
-#    }
-#}
-
 DATABASES = {
     'default': {
+#        #Produccion
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': '/home1/semantik/django_proyectos/modeladorsemantiko/my.cnf',
-            },
-        }
+        'OPTIONS'  : { 'init_command' : 'SET storage_engine=MyISAM', },# Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'semantik_modelador',
+        'USER':'semantik_ehebel',
+        'PASSWORD':'nThmtT[x*_M(',
+        'HOST': 'localhost',             # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',                      # Set to empty string for default.
+        #PRUEBAS:
+#        #TODO Cambiar Conexión de BD a MySQL NO OLVIDAR
+#        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#        'NAME': 'semantik_modelador.sqlite3', # Or path to database file if using sqlite3.
+#        # The following settings are not used with sqlite3:
+#        'USER':'',
+#        'PASSWORD':'',
+#        'HOST': '',             # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+#        'PORT': '',                      # Set to empty string for default.
+    }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'OPTIONS': {
+#            'read_default_file': '/home1/semantik/django_proyectos/modeladorsemantiko/my.cnf',
+#            },
+#        }
+#}
 
 
 TEMPLATE_CONTEXT_PROCESSORS = ('django.contrib.auth.context_processors.auth',
@@ -174,11 +174,11 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'south',
     'autocomplete_light',
-#    'autocomplete_light.tests',
-#    'gfk_autocomplete',
-#    'optionnal_gfk_autocomplete',
-#    'generic_m2m_autocomplete',
-#    'genericm2m',
+    'autocomplete_light.tests',
+    'gfk_autocomplete',
+    'optionnal_gfk_autocomplete',
+    'generic_m2m_autocomplete',
+    'genericm2m',
     #'navigation_autocomplete',
     # Uncomment the next line to enable admin documentation:
     'modeladorsemantiko',

@@ -6,4 +6,4 @@ from models import TaggedItem
 
 class TaggedItemAdmin(admin.ModelAdmin):
     form = TaggedItemForm
-#admin.site.registration(TaggedItem, TaggedItemAdmin)
+admin.site.registration(TaggedItem, TaggedItemAdmin)

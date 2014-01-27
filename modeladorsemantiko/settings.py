@@ -43,7 +43,7 @@ DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql',
 #        'OPTIONS': {
-#            'read_default_file': '/home1/semantik/django_proyectos/modeladorsemantiko/my.cnf',
+#            'read_default_file': '/home1/semantik/django_proyectos/modeladorsemantiko/myOLD.cnf',
 #            },
 #        }
 #}
